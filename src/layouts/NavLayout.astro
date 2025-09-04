@@ -1,0 +1,26 @@
+---
+import '../styles/global.css'
+import MobileMenu from '../components/MobileMenu.astro'
+import Logo from '../assets/Logo.svg'
+const { title } = Astro.props;
+
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content="Magnolia Coasts Photography" />
+    <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon" /> -->
+  </head>
+  <body class="relative w-screen min-h-dvh flex flex-col justify-start items-stretch">
+    <nav class="sticky top-0 w-screen h-[66px]">
+      <div class="static w-full h-full flex justify-center items-center">
+        <Logo height={51} width={162} />
+        <MobileMenu />
+      </div>
+    </nav>
+    <slot />
+  </body>
+  
+</html>
