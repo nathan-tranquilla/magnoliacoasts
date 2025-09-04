@@ -14,8 +14,8 @@ const { title } = Astro.props;
     <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon" /> -->
   </head>
   <body class="relative w-screen min-h-dvh flex flex-col justify-start items-stretch">
-    <nav class="sticky top-0 w-screen h-[66px]">
-      <div class="static w-full h-full flex justify-center items-center">
+    <nav class="sticky top-0 w-screen h-[var(--mobile-nav-height)]">
+      <div class="static w-full h-full flex justify-center items-center shadow-md">
         <Logo height={51} width={162} />
         <MobileMenu />
       </div>

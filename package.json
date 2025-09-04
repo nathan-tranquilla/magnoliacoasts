@@ -6,11 +6,22 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "res:build": "rescript",
+    "res:clean": "rescript clean",
+    "res:dev": "rescript -w"
   },
   "dependencies": {
+    "@astrojs/react": "^4.3.0",
+    "@rescript/core": "^1.6.1",
+    "@rescript/react": "^0.14.0",
     "@tailwindcss/vite": "^4.1.12",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
     "astro": "^5.13.5",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "rescript": "^11.1.4",
     "tailwindcss": "^4.1.12"
   }
 }

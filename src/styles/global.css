@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+:root {
+  --mobile-nav-height: 66px;
+}

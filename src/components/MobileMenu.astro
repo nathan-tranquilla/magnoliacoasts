@@ -1,10 +1,5 @@
 ---
-const lines = "block bg-[#5A5A5A] w-full h-[2px] rounded-xs"
-const menu = "absolute top-0 right-0 w-[24px] h-[13.5px] flex flex-col justify-between translate-y-[150%] -translate-x-[100%]"
+import { make as MobileMenuComponent } from './MobileMenu.res.mjs'
 ---
 
-<div class={menu}>
-  <span class={lines}/>
-  <span class={lines}/>
-  <span class={lines}/>
-</div>
+<MobileMenuComponent client:visible/>
