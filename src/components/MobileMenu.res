@@ -37,7 +37,7 @@ let make = () => {
     | false => React.null
     | true => <div
         key="menu"
-        className="bg-white z-10 absolute top-[calc(var(--mobile-nav-height)-1px)] right-0 flex flex-col justify-center items-center w-full">
+        className="pb-4 shadow-md bg-white z-10 absolute top-[calc(var(--mobile-nav-height)-1px)] right-0 flex flex-col justify-center items-center w-full">
         {links->Array.map(((href, text)) =>
             <a key=href className=link href=href onClick={(_) => dispatch(Close)}> {React.string(text)} </a>
           )->React.array
