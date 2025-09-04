@@ -19,7 +19,7 @@ let make = () => {
 
   let lines = "block bg-[#5A5A5A] w-full h-[2px] rounded-xs"
   let menu = "cursor-pointer absolute top-0 right-0 w-[24px] h-[13.5px] flex flex-col justify-between translate-y-[200%] -translate-x-[100%]"
-  let link = "cursor-pointer p-2"
+  let link = "font-serif cursor-pointer p-2"
   let links = [
       ("#/home", "Home"),
       ("#/investment", "Investment"),
@@ -37,7 +37,7 @@ let make = () => {
     | false => React.null
     | true => <div
         key="menu"
-        className="bg-white z-10 absolute top-[calc(var(--mobile-nav-height)-1px)] right-0 flex flex-col justify-center items-center w-full shadow-md">
+        className="bg-white z-10 absolute top-[calc(var(--mobile-nav-height)-1px)] right-0 flex flex-col justify-center items-center w-full">
         {links->Array.map(((href, text)) =>
             <a key=href className=link href=href onClick={(_) => dispatch(Close)}> {React.string(text)} </a>
           )->React.array

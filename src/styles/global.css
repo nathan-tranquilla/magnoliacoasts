@@ -3,3 +3,11 @@
 :root {
   --mobile-nav-height: 66px;
 }
+
+@theme {
+  --font-serif: Garamond, serif;
+  --font-mono: "Inter", "Courier New", monospace;
+  --font-sans: "Dancing Script", "Lucida Handwriting", cursive;
+
+  --color-default: #FFFBFA;
+}
