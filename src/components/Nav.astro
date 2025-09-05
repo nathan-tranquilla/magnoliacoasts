@@ -1,15 +1,23 @@
 ---
-const links = [
+const leftLinks = [
   { href: '#/home', text: 'Home' },
-  { href: '#/investment', text: 'Investment' },
-  { href: '#/galleries', text: 'Galleries' },
   { href: '#/about', text: 'About Photographer' },
 ];
+const rightLinks = [
+  { href: '#/galleries', text: 'Galleries' },
+  { href: '#/investment', text: 'Investment' }
+];
+const links = [
+  ...leftLinks,
+  ...rightLinks
+];
+import logo from '../assets/Logo.svg'
 import Logo from '../assets/Logo.svg'
+import { Image } from 'astro:assets';
 ---
-<nav class="bg-white sticky top-0 w-screen h-[var(--mobile-nav-height)]">
+<nav class="bg-white sticky top-0 w-screen h-[var(--mobile-nav-height)] md:[var(--tablet-nav-height)] lg:[var(--desktop-nav-height)]">
   <div class="static w-full h-full flex justify-center items-center shadow-md md:hidden">
-    <Logo height={51} width={162} />
+    <Image src={logo} width={162} height={51} alt="Magnolia Coasts Logo." />
     <input type="checkbox" id="menu-toggle" class="hidden peer" />
     <label for="menu-toggle" class="cursor-pointer absolute top-0 right-0 w-[24px] h-[13.5px] flex flex-col justify-between translate-y-[200%] -translate-x-[100%]">
       <span class="block bg-[#5A5A5A] w-full h-[2px] rounded-xs"></span>
@@ -18,7 +26,20 @@ import Logo from '../assets/Logo.svg'
     </label>
     <div class="menu-links pb-4 shadow-md bg-white z-10 absolute top-[calc(var(--mobile-nav-height)-1px)] right-0 flex flex-col justify-center items-center w-full hidden peer-checked:flex">
       {links.map(link => (
-        <a class="font-serif cursor-pointer p-2" href={link.href}>{link.text}</a>
+        <a class="font-cormorant-garamond cursor-pointer p-2" href={link.href}>{link.text}</a>
+      ))}
+    </div>
+  </div>
+  <div class="justify-self-center static w-full h-full flex justify-around items-center shadow-md hidden md:flex max-w-[1000px]">
+    <div class="flex justify-between w-full max-w-[275px]">
+      {leftLinks.map(link => (
+        <a class="font-cormorant-garamond cursor-pointer p-2" href={link.href}>{link.text}</a>
+      ))}
+    </div>
+    <Image src={logo} width={162} height={51} alt="Magnolia Coasts Logo." />
+    <div class="flex justify-between w-full max-w-[275px]">
+      {rightLinks.map(link => (
+        <a class="font-cormorant-garamond cursor-pointer p-2" href={link.href}>{link.text}</a>
       ))}
     </div>
   </div>

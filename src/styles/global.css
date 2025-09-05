@@ -1,15 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 @import "tailwindcss";
 
 :root {
   --mobile-nav-height: 66px;
+  --tablet-nav-height: 78px;
+  --desktop-nav-height: 90px;
   --edge-padding: 1rem;
   --card-padding: 0.75rem
 }
 
 @theme {
-  --font-serif: Garamond, serif;
-  --font-mono: "Inter", "Courier New", monospace;
-  --font-sans: "Dancing Script", "Lucida Handwriting", cursive;
+  --font-cormorant-garamond: "Cormorant Garamond", serif; 
 
   --color-default: #FFFBFA;
   --color-pink: #F9CFCD;
