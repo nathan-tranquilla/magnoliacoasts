@@ -1,0 +1,23 @@
+---
+export interface Props {
+  color: 'Pink' | 'Mint';
+  variant: 'Active' | 'Default';
+  text: string;
+}
+
+const { color, variant, text } = Astro.props;
+
+const getClassMod = (color: Props['color'], variant: Props['variant']) => {
+  if (color === 'Pink' && variant === 'Active') return 'bg-pink-active';
+  if (color === 'Pink' && variant === 'Default') return 'bg-pink';
+  if (color === 'Mint' && variant === 'Active') return 'bg-mint-active  border-[#8DA5A3]';
+  if (color === 'Mint' && variant === 'Default') return 'bg-mint border border-[#8DA5A3]';
+  return '';
+};
+---
+
+<button
+  class={"justify-self-stretch rounded-lg size-auto w-100 w-max-[370px] h-[30px] flex justify-center items-center text-black text-sm " + getClassMod(color, variant)}
+>
+  {text}
+</button>

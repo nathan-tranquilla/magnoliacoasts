@@ -2,6 +2,8 @@
 
 :root {
   --mobile-nav-height: 66px;
+  --edge-padding: 1rem;
+  --card-padding: 0.75rem
 }
 
 @theme {
@@ -10,4 +12,10 @@
   --font-sans: "Dancing Script", "Lucida Handwriting", cursive;
 
   --color-default: #FFFBFA;
+  --color-pink: #F9CFCD;
+  --color-pink-active: #FCC6C3;
+  --color-mint: #B2DAD7;
+  --color-mint-active: #94CCC9;
+
+  --shadow-card: 0 0 10px rgba(96, 96, 96, 0.25);
 }
