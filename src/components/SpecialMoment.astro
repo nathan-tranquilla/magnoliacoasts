@@ -1,0 +1,9 @@
+---
+import { Image } from 'astro:assets';
+const { src, alt, buttonText } = Astro.props;
+import Button from './Button.astro'
+---
+<div class="shadow-card max-h-[440px] max-w-[240px] flex flex-col justify-around p-4 grid grid-cols-1 gap-4">
+  <Image layout="constrained" src={src} alt={alt} />
+  <Button color="Pink" variant="Default" text={buttonText} />
+</div>

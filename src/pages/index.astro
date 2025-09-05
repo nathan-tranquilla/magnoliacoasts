@@ -3,6 +3,7 @@ import NavLayout from '../layouts/NavLayout.astro';
 import Welcome from '../components/Welcome.astro'
 import { Picture } from 'astro:assets';
 import heroImage from "../assets/HeroImage.png";
+import SpecialMoments from '../components/SpecialMoments.astro';
 ---
 <style>
   picture {
@@ -14,4 +15,5 @@ import heroImage from "../assets/HeroImage.png";
 <NavLayout title="Home Page">
 	<Picture src={heroImage} alt="Baby in a basket." />
   <Welcome />
+  <SpecialMoments />
 </NavLayout>

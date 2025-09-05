@@ -1,0 +1,14 @@
+---
+import prego from '../assets/PregnantWoman.png'
+import famJam from '../assets/FamilyByRoad.png'
+import babySling from '../assets/BabyInSling.png'
+import cakeSmash from '../assets/BabyBDayCake.png'
+import SpecialMoment from './SpecialMoment.astro'
+---
+<div class="self-center m-4 grid grid-cols-2 md:grid-cols-4 gap-4 font-cormorant-garamond max-w-[1439px]">
+  <p class="col-span-full flex justify-center md:text-3xl sm:text-xl text-base">What special moments would you like to capture?</p>
+  <SpecialMoment src={prego} alt="Pregnant woman." buttonText="Maternity"/>
+  <SpecialMoment src={babySling} alt="Baby in a sling." buttonText="Newborn"/>
+  <SpecialMoment src={famJam} alt="Family by the road." buttonText="Family"/>
+  <SpecialMoment src={cakeSmash} alt="Baby with a birthday cake." buttonText="Cake Smashes"/>
+</div>
