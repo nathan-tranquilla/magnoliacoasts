@@ -1,5 +1,28 @@
 ---
-import { make as MobileMenuComponent } from './MobileMenu.res.mjs'
+const links = [
+  { href: '#/home', text: 'Home' },
+  { href: '#/investment', text: 'Investment' },
+  { href: '#/galleries', text: 'Galleries' },
+  { href: '#/about', text: 'About Photographer' },
+];
 ---
+<style>
+  input[type="checkbox"]:checked ~ .menu-links {
+    display: flex;
+  }
+</style>
 
-<MobileMenuComponent client:visible/>
+<div>
+  <input type="checkbox" id="menu-toggle" class="hidden" />
+  <label for="menu-toggle" class="cursor-pointer absolute top-0 right-0 w-[24px] h-[13.5px] flex flex-col justify-between translate-y-[200%] -translate-x-[100%]">
+    <span class="block bg-[#5A5A5A] w-full h-[2px] rounded-xs"></span>
+    <span class="block bg-[#5A5A5A] w-full h-[2px] rounded-xs"></span>
+    <span class="block bg-[#5A5A5A] w-full h-[2px] rounded-xs"></span>
+  </label>
+
+  <div class="menu-links pb-4 shadow-md bg-white z-10 absolute top-[calc(var(--mobile-nav-height)-1px)] right-0 flex flex-col justify-center items-center w-full hidden">
+    {links.map(link => (
+      <a class="font-serif cursor-pointer p-2" href={link.href}>{link.text}</a>
+    ))}
+  </div>
+</div>
