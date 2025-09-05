@@ -30,13 +30,13 @@ import { Image } from 'astro:assets';
     </div>
   </nav>
   <nav class="justify-self-center static w-full h-full flex justify-around items-center hidden md:flex max-w-[1000px]">
-    <div class="flex justify-between w-full max-w-[275px]">
+    <div class="flex justify-around w-full max-w-[275px]">
       {leftLinks.map(link => (
         <a class="font-cormorant-garamond cursor-pointer p-2" href={link.href}>{link.text}</a>
       ))}
     </div>
     <Image src={logo} width={162} height={51} alt="Magnolia Coasts Logo." />
-    <div class="flex justify-between w-full max-w-[275px]">
+    <div class="flex justify-around w-full max-w-[275px]">
       {rightLinks.map(link => (
         <a class="font-cormorant-garamond cursor-pointer p-2" href={link.href}>{link.text}</a>
       ))}
