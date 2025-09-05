@@ -5,6 +5,13 @@ import { Picture, Image } from 'astro:assets';
 import heroImage from "../assets/HeroImage.png";
 import stephaniePortrait from "../assets/StephaniePortrait.png";
 ---
+<style>
+  picture {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(237,232,220), rgb(218,217,205));
+  }
+</style>
 <NavLayout title="Home Page">
 	<Picture src={heroImage} alt="Baby in a basket." />
   <div class="p-[var(--card-padding)] m-[var(--edge-padding)] rounded-xl shadow-card flex justify-start">
