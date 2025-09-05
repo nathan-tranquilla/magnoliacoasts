@@ -4,16 +4,15 @@ import Welcome from '../components/Welcome.astro'
 import { Picture } from 'astro:assets';
 import heroImage from "../assets/HeroImage.png";
 import SpecialMoments from '../components/SpecialMoments.astro';
+import artInYourHome from "../assets/ArtInYourHome.jpg"
 ---
-<style>
-  picture {
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(to right, rgb(237,232,220), rgb(218,217,205));
-  }
-</style>
 <NavLayout title="Home Page">
-	<Picture src={heroImage} alt="Baby in a basket." />
+  <div class="flex justify-center bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(218,217,205)]">
+    <Picture src={heroImage} alt="Baby in a basket." />
+  </div>
   <Welcome />
   <SpecialMoments />
+  <div class="flex justify-center bg-gradient-to-r from-[rgb(230,229,236)] to-[rgb(153,148,149)]">
+    <Picture src={artInYourHome} alt="Art in your home." />
+  </div>
 </NavLayout>
