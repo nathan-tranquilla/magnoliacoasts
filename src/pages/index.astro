@@ -1,10 +1,13 @@
 ---
 import NavLayout from '../layouts/NavLayout.astro';
 import Welcome from '../components/Welcome.astro'
-import { Picture } from 'astro:assets';
+import { Picture, Image } from 'astro:assets';
 import heroImage from "../assets/HeroImage.png";
 import SpecialMoments from '../components/SpecialMoments.astro';
 import artInYourHome from "../assets/ArtInYourHome.jpg"
+import TestimonialCard from "../components/TestimonialCard.astro"
+import erikaFam from '../assets/ErikaMcNabb.png' 
+let testimony = "Working with Stephanie was one of the best decisions we ever made! Her easy and friendly manner, professionalism and attention to detail made for a memorable and enjoyable experience. We absolutely love our family photos! Thank you, Stephanie, for capturing beautiful moments that will now become lasting memories."
 ---
 <NavLayout title="Home Page">
   <div class="flex justify-center bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(218,217,205)]">
@@ -15,4 +18,7 @@ import artInYourHome from "../assets/ArtInYourHome.jpg"
   <div class="flex justify-center bg-gradient-to-r from-[rgb(230,229,236)] to-[rgb(153,148,149)]">
     <Picture src={artInYourHome} alt="Art in your home." />
   </div>
+  <!-- <TestimonialCard title="Erika McNabb" date="November 2023" testimony={testimony} client:visible >
+    <Image class="h-[100%] w-auto object-cover object-center rounded-md" slot="image" layout="fixed" src={erikaFam} alt="Erika family." />
+  </TestimonialCard> -->
 </NavLayout>
