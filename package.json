@@ -22,6 +22,7 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "rescript": "^11.1.4",
+    "rescript-webapi": "^0.10.0",
     "tailwindcss": "^4.1.12"
   }
 }

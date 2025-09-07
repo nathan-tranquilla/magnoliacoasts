@@ -12,7 +12,8 @@
   "jsx": { "version": 4 },
   "bs-dependencies": [
     "@rescript/core",
-    "@rescript/react"
+    "@rescript/react",
+    "rescript-webapi"
   ],
   "bsc-flags": [
     "-open RescriptCore"
