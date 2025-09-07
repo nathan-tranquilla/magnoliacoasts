@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
 const { title } = Astro.props;
 
 ---
@@ -15,6 +16,7 @@ const { title } = Astro.props;
   <body class="relative w-screen min-h-dvh flex flex-col justify-start items-stretch bg-default">
     <Nav />
     <slot />
+    <Footer />
   </body>
   
 </html>

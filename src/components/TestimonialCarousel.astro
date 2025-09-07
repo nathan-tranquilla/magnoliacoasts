@@ -18,7 +18,7 @@ let { count } = Astro.props
   import { init } from "../utils/carousel.res.mjs"
   init()
 </script>
-<div class="carousel w-dvw min-h-[200px] flex flex-col justify-center items-center">
+<div class="carousel w-dvw min-h-[200px] flex flex-col justify-center items-center my-4">
   <SectionTitle title="What our clients say about us"/>
   <div class="relateive flex justify-center items-center max-w-dvw overflow-hidden">
     <div id="slot-container-0" class={activeSlot}><slot name="testimonial-1" /></div>
