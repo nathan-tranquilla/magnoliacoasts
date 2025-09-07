@@ -1,0 +1,8 @@
+---
+export interface Props {
+  title: string;
+  classStyles?: string;
+}
+const { title, classStyles } = Astro.props;
+---
+<p class={"my-2 sm:my-4 md:my-6 font-cormorant-garamond flex justify-center md:text-3xl sm:text-xl text-base " + classStyles || ""}>{title}</p>

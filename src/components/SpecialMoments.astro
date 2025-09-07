@@ -5,16 +5,17 @@ import babySling from '../assets/BabyInSling.png'
 import cakeSmash from '../assets/BabyBDayCake.png'
 import SpecialMoment from './SpecialMoment.astro'
 import Button from './Button.astro'
+import SectionTitle from './SectionTitle.astro'
 ---
 <div class="self-center m-4 grid grid-cols-2 md:grid-cols-4 gap-4 font-cormorant-garamond max-w-[1439px]">
-  <p class="col-span-full flex justify-center md:text-3xl sm:text-xl text-base">What special moments would you like to capture?</p>
+  <SectionTitle title="What special moments would you like to capture?" classStyles="col-span-full" />
   <SpecialMoment src={prego} alt="Pregnant woman." buttonText="Maternity"/>
   <SpecialMoment src={babySling} alt="Baby in a sling." buttonText="Newborn"/>
   <SpecialMoment src={famJam} alt="Family by the road." buttonText="Family"/>
   <SpecialMoment src={cakeSmash} alt="Baby with a birthday cake." buttonText="Cake Smashes"/>
 </div>
 <div class="self-center m-4 grid grid-cols-2 sm:grid-cols-4 gap-4 font-cormorant-garamond max-w-[880px]">
-  <p class="col-span-full flex justify-center md:text-3xl sm:text-xl text-base">Other types of photo sessions</p>
+  <SectionTitle title="Other types of photo sessions" classStyles="col-span-full" />
   <Button color="Mint" variant="Default" text="Milestones"/>
   <Button color="Mint" variant="Default" text="Children"/>
   <Button color="Mint" variant="Default" text="Branding"/>
