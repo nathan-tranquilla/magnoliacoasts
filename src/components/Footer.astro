@@ -1,41 +1,46 @@
 ---
 import { Image } from 'astro:assets';
-
 import fbIcon from '../assets/FacebookIcon.png'
 import instaIcon from '../assets/InstagramIcon.png'
 import pintrestIcon from '../assets/PintrestIcon.png'
+
+const footerClass = "font-semibold text-white font-cormorant-garamond bg-pastel-green min-h-[184px] w-screen grid grid-cols-3 grid-rows-3 p-2"
+const colHeaderClass = "pt-4 flex flex-col justify-start items-center row-start-1 col-span-1"
+const iconClass = "mx-4"
+const cityColClass = "text-sm flex flex-col justify-between items-center row-start-3 col-span-1"
+const cityListClass = "flex flex-col items-start"
 ---
-<footer class="font-semibold text-white font-cormorant-garamond bg-pastel-green min-h-[184px] w-screen grid grid-cols-3 grid-rows-3 p-2">
-  <div class="pt-4 row-start-1 col-start-1 col-span-1 flex flex-col justify-start items-center">
+<footer class={footerClass}>
+  <div class={`${colHeaderClass} col-start-1`}>
     Contact Us
   </div>
-  <div class="pt-4 row-start-1 col-start-2 col-span-1 flex flex-col justify-start items-center">
+  <div class={`${colHeaderClass} col-start-2`}>
     Investment  
   </div>
-  <div class="pt-4 row-start-1 col-start-3 col-span-1 flex flex-col justify-start items-center">
+  <div class={`${colHeaderClass} col-start-3`}>
     Subscribe
   </div>
   <div class="row-start-2 col-start-1 col-span-3 flex justify-center items-center">
-    <Image class="mx-4" src={fbIcon} alt="Facebook Icon" />
-    <Image class="mx-4" src={instaIcon} alt="Instagram Icon"/>
-    <Image class="mx-4" src={pintrestIcon} alt="Pintrest Icon"/>
+    <Image class={iconClass} src={fbIcon} alt="Facebook Icon" />
+    <Image class={iconClass} src={instaIcon} alt="Instagram Icon"/>
+    <Image class={iconClass} src={pintrestIcon} alt="Pintrest Icon"/>
   </div>
-  <div class="text-sm row-start-3 col-start-1 col-span-1 flex flex-col justify-between items-center">
-    <div class="flex flex-col items-start">
+  <div class={`${cityColClass} col-start-1`}>
+    <div class={cityListClass}>
       <span>Toronto</span>
       <span>Mississauga</span>
       <span>Oakville</span>
     </div>
   </div>
-  <div class="text-sm row-start-3 col-start-2 col-span-1 flex flex-col justify-between items-center">
-    <div class="flex flex-col items-start">
+  <div class={`${cityColClass} col-start-2`}>
+    <div class={cityListClass}>
       <span>Brampton</span>
       <span>Caledon</span>
       <span>Barrie</span>
     </div>
   </div>
-  <div class="text-sm row-start-3 col-start-3 col-span-1 flex flex-col justify-between items-center">
-    <div class="flex flex-col items-start">
+  <div class={`${cityColClass} col-start-3`}>
+    <div class={cityListClass}>
       <span>Scarborough</span>
       <span>Oshawa</span>
       <span>Whitby</span>
