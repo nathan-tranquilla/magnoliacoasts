@@ -19,6 +19,8 @@
   --color-pink-active: #FCC6C3;
   --color-mint: #B2DAD7;
   --color-mint-active: #94CCC9;
+  --color-app-grey: #DDDDDD;
+  --color-app-dark-grey: #939393;
 
   --shadow-card: 0 0 10px rgba(96, 96, 96, 0.25);
 }

@@ -1,0 +1,46 @@
+---
+import SectionTitle from "./SectionTitle.astro"
+
+export interface Props {
+  count: number
+}
+
+let dotClass = "m-4 h-[8px] w-[8px] rounded-full border border-[#ACABAC] "
+let activeDotClass = " bg-app-dark-grey"
+let inactiveDotClass = " bg-app-grey"
+let buttonClass = "mx-4 h-[2rem] w-[2rem] border border-[#C5C5C5] border-2 rounded-full flex justify-center items-center text-[#C5C5C5]"
+let activeSlot = "transition-all"
+let inactiveSlot = "transition-all absolute translate-x-400"
+
+let { count } = Astro.props
+---
+<script>
+  import { init } from "../utils/carousel.res.mjs"
+  init()
+</script>
+<div class="carousel w-dvw min-h-[200px] flex flex-col justify-center items-center">
+  <SectionTitle title="What our clients say about us"/>
+  <div class="relateive flex justify-center items-center max-w-dvw overflow-hidden">
+    <div id="slot-container-0" class={activeSlot}><slot name="testimonial-1" /></div>
+    <div id="slot-container-1" class={inactiveSlot}><slot name="testimonial-2" /></div>
+    <div id="slot-container-2" class={inactiveSlot}><slot name="testimonial-3" /></div>
+    <div id="slot-container-3" class={inactiveSlot}><slot name="testimonial-4" /></div>
+    <div id="slot-container-4" class={inactiveSlot}><slot name="testimonial-5" /></div>
+    <div id="slot-container-5" class={inactiveSlot}><slot name="testimonial-6" /></div>
+    <div id="slot-container-6" class={inactiveSlot}><slot name="testimonial-7" /></div>
+    <div id="slot-container-7" class={inactiveSlot}><slot name="testimonial-8" /></div>
+    <div id="slot-container-8" class={inactiveSlot}><slot name="testimonial-9" /></div>
+    <div id="slot-container-9" class={inactiveSlot}><slot name="testimonial-10" /></div>
+  </div>
+  <div class="flex justify-around items-center">
+    <button id="carousel-go-left"  class={buttonClass}>{"<"}</button>
+    <div class="flex items-center">
+      <button id="carousel-go-0" class={"dots " + dotClass + activeDotClass} />
+      {Array.from({ length: count-1 }).map((_, i) => (
+        <button id={`carousel-go-${i+1}`} class={"dots " + dotClass + inactiveDotClass} />
+      ))}
+    </div>
+    <div id="carousel-go-right" class={buttonClass}>{">"}</button>
+  </div>
+
+</div>
