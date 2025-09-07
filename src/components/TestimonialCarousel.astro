@@ -5,10 +5,10 @@ export interface Props {
   count: number
 }
 
-let dotClass = "m-4 h-[8px] w-[8px] rounded-full border border-[#ACABAC] "
-let activeDotClass = " bg-app-dark-grey"
+let dotClass = "m-4 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer "
+let activeDotClass = "scale-130 bg-app-active-grey"
 let inactiveDotClass = " bg-app-grey"
-let buttonClass = "mx-4 h-[2rem] w-[2rem] border border-[#C5C5C5] border-2 rounded-full flex justify-center items-center text-[#C5C5C5]"
+let buttonClass = "mx-4 h-[2rem] w-[2rem] border border-[#C5C5C5] border-2 rounded-full flex justify-center items-center text-[#C5C5C5] cursor-pointer hover:scale-130 hover:shadow-lg hover:text-app-active-grey hover:border-app-active-grey focus:shadow-lg focus:text-app-active-grey focus:border-app-active-grey cursor-pointer"
 let activeSlot = "transition-all"
 let inactiveSlot = "transition-all absolute translate-x-400"
 

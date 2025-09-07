@@ -30,10 +30,12 @@ let init = () => {
           ReQuery.Signal.subscribe(i, (v) => {
             if v == x {
               ReQuery.Element.removeClass(el, "bg-app-grey")
-              ReQuery.Element.addClass(el, "bg-app-dark-grey")
+              ReQuery.Element.addClass(el, "bg-app-active-grey")
+              ReQuery.Element.addClass(el, "scale-130")
             } else {
-              ReQuery.Element.removeClass(el, "bg-app-dark-grey")
+              ReQuery.Element.removeClass(el, "bg-app-active-grey")
               ReQuery.Element.addClass(el, "bg-app-grey")
+              ReQuery.Element.removeClass(el, "scale-130")
             }
           })
         }
