@@ -32,6 +32,10 @@ task :dev => ['node_modules', :res_build] do
   sh "npx astro dev"
 end
 
+task :test => ['node_modules'] do 
+  sh "echo \"not implemented\""
+end 
+
 task :build => ['node_modules', :res_build] do
   sh "npx astro build"
 end

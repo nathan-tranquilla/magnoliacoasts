@@ -4,49 +4,18 @@ import '../styles/global.css'
 import Nav from '../components/Nav.astro'
 import Footer from '../components/Footer.astro'
 import businessData from '../data/localBusinessProfile.json'
+import keywordData from '../data/keywords.json'
 
 const { title } = Astro.props;
 
-const categories = [
-  'family',
-  'newborn',
-  'maternity',
-  'baby',
-  'child',
-  'kids',
-  'portrait',
-  'milestone',
-  'cake smash',
-  'studio'
-];
-const cities = [
-  'Toronto',
-  'Mississauga',
-  'Oakville',
-  'Brampton',
-  'Caledon',
-  'Barrie',
-  'Scarborough',
-  'Oshawa',
-  'Whitby'
-];
-
-const generic = [
-  'Magnolia Coasts',
-  'professional family photographer',
-  'family photos',
-  'photography',
-  'photographer'
-];
-
 const keywords = [
-  ...categories.map(cat => `${cat} photography`),
-  ...categories.map(cat => `${cat} photographer`),
-  ...categories.flatMap(cat => cities.map(city => `${cat} photography in ${city}`)),
-  ...categories.flatMap(cat => cities.map(city => `${cat} photographer in ${city}`)),
-  ...cities.map(city => `family photographer for ${city}`),
-  ...cities.map(city => `family photos for ${city}`),
-  ...generic
+  ...keywordData.categories.map(cat => `${cat} photography`),
+  ...keywordData.categories.map(cat => `${cat} photographer`),
+  ...keywordData.categories.flatMap(cat => keywordData.cities.map(city => `${cat} photography in ${city}`)),
+  ...keywordData.categories.flatMap(cat => keywordData.cities.map(city => `${cat} photographer in ${city}`)),
+  ...keywordData.cities.map(city => `family photographer for ${city}`),
+  ...keywordData.cities.map(city => `family photos for ${city}`),
+  ...keywordData.generic
 ].join(', ');
 
 const localBusinessProfile = JSON.stringify(businessData)
@@ -62,10 +31,23 @@ const localBusinessProfile = JSON.stringify(businessData)
     <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon" /> -->
+    <script type="application/ld+json" set:html={localBusinessProfile}></script>
+    <meta name="email" content="info@magnoliacoastsphotography.com" />
+    <link rel="canonical" href="https://magnoliacoastsphotography.com/" />
 
-    <script type="application/ld+json" set:html={localBusinessProfile}>
-    </script>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Magnolia Coasts Photography. Family, newborn, and portrait photography in Toronto, Mississauga, and the GTA." />
+    <meta property="og:url" content="https://magnoliacoastsphotography.com/" />
+    <meta property="og:image" content="https://magnoliacoastsphotography.com/favicon.svg" />
+    <meta property="article:publisher" content="https://www.facebook.com/magnoliacoastsphotography/" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" /> 
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content="Magnolia Coasts Photography. Family, newborn, and portrait photography in Toronto, Mississauga, and the GTA." />
+    <meta name="twitter:image" content="https://magnoliacoastsphotography.com/favicon.svg" />
   </head>
   <body class="relative w-screen min-h-dvh flex flex-col justify-start items-stretch bg-default">
     <Nav />
