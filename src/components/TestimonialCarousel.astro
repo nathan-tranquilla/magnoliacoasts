@@ -5,12 +5,9 @@ export interface Props {
   count: number
 }
 
-let dotClass = "m-4 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer "
-let activeDotClass = "scale-130 bg-app-active-grey"
-let inactiveDotClass = " bg-app-grey"
-let buttonClass = "mx-4 h-[2rem] w-[2rem] border border-[#C5C5C5] border-2 rounded-full flex justify-center items-center text-[#C5C5C5] cursor-pointer hover:scale-130 hover:shadow-lg hover:text-app-active-grey hover:border-app-active-grey focus:shadow-lg focus:text-app-active-grey focus:border-app-active-grey cursor-pointer"
-let activeSlot = "transition-all"
-let inactiveSlot = "transition-all absolute translate-x-400"
+let dotClass = "m-4 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer bg-app-grey "
+let buttonClass = "mx-4 h-[2rem] w-[2rem] border border-[#C5C5C5] border-2 rounded-full flex justify-center items-center text-[#C5C5C5] cursor-pointer hover:scale-130 hover:shadow-lg hover:text-app-active-grey hover:border-app-active-grey focus:shadow-lg focus:text-app-active-grey focus:border-app-active-grey cursor-pointer transition-all "
+let slotContClass = "duration-600 transition-all"
 
 let { count } = Astro.props
 ---
@@ -18,26 +15,42 @@ let { count } = Astro.props
   import { init } from "../utils/carousel.res.mjs"
   init()
 </script>
+<style>
+  .active-dot {
+    transform: scale(130%);
+    background-color: var(--color-app-active-grey) !important;
+  }
+  .move-left {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-50rem);
+  }
+  .move-right {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(50rem);
+  }
+</style>
 <div class="carousel w-dvw min-h-[200px] flex flex-col justify-center items-center my-4">
   <SectionTitle title="What our clients say about us"/>
-  <div class="relateive flex justify-center items-center max-w-dvw overflow-hidden">
-    <div id="slot-container-0" class={activeSlot}><slot name="testimonial-1" /></div>
-    <div id="slot-container-1" class={inactiveSlot}><slot name="testimonial-2" /></div>
-    <div id="slot-container-2" class={inactiveSlot}><slot name="testimonial-3" /></div>
-    <div id="slot-container-3" class={inactiveSlot}><slot name="testimonial-4" /></div>
-    <div id="slot-container-4" class={inactiveSlot}><slot name="testimonial-5" /></div>
-    <div id="slot-container-5" class={inactiveSlot}><slot name="testimonial-6" /></div>
-    <div id="slot-container-6" class={inactiveSlot}><slot name="testimonial-7" /></div>
-    <div id="slot-container-7" class={inactiveSlot}><slot name="testimonial-8" /></div>
-    <div id="slot-container-8" class={inactiveSlot}><slot name="testimonial-9" /></div>
-    <div id="slot-container-9" class={inactiveSlot}><slot name="testimonial-10" /></div>
+  <div class="relative flex justify-center items-center max-w-dvw overflow-hidden">
+    <div id="slot-container-0" class={`${slotContClass}`}><slot name="testimonial-1" /></div>
+    <div id="slot-container-1" class={`${slotContClass} move-right`}><slot name="testimonial-2" /></div>
+    <div id="slot-container-2" class={`${slotContClass} move-right`}><slot name="testimonial-3" /></div>
+    <div id="slot-container-3" class={`${slotContClass} move-right`}><slot name="testimonial-4" /></div>
+    <div id="slot-container-4" class={`${slotContClass} move-right`}><slot name="testimonial-5" /></div>
+    <div id="slot-container-5" class={`${slotContClass} move-right`}><slot name="testimonial-6" /></div>
+    <div id="slot-container-6" class={`${slotContClass} move-right`}><slot name="testimonial-7" /></div>
+    <div id="slot-container-7" class={`${slotContClass} move-right`}><slot name="testimonial-8" /></div>
+    <div id="slot-container-8" class={`${slotContClass} move-right`}><slot name="testimonial-9" /></div>
+    <div id="slot-container-9" class={`${slotContClass} move-right`}><slot name="testimonial-10" /></div>
   </div>
   <div class="flex justify-around items-center">
     <button id="carousel-go-left"  class={buttonClass}>{"<"}</button>
     <div class="flex items-center">
-      <button id="carousel-go-0" class={"dots " + dotClass + activeDotClass} />
+      <button id="carousel-go-0" class={"dots " + dotClass + " active-dot"} />
       {Array.from({ length: count-1 }).map((_, i) => (
-        <button id={`carousel-go-${i+1}`} class={"dots " + dotClass + inactiveDotClass} />
+        <button id={`carousel-go-${i+1}`} class={"dots " + dotClass} />
       ))}
     </div>
     <div id="carousel-go-right" class={buttonClass}>{">"}</button>

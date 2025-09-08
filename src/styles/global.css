@@ -9,6 +9,7 @@
   --card-padding: 0.75rem;
 
   --functional-max-width: 1440px;
+  --color-app-active-grey: #939393;
 }
 
 @theme {
