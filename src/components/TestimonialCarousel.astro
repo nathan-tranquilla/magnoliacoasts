@@ -6,7 +6,7 @@ export interface Props {
 }
 
 let dotClass = "m-4 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer bg-app-grey "
-let buttonClass = "mx-4 h-[2rem] w-[2rem] border border-[#C5C5C5] border-2 rounded-full flex justify-center items-center text-[#C5C5C5] cursor-pointer hover:scale-130 hover:shadow-lg hover:text-app-active-grey hover:border-app-active-grey focus:shadow-lg focus:text-app-active-grey focus:border-app-active-grey cursor-pointer transition-all "
+let buttonClass = "bg-white mx-4 h-[2rem] w-[2rem] border border-[#C5C5C5] border-2 rounded-full flex justify-center items-center text-[#C5C5C5] cursor-pointer hover:scale-130 hover:shadow-lg hover:text-app-active-grey hover:border-app-active-grey focus:shadow-lg focus:text-app-active-grey focus:border-app-active-grey cursor-pointer transition-all "
 let slotContClass = "duration-600 transition-all"
 
 let { count } = Astro.props
@@ -31,7 +31,7 @@ let { count } = Astro.props
     transform: translateX(50rem);
   }
 </style>
-<div class="carousel w-dvw min-h-[200px] flex flex-col justify-center items-center my-4">
+<div class="bg-[url(../assets/WelcomeBackground.png)] carousel w-dvw min-h-[200px] flex flex-col justify-center items-center py-8">
   <SectionTitle title="What our clients say about us"/>
   <div class="relative flex justify-center items-center max-w-dvw overflow-hidden">
     <div id="slot-container-0" class={`${slotContClass}`}><slot name="testimonial-1" /></div>

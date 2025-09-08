@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+import Button from '../components/Button.astro';
+import newsletter from "../assets/Newsletter.png";
+import SectionTitle from './SectionTitle.astro';
+---
+<style>
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+</style>
+<div class="flex justify-center">
+  <div class="my-[1.5rem] mx-[1rem] rounded-lg shadow-card bg-white grid grid-cols-5 grid-rows-6 gap-4 p-3 sm:max-w-[274px] sm:max-w-[750px]">
+    <div class="col-start-1 col-span-2 row-start-1 row-span-6 sm:row-span-6">
+      <Image layout="constrained" src={newsletter} alt="Photo of woman on a laptop." />
+    </div>
+    
+    <div class="col-start-3 col-span-3 row-start-3 row-span-2 font-cormorant-garamond md:text-lg sm:text-base text-sm flex flex-col align-start sm:justify-around justify-start">
+      <SectionTitle title="Subscribe To Our Newsletter"/>
+      <div class="font-cormorant-garamond">
+        <Button variant="Default" color="Mint" text="Subscribe"/>
+      </div>
+    </div>
+  </div>
+  
+</div>

@@ -42,7 +42,8 @@ let init = () => {
     for x in 0 to limit {
       switch ReQuery.Query.getById("slot-container-" ++ Belt.Int.toString(x)) {
       | None => ()
-      | Some(el) => ReQuery.Signal.subscribe(i, v => {
+      | Some(el) =>
+        ReQuery.Signal.subscribe(i, v => {
           if v == x {
             ReQuery.Element.removeClass(el, "move-left")
             ReQuery.Element.removeClass(el, "move-right")
