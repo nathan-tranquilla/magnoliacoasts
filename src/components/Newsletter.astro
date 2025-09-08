@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Button from '../components/Button.astro';
 import newsletter from "../assets/Newsletter.png";
 import SectionTitle from './SectionTitle.astro';
+let subscribeLink = "https://magnoliacoastsphotography.us14.list-manage.com/subscribe?u=4ebfced223d835c48a891029f&id=92c1de656f"
 ---
 <style>
   img {
@@ -19,9 +20,9 @@ import SectionTitle from './SectionTitle.astro';
     
     <div class="col-start-3 col-span-3 row-start-3 row-span-2 font-cormorant-garamond md:text-lg sm:text-base text-sm flex flex-col align-start sm:justify-around justify-start">
       <SectionTitle title="Subscribe To Our Newsletter"/>
-      <div class="font-cormorant-garamond">
+      <a href={subscribeLink} target="_blank" class="font-cormorant-garamond">
         <Button variant="Default" color="Mint" text="Subscribe"/>
-      </div>
+      </a>
     </div>
   </div>
   
