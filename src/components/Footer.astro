@@ -3,43 +3,55 @@ import { Image } from 'astro:assets';
 import fbIcon from '../assets/FacebookIcon.png'
 import instaIcon from '../assets/InstagramIcon.png'
 import pintrestIcon from '../assets/PintrestIcon.png'
+import logo from '../assets/LogoWhite.svg'
 
-const footerClass = "font-semibold text-white font-cormorant-garamond bg-pastel-green min-h-[184px] w-screen grid grid-cols-3 grid-rows-3 p-2"
-const colHeaderClass = "pt-4 flex flex-col justify-start items-center row-start-1 col-span-1"
+const footerClass = "font-semibold text-white font-cormorant-garamond bg-pastel-green md:h-auto h-[184px] w-screen p-2"
+const mobileGrid = "grid grid-cols-3 grid-rows-3"
+const grid = "md:grid-cols-8"
+const colHeaderClass = "pt-4 flex flex-col justify-start items-center"
+const colHeaderGrid = "row-start-1 col-span-1 md:row-span-1"
 const iconClass = "mx-4"
-const cityColClass = "text-sm flex flex-col justify-between items-center row-start-3 col-span-1"
-const cityListClass = "flex flex-col items-start"
+const cityColClass = "text-sm flex flex-col justify-center items-center"
+const cityColGrid = "row-start-3 col-span-1 md:row-start-1 md:row-span-3"
+const cityListClass = "flex flex-col items-start justify-between md:h-[75%]"
+
+let footerClasses = [footerClass, mobileGrid, grid].join(" ")
+let colHeaderClasses = [colHeaderClass, colHeaderGrid].join(" ")
+let cityColClasses = [cityColClass, cityColGrid].join(" ")
 ---
-<footer class={footerClass}>
-  <div class={`${colHeaderClass} col-start-1`}>
+<footer class={footerClasses}>
+  <div class={`${colHeaderClasses} col-start-1 md:row-span-1`}>
     Contact Us
   </div>
-  <div class={`${colHeaderClass} col-start-2`}>
+  <div class={`${colHeaderClasses} col-start-2 md:row-span-1`}>
     Investment  
   </div>
-  <div class={`${colHeaderClass} col-start-3`}>
+  <div class={`${colHeaderClasses} col-start-3 md:row-span-1`}>
     Subscribe
   </div>
-  <div class="row-start-2 col-start-1 col-span-3 flex justify-center items-center">
+  <div class="row-start-2 col-start-1 col-span-3 md:row-span-2 flex justify-center items-center">
     <Image class={iconClass} src={fbIcon} alt="Facebook Icon" />
     <Image class={iconClass} src={instaIcon} alt="Instagram Icon"/>
     <Image class={iconClass} src={pintrestIcon} alt="Pintrest Icon"/>
   </div>
-  <div class={`${cityColClass} col-start-1`}>
+  <div class="hidden md:flex justify-center items-center text-white md:col-start-4 md:col-span-2 md:row-start-1 md:row-span-3">
+    <Image src={logo} width={162} height={51} alt="Magnolia Coasts Logo." />
+  </div>
+  <div class={`${cityColClasses} col-start-1 md:col-start-6 md:row-span-3`}>
     <div class={cityListClass}>
       <span>Toronto</span>
       <span>Mississauga</span>
       <span>Oakville</span>
     </div>
   </div>
-  <div class={`${cityColClass} col-start-2`}>
+  <div class={`${cityColClasses} col-start-2 md:col-start-7 md:row-span-3`}>
     <div class={cityListClass}>
       <span>Brampton</span>
       <span>Caledon</span>
       <span>Barrie</span>
     </div>
   </div>
-  <div class={`${cityColClass} col-start-3`}>
+  <div class={`${cityColClasses} col-start-3 md:col-start-8 md:row-span-3`}>
     <div class={cityListClass}>
       <span>Scarborough</span>
       <span>Oshawa</span>
