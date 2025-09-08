@@ -1,0 +1,42 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Magnolia Coasts Photography",
+  "image": "https://magnoliacoasts.com/favicon.svg",
+  "@id": "https://magnoliacoasts.com/",
+  "url": "https://magnoliacoasts.com/",
+  "telephone": "+1-555-555-5555",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Ontario",
+    "postalCode": "L4W 2G8",
+    "addressCountry": "CA"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "10:30",
+    "closes": "15:30"
+  }],
+  "sameAs": [
+    "https://www.instagram.com/magnoliacoastsphotography/"
+  ],
+  "areaServed": [
+    "Toronto",
+    "Mississauga",
+    "Oakville",
+    "Brampton",
+    "Caledon",
+    "Barrie",
+    "Scarborough",
+    "Oshawa",
+    "Whitby"
+  ]
+}
