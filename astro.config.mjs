@@ -11,6 +11,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   outDir: 'docs',
-  base: '/magnoliacoasts',
-  integrations: [react()]
+  base: '/magnoliacoasts/'
 });
