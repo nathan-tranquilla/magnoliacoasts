@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import Main from '../layouts/Main.astro';
+import stephAndKids from '../assets/stephAndKids.png'
+import potterDavieFam from '../assets/potterDavieFamily.png'
+import Button from '../components/Button.astro'
+import stephanieCoffee from '../assets/stephCoffee.png'
+let mobileLayout = "flex flex-col justify-start items-start"
+let desktopLayout = [
+  "grid",
+  "grid-cols-2",
+  "m-4"
+].map(cl => `md:${cl}`).join(" ")
+---
+<style>
+  p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+</style>
+<Main title="Magnolia Coast Photography | About The Photographer">
+  
+  <article class={`w-screen font-cormorant-garamond bg-[rgb(243,234,233)] flex flex-col justify-start items-center`}>
+    <h1 class="h-[4rem] w-screen font-cormorant-garamond text-xl text-black flex justify-center items-center">About Photographer</h1>
+    <div class={`p-4 m-4 bg-white ${mobileLayout} ${desktopLayout} shadow-card gap-4 rounded-md max-w-[1100px]`}>
+      <div class="py-2 col-start-1 col-span-1 row-start-1">
+        <Image src={stephAndKids} alt="Stephanie and the kids."/>
+      </div>
+      <div class="col-start-2 col-span-1 row-start-1 row-span-2 m-4">
+        <p>I'm Stephanie, the owner and photographer of Magnolia Coasts Photography. I'm the woman behind the camera making magic happen by creating custom sets, wrapping and hushing babies to sleep and making children laugh.</p>
+    
+        <p>I am a mama of two energetic kids who have are turned 12 and 10 and a fluffy white pup that just turned 4. They are everything to me and one the reasons I quit my day job and started photography!</p>
+        <p>I used to be a teacher, but after a big push from my supportive husband and close friends, I launched a new career in something I was passionate about. I decided after my son was born that I wanted more flexibility, the ability to travel and less stress in my life. I fell in love with photography while traveling with my babies, documenting each milestone. Thus the obsessive hobby morphed into a bustling business and I haven’t looked back.  </p>
+        <p>In January 2015, I photographed my first baby. The baby boy had the same birthday as my daughter and the same name as my son. He fell asleep easily in my arms and it was "a sign" along with a few other series of events that would indicate this is what I was meant to do. It is still one of my most memorable shoots!</p>
+        <p>Since then I have photographed over 1000 babies and still try to make every session unique and special for my clients. I love watching babies grow and be the “auntie” to so many as they hit one, two….five…. eight years old and have brothers or sisters or cousins.</p>
+        <p>Why Magnolia Coasts Photography? Well, that’s a story we’ll save for our chat when we meet up!</p>
+      </div>
+      <div class="py-2 col-start-1 col-span-1 row-start-2">
+      <Image src={potterDavieFam} alt="Potter-Davie family."/>
+      </div>
+      <div class="py-2 col-start-1 col-span-1 row-start-3">
+        <Image src={stephanieCoffee} alt="Stephanie and coffee."/>
+      </div>
+      <a class="py-6 w-full flex justify-center items-center col-start-2 col-span-1 row-start-3">
+        <Button color="Pink" variant="Default" text="Book With Stephanie"/>
+      </a>
+    </div>
+    
+  </article>
+  
+</Main>
