@@ -14,7 +14,7 @@ const links = [
 import logo from '../assets/Logo.svg'
 import { Image } from 'astro:assets';
 ---
-<header class="shadow-md bg-white sticky top-0 w-screen h-[var(--mobile-nav-height)] md:[var(--tablet-nav-height)] lg:[var(--desktop-nav-height)]">
+<header class="z-10 shadow-md bg-white sticky top-0 w-screen h-[var(--mobile-nav-height)] md:[var(--tablet-nav-height)] lg:[var(--desktop-nav-height)]">
   <nav class="static w-full h-full flex justify-center items-center md:hidden">
     <Image src={logo} width={162} height={51} alt="Magnolia Coasts Logo." />
     <input type="checkbox" id="menu-toggle" class="hidden peer" />

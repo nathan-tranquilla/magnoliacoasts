@@ -1,0 +1,11 @@
+---
+
+import { Picture } from 'astro:assets';
+import artInYourHome from "../assets/ArtInYourHome.jpg"
+---
+<div class="relative flex justify-center bg-gradient-to-r from-[rgb(230,229,236)] to-[rgb(153,148,149)]">
+  <Picture src={artInYourHome} alt="Art in your home." />
+  <div class="text-white absolute bottom-0 left-0 right-0 font-cormorant-garamond text-3xl lg:text-5xl flex justify-end items-center py-[1rem] px-[2rem] md:px-[5rem] lg:px-[7rem] bg-pink/50">
+    Art In Your Home
+  </div>
+</div>
