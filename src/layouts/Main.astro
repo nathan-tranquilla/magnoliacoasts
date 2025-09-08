@@ -1,0 +1,78 @@
+---
+
+import '../styles/global.css'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+import businessData from '../data/localBusinessProfile.json'
+
+const { title } = Astro.props;
+
+const categories = [
+  'family',
+  'newborn',
+  'maternity',
+  'baby',
+  'child',
+  'kids',
+  'portrait',
+  'milestone',
+  'cake smash',
+  'studio'
+];
+const cities = [
+  'Toronto',
+  'Mississauga',
+  'Oakville',
+  'Brampton',
+  'Caledon',
+  'Barrie',
+  'Scarborough',
+  'Oshawa',
+  'Whitby'
+];
+
+const generic = [
+  'Magnolia Coasts',
+  'professional family photographer',
+  'family photos',
+  'photography',
+  'photographer'
+];
+
+const keywords = [
+  ...categories.map(cat => `${cat} photography`),
+  ...categories.map(cat => `${cat} photographer`),
+  ...categories.flatMap(cat => cities.map(city => `${cat} photography in ${city}`)),
+  ...categories.flatMap(cat => cities.map(city => `${cat} photographer in ${city}`)),
+  ...cities.map(city => `family photographer for ${city}`),
+  ...cities.map(city => `family photos for ${city}`),
+  ...generic
+].join(', ');
+
+const localBusinessProfile = JSON.stringify(businessData)
+
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content="Magnolia Coasts Photography." />
+    <meta name="author" content="Magnolia Coasts" />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon" /> -->
+
+    <script type="application/ld+json" set:html={localBusinessProfile}>
+    </script>
+  </head>
+  <body class="relative w-screen min-h-dvh flex flex-col justify-start items-stretch bg-default">
+    <Nav />
+    <main class="w-screen min-h-dvh flex flex-col justify-start items-stretch bg-default">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+  
+</html>
