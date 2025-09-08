@@ -8,16 +8,6 @@ import keywordData from '../data/keywords.json'
 
 const { title } = Astro.props;
 
-const keywords = [
-  ...keywordData.categories.map(cat => `${cat} photography`),
-  ...keywordData.categories.map(cat => `${cat} photographer`),
-  ...keywordData.categories.flatMap(cat => keywordData.cities.map(city => `${cat} photography in ${city}`)),
-  ...keywordData.categories.flatMap(cat => keywordData.cities.map(city => `${cat} photographer in ${city}`)),
-  ...keywordData.cities.map(city => `family photographer for ${city}`),
-  ...keywordData.cities.map(city => `family photos for ${city}`),
-  ...keywordData.generic
-].join(', ');
-
 const localBusinessProfile = JSON.stringify(businessData)
 
 ---
@@ -28,7 +18,6 @@ const localBusinessProfile = JSON.stringify(businessData)
     <title>{title}</title>
     <meta name="description" content="Magnolia Coasts Photography." />
     <meta name="author" content="Magnolia Coasts" />
-    <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <script type="application/ld+json" set:html={localBusinessProfile}></script>
