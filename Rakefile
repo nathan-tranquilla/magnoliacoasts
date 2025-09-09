@@ -1,4 +1,5 @@
 ENV["BROWSER_PATH"] = `which google-chrome-stable`.chomp
+ENV["RUBYOPT"] = "-W0"
 
 file 'node_modules' do
   sh 'npm install'
@@ -10,7 +11,7 @@ file 'ruby/vendor/bundle' do
   end
 end 
 
-task :test => ['ruby/vendor/bundle'] do 
+task :it => ['ruby/vendor/bundle'] do 
   Dir.chdir('ruby') do
     sh 'bundle exec rspec'
   end 
