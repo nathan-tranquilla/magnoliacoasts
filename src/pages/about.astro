@@ -5,6 +5,7 @@ import stephAndKids from '../assets/stephAndKids.png'
 import potterDavieFam from '../assets/potterDavieFamily.png'
 import Button from '../components/Button.astro'
 import stephanieCoffee from '../assets/stephCoffee.png'
+import { INQUIRE_LINK } from '../data/links';
 let mobileLayout = "flex flex-col justify-start items-start"
 let desktopLayout = [
   "grid",
@@ -28,7 +29,6 @@ let desktopLayout = [
       </div>
       <div class="col-start-2 col-span-1 row-start-1 row-span-2 m-4">
         <p>I'm Stephanie, the owner and photographer of Magnolia Coasts Photography. I'm the woman behind the camera making magic happen by creating custom sets, wrapping and hushing babies to sleep and making children laugh.</p>
-    
         <p>I am a mama of two energetic kids who have are turned 12 and 10 and a fluffy white pup that just turned 4. They are everything to me and one the reasons I quit my day job and started photography!</p>
         <p>I used to be a teacher, but after a big push from my supportive husband and close friends, I launched a new career in something I was passionate about. I decided after my son was born that I wanted more flexibility, the ability to travel and less stress in my life. I fell in love with photography while traveling with my babies, documenting each milestone. Thus the obsessive hobby morphed into a bustling business and I haven’t looked back.  </p>
         <p>In January 2015, I photographed my first baby. The baby boy had the same birthday as my daughter and the same name as my son. He fell asleep easily in my arms and it was "a sign" along with a few other series of events that would indicate this is what I was meant to do. It is still one of my most memorable shoots!</p>
@@ -41,7 +41,7 @@ let desktopLayout = [
       <div class="py-2 col-start-1 col-span-1 row-start-3">
         <Image src={stephanieCoffee} alt="Stephanie and coffee."/>
       </div>
-      <a class="py-6 w-full flex justify-center items-center col-start-2 col-span-1 row-start-3">
+      <a class="py-6 w-full flex justify-center items-center col-start-2 col-span-1 row-start-3" href={INQUIRE_LINK}>
         <Button color="Pink" variant="Default" text="Book With Stephanie"/>
       </a>
     </div>
