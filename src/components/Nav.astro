@@ -1,18 +1,21 @@
 ---
+
+import logo from '../assets/Logo.svg'
+import { Image } from 'astro:assets';
+import { BASE_URL } from '../data/links';
+
 const leftLinks = [
-  { href: '#/home', text: 'Home' },
-  { href: '#/about', text: 'About Photographer' },
+  { href: BASE_URL + '/', text: 'Home' },
+  { href: BASE_URL + '/about', text: 'About Photographer' },
 ];
 const rightLinks = [
-  { href: '#/galleries', text: 'Galleries' },
-  { href: '#/investment', text: 'Investment' }
+  { href: BASE_URL + '/galleries', text: 'Galleries' },
+  { href: BASE_URL + '/investment', text: 'Investment' }
 ];
 const links = [
   ...leftLinks,
   ...rightLinks
 ];
-import logo from '../assets/Logo.svg'
-import { Image } from 'astro:assets';
 ---
 <header class="z-10 shadow-md bg-white sticky top-0 w-screen h-[var(--mobile-nav-height)] md:[var(--tablet-nav-height)] lg:[var(--desktop-nav-height)]">
   <nav class="static w-full h-full flex justify-center items-center md:hidden">
