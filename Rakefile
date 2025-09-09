@@ -48,7 +48,7 @@ task :res_dev => 'node_modules' do
 end
 
 task :dev => ['node_modules', :res_build] do
-  sh "npx astro dev"
+  sh "npx astro dev --host"
 end
 
 task :test => ['node_modules'] do 
@@ -66,5 +66,5 @@ task :build_prod => [:node_modules_clean, :ci_install, :res_build] do
 end
 
 task :preview => 'node_modules' do
-  sh "npx astro preview"
+  sh "npx astro preview --host"
 end
