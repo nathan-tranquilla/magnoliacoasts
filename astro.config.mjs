@@ -9,5 +9,4 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   outDir: 'docs',
-  base: '/magnoliacoasts/'
 });

@@ -3,6 +3,14 @@
   "manifest": {
     "version": 1,
     "install": {
+      "google-chrome": {
+        "pkg-path": "google-chrome",
+        "systems": [
+          "aarch64-darwin",
+          "x86_64-darwin",
+          "x86_64-linux"
+        ]
+      },
       "nodejs": {
         "pkg-path": "nodejs"
       },
@@ -15,6 +23,93 @@
     "options": {}
   },
   "packages": [
+    {
+      "attr_path": "google-chrome",
+      "broken": false,
+      "derivation": "/nix/store/lisf0wqzgjbkrjx6z7wi0rcp8aqma4n7-google-chrome-140.0.7339.81.drv",
+      "description": "Freeware web browser developed by Google",
+      "install_id": "google-chrome",
+      "license": "Unfree",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "google-chrome-140.0.7339.81",
+      "pname": "google-chrome",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T03:40:12.759895Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": true,
+      "version": "140.0.7339.81",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/pi8qbnhs6svq0sxcykszjynxwl1bmw21-google-chrome-140.0.7339.81"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "google-chrome",
+      "broken": false,
+      "derivation": "/nix/store/irqldrbf8mri7d4ckp3mf9yhddcvi6bv-google-chrome-140.0.7339.81.drv",
+      "description": "Freeware web browser developed by Google",
+      "install_id": "google-chrome",
+      "license": "Unfree",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "google-chrome-140.0.7339.81",
+      "pname": "google-chrome",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T04:22:02.684433Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": true,
+      "version": "140.0.7339.81",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/4ahvqgy0m0z76j0cl4vq70ck512l9cak-google-chrome-140.0.7339.81"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "google-chrome",
+      "broken": false,
+      "derivation": "/nix/store/nfc50fwil17g9gi53h1p2h0zpkjgpril-google-chrome-140.0.7339.80.drv",
+      "description": "Freeware web browser developed by Google",
+      "install_id": "google-chrome",
+      "license": "Unfree",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "google-chrome-140.0.7339.80",
+      "pname": "google-chrome",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T04:54:31.748969Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": true,
+      "version": "140.0.7339.80",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/ws89kkr3gw68az3255afxdcgdd8x65kq-google-chrome-140.0.7339.80"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
     {
       "attr_path": "nodejs",
       "broken": false,
