@@ -5,6 +5,11 @@ links = [
     origin: "/",
     dest: "/about",
     text: "Get to know me",
+  },
+  {
+    origin: "/investment",
+    dest: "/investment/maternity",
+    text: "Maternity Packages",
   }
 ]
 

@@ -5,7 +5,17 @@ links = [
     origin: "/",
     dest: "/about",
     text: "About Photographer",
-  }
+  },
+  {
+    origin: "/",
+    dest: "/",
+    text: "Home",
+  },
+  {
+    origin: "/",
+    dest: "/investment",
+    text: "Investment",
+  },
 ]
 
 

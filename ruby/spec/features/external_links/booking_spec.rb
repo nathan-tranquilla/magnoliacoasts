@@ -16,6 +16,11 @@ links = [
     origin: "/about",
     text: "Book With Stephanie",
     external_link: Constants::INQUIRE_LINK
+  },
+  {
+    origin: "/investment/maternity",
+    text: "Inquire",
+    external_link: Constants::INQUIRE_LINK
   }
 ]
 
