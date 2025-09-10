@@ -43,6 +43,12 @@ links = [
     text: "Inquire",
     external_link: Constants::INQUIRE_LINK,
     expected_links: 4
+  },
+  {
+    origin: "/investment/headshot",
+    text: "Inquire",
+    external_link: Constants::INQUIRE_LINK,
+    expected_links: 4
   }
 ]
 

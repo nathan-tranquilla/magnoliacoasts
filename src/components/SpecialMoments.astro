@@ -13,7 +13,7 @@ import { BASE_URL } from '../data/links'
   <SpecialMoment link={`${BASE_URL}/investment/maternity`} src={prego} alt="Pregnant woman." buttonText="Maternity"/>
   <SpecialMoment link={`${BASE_URL}/investment/newborn`} src={babySling} alt="Baby in a sling." buttonText="Newborn"/>
   <SpecialMoment link={`${BASE_URL}/investment/family`} src={famJam} alt="Family by the road." buttonText="Family"/>
-  <SpecialMoment link={`${BASE_URL}/investment`} src={cakeSmash} alt="Baby with a birthday cake." buttonText="Cake Smashes"/>
+  <SpecialMoment link={`${BASE_URL}/investment/newborn`} src={cakeSmash} alt="Baby with a birthday cake." buttonText="Cake Smashes"/>
 </div>
 <div class="self-center m-4 grid grid-cols-2 sm:grid-cols-4 gap-4 font-cormorant-garamond max-w-[880px]">
   <SectionTitle title="Other types of photo sessions" classStyles="col-span-full" />
@@ -21,6 +21,10 @@ import { BASE_URL } from '../data/links'
     <Button color="Mint" variant="Default" text="Milestones"/>
   </a>
   <Button color="Mint" variant="Default" text="Children"/>
-  <Button color="Mint" variant="Default" text="Branding"/>
-  <Button color="Mint" variant="Default" text="Headshots"/>
+  <a href={`${BASE_URL}/investment/headshot`}>
+    <Button color="Mint" variant="Default" text="Branding"/>
+  </a>
+  <a href={`${BASE_URL}/investment/headshot`}>
+    <Button color="Mint" variant="Default" text="Headshots"/>
+  </a>
 </div>

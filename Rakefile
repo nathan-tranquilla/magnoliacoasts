@@ -121,9 +121,10 @@ task :generate_package do
   f.puts "---"
   f.puts "title: #{title}"
   f.puts "sortOrder: #{sort_order}"
-  f.puts "price: #{price}"
-  f.puts "priceRange: #{price_range}"
+  f.puts "price: #{price}" unless price.empty?
+  f.puts "priceRange: #{price_range}" unless price_range.empty?
   f.puts "details:"
+  f.puts "- ''"
   f.puts "---"
   f.puts "![#{image_alt}](../../assets/#{image_src})"
   end

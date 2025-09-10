@@ -7,11 +7,6 @@ links = [
     text: "Get to know me",
   },
   {
-    origin: "/investment",
-    dest: "/investment/maternity",
-    text: "Maternity Packages",
-  },
-  {
     origin: "/",
     dest: "/investment/maternity",
     text: "Maternity",
@@ -30,6 +25,41 @@ links = [
     origin: "/",
     dest: "/investment/family",
     text: "Family",
+  },
+  {
+    origin: "/",
+    dest: "/investment/headshot",
+    text: "Branding",
+  },
+  {
+    origin: "/",
+    dest: "/investment/headshot",
+    text: "Headshots",
+  },
+  {
+    origin: "/investment",
+    dest: "/investment/maternity",
+    text: "Maternity Packages",
+  },
+  {
+    origin: "/investment",
+    dest: "/investment/newborn",
+    text: "Newborn Packages",
+  },
+  {
+    origin: "/investment",
+    dest: "/investment/milestone",
+    text: "Milestone Packages",
+  },
+  {
+    origin: "/investment",
+    dest: "/investment/family",
+    text: "Family Packages",
+  },
+  {
+    origin: "/investment",
+    dest: "/investment/headshot",
+    text: "Headshot Packages",
   }
 ]
 

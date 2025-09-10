@@ -36,5 +36,10 @@ const familyPackages = defineCollection({
   schema: packageSchema,
 });
 
+const headshotPackages = defineCollection({ 
+  loader: glob({ pattern: "*.md", base: "./src/data/headshotBrandingPortraitPackages" }),
+  schema: packageSchema,
+});
+
 // 4. Export a single `collections` object to register your collection(s)
-export const collections = { maternityPackages, newbornPackages, milestonePackages, familyPackages };
+export const collections = { maternityPackages, newbornPackages, milestonePackages, familyPackages, headshotPackages };
