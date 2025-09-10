@@ -10,6 +10,16 @@ links = [
     origin: "/investment",
     dest: "/investment/maternity",
     text: "Maternity Packages",
+  },
+  {
+    origin: "/",
+    dest: "/investment/maternity",
+    text: "Maternity",
+  },
+  {
+    origin: "/",
+    dest: "/investment/newborn",
+    text: "Newborn",
   }
 ]
 
