@@ -18,7 +18,7 @@ const getClassMod = (color: Props['color'], variant: Props['variant']) => {
 ---
 
 <button
-  class={"transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md cursor-pointer justify-self-stretch rounded-lg size-auto w-100 max-w-[100%] h-[30px] flex justify-center items-center text-black text-inherit " + getClassMod(color, variant) + " " + classes || ""}
+  class={"transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md cursor-pointer justify-self-stretch rounded-lg size-auto w-full max-w-[100%] h-[30px] flex justify-center items-center text-black text-inherit " + getClassMod(color, variant) + " " + classes || ""}
 >
   {text}
 </button>
