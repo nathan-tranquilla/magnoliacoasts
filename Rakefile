@@ -68,3 +68,65 @@ end
 task :preview => 'node_modules' do
   sh "npx astro preview --host"
 end
+
+task :generate_package do 
+
+  require 'fileutils'
+
+  data_dir = File.expand_path('src/data', Dir.pwd)
+
+  # Prompt for package (folder) name
+  print "Enter package folder name (e.g. newbornPackages): "
+  package_folder = STDIN.gets.strip
+  package_path = File.join(data_dir, package_folder)
+
+  if File.exist?(package_path)
+    puts "Folder '#{package_folder}' already exists."
+  else
+    FileUtils.mkdir_p(package_path)
+    puts "Created folder: #{package_path}"
+  end
+
+  # Prompt for markdown file name
+  print "Enter markdown file name (e.g. miniNewborn.md): "
+  md_file = STDIN.gets.strip
+  md_path = File.join(package_path, md_file)
+
+  if File.exist?(md_path)
+    puts "File '#{md_file}' already exists in '#{package_folder}'. Aborting."
+    next
+  end
+
+  # Prompt for fields
+  print "Title: "
+  title = STDIN.gets.strip
+
+  print "Sort order (number): "
+  sort_order = STDIN.gets.strip
+
+  print "Price (leave blank if specifying price range): "
+  price = STDIN.gets.strip
+
+  print "Price range (e.g. $200-$400, leave blank if not applicable): "
+  price_range = STDIN.gets.strip
+
+  print "Image src (relative to src/assets, e.g. miniNewborn.png): "
+  image_src = STDIN.gets.strip
+
+  print "Image alt text: "
+  image_alt = STDIN.gets.strip
+
+  # Write file
+  File.open(md_path, 'w') do |f|
+  f.puts "---"
+  f.puts "title: #{title}"
+  f.puts "sortOrder: #{sort_order}"
+  f.puts "price: #{price}"
+  f.puts "priceRange: #{price_range}"
+  f.puts "details:"
+  f.puts "---"
+  f.puts "![#{image_alt}](../../assets/#{image_src})"
+  end
+
+  puts "Created #{md_path}"
+end
