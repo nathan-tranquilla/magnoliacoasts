@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import Main from '../layouts/Main.astro'
+import Button from '../components/Button.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import { render } from 'astro:content';
+import { INQUIRE_LINK } from '../data/links';
+
+export enum PackageType {
+  Maternity = "maternityPackages"
+}
+
+export interface Props {
+  pkgType: PackageType,
+  title: string,
+}
+
+let { pkgType, title } = Astro.props;
+
+const maternityPkgs = await getCollection(pkgType);
+---
+<style>
+  li::marker {
+    color: var(--color-pink);
+  }
+</style>
+<Main title={`Magnolia Coasts Photograph | ${title}`}>
+  <SectionHeader title={title} />
+  <div class="flex justify-center items-center flex-wrap w-full p-4">
+    {maternityPkgs.map(async pkg => {
+      let { Content } = await render(pkg);
+      return (
+        <div class="rounded-sm shadow-card bg-white flex flex-col justify-start items-stretch p-4 w-full max-w-[450px] m-2 md:mx-auto">
+          <h2 class="flex justify-center items-center mb-4 font-cormorant-garamond">{pkg.data.title}</h2>
+          <Content />
+          <ul class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
+            {pkg.data.details.map(detail => (
+              <li class="text-sm my-[0.25rem] align-middle">{detail}</li>
+            ))}
+          </ul>
+          <div class="flex justify-between items-center h-[62px]">
+            <div class="class text-lg font-bold">${pkg.data.price} + Tax</div>
+            <a href={INQUIRE_LINK} target="_blank" class="w-4/10 h-3/4 flex items-center font-cormorant-garamond">
+              <Button text="Inquire" color="Pink" variant="Default" />
+            </a>
+          </div>
+        </div>
+      )
+    })}
+  </div>
+</Main>
