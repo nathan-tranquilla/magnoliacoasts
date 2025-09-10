@@ -7,7 +7,8 @@ import { render } from 'astro:content';
 import { INQUIRE_LINK } from '../data/links';
 
 export enum PackageType {
-  Maternity = "maternityPackages"
+  Maternity = "maternityPackages",
+  Newborn = "newbornPackages"
 }
 
 export interface Props {
@@ -17,7 +18,7 @@ export interface Props {
 
 let { pkgType, title } = Astro.props;
 
-const maternityPkgs = await getCollection(pkgType);
+const collection = (await getCollection(pkgType)).sort((a,b) => a.data.sortOrder - b.data.sortOrder );
 ---
 <style>
   li::marker {
@@ -27,7 +28,7 @@ const maternityPkgs = await getCollection(pkgType);
 <Main title={`Magnolia Coasts Photograph | ${title}`}>
   <SectionHeader title={title} />
   <div class="flex justify-center items-center flex-wrap w-full p-4">
-    {maternityPkgs.map(async pkg => {
+    {collection.map(async pkg => {
       let { Content } = await render(pkg);
       return (
         <div class="rounded-sm shadow-card bg-white flex flex-col justify-start items-stretch p-4 w-full max-w-[450px] m-2 md:mx-auto">
