@@ -8,7 +8,8 @@ import { INQUIRE_LINK } from '../data/links';
 
 export enum PackageType {
   Maternity = "maternityPackages",
-  Newborn = "newbornPackages"
+  Newborn = "newbornPackages",
+  Milestone = "milestonePackages"
 }
 
 export interface Props {
@@ -40,7 +41,7 @@ const collection = (await getCollection(pkgType)).sort((a,b) => a.data.sortOrder
             ))}
           </ul>
           <div class="flex justify-between items-center h-[62px]">
-            <div class="class text-lg font-bold">${pkg.data.price} + Tax</div>
+            <div class="class text-lg font-bold">${pkg.data.price || pkg.data.priceRange} + Tax</div>
             <a href={INQUIRE_LINK} target="_blank" class="w-4/10 h-3/4 flex items-center font-cormorant-garamond">
               <Button text="Inquire" color="Pink" variant="Default" />
             </a>

@@ -5,25 +5,31 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 // 3. Define your collection(s)
+const packageSchema = z.object({
+  title: z.string(),
+  sortOrder: z.number(),
+  details: z.array(z.string()),
+  price: z.number().optional(),
+  priceRange: z.string().optional()
+}).refine(
+  (data) => typeof data.price === 'number' || (data.priceRange && data.priceRange.length > 0),
+  { message: "Either price or priceRange must be specified." }
+);
+
 const maternityPackages = defineCollection({ 
   loader: glob({ pattern: "*.md", base: "./src/data/maternityPackages" }),
-  schema: z.object({
-    title: z.string(),
-    sortOrder: z.number(),
-    details: z.array(z.string()),
-    price: z.number()
-  }),
+  schema: packageSchema,
 });
 
 const newbornPackages = defineCollection({ 
   loader: glob({ pattern: "*.md", base: "./src/data/newbornPackages" }),
-  schema: z.object({
-    title: z.string(),
-    sortOrder: z.number(),
-    details: z.array(z.string()),
-    price: z.number()
-  }),
+  schema: packageSchema,
+});
+
+const milestonePackages = defineCollection({ 
+  loader: glob({ pattern: "*.md", base: "./src/data/milestonePackages" }),
+  schema: packageSchema,
 });
 
 // 4. Export a single `collections` object to register your collection(s)
-export const collections = { maternityPackages, newbornPackages };
+export const collections = { maternityPackages, newbornPackages, milestonePackages };
