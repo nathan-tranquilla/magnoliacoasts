@@ -37,6 +37,12 @@ links = [
     text: "Inquire",
     external_link: Constants::INQUIRE_LINK,
     expected_links: 3
+  },
+  {
+    origin: "/investment/family",
+    text: "Inquire",
+    external_link: Constants::INQUIRE_LINK,
+    expected_links: 4
   }
 ]
 

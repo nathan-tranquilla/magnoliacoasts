@@ -9,7 +9,8 @@ import { INQUIRE_LINK } from '../data/links';
 export enum PackageType {
   Maternity = "maternityPackages",
   Newborn = "newbornPackages",
-  Milestone = "milestonePackages"
+  Milestone = "milestonePackages",
+  Family = "familyPackages",
 }
 
 export interface Props {
@@ -32,7 +33,7 @@ const collection = (await getCollection(pkgType)).sort((a,b) => a.data.sortOrder
     {collection.map(async pkg => {
       let { Content } = await render(pkg);
       return (
-        <div class="rounded-sm shadow-card bg-white flex flex-col justify-start items-stretch p-4 w-full max-w-[450px] m-2 md:mx-auto">
+        <div class="rounded-sm shadow-card bg-white flex flex-col justify-start items-stretch p-4 w-full max-w-[400px] m-2 md:mx-auto">
           <h2 class="flex justify-center items-center mb-4 font-cormorant-garamond">{pkg.data.title}</h2>
           <Content />
           <ul class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
