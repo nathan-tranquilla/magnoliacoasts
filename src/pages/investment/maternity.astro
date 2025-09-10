@@ -16,12 +16,11 @@ const maternityPkgs = await getCollection('maternityPackages');
 </style>
 <Main title="Magnolia Coasts Photograph | Maternity Packages">
   <SectionHeader title="Maternity Packages" />
-  <div class="flex justify-center items-center flex-wrap w-full">
-    
+  <div class="flex justify-center items-center flex-wrap w-full p-4">
     {maternityPkgs.map(async pkg => {
       let { Content } = await render(pkg);
       return (
-        <div class="shadow-card bg-white flex flex-col justify-start items-stretch p-4 w-full max-w-[450px] m-2 md:mx-auto">
+        <div class="rounded-sm shadow-card bg-white flex flex-col justify-start items-stretch p-4 w-full max-w-[450px] m-2 md:mx-auto">
           <h2 class="flex justify-center items-center mb-4 font-cormorant-garamond">{pkg.data.title}</h2>
           <Content />
           <ul class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
