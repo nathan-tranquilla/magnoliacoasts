@@ -31,7 +31,6 @@ const collection = (await getCollection(pkgType)).sort((a,b) => a.data.sortOrder
 <Main title={`Magnolia Coasts Photograph | ${title}`}>
   <SectionHeader title={title} />
   <div class="flex justify-center items-start flex-wrap w-full p-4">
-    <div class="grow-2"/>
     {collection.map(async pkg => {
       let { Content } = await render(pkg);
       return (
@@ -52,6 +51,5 @@ const collection = (await getCollection(pkgType)).sort((a,b) => a.data.sortOrder
         </div>
       )
     })}
-    <div class="grow-2"/>
   </div>
 </Main>
