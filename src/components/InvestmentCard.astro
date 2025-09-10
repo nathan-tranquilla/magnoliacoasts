@@ -1,0 +1,16 @@
+---
+import { BASE_URL } from '../data/links'
+
+export interface Props {
+  href: string,
+  text: string,
+  classes?: string
+}
+const { href, text, classes } = Astro.props 
+---
+<a href={href} class={`flex flex-col py-4 px-2 shadow-card rounded-md bg-white ${classes || ""}`}>
+  <slot />
+  <div class="flex justify-center items-end h-[3rem] lg:h-[4rem] lg:text-2xl md:text-lg font-semibold">
+    {text}
+  </div>
+</a>

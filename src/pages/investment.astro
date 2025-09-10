@@ -1,0 +1,43 @@
+---
+import Main from '../layouts/Main.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import InvestmentCard from '../components/InvestmentCard.astro';
+import { Image } from 'astro:assets';
+
+import maternityPackages from '../assets/maternityPackages.avif'
+import newbornPackages from '../assets/newbornPackage.avif'
+import milestonePackages from '../assets/milestonePackages.avif'
+import familyPackages from '../assets/familyPackages.avif'
+import headshotPackages from '../assets/headshotPackages.avif'
+import collectionPackages from '../assets/collectionPackages.avif'
+import { BASE_URL } from '../data/links';
+
+
+const mobileGrid = "grid gap-2 grid-cols-2 grid-rows-[min-content_1fr_1fr_1fr]"
+const desktopGrid = "md:mx-4 md:grid-cols-3 lg:gap-6 md:gap-4 md:pl-0  md:grid-rows-[min-content_1fr_1fr_1fr]"
+---
+<Main title="Magnolia Coasts Photgraphy | Investment">
+  <div class={`pb-4 box-border w-screen font-cormorant-garamond bg-[rgb(243,234,233)] flex justify-center items-center`}>
+    <div class={`m-2 ${mobileGrid} ${desktopGrid} max-w-[1500px]`}>
+      <SectionHeader title="Investment" classes="col-start-1 col-span-2 md:col-span-3 row-span-1"/>
+      <InvestmentCard href={`${BASE_URL}/investment/maternity`} text="Maternity Packages" classes="col-start-1 col-span-1 row-start-2">
+        <Image src={maternityPackages} alt="Pregnant Woman"/>
+      </InvestmentCard>
+      <InvestmentCard href={`${BASE_URL}/maternity`} text="Newborn Packages" classes="col-start-2 col-span-1 row-start-2">
+        <Image src={newbornPackages} alt="Newborn baby"/>
+      </InvestmentCard>
+      <InvestmentCard href={`${BASE_URL}/newborn`} text="Milestone Packages" classes="col-start-1 col-span-1 row-start-3 md:col-start-3 md:row-start-2">
+        <Image src={milestonePackages} alt="Baby milestone"/>
+      </InvestmentCard>
+      <InvestmentCard href={`${BASE_URL}/family`} text="Family Packages" classes="col-start-2 col-span-1 row-start-3 md:col-start-1 md:row-start-3">
+        <Image src={familyPackages} alt="Family portrait"/>
+      </InvestmentCard>
+      <InvestmentCard href={`${BASE_URL}/headshots`} text="Headshot Packages" classes="col-start-1 col-span-1 row-start-4 md:col-start-2 md:row-start-3">
+        <Image src={headshotPackages} alt="Professional headshot"/>
+      </InvestmentCard>
+      <InvestmentCard href={`${BASE_URL}/collections`} text="Collection Packages" classes="col-start-2 col-span-1 row-start-4 md:col-start-3 md:row-start-3">
+        <Image src={collectionPackages} alt="Photo collection"/>
+      </InvestmentCard>
+    </div>
+  </div>
+</Main>

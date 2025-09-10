@@ -6,6 +6,7 @@ import potterDavieFam from '../assets/potterDavieFamily.png'
 import Button from '../components/Button.astro'
 import stephanieCoffee from '../assets/stephCoffee.png'
 import { INQUIRE_LINK } from '../data/links';
+import SectionHeader from '../components/SectionHeader.astro';
 let mobileLayout = "flex flex-col justify-start items-start"
 let desktopLayout = [
   "md:grid",
@@ -20,9 +21,8 @@ let desktopLayout = [
   }
 </style>
 <Main title="Magnolia Coast Photography | About The Photographer">
-  
   <article class={`w-screen font-cormorant-garamond bg-[rgb(243,234,233)] flex flex-col justify-start items-center`}>
-    <h1 class="h-[4rem] w-screen font-cormorant-garamond text-xl text-black flex justify-center items-center">About Photographer</h1>
+    <SectionHeader title="About Photographer" />
     <div class={`p-4 m-4 bg-white ${mobileLayout} ${desktopLayout} shadow-card gap-4 rounded-md max-w-[1100px]`}>
       <div class="py-2 col-start-1 col-span-1 row-start-1">
         <Image src={stephAndKids} alt="Stephanie and the kids."/>
