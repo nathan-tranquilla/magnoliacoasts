@@ -42,8 +42,17 @@ const headshotPackages = defineCollection({
 });
 
 const collectionsPackages = defineCollection({ 
-  loader: glob({ pattern: "*.md", base: "./src/data/headshotBrandingPortraitPackages" }),
-  schema: packageSchema,
+  loader: glob({ pattern: "*.md", base: "./src/data/collectionsPackages" }),
+  schema: z.object({
+    title: z.string(),
+    sortOrder: z.number(),
+    detailsCollection: z.record(z.string(), z.object({
+      metadata: z.array(z.string()),
+      details: z.array(z.string())
+    })),
+    price: z.number(),
+    priceDetails: z.array(z.string())
+  })
 });
 
 // 4. Export a single `collections` object to register your collection(s)

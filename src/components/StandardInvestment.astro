@@ -12,6 +12,11 @@ export interface Props {
 let { title, details, price, priceRange } = Astro.props;
 
 ---
+<style>
+  li::marker {
+    color: var(--color-pink);
+  }
+</style>
 <Card classes="w-full max-w-[400px] m-2">
   <h2 class="flex justify-center items-center mb-4 font-cormorant-garamond">{title}</h2>
   <slot />
