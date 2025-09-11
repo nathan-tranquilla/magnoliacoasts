@@ -30,9 +30,9 @@ let galleries = [
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 self-center">
       <SectionHeader title="Galleries" classes="col-span-2 md:col-span-4 w-full"/>
       {galleries.map(gallery => (
-        <Card classes="w-full max-w-[174px] grid grid-cols-1 gap-2">
+        <Card classes="w-full max-w-[174px] lg:max-w-[250px] grid grid-cols-1 gap-2">
           <Image src={gallery.imgSrc} alt={gallery.text}/>
-          <a class="font-cormorant-garamond flex items-end" href={gallery.href}>
+          <a class="font-semibold font-cormorant-garamond flex items-end" href={gallery.href}>
             <Button variant="Default" color="Pink" text={gallery.text}/>
           </a>
         </Card>
