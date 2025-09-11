@@ -1,0 +1,42 @@
+---
+import pregnantWoman from '../assets/PregnantWoman.png'
+import babyInSling from '../assets/babyInSling2.png'
+import familyByRoad from '../assets/FamilyByRoad.png'
+import babyBdayCake from '../assets/BabyBDayCake.png'
+import babyLookingAtCamera from '../assets/babyLookingAtCamera.jpg'
+import childrenInSwing from '../assets/kidsInSwing.png'
+import branding from '../assets/womanInOffice.png'
+import headshots from '../assets/laughingInChair.png'
+
+import { BASE_URL } from '../data/links'
+import Main from '../layouts/Main.astro'
+import Card from '../components/Card.astro'
+import { Image } from 'astro:assets'
+import Button from '../components/Button.astro'
+import SectionHeader from '../components/SectionHeader.astro'
+
+let galleries = [
+  { text: 'Maternity', imgSrc: pregnantWoman, href: `${BASE_URL}/gallery/maternity`},
+  { text: 'Newborn', imgSrc: babyInSling,  href: `${BASE_URL}/gallery/newborn`},
+  { text: 'Family', imgSrc: familyByRoad,  href: `${BASE_URL}/gallery/family`},
+  { text: 'Cake Smashes', imgSrc: babyBdayCake,  href: `${BASE_URL}/gallery/cakesmashes`},
+  { text: 'Milestones', imgSrc: babyLookingAtCamera,  href: `${BASE_URL}/gallery/milestones`},
+  { text: 'Children', imgSrc: childrenInSwing,  href: `${BASE_URL}/gallery/children`},
+  { text: 'Branding', imgSrc: branding,  href: `${BASE_URL}/gallery/branding`},
+  { text: 'Headshots', imgSrc: headshots,  href: `${BASE_URL}/gallery/headshots`},
+]
+---
+<Main title="Magnolia Coasts Photgraphy | Gallery">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 self-center">
+      <SectionHeader title="Galleries" classes="col-span-2 md:col-span-4 w-full"/>
+      {galleries.map(gallery => (
+        <Card classes="w-full max-w-[174px] grid grid-cols-1 gap-2">
+          <Image src={gallery.imgSrc} alt={gallery.text}/>
+          <a class="font-cormorant-garamond flex items-end" href={gallery.href}>
+            <Button variant="Default" color="Pink" text={gallery.text}/>
+          </a>
+        </Card>
+      ))}
+    </div>
+  </div>
+</Main>

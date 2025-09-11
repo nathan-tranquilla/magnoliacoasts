@@ -16,6 +16,11 @@ links = [
     dest: "/investment",
     text: "Investment",
   },
+  {
+    origin: "/",
+    dest: "/gallery",
+    text: "Galleries",
+  }
 ]
 
 
