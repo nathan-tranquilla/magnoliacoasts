@@ -1,4 +1,5 @@
 ---
+import FAButton from "./FAButton.astro"
 import SectionTitle from "./SectionTitle.astro"
 
 export interface Props {
@@ -6,7 +7,6 @@ export interface Props {
 }
 
 let dotClass = "m-4 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer bg-app-grey "
-let buttonClass = "bg-white mx-4 h-[2rem] w-[2rem] border border-[#C5C5C5] border-2 rounded-full flex justify-center items-center text-[#C5C5C5] cursor-pointer hover:scale-130 hover:shadow-lg hover:text-app-active-grey hover:border-app-active-grey focus:shadow-lg focus:text-app-active-grey focus:border-app-active-grey cursor-pointer transition-all "
 let slotContClass = "duration-600 transition-all"
 
 let { count } = Astro.props
@@ -46,14 +46,14 @@ let { count } = Astro.props
     <div id="slot-container-9" class={`${slotContClass} move-right`}><slot name="testimonial-10" /></div>
   </div>
   <div class="flex justify-around items-center">
-    <button id="carousel-go-left"  class={buttonClass}>{"<"}</button>
+    <FAButton id="carousel-go-left">{"<"}</FAButton>
     <div class="flex items-center">
       <button id="carousel-go-0" class={"dots " + dotClass + " active-dot"} />
       {Array.from({ length: count-1 }).map((_, i) => (
         <button id={`carousel-go-${i+1}`} class={"dots " + dotClass} />
       ))}
     </div>
-    <div id="carousel-go-right" class={buttonClass}>{">"}</button>
+    <FAButton id="carousel-go-right">{">"}</FAButton>
   </div>
 
 </div>

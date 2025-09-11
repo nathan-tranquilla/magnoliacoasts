@@ -1,0 +1,24 @@
+---
+import FAButton from './FAButton.astro';
+export enum NavDir {
+  Left = "left",
+  Right = "right"
+}
+export interface Props {
+  direction: NavDir,
+  text: string,
+  href: string
+}
+const { direction, text, href } = Astro.props;
+const arrowClass = "flex items-center text-2xl font-semibold"
+const desktopDisplay = "hidden md:flex justify-center items-stretch" 
+const mobileDisplay = "md:hidden flex justify-center items-center"
+---
+<a id={direction == NavDir.Left ? "prev" : "next"} href={href} class={`${desktopDisplay} px-4 font-cormorant-garamond`}>
+  { direction == NavDir.Left && (<span class={arrowClass}>{"<"}</span>) }
+  <span class="flex items-center mx-2 text-nowrap text-base md:text-xl font-semibold">{text}</span>
+  { direction == NavDir.Right && (<span class={arrowClass}>{">"}</span>) }
+</a>
+<a id={direction == NavDir.Left ? "prev" : "next"} href={href} class={`${mobileDisplay} ${direction == NavDir.Left ? "justify-self-start" : "justify-self-end"}`}>
+  <FAButton id="" >{direction == NavDir.Left ? "<" : ">"}</FAButton>
+</a>
