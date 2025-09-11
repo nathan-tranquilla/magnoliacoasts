@@ -11,14 +11,16 @@ export interface Props {
 }
 const { direction, text, href } = Astro.props;
 const arrowClass = "flex items-center text-2xl font-semibold"
-const desktopDisplay = "hidden md:flex justify-center items-stretch" 
-const mobileDisplay = "md:hidden flex justify-center items-center"
+const desktopDisplay = "hidden md:flex justify-center items-center" 
+const mobileDisplay = `md:hidden flex ${direction == NavDir.Left ? "justify-start" : "justify-end"} items-center`
+const overflowDisplay = "h-fit whitespace-nowrap overflow-hidden text-ellipsis font-cormorant-garamond"
+const textDisplay = "block vertical-middle text-center"
 ---
-<a id={direction == NavDir.Left ? "prev" : "next"} href={href} class={`${desktopDisplay} px-4 font-cormorant-garamond`}>
+<a id={direction == NavDir.Left ? "prev" : "next"} href={href} class={`w-[20vw] px-4 ${desktopDisplay}`}>
   { direction == NavDir.Left && (<span class={arrowClass}>{"<"}</span>) }
-  <span class="flex items-center mx-2 text-nowrap text-base md:text-xl font-semibold">{text}</span>
+  <span class={`${overflowDisplay} ${textDisplay} mx-2 text-base md:text-xl font-semibold`}>{text}</span>
   { direction == NavDir.Right && (<span class={arrowClass}>{">"}</span>) }
 </a>
-<a id={direction == NavDir.Left ? "prev" : "next"} href={href} class={`${mobileDisplay} ${direction == NavDir.Left ? "justify-self-start" : "justify-self-end"}`}>
+<a id={direction == NavDir.Left ? "prev" : "next"} href={href} class={`w-[20vw] ${mobileDisplay} `}>
   <FAButton id="" >{direction == NavDir.Left ? "<" : ">"}</FAButton>
 </a>

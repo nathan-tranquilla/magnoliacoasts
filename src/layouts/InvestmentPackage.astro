@@ -37,6 +37,9 @@ const pkg = packageTypeToTuple[pkgType];
 let pkgs = get_surrounding_pkgs(pkg, packages)
  
 const collection = (await getCollection(pkgType)).sort((a,b) => a.data.sortOrder - b.data.sortOrder);
+
+const desktopDisplay = "md:grid grid-cols-[20vw_50vw_20vw] gap-2" 
+const mobileDisplay = "flex justify-around items-center"
 ---
 <style>
   li::marker {
@@ -44,7 +47,7 @@ const collection = (await getCollection(pkgType)).sort((a,b) => a.data.sortOrder
   }
 </style>
 <Main title={`Magnolia Coasts Photography | ${title}`}>
-  <div class="self-center grid grid-cols-[100px_1fr_100px] max-w-[1000px] md:gap-[10vw] gap-2">
+  <div class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
     <SiblingPackageNav text={pkgs[0][0]} href={pkgs[0][1]} direction={NavDir.Left} />
     <SectionHeader title={title} />
     <SiblingPackageNav text={pkgs[1][0]} href={pkgs[1][1]} direction={NavDir.Right} />

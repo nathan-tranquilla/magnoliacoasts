@@ -4,5 +4,11 @@ export interface Props {
   classes?: string 
 }
 const { title, classes } = Astro.props
+const dimensionsMobile = "h-full w-[40vw]"
+const dimensionsDesktop = "md:h-[100px] md:w-full"
+const text = "font-semibold font-cormorant-garamond lg:text-5xl md:text-3xl text-xl text-black text-nowrap"
+const layout = "flex justify-center items-center"
 ---
-<h1 class={`text-nowrap py-4 md:h-[100px] h-[60px] lg:text-5xl md:text-3xl text-lg font-semibold h-full w-full font-cormorant-garamond text-xl text-black flex h-full justify-center items-center ${classes || ""}`}>{title}</h1>
+<h1 class={`py-4 ${dimensionsMobile} ${dimensionsDesktop} ${text} ${layout} ${classes || ""}`}>
+  {title}
+</h1>
