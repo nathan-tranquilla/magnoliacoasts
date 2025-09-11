@@ -4,8 +4,8 @@ PAGES = [
 	{
 		url: "/investment/maternity",
 		h1: "Maternity Packages",
-		prev: "/investment/headshot",
-		prev_h1: "Headshot, Branding & Portrait",
+		prev: "/investment/collections",
+		prev_h1: "Collections Packages",
 		next: "/investment/newborn",
 		next_h1: "Newborn Packages"
 	},
@@ -38,6 +38,14 @@ PAGES = [
 		h1: "Headshot, Branding & Portrait",
 		prev: "/investment/family",
 		prev_h1: "Family Packages",
+		next: "/investment/collections",
+		next_h1: "Collections Packages"
+	},
+	{
+		url: "/investment/collections",
+		h1: "Collections Packages",
+		prev: "/investment/headshot",
+		prev_h1: "Headshot, Branding & Portrait",
 		next: "/investment/maternity",
 		next_h1: "Maternity Packages"
 	}

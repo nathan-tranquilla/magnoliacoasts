@@ -60,6 +60,11 @@ links = [
     origin: "/investment",
     dest: "/investment/headshot",
     text: "Headshot Packages",
+  },
+  {
+    origin: "/investment",
+    dest: "/investment/collections",
+    text: "Collection Packages",
   }
 ]
 

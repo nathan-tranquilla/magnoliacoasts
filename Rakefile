@@ -17,6 +17,12 @@ task :it => ['ruby/vendor/bundle'] do
   end 
 end 
 
+task :it_rerun => ['ruby/vendor/bundle'] do 
+  Dir.chdir('ruby') do
+    sh 'bundle exec rspec --only-failures'
+  end 
+end 
+
 task :ci_install do 
   sh "npm ci"
 end 
