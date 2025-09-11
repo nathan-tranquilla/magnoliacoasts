@@ -46,6 +46,7 @@ const collectionsPackages = defineCollection({
   schema: z.object({
     title: z.string(),
     sortOrder: z.number(),
+    photoCount: z.number(),
     detailsCollection: z.record(z.string(), z.object({
       metadata: z.array(z.string()),
       details: z.array(z.string())

@@ -1,6 +1,7 @@
 ---
 title: Premium Collection (3 Sessions)
-sortOrder: 2
+sortOrder: 3
+photoCount: 3
 price: 1200
 priceDetails: 
   - ($1350 Value)

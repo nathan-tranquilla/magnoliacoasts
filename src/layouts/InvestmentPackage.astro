@@ -57,7 +57,7 @@ const mobileDisplay = "flex justify-around items-center"
       switch (pkgType) {
         case PackageType.Collections:
           return (
-            <CollectionsInvestment title={pkg.data.title} price={pkg.data.price} priceDetails={pkg.data.priceDetails} detailsCollection={pkg.data.detailsCollection}>
+            <CollectionsInvestment photoCount={pkg.data.photoCount} title={pkg.data.title} price={pkg.data.price} priceDetails={pkg.data.priceDetails} detailsCollection={pkg.data.detailsCollection}>
               <Content />
             </CollectionsInvestment>
           )

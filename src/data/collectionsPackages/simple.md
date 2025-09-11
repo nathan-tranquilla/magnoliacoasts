@@ -1,6 +1,7 @@
 ---
 title: Simple Collection (2 Sessions)
 sortOrder: 1
+photoCount: 1
 price: 1050
 priceDetails: 
   - ($1150 Value)

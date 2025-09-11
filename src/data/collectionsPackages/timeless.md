@@ -1,6 +1,7 @@
 ---
 title: Timeless Collection (4 Sessions)
 sortOrder: 4
+photoCount: 4
 price: 1350
 priceDetails: 
   - ($1600 Value)

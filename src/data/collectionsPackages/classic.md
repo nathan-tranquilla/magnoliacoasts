@@ -1,6 +1,7 @@
 ---
 title: Classic Collection (3 Sessions)
 sortOrder: 2
+photoCount: 3
 price: 1200
 priceDetails: 
   - ($1150 Value)

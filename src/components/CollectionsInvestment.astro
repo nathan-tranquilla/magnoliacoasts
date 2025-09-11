@@ -7,15 +7,17 @@ export interface Props {
   title: string,
   detailsCollection: Record<string, Record<string,Array<string>>>,
   price: number,
-  priceDetails: string[]
+  priceDetails: string[],
+  photoCount: number
 }
-let { title, detailsCollection, price, priceDetails } = Astro.props;
+let { title, detailsCollection, price, priceDetails, photoCount } = Astro.props;
 
-console.log(Object.keys(detailsCollection).length);
-
-let numOfDetails = Object.keys(detailsCollection).length
-let desktopColumns = numOfDetails == 2 ? "3" : numOfDetails
-let tabletColumns = numOfDetails == 2 ? "3" : "2"
+let desktopColumns = photoCount;
+let tabletColumns = photoCount;
+if (photoCount == 1) {
+    desktopColumns = 3;
+    tabletColumns = 3;
+}
 let mobileDisplay = "grid grid-cols-1 gap-4"
 let tabletDisplay = `md:max-w-[750px] md:grid-cols-${tabletColumns}`
 let desktopDisplay = `lg:max-w-[1300px] lg:grid-cols-${desktopColumns}`
