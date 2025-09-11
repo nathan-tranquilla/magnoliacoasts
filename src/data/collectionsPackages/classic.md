@@ -43,6 +43,6 @@ detailsCollection:
       - in studio or park
       - in studio only
 ---
-![Prego On Beach](../../assets/pregoOnBeach.jpg)
+![Pregnant woman on beach](../../assets/pregoOnBeach.jpg)
 ![Baby In Sling](../../assets/BabyInSling.png)
 ![Wild One](../../assets/wildOne.jpg)
