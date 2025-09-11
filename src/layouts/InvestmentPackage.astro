@@ -8,6 +8,7 @@ import { BASE_URL, INQUIRE_LINK } from '../data/links';
 import { get_surrounding_pkgs } from './InvestmentPackage.res.mjs'
 import SiblingPackageNav, { NavDir } from '../components/SiblingPackageNav.astro';
 import Card from '../components/Card.astro';
+import StandardInvestment from '../components/StandardInvestment.astro';
 
 export enum PackageType {
   Maternity = "maternityPackages",
@@ -15,6 +16,7 @@ export enum PackageType {
   Milestone = "milestonePackages",
   Family = "familyPackages",
   Headshot = "headshotPackages",
+  Collections = "collectionsPackages",
 }
 
 const packageTypeToTuple: Record<PackageType, [string, string]> = {
@@ -23,6 +25,7 @@ const packageTypeToTuple: Record<PackageType, [string, string]> = {
   [PackageType.Milestone]: ["Milestone Packages", `${BASE_URL}/investment/milestone`],
   [PackageType.Family]: ["Family Packages", `${BASE_URL}/investment/family`],
   [PackageType.Headshot]: ["Headshot, Branding & Portrait Packages", `${BASE_URL}/investment/headshot`],
+  [PackageType.Collections]: ["Collections Packages", `${BASE_URL}/investment/collections`],
 };
 
 export interface Props {
@@ -56,21 +59,9 @@ const mobileDisplay = "flex justify-around items-center"
     {collection.map(async pkg => {
       let { Content } = await render(pkg);
       return (
-        <Card classes="w-full max-w-[400px] m-2">
-          <h2 class="flex justify-center items-center mb-4 font-cormorant-garamond">{pkg.data.title}</h2>
+        <StandardInvestment title={pkg.data.title} price={pkg.data.price} priceRange={pkg.data.priceRange} details={pkg.data.details}>
           <Content />
-          <ul class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
-            {pkg.data.details.map((detail: string) => (
-              <li class="text-sm my-[0.25rem] align-middle">{detail}</li>
-            ))}
-          </ul>
-          <div class="flex justify-between items-center h-[62px]">
-            <div class="class text-lg font-bold">${pkg.data.price || pkg.data.priceRange} + Tax</div>
-            <a href={INQUIRE_LINK} target="_blank" class="w-4/10 h-3/4 flex items-center font-cormorant-garamond">
-              <Button text="Inquire" color="Pink" variant="Default" />
-            </a>
-          </div>
-        </Card>
+        </StandardInvestment>
       )
     })}
   </div>

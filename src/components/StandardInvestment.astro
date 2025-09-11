@@ -1,0 +1,29 @@
+---
+import { INQUIRE_LINK } from "../data/links"
+import Card from "./Card.astro"
+import Button from "./Button.astro";
+
+export interface Props {
+  title: string,
+  details: string[],
+  price?: number,
+  priceRange?: string,
+}
+let { title, details, price, priceRange } = Astro.props;
+
+---
+<Card classes="w-full max-w-[400px] m-2">
+  <h2 class="flex justify-center items-center mb-4 font-cormorant-garamond">{title}</h2>
+  <slot />
+  <ul class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
+    {details.map((detail: string) => (
+      <li class="text-sm my-[0.25rem] align-middle">{detail}</li>
+    ))}
+  </ul>
+  <div class="flex justify-between items-center h-[62px]">
+    <div class="class text-lg font-bold">${price || priceRange} + Tax</div>
+    <a href={INQUIRE_LINK} target="_blank" class="w-4/10 h-3/4 flex items-center font-cormorant-garamond">
+      <Button text="Inquire" color="Pink" variant="Default" />
+    </a>
+  </div>
+</Card>
