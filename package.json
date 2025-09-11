@@ -12,6 +12,7 @@
     "astro": "^5.13.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "rehype-unwrap-images": "^1.0.0",
     "rescript": "^11.1.4",
     "rescript-webapi": "^0.10.0",
     "tailwindcss": "^4.1.12"

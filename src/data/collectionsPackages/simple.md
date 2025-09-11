@@ -9,6 +9,7 @@ detailsCollection:
   Full Newborn:
     metadata:
       - (worth $650)
+      - $75 weekend fee if booked outside of Mon-Fri 10:30 am - 3:30 pm
     details:
       - 4 hour session
       - online proofing gallery

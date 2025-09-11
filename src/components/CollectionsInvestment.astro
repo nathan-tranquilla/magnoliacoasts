@@ -11,33 +11,49 @@ export interface Props {
 }
 let { title, detailsCollection, price, priceDetails } = Astro.props;
 
+console.log(Object.keys(detailsCollection).length);
+
+let numOfDetails = Object.keys(detailsCollection).length
+let desktopColumns = numOfDetails == 2 ? "3" : numOfDetails
+let tabletColumns = numOfDetails == 2 ? "3" : "2"
+let mobileDisplay = "grid grid-cols-1 gap-4"
+let tabletDisplay = `md:max-w-[750px] md:grid-cols-${tabletColumns}`
+let desktopDisplay = `lg:max-w-[1300px] lg:grid-cols-${desktopColumns}`
+let spanAllCols = `md:col-span-${tabletColumns} lg:col-span-${desktopColumns}`
+let _load = "lg:col-span-2 lg:col-span-3 lg:col-span-4 md:col-span-2 md:col-span-3 md:col-span-4 md:grid-cols-2 md:grid-cols-3 md:grid-cols-4 md:col-span-4 lg:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4"
+
 ---
 <style>
   li::marker {
     color: var(--color-pink);
   }
+  img {
+    max-width: 400px;
+    max-height: 420px;
+  }
 </style>
-<Card classes="w-full max-w-[1300px] m-2">
-  <h2 class="flex justify-center items-center mb-4 font-cormorant-garamond">{title}</h2>
+<Card classes={`card w-full max-w-[1300px] m-2 ${mobileDisplay} ${tabletDisplay} ${desktopDisplay}`}>
+  <h2 class={`flex justify-center items-center mb-4 font-cormorant-garamond ${spanAllCols}`}>{title}</h2>
   <slot />
-  <ul class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
-    {Object.entries(detailsCollection).map(([key, section]) => (
-      <div>{key} <span class="pl-2 font-light text-sm">{section.metadata.join("")}</span></div>
+  {Object.entries(detailsCollection).map(([key, section]) => (
+    <div class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
+      <div>{key} <span class="pl-2 font-light text-sm">{section.metadata[0]}</span></div>
       <ul class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
         {section.details.map((detail: string) => (
           <li class="text-sm my-[0.25rem] align-middle">{detail}</li>
         ))}
+        <li class="text-sm my-[0.25rem] align-middle font-light text-xs">{section.metadata[1]}</li>
       </ul>
-    ))}
-  </ul>
-  <div class="flex justify-between items-center h-[62px]">
+    </div>
+  ))}
+  <div class={`flex justify-between items-center h-[62px] ${spanAllCols}`}>
     <div class="class text-lg font-bold flex flex-col items-start">
       ${price} + Tax
       {priceDetails.map(detail => (
         <span class="pl-2 font-light text-sm">{detail}</span>
       ))}
     </div>
-    <a href={INQUIRE_LINK} target="_blank" class="w-4/10 h-3/4 flex items-center font-cormorant-garamond">
+    <a href={INQUIRE_LINK} target="_blank" class="max-w-[200px] w-4/10 h-3/4 flex items-center font-cormorant-garamond">
       <Button text="Inquire" color="Pink" variant="Default" />
     </a>
   </div>
