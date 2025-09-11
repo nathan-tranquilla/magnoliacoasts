@@ -8,10 +8,11 @@ export interface Props {
 }
 const { src, alt, buttonText, link } = Astro.props;
 import Button from './Button.astro'
+import Card from './Card.astro';
 ---
-<div class="shadow-card max-h-[440px] max-w-[240px] flex flex-col justify-around p-4 grid grid-cols-1 gap-4">
+<Card classes="max-h-[440px] max-w-[240px] grid grid-cols-1 gap-4">
   <Image layout="constrained" src={src} alt={alt} />
   <a href={link}>
     <Button color="Pink" variant="Default" text={buttonText} />
   </a>
-</div>
+</Card>

@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Button from '../components/Button.astro';
 import newsletter from "../assets/Newsletter.png";
 import SectionTitle from './SectionTitle.astro';
+import Card from './Card.astro';
 let subscribeLink = "https://magnoliacoastsphotography.us14.list-manage.com/subscribe?u=4ebfced223d835c48a891029f&id=92c1de656f"
 ---
 <style>
@@ -13,7 +14,7 @@ let subscribeLink = "https://magnoliacoastsphotography.us14.list-manage.com/subs
   }
 </style>
 <div class="flex justify-center">
-  <div class="my-[1.5rem] mx-[1rem] rounded-lg shadow-card bg-white grid grid-cols-5 grid-rows-6 gap-4 p-3 sm:max-w-[274px] sm:max-w-[750px]">
+  <Card classes="grid grid-cols-5 grid-rows-6 gap-4 p-3 sm:max-w-[274px] sm:max-w-[750px]">
     <div class="col-start-1 col-span-2 row-start-1 row-span-6 sm:row-span-6">
       <Image layout="constrained" src={newsletter} alt="Photo of woman on a laptop." />
     </div>
@@ -24,6 +25,6 @@ let subscribeLink = "https://magnoliacoastsphotography.us14.list-manage.com/subs
         <Button variant="Default" color="Mint" text="Subscribe"/>
       </a>
     </div>
-  </div>
+  </Card>
   
 </div>

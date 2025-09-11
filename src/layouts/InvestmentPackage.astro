@@ -7,6 +7,7 @@ import { render } from 'astro:content';
 import { BASE_URL, INQUIRE_LINK } from '../data/links';
 import { get_surrounding_pkgs } from './InvestmentPackage.res.mjs'
 import SiblingPackageNav, { NavDir } from '../components/SiblingPackageNav.astro';
+import Card from '../components/Card.astro';
 
 export enum PackageType {
   Maternity = "maternityPackages",
@@ -52,7 +53,7 @@ const collection = (await getCollection(pkgType)).sort((a,b) => a.data.sortOrder
     {collection.map(async pkg => {
       let { Content } = await render(pkg);
       return (
-        <div class="box-content rounded-sm shadow-card bg-white flex flex-col justify-start items-stretch p-4 w-full max-w-[400px] m-2">
+        <Card classes="w-full max-w-[400px] m-2">
           <h2 class="flex justify-center items-center mb-4 font-cormorant-garamond">{pkg.data.title}</h2>
           <Content />
           <ul class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
@@ -66,7 +67,7 @@ const collection = (await getCollection(pkgType)).sort((a,b) => a.data.sortOrder
               <Button text="Inquire" color="Pink" variant="Default" />
             </a>
           </div>
-        </div>
+        </Card>
       )
     })}
   </div>

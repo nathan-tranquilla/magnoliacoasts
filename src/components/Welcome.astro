@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Button from '../components/Button.astro';
 import stephaniePortrait from "../assets/StephaniePortrait.png";
 import { BASE_URL } from '../data/links';
+import Card from './Card.astro';
 ---
 <style>
   img {
@@ -12,8 +13,8 @@ import { BASE_URL } from '../data/links';
   }
 </style>
 <div class="bg-[url(../assets/WelcomeBackground.png)] flex justify-center">
-  <div class="my-[1.5rem] mx-[1rem] rounded-lg shadow-card bg-white grid grid-cols-5 grid-rows-6 gap-3 p-3 sm:max-w-[274px] sm:max-w-[750px]">
-    <div class="col-start-1 col-span-2 row-start-1 row-span-5 sm:row-span-6">
+  <Card classes="my-[1.5rem] mx-[1rem] grid grid-cols-5 grid-rows-6 gap-3 sm:max-w-[274px] sm:max-w-[750px]">
+    <div class="rounded-sm overflow-hidden col-start-1 col-span-2 row-start-1 row-span-5 sm:row-span-6">
       <Image layout="constrained" src={stephaniePortrait} alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography." />
     </div>
     <a href={`${BASE_URL}/about`} class="col-start-1 col-span-2 row-start-6 row-span-1 flex font-cormorant-garamond sm:hidden">
@@ -27,6 +28,6 @@ import { BASE_URL } from '../data/links';
         <Button variant="Default" color="Mint" text="Get to know me"/>
       </a>
     </div>
-  </div>
+  </Card>
   
 </div>
