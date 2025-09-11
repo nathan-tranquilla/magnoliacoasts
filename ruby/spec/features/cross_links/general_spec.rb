@@ -37,6 +37,11 @@ links = [
     text: "Headshots",
   },
   {
+    origin: "/",
+    dest: "/investment/milestone",
+    text: "Children",
+  },
+  {
     origin: "/investment",
     dest: "/investment/maternity",
     text: "Maternity Packages",
