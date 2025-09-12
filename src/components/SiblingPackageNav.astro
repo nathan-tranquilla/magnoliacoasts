@@ -22,5 +22,5 @@ const textDisplay = "block vertical-middle text-center"
   { direction == NavDir.Right && (<span class={arrowClass}>{">"}</span>) }
 </a>
 <a id={direction == NavDir.Left ? "prev" : "next"} href={href} class={`w-[20vw] ${mobileDisplay} `}>
-  <FAButton id="" >{direction == NavDir.Left ? "<" : ">"}</FAButton>
+  <FAButton title={direction == NavDir.Left ? "Previous Page" : "Next Page"} >{direction == NavDir.Left ? "<" : ">"}</FAButton>
 </a>
