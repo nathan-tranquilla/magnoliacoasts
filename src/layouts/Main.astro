@@ -9,6 +9,10 @@ import cormorantGaramondRegular from "../assets/fonts/Cormorant_Garamond/static/
 import cormorantGaramondBold from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Bold.ttf"
 import cormorantGaramondSemibold from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBold.ttf"
 
+import heroImage from "../assets/HeroImage.png"
+
+import { BASE_URL } from '../data/links'
+
 const { title } = Astro.props;
 
 const localBusinessProfile = JSON.stringify(businessData)
@@ -26,7 +30,11 @@ const localBusinessProfile = JSON.stringify(businessData)
     <link rel="preload" as="font" type="font/ttf" crossorigin href={cormorantGaramondRegular}>
     <link rel="preload" as="font" type="font/ttf" crossorigin href={cormorantGaramondBold}>
     <link rel="preload" as="font" type="font/ttf" crossorigin href={cormorantGaramondSemibold}>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
+    <link rel="preload" fetchpriority="high" as="image" href={heroImage.src} type="image/png">
+
+    <link rel="icon" href={`${BASE_URL}/favicon.ico`} type="image/x-icon" />
     <script type="application/ld+json" set:html={localBusinessProfile}></script>
     <meta name="email" content="info@magnoliacoastsphotography.com" />
     <link rel="canonical" href="https://magnoliacoastsphotography.com/" />
