@@ -17,7 +17,12 @@ import SplotchyBackground from './SplotchyBackground.astro';
 <SplotchyBackground>
   <Card classes="my-[1.5rem] mx-[1rem] grid grid-cols-5 grid-rows-6 gap-3 sm:max-w-[274px] sm:max-w-[750px]">
     <div class="rounded-sm overflow-hidden col-start-1 col-span-2 row-start-1 row-span-5 sm:row-span-6">
-      <Image layout="constrained" src={stephaniePortrait} alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography." />
+      <Image
+        src={stephaniePortrait}
+        alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
+        widths={[165, 244, 284, 300, 412, 600]}
+        sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 244px"
+      />
     </div>
     
     <Button color="Mint" classes="col-start-1 col-span-2 row-start-6 row-span-1 flex font-cormorant-garamond sm:hidden">

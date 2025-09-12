@@ -22,13 +22,31 @@ let testimony3 = "Stephanie is an extraordinary photographer! She is SO SO good 
   <ArtInYourHome />
   <TestimonialCarousel count={3}>
     <TestimonialCard slot="testimonial-1" title="Erika McNabb" date="November 2023" testimony={testimony1}>
-      <Image class="h-[100%] w-auto object-cover object-center rounded-md" slot="image" layout="fixed" src={erikaFam} alt="Erika family." />
+      <Image 
+        class="h-[100%] w-auto object-cover object-center rounded-md" 
+        slot="image" 
+        src={erikaFam} 
+        alt="Erika family." 
+        widths={[150, 244, 300, 457]}
+        sizes="(max-width: 300px) 100vw, 244px"
+      />
     </TestimonialCard>
     <TestimonialCard slot="testimonial-2" title="Nritya Bhumi Studio" date="August 2023" testimony={testimony2}>
-      <Image class="h-[100%] w-auto object-cover object-center rounded-md" slot="image" layout="fixed" src={nitryaStudios} alt="Baby laughing." />
+      <Image 
+        class="h-[100%] w-auto object-cover object-center rounded-md" 
+        slot="image" 
+        src={nitryaStudios} 
+        alt="Baby laughing." 
+        widths={[150, 244, 300, 457]}
+        sizes="(max-width: 300px) 100vw, 244px"/>
     </TestimonialCard>
     <TestimonialCard slot="testimonial-3" title="Tisha McNama" date="May 2024" testimony={testimony3}>
-      <Image class="h-[100%] w-auto object-cover object-center rounded-md" slot="image" layout="fixed" src={tisha} alt="Baby pointing." />
+      <Image class="h-[100%] w-auto object-cover object-center rounded-md" 
+        slot="image" 
+        src={tisha} 
+        alt="Baby pointing." 
+        widths={[150, 244, 300, 457]}
+        sizes="(max-width: 300px) 100vw, 244px"/>
     </TestimonialCard>
   </TestimonialCarousel>
   <NewsLetter />

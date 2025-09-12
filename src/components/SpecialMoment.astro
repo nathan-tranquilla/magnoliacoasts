@@ -11,7 +11,13 @@ import Button from './Button.astro'
 import Card from './Card.astro';
 ---
 <Card classes="max-h-[440px] max-w-[240px] grid grid-cols-1 gap-4">
-  <Image layout="constrained" src={src} alt={alt} />
+  <Image 
+    layout="constrained" 
+    src={src} 
+    alt={alt} 
+    widths={[100, 120, 150, 214, 248, 353]}
+    sizes="(max-width: 214px) 100vw, 150px"
+  />
   <Button color="Pink" classes="mt-auto">
     <a href={link} class="w-full h-full flex justify-center items-center">{buttonText}</a>
   </Button>

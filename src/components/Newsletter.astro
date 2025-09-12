@@ -16,7 +16,13 @@ let subscribeLink = "https://magnoliacoastsphotography.us14.list-manage.com/subs
 <div class="flex justify-center py-4">
   <Card classes="grid grid-cols-5 grid-rows-6 gap-4 p-3 sm:max-w-[274px] sm:max-w-[750px]">
     <div class="col-start-1 col-span-2 row-start-1 row-span-6 sm:row-span-6">
-      <Image layout="constrained" src={newsletter} alt="Photo of woman on a laptop." />
+      <Image 
+        layout="constrained" 
+        src={newsletter} 
+        alt="Photo of woman on a laptop." 
+        widths={[150, 244, 284, 340]}
+        sizes="(max-width: 464px) 100vw, 284px"
+      />
     </div>
     
     <div class="col-start-3 col-span-3 row-start-3 row-span-2 font-cormorant-garamond md:text-lg sm:text-base text-sm flex flex-col align-start sm:justify-around justify-start">

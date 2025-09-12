@@ -5,6 +5,11 @@ import heroImage from "../assets/HeroImage.png";
 import { INQUIRE_LINK } from '../data/links';
 ---
 <div class="relative flex justify-center bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(218,217,205)]">
-  <Image src={heroImage} alt="Baby in a basket." />
+  <Image 
+    src={heroImage} 
+    alt="Baby in a basket." 
+    widths={[150, 244, 300, 412, 600, 900]}
+    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 600px"
+  />
   <a role="button" class="w-[100px] font-cormorant-garamond absolute bottom-0 lg:-translate-y-40 md:-translate-y-20 -translate-y-10 transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md cursor-pointer rounded-3xl flex justify-center items-center text-black font-semibold bg-pink lg:text-2xl md:text-lg text-sm p-4 px-6" href={INQUIRE_LINK} target="_blank">Inquire</a>
 </div>
