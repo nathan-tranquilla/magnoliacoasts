@@ -1,6 +1,7 @@
 ---
 import FAButton from "./FAButton.astro"
 import SectionTitle from "./SectionTitle.astro"
+import SplotchyBackground from "./SplotchyBackground.astro"
 
 export interface Props {
   count: number
@@ -31,7 +32,7 @@ let { count } = Astro.props
     transform: translateX(50rem);
   }
 </style>
-<div class="bg-[url(../assets/WelcomeBackground.png)] carousel w-dvw flex flex-col justify-center items-center py-8">
+<SplotchyBackground classes="carousel w-dvw flex flex-col justify-center items-center py-8">
   <SectionTitle title="What our clients say about us"/>
   <div class="relative flex justify-center items-center max-w-dvw overflow-hidden">
     <div id="slot-container-0" class={`${slotContClass}`}><slot name="testimonial-1" /></div>
@@ -56,4 +57,4 @@ let { count } = Astro.props
     <FAButton id="carousel-go-right" title="Next Slide">{">"}</FAButton>
   </div>
 
-</div>
+</SplotchyBackground>

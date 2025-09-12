@@ -4,6 +4,7 @@ import Button from '../components/Button.astro';
 import stephaniePortrait from "../assets/StephaniePortrait.png";
 import { BASE_URL } from '../data/links';
 import Card from './Card.astro';
+import SplotchyBackground from './SplotchyBackground.astro';
 ---
 <style>
   img {
@@ -11,8 +12,9 @@ import Card from './Card.astro';
     height: 100%;
     width: 100%;
   }
+  
 </style>
-<div class="bg-[url(../assets/WelcomeBackground.png)] flex justify-center">
+<SplotchyBackground>
   <Card classes="my-[1.5rem] mx-[1rem] grid grid-cols-5 grid-rows-6 gap-3 sm:max-w-[274px] sm:max-w-[750px]">
     <div class="rounded-sm overflow-hidden col-start-1 col-span-2 row-start-1 row-span-5 sm:row-span-6">
       <Image layout="constrained" src={stephaniePortrait} alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography." />
@@ -32,4 +34,4 @@ import Card from './Card.astro';
     </div>
   </Card>
   
-</div>
+</SplotchyBackground>
