@@ -5,7 +5,7 @@ import instaIcon from '../assets/InstagramIcon.png'
 import pintrestIcon from '../assets/PintrestIcon.png'
 import logo from '../assets/LogoWhite.svg'
 
-const footerClass = "text-xl font-semibold text-white font-cormorant-garamond bg-pastel-green md:h-auto h-[250px] w-screen p-2"
+const footerClass = "text-lg text-white font-cormorant-garamond bg-dark-green md:h-auto h-[250px] w-screen p-2"
 const mobileGrid = "grid grid-cols-3 grid-rows-3"
 const grid = "md:grid-cols-8"
 const colHeaderClass = "pt-4 flex flex-col justify-start items-center"
@@ -18,16 +18,18 @@ const cityListClass = "flex flex-col items-start justify-between md:h-[75%]"
 let footerClasses = [footerClass, mobileGrid, grid].join(" ")
 let colHeaderClasses = [colHeaderClass, colHeaderGrid].join(" ")
 let cityColClasses = [cityColClass, cityColGrid].join(" ")
+let entryDisplay = "dbackdrop-contrast-200 px-0.5 rounded-md"
+
 ---
 <footer class={footerClasses}>
   <div class={`${colHeaderClasses} col-start-1 md:row-span-1`}>
-    Contact Us
+    <span class={entryDisplay}>Contact Us</span>
   </div>
   <div class={`${colHeaderClasses} col-start-2 md:row-span-1`}>
-    Investment  
+    <span class={entryDisplay}>Investment</span>
   </div>
   <div class={`${colHeaderClasses} col-start-3 md:row-span-1`}>
-    Subscribe
+    <span class={entryDisplay}>Subscribe</span>
   </div>
   <div class="row-start-2 col-start-1 col-span-3 md:row-span-2 flex justify-center items-center">
     <Image class={iconClass} src={fbIcon} alt="Facebook Icon" />
@@ -39,23 +41,23 @@ let cityColClasses = [cityColClass, cityColGrid].join(" ")
   </div>
   <div class={`${cityColClasses} col-start-1 md:col-start-6 md:row-span-3`}>
     <div class={cityListClass}>
-      <span>Toronto</span>
-      <span>Mississauga</span>
-      <span>Oakville</span>
+      <span class={entryDisplay}>Toronto</span>
+      <span class={entryDisplay}>Mississauga</span>
+      <span class={entryDisplay}>Oakville</span>
     </div>
   </div>
   <div class={`${cityColClasses} col-start-2 md:col-start-7 md:row-span-3`}>
     <div class={cityListClass}>
-      <span>Brampton</span>
-      <span>Caledon</span>
-      <span>Barrie</span>
+      <span class={entryDisplay}>Brampton</span>
+      <span class={entryDisplay}>Caledon</span>
+      <span class={entryDisplay}>Barrie</span>
     </div>
   </div>
   <div class={`${cityColClasses} col-start-3 md:col-start-8 md:row-span-3`}>
     <div class={cityListClass}>
-      <span>Scarborough</span>
-      <span>Oshawa</span>
-      <span>Whitby</span>
+      <span class={entryDisplay}>Scarborough</span>
+      <span class={entryDisplay}>Oshawa</span>
+      <span class={entryDisplay}>Whitby</span>
     </div>
   </div>
 </footer>
