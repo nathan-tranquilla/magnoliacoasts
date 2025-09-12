@@ -10,6 +10,7 @@ import cormorantGaramondBold from "../assets/fonts/Cormorant_Garamond/static/Cor
 import cormorantGaramondSemibold from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBold.ttf"
 
 import heroImage from "../assets/HeroImage.png"
+import stephanie from '../assets/StephaniePortrait.png'
 
 import { BASE_URL } from '../data/links'
 
@@ -33,6 +34,7 @@ const localBusinessProfile = JSON.stringify(businessData)
 
     <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
     <link rel="preload" fetchpriority="high" as="image" href={heroImage.src} type="image/png">
+    <link rel="preload" fetchpriority="high" as="image" href={stephanie.src} type="image/png">
 
     <link rel="icon" href={`${BASE_URL}/favicon.ico`} type="image/x-icon" />
     <script type="application/ld+json" set:html={localBusinessProfile}></script>
