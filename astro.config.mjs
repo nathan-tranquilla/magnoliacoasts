@@ -12,4 +12,7 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [rehypeUnwrapImages],
   },
+  build: {
+    inlineStylesheets: 'always'
+  }
 });
