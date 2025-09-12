@@ -1,24 +1,24 @@
 ---
 export interface Props {
   color: 'Pink' | 'Mint';
-  variant: 'Active' | 'Default';
-  text: string;
-  classes?: string 
+  classes?: string,
 }
 
-const { color, variant, text, classes } = Astro.props;
+const { color, classes } = Astro.props;
 
-const getClassMod = (color: Props['color'], variant: Props['variant']) => {
-  if (color === 'Pink' && variant === 'Active') return 'bg-pink-active';
-  if (color === 'Pink' && variant === 'Default') return 'bg-pink';
-  if (color === 'Mint' && variant === 'Active') return 'bg-mint-active  border-[#8DA5A3]';
-  if (color === 'Mint' && variant === 'Default') return 'bg-mint border border-[#8DA5A3]';
+const getClassMod = (color: Props['color']) => {
+  if (color === 'Pink') return 'bg-pink';
+  if (color === 'Mint') return 'bg-mint border border-[#8DA5A3]';
   return '';
 };
+const buttonDisplay = "flex justify-center justify-items-stretch items-stretch"
+const animation = "transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md"
+const dimensions = "w-full max-w-[200px] px-[2rem] py-[0.5rem] rounded-lg"
+const text = "text-black text-nowrap"
 ---
 
 <button
-  class={"transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md cursor-pointer justify-self-stretch rounded-lg size-auto w-full max-w-[100%] h-[30px] flex justify-center items-center text-black text-inherit " + getClassMod(color, variant) + " " + classes || ""}
+  class={`cursor-pointer ${animation} ${dimensions} ${text} ${buttonDisplay} ${getClassMod(color)} ${classes || ""}`}
 >
-  {text}
+  <slot />
 </button>

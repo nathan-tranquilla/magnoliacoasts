@@ -32,9 +32,10 @@ let galleries = [
       {galleries.map(gallery => (
         <Card classes="w-full max-w-[174px] lg:max-w-[250px] grid grid-cols-1 gap-2">
           <Image src={gallery.imgSrc} alt={gallery.text}/>
-          <a class="font-semibold font-cormorant-garamond flex items-end" href={gallery.href}>
-            <Button variant="Default" color="Pink" text={gallery.text}/>
-          </a>
+          
+          <Button color="Pink" classes="max-w-full mt-auto font-cormorant-garamond flex items-end">
+            <a class="w-full h-full flex justify-center items-center" href={gallery.href}>{gallery.text}</a>
+          </Button>
         </Card>
       ))}
     </div>

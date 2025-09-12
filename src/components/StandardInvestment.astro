@@ -27,8 +27,9 @@ let { title, details, price, priceRange } = Astro.props;
   </ul>
   <div class="flex justify-between items-center h-[62px]">
     <div class="class text-lg font-bold">${price || priceRange} + Tax</div>
-    <a href={INQUIRE_LINK} target="_blank" class="w-4/10 h-3/4 flex items-center font-cormorant-garamond">
-      <Button text="Inquire" color="Pink" variant="Default" />
-    </a>
+    
+    <Button color="Pink" classes="w-4/10 h-3/4">
+      <a href={INQUIRE_LINK} target="_blank" class="w-full h-full flex justify-center items-center font-cormorant-garamond">Inquire</a>
+    </Button>
   </div>
 </Card>

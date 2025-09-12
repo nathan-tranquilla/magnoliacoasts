@@ -4,7 +4,7 @@ links = [
   {
     origin: "/",
     dest: "/about",
-    text: "Get to know me",
+    text: "About Me",
   },
   {
     origin: "/",
