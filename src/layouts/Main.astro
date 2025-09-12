@@ -8,9 +8,9 @@ import businessData from '../data/localBusinessProfile.json'
 import cormorantGaramondRegular from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf"
 import cormorantGaramondBold from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Bold.ttf"
 import cormorantGaramondSemibold from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBold.ttf"
+import cormorantGaramondLight from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.ttf"
 
 import heroImage from "../assets/HeroImage.png"
-import stephanie from '../assets/StephaniePortrait.png'
 import welcomeBackground from '../assets/WelcomeBackground.png'
 
 import { BASE_URL } from '../data/links'
@@ -32,6 +32,7 @@ const localBusinessProfile = JSON.stringify(businessData)
     <link rel="preload" as="font" type="font/ttf" crossorigin href={cormorantGaramondRegular}>
     <link rel="preload" as="font" type="font/ttf" crossorigin href={cormorantGaramondBold}>
     <link rel="preload" as="font" type="font/ttf" crossorigin href={cormorantGaramondSemibold}>
+    <link rel="preload" as="font" type="font/ttf" crossorigin href={cormorantGaramondLight}>
 
     <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
     <link rel="preload" fetchpriority="high" as="image" href={heroImage.src} type="image/png">
