@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.8",
     "@astrojs/react": "^4.3.0",
     "@rescript/core": "^1.6.1",
     "@rescript/react": "^0.14.0",

@@ -70,8 +70,12 @@ task :build_prod => [:node_modules_clean, :ci_install, :res_build] do
 end
 
 task :preview => [:build_prod] do
-  sh "npx wrangler dev"
+  sh "npx wrangler pages dev ./docs"
 end
+
+task :deploy => [] do 
+  sh "npx wrangler pages deploy ./docs"
+end 
 
 task :generate_package do 
 
