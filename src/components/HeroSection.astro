@@ -3,6 +3,13 @@
 import { Image } from 'astro:assets';
 import heroImage from "../assets/HeroImage.png";
 import { INQUIRE_LINK } from '../data/links';
+
+let textClasses = "text-[#392C2C] font-cormorant-garamond text-black lg:text-2xl md:text-lg text-sm"
+let dimensionClasses = "md:w-[200px] md:h-[78px] w-[100px]"
+let displayClasss = "flex justify-center items-center"
+let positionClasses = "absolute bottom-0 lg:-translate-y-40 md:-translate-y-20 -translate-y-10"
+let animationClasses = "transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md"
+let aestheticClasses = "cursor-pointer rounded-3xl bg-pink p-4 px-6"
 ---
 <div class="relative flex justify-center bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(211,208,194)]">
   <div class="w-full max-w-[1800px]">
@@ -12,5 +19,5 @@ import { INQUIRE_LINK } from '../data/links';
       widths={[412, 500, 800, 900, 1200, 1800]}
     />
   </div>
-  <a role="button" class="w-[100px] font-cormorant-garamond absolute bottom-0 lg:-translate-y-40 md:-translate-y-20 -translate-y-10 transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md cursor-pointer rounded-3xl flex justify-center items-center text-black font-semibold bg-pink lg:text-2xl md:text-lg text-sm p-4 px-6" href={INQUIRE_LINK} target="_blank">Inquire</a>
+  <a role="button" class={`${textClasses} ${dimensionClasses} ${displayClasss} ${positionClasses} ${animationClasses} ${aestheticClasses}`} href={INQUIRE_LINK} target="_blank">Inquire</a>
 </div>
