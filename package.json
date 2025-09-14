@@ -16,5 +16,8 @@
     "rescript": "^11.1.4",
     "rescript-webapi": "^0.10.0",
     "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "wrangler": "^4.36.0"
   }
 }

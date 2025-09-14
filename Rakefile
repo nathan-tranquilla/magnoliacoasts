@@ -66,13 +66,11 @@ task :build => ['node_modules', :res_build] do
 end
 
 task :build_prod => [:node_modules_clean, :ci_install, :res_build] do
-  base_url = "/magnoliacoasts"
-  ENV["BASE_URL"] = base_url
-  sh "npx astro build --base #{base_url}"
+  sh "npx astro build"
 end
 
-task :preview => 'node_modules' do
-  sh "npx astro preview --host"
+task :preview => [:build_prod] do
+  sh "npx wrangler dev"
 end
 
 task :generate_package do 
