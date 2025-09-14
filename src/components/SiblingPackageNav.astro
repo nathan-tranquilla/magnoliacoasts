@@ -10,7 +10,7 @@ export interface Props {
   href: string
 }
 const { direction, text, href } = Astro.props;
-const arrowClass = "flex items-center text-2xl font-semibold"
+const arrowClass = "flex items-center text-2xl font-extralight -translate-y-0.5"
 const desktopDisplay = "hidden md:flex justify-center items-center" 
 const mobileDisplay = `md:hidden flex ${direction == NavDir.Left ? "justify-start" : "justify-end"} items-center`
 const overflowDisplay = "h-fit whitespace-nowrap overflow-hidden text-ellipsis font-cormorant-garamond"
