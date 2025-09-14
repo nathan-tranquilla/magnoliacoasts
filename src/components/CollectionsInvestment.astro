@@ -35,7 +35,7 @@ let _load = "lg:col-span-2 lg:col-span-3 lg:col-span-4 md:col-span-2 md:col-span
   }
 </style>
 <Card classes={`card w-full max-w-[1300px] m-2 ${mobileDisplay} ${tabletDisplay} ${desktopDisplay}`}>
-  <h2 class={`flex justify-center items-center mb-4 font-cormorant-garamond ${spanAllCols}`}>{title}</h2>
+  <h2 class={`md:text-lg lg:text-2xl flex justify-center items-center mb-4 font-cormorant-garamond ${spanAllCols}`}>{title}</h2>
   <slot />
   {Object.entries(detailsCollection).map(([key, section]) => (
     <div class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
