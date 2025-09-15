@@ -1,3 +1,17 @@
 ---
+import Main from "../layouts/Main.astro"
 ---
-<p>oops!</p>
+<Main title="Magnolia Coasts Photography | Not Found">
+  <div class="flex flex-col items-center justify-center text-center py-32 px-4">
+    <h1 class="text-2xl font-bold mb-4">404: Oops, this page is missing!</h1>
+    <p>Visit one of these links to find what you are looking for</p>
+    <nav class="flex flex-wrap gap-4 justify-center">
+      <a href="/" class="underline">Home</a>
+      <a href="/about" class="underline">About</a>
+      <a href="/investment" class="underline">Investment</a>
+      <a href="/gallery" class="underline">Gallery</a>
+      <a href="/contact" class="underline">Contact</a>
+    </nav>
+    <p class="mt-8 text-sm text-gray-500">Let’s capture the right moment together! 📸</p>
+  </div>
+</Main>
