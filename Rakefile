@@ -10,14 +10,21 @@ file 'ruby/vendor/bundle' do
     sh 'bundle install --path vendor/bundle'
   end
 end 
+task :ruby_install => 'ruby/vendor/bundle'
 
-task :it => ['ruby/vendor/bundle'] do 
+desc "Run integration tests. Optionally pass TAG=yourtag to filter by tag."
+task :it, [:tag] => [:ruby_install] do |t, args|
   Dir.chdir('ruby') do
-    sh 'bundle exec rspec'
-  end 
-end 
+    tag = ENV['TAG'] || args[:tag]
+    if tag && !tag.empty?
+      sh "bundle exec rspec --tag #{tag}"
+    else
+      sh 'bundle exec rspec'
+    end
+  end
+end
 
-task :it_rerun => ['ruby/vendor/bundle'] do 
+task :it_rerun => [:ruby_install] do 
   Dir.chdir('ruby') do
     sh 'bundle exec rspec --only-failures'
   end 
