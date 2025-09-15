@@ -27,3 +27,6 @@ pnpm-debug.log*
 /lib/
 .bsb.lock
 **/*.res.mjs
+
+src/assets/galleries/
+*.zip

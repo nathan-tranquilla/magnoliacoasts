@@ -19,6 +19,8 @@
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
+    "adm-zip": "^0.5.16",
+    "dropbox": "^10.34.0",
     "wrangler": "^4.36.0"
   }
 }

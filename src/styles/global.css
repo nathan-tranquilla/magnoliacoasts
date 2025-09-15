@@ -84,6 +84,7 @@
 }
 
 @theme {
+  --breakpoint-xs: 24rem;
   --color-default: #FFFBFA;
   --color-pink: #F9CFCD;
   --color-light-pink: #f1e2e1;

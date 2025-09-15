@@ -5,6 +5,11 @@ file 'node_modules' do
   sh 'npm install'
 end
 
+file 'src/assets/galleries' do 
+  sh 'node src/utils/download-galleries.js'
+end
+task :dl_galleries => 'src/assets/galleries'
+
 file 'ruby/vendor/bundle' do 
   Dir.chdir('ruby') do
     sh 'bundle install --path vendor/bundle'
@@ -42,6 +47,10 @@ task :node_modules_clean do
   sh "rm -rf node_modules"
 end
 
+task :clean_galleries do 
+  sh 'rm -rf src/assets/galleries'
+end 
+
 task :docs_clean do 
   sh "rm -rf docs"
 end 
@@ -54,13 +63,13 @@ task :res_clean do
   sh "npx rescript clean"
 end
 
-task :clean => [:res_clean, :node_modules_clean, :docs_clean, :ruby_clean]
+task :clean => [:res_clean, :node_modules_clean, :docs_clean, :ruby_clean, :clean_galleries]
 
 task :res_dev => 'node_modules' do
   sh "npx rescript -w"
 end
 
-task :dev => ['node_modules', :res_build] do
+task :dev => ['node_modules', :res_build, :dl_galleries] do
   sh "npx astro dev --host"
 end
 
@@ -68,11 +77,11 @@ task :test => ['node_modules'] do
   sh "echo \"not implemented\""
 end 
 
-task :build => ['node_modules', :res_build] do
+task :build => ['node_modules', :res_build, :dl_galleries] do
   sh "npx astro build"
 end
 
-task :build_prod => [:node_modules_clean, :ci_install, :res_build] do
+task :build_prod => [:node_modules_clean, :ci_install, :res_build, :dl_galleries] do
   base_url = "/magnoliacoasts"
   ENV["BASE_URL"] = base_url
   sh "npx astro build --base #{base_url}"
