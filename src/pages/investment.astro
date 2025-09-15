@@ -64,7 +64,7 @@ const investmentCards = [
 <Main title="Magnolia Coasts Photgraphy | Investment">
   <div class={`pb-4 box-border w-screen font-cormorant-garamond bg-[rgb(243,234,233)] flex justify-center items-center`}>
     <div class={`m-2 ${mobileGrid} ${desktopGrid} max-w-[1200px]`}>
-      <SectionHeader title="Investment" classes="col-start-1 col-span-2 md:col-span-3 row-span-1"/>
+      <SectionHeader title="Investment" classes="col-start-1 col-span-2 md:col-span-3 row-span-1 "/>
       {investmentCards.map(card => (
         <InvestmentCard href={card.href} text={card.text} classes={card.classes}>
           <Image src={card.img} alt={card.alt} widths={[163, 213, 452]} />

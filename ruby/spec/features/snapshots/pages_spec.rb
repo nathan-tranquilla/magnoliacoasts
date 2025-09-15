@@ -27,8 +27,8 @@ links = [
     links.each do |link|
       it "on page #{link}" do
         visit link
+        sleep 1
         driver_name = driver.to_s
-        FileUtils.mkdir_p("ruby/doc/screenshots/#{driver_name}")
         filename = link == '/' ? 'home' : link.sub(/^\//, '').gsub('/', '-')
         expect(page).to match_screenshot("#{driver_name}/#{filename}.png")
       end
