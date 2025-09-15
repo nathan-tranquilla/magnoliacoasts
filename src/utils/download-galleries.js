@@ -11,6 +11,7 @@ const dbx = new Dropbox({
 
 async function downloadFolderAsZip(folderPath, outputPath) {
   try {
+    console.log(`Dropbox access token is ${process.env.DROPBOX_ACCESS_TOKEN.slice(5)}`);
     const response = await dbx.filesDownloadZip({ path: folderPath });
     // response.result.fileBinary contains the zip file data
     fs.writeFileSync('./out.zip', response.result.fileBinary, 'binary');
