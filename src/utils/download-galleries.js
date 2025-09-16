@@ -2,6 +2,7 @@
 import fs from 'fs';
 import { Dropbox } from 'dropbox';
 import AdmZip  from 'adm-zip';
+import {execSync} from 'child_process'
 
 // Initialize Dropbox client with your access token
 const dbx = new Dropbox({ 
@@ -17,8 +18,16 @@ async function downloadFolderAsZip(folderPath, outputPath) {
 
     const zip = new AdmZip('./out.zip');
     zip.extractAllTo(outputPath, true);
-    fs.unlinkSync('./out.zip')
+    fs.unlinkSync('./out.zip');
     console.log(`Downloaded all files to ${outputPath}`);
+
+    try {
+      const result = execSync(`find ${outputPath} -type f -name '*.png'`, { encoding: 'utf8' });
+      console.log('Downloaded gallery files:');
+      console.log(result.trim());
+    } catch (err) {
+      console.error('Error running find for .png files:', err);
+    }
   } catch (error) {
     console.error('Error downloading folder:', error);
     process.exit(1);
