@@ -44,12 +44,12 @@ jobs:
         env:
           DROPBOX_ACCESS_TOKEN: ${{ secrets.DROPBOX_ACCESS_TOKEN }}
           DROPBOX_APP_USER: ${{ secrets.DROPBOX_APP_USER }}
-        run: rake clean_galleries && find src/assets/gallieries -type f -name '*.png' 
+        run: rake clean_galleries build_prod
 
-      # - name: Upload artifact
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     path: docs
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
 
   deploy:
     environment:
