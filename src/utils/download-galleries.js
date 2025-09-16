@@ -22,11 +22,13 @@ async function downloadFolderAsZip(folderPath, outputPath) {
     console.log(`Downloaded all files to ${outputPath}galleries`);
 
     try {
-      const result = execSync(`find ${outputPath}galleries -type f -name '*.png'`, { encoding: 'utf8' });
+      let cmd = `find ${outputPath}galleries -type f -name '*.jpg'`
+      console.log(cmd)
+      const result = execSync(`find ${outputPath}galleries -type f -name '*.jpg'`, { encoding: 'utf8' });
       console.log('Downloaded gallery files:');
       console.log(result.trim());
     } catch (err) {
-      console.error('Error running find for .png files:', err);
+      console.error('Error running find for .jpg files:', err);
     }
   } catch (error) {
     console.error('Error downloading folder:', error);

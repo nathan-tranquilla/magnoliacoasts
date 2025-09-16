@@ -5,7 +5,7 @@ file 'node_modules' do
   sh 'npm install'
 end
 
-file 'src/assets/galleries' do 
+file 'src/assets/galleries' => ['node_modules'] do 
   sh 'node src/utils/download-galleries.js'
 end
 task :dl_galleries => 'src/assets/galleries'
