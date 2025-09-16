@@ -44,7 +44,7 @@ jobs:
         env:
           DROPBOX_ACCESS_TOKEN: ${{ secrets.DROPBOX_ACCESS_TOKEN }}
           DROPBOX_APP_USER: ${{ secrets.DROPBOX_APP_USER }}
-        run: rake clean_galleries && find src/assets/galleries/ -type f -name '*.png' 
+        run: rake clean_galleries && find src/assets/ -type f -name '*.png' 
 
       # - name: Upload artifact
       #   uses: actions/upload-pages-artifact@v3
