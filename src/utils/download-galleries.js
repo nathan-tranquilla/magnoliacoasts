@@ -21,6 +21,10 @@ async function downloadFolderAsZip(folderPath, outputPath) {
     console.log(`Downloaded zip size: ${zipSizeBytes} bytes (${zipSizeMB} MB)`);
 
     const zip = new AdmZip('./out.zip');
+    var zipEntries = zip.getEntries(); // an array of ZipEntry records - add password parameter if entries are password protected
+    zipEntries.forEach(function (zipEntry) {
+      console.log(zipEntry.entryName); // outputs zip entries information
+    });
     zip.extractAllTo(outputPath, true);
     fs.unlinkSync('./out.zip');
     console.log(`Downloaded all files to ${outputPath}galleries`);
@@ -40,4 +44,4 @@ async function downloadFolderAsZip(folderPath, outputPath) {
   }
 }
 
-downloadFolderAsZip('/Public/galleries', './src/assets/');
+downloadFolderAsZip('/public/galleries', './src/assets/');

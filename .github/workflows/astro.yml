@@ -46,9 +46,7 @@ jobs:
           DROPBOX_APP_USER: ${{ secrets.DROPBOX_APP_USER }}
         run: |
           rake dl_galleries
-          mv src/assets/Galleries/* src/assets/galleries/
-          rm -rf src/assets/Galleries
-          find src/assets/galleries
+          ls -la src/assets/
 
       - name: Build prod
         run: rake build_prod
