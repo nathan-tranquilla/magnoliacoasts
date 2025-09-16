@@ -19,10 +19,10 @@ async function downloadFolderAsZip(folderPath, outputPath) {
     const zip = new AdmZip('./out.zip');
     zip.extractAllTo(outputPath, true);
     fs.unlinkSync('./out.zip');
-    console.log(`Downloaded all files to ${outputPath}/galleries`);
+    console.log(`Downloaded all files to ${outputPath}galleries`);
 
     try {
-      const result = execSync(`find ${outputPath}/galleries -type f -name '*.png'`, { encoding: 'utf8' });
+      const result = execSync(`find ${outputPath}galleries -type f -name '*.png'`, { encoding: 'utf8' });
       console.log('Downloaded gallery files:');
       console.log(result.trim());
     } catch (err) {
