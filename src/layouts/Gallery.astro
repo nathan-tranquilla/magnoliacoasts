@@ -59,7 +59,7 @@ const sortedImages = images.sort(sortByFilename);
     <SectionHeader title={title} />
     <SiblingPackageNav text={pkgs[1][0]} href={pkgs[1][1]} direction={NavDir.Right} />
   </div>
-  <div class="self-center 2xl:max-w-[1530px] lg:max-w-[1200px] grid lg:grid-cols-6 xs:grid-cols-3 grid-cols-1 gap-4 p-4">
+  <div class="self-center lg:max-w-[1200px] grid xs:grid-cols-3 grid-cols-1 gap-4 p-4">
     {sortedImages.map((image: ImageMetadata, i) => {
       const mod = i % 4
       const isLandscape = mod == 0 || mod == 3

@@ -12,12 +12,20 @@ investments = [
   "/collections",
 ]
 
+galleries = [
+  "/maternity",
+  "/newborn",
+  "/family",
+  "/cakesmash",
+]
+
 links = [
   "/",
   "/about",
   "/investment",
   *investments.map { |path| "/investment#{path}" },
-  "/gallery"
+  "/gallery",
+  *galleries.map { |path| "/gallery#{path}" },
 ]
 
 [:cuprite, :cuprite_mobile].each do |driver|
