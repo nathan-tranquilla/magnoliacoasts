@@ -17,6 +17,8 @@ file 'ruby/vendor/bundle' do
 end 
 task :ruby_install => 'ruby/vendor/bundle'
 
+task :install => [:ruby_install, 'node_modules']
+
 desc "Run integration tests. Optionally pass TAG=yourtag to filter by tag."
 task :it, [:tag] => [:ruby_install] do |t, args|
   Dir.chdir('ruby') do
