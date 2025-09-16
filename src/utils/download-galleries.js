@@ -13,8 +13,12 @@ const dbx = new Dropbox({
 async function downloadFolderAsZip(folderPath, outputPath) {
   try {
     const response = await dbx.filesDownloadZip({ path: folderPath });
-    // response.result.fileBinary contains the zip file data
     fs.writeFileSync('./out.zip', response.result.fileBinary, 'binary');
+    // Print size of zip file
+    const zipStats = fs.statSync('./out.zip');
+    const zipSizeBytes = zipStats.size;
+    const zipSizeMB = (zipSizeBytes / (1024 * 1024)).toFixed(2);
+    console.log(`Downloaded zip size: ${zipSizeBytes} bytes (${zipSizeMB} MB)`);
 
     const zip = new AdmZip('./out.zip');
     zip.extractAllTo(outputPath, true);
@@ -36,4 +40,4 @@ async function downloadFolderAsZip(folderPath, outputPath) {
   }
 }
 
-downloadFolderAsZip('/public/galleries', './src/assets/');
+downloadFolderAsZip('/Public/galleries', './src/assets/');
