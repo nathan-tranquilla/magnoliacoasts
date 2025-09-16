@@ -46,8 +46,13 @@ jobs:
           DROPBOX_APP_USER: ${{ secrets.DROPBOX_APP_USER }}
         run: |
           rake dl_galleries 
-          mkdir -p src/assets/galleries
+          echo "in Galleries before: "
+          ls -la src/assets/Galleries
+          ls -la src/assets/galleries
           mv src/assets/Galleries/* src/assets/galleries
+          ls -la src/assets/galleries
+          echo "in Galleries after: "
+          ls -la src/assets/Galleries
           rake build_prod
 
       - name: Upload artifact
