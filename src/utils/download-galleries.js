@@ -22,6 +22,7 @@ async function downloadFolderAsZip(folderPath, outputPath) {
     console.log(`Downloaded all files to ${outputPath}`);
   } catch (error) {
     console.error('Error downloading folder:', error);
+    process.exit(1);
   }
 }
 

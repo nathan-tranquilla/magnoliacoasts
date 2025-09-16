@@ -56,13 +56,5 @@ const collectionsPackages = defineCollection({
   })
 });
 
-const galleries = defineCollection({
-  loader: glob({ pattern: "index.md", base: "./src/data/galleries" }),
-  schema: z.array(z.object({
-    text: z.string(),
-    href: z.string()
-  }))
-})
-
 // 4. Export a single `collections` object to register your collection(s)
-export const collections = { maternityPackages, newbornPackages, milestonePackages, familyPackages, headshotPackages, collectionsPackages, galleries };
+export const collections = { maternityPackages, newbornPackages, milestonePackages, familyPackages, headshotPackages, collectionsPackages};
