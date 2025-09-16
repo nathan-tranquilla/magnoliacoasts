@@ -29,4 +29,5 @@ pnpm-debug.log*
 **/*.res.mjs
 
 src/assets/galleries/
+src/assets/__MACOSX
 *.zip

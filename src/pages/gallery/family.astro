@@ -2,7 +2,7 @@
 import Gallery, { GalleryType } from "../../layouts/Gallery.astro"
 
 const images = Object.values(
-  import.meta.glob(`../../assets/galleries/maternity/*.jpg`, { eager: true })
+  import.meta.glob(`../../assets/galleries/family/*.jpg`, { eager: true })
 ).map((module: any) => module.default) as ImageMetadata[];
 ---
-<Gallery title="Maternity" galleryType={GalleryType.Maternity} images={images}/>
+<Gallery title="Family" galleryType={GalleryType.Family} images={images}/>

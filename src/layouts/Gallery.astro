@@ -11,7 +11,7 @@ export enum GalleryType {
   Maternity = "maternity",
   Newborn = "newborn",
   Milestone = "milestone",
-  CakeSmashAndBday = "cakesmashandbirthday",
+  CakeSmash = "cakesmash",
   Family = "family",
   Children = "children",
   Branding = "branding",
@@ -22,7 +22,7 @@ const galleryTypeToTuple: Record<GalleryType, [string, string]> = {
   [GalleryType.Maternity]: ["Maternity", `${BASE_URL}/gallery/maternity`],
   [GalleryType.Newborn]: ["Newborn", `${BASE_URL}/gallery/newborn`],
   [GalleryType.Milestone]: ["Milestone", `${BASE_URL}/gallery/milestone`],
-  [GalleryType.CakeSmashAndBday]: ["Cake Smash & Birthday", `${BASE_URL}/gallery/cakesmashandbirthday`],
+  [GalleryType.CakeSmash]: ["Cake Smash & Birthday", `${BASE_URL}/gallery/cakesmash`],
   [GalleryType.Family]: ["Family", `${BASE_URL}/gallery/family`],
   [GalleryType.Children]: ["Children", `${BASE_URL}/gallery/children`],
   [GalleryType.Branding]: ["Branding", `${BASE_URL}/gallery/branding`],
@@ -34,15 +34,23 @@ const mobileDisplay = "flex justify-around items-center"
 
 export interface Props {
   title: string,
+  images: ImageMetadata[],
   galleryType: GalleryType
-  images: ImageMetadata[]
 }
-const { title, images, galleryType } = Astro.props
+const { title, galleryType, images } = Astro.props
 
 
 let galleries = Object.values(galleryTypeToTuple)
 const pkg = galleryTypeToTuple[galleryType];
 let pkgs = get_surrounding_pkgs(pkg, galleries)
+
+const sortByFilename = (a: ImageMetadata, b: ImageMetadata) => {
+  // Extract the numeric part from the filename (e.g., '01' from '01.jpg')
+  const numA = parseInt(a.src.match(/(\d+)/)?.[0] || '0', 10);
+  const numB = parseInt(b.src.match(/(\d+)/)?.[0] || '0', 10);
+  return numA - numB;
+}
+const sortedImages = images.sort(sortByFilename);
 
 ---
 <Main title={`Magnolia Coasts Photography | ${title}`}>
@@ -52,7 +60,7 @@ let pkgs = get_surrounding_pkgs(pkg, galleries)
     <SiblingPackageNav text={pkgs[1][0]} href={pkgs[1][1]} direction={NavDir.Right} />
   </div>
   <div class="self-center 2xl:max-w-[1530px] lg:max-w-[1200px] grid lg:grid-cols-6 xs:grid-cols-3 grid-cols-1 gap-4 p-4">
-    {images.map((image: ImageMetadata, i) => {
+    {sortedImages.map((image: ImageMetadata, i) => {
       const mod = i % 4
       const isLandscape = mod == 0 || mod == 3
       return (
