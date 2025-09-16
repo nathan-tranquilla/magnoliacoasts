@@ -51,6 +51,7 @@ end
 
 task :clean_galleries do 
   sh 'rm -rf src/assets/galleries'
+  sh 'rm -rf out.zip'
 end 
 
 task :docs_clean do 
