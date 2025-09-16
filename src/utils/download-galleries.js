@@ -28,17 +28,7 @@ async function downloadFolderAsZip(folderPath, outputPath) {
     zip.extractAllTo(outputPath, true);
     fs.unlinkSync('./out.zip');
     
-    console.log(`Downloaded all files to ${outputPath}galleries`);
-
-    try {
-      let cmd = `find ${outputPath}galleries -type f -name '*.jpg'`
-      console.log(cmd)
-      const result = execSync(`find ${outputPath}galleries -type f -name '*.jpg'`, { encoding: 'utf8' });
-      console.log('Downloaded gallery files:');
-      console.log(result.trim());
-    } catch (err) {
-      console.error('Error running find for .jpg files:', err);
-    }
+    console.log(`Downloaded all files to ${outputPath}`);
   } catch (error) {
     console.error('Error downloading folder:', error);
     process.exit(1);
