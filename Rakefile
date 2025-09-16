@@ -65,7 +65,7 @@ task :res_clean do
   sh "npx rescript clean"
 end
 
-task :clean => [:res_clean, :node_modules_clean, :docs_clean, :ruby_clean, :clean_galleries]
+task :clean => [:node_modules_clean, :docs_clean, :ruby_clean, :clean_galleries]
 
 task :res_dev => 'node_modules' do
   sh "npx rescript -w"
