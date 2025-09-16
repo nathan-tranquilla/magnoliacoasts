@@ -27,7 +27,7 @@ async function downloadFolderAsZip(folderPath, outputPath) {
     });
     zip.extractAllTo(outputPath, true);
     fs.unlinkSync('./out.zip');
-    execSync(`mv ${outputPath}Galleries ${outputPath}galleries`)
+    
     console.log(`Downloaded all files to ${outputPath}galleries`);
 
     try {
