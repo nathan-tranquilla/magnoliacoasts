@@ -40,11 +40,18 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build with Rake
+      - name: Download galleries and normalize
         env:
           DROPBOX_ACCESS_TOKEN: ${{ secrets.DROPBOX_ACCESS_TOKEN }}
           DROPBOX_APP_USER: ${{ secrets.DROPBOX_APP_USER }}
-        run: rake clean_galleries build_prod
+        run: |
+          rake dl_galleries
+          mv src/assets/Galleries/* src/assets/galleries/
+          rm -rf src/assets/Galleries
+          find src/assets/galleries
+
+      - name: Build prod
+        run: rake build_prod
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
