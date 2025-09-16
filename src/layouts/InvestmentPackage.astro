@@ -1,13 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import Main from '../layouts/Main.astro'
-import Button from '../components/Button.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import { render } from 'astro:content';
 import { BASE_URL, INQUIRE_LINK } from '../data/links';
 import { get_surrounding_pkgs } from './InvestmentPackage.res.mjs'
 import SiblingPackageNav, { NavDir } from '../components/SiblingPackageNav.astro';
-import Card from '../components/Card.astro';
 import StandardInvestment from '../components/StandardInvestment.astro';
 import CollectionsInvestment from '../components/CollectionsInvestment.astro';
 

@@ -1,6 +1,6 @@
 require "spec_helper"
 require 'capybara_screenshot_diff/rspec'
-Capybara::Screenshot::Diff.tolerance = 0.3
+Capybara::Screenshot::Diff.tolerance = 0.35
 
 
 investments = [

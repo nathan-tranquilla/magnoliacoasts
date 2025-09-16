@@ -34,7 +34,7 @@ let _load = "lg:col-span-2 lg:col-span-3 lg:col-span-4 md:col-span-2 md:col-span
     max-height: 420px;
   }
 </style>
-<Card classes={`card w-full max-w-[1300px] m-2 ${mobileDisplay} ${tabletDisplay} ${desktopDisplay}`}>
+<Card test_id={title} classes={`card w-full max-w-[1300px] m-2 ${mobileDisplay} ${tabletDisplay} ${desktopDisplay}`}>
   <h2 class={`md:text-lg lg:text-2xl flex justify-center items-center mb-4 font-cormorant-garamond ${spanAllCols}`}>{title}</h2>
   <slot />
   {Object.entries(detailsCollection).map(([key, section]) => (

@@ -17,7 +17,7 @@ let { title, details, price, priceRange } = Astro.props;
     color: var(--color-pink);
   }
 </style>
-<Card classes="w-full max-w-[400px] m-2">
+<Card test_id={title} classes="w-full max-w-[400px] m-2">
   <h2 class="md:text-lg lg:text-2xl flex justify-center items-center mb-4 font-cormorant-garamond">{title}</h2>
   <slot />
   <ul class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">

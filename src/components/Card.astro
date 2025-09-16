@@ -1,9 +1,12 @@
 ---
 export interface Props {
+  test_id?: string,
   classes?: string 
 }
+import { string_to_id } from '../utils/utils.res.mjs'
 const { classes, ...props } = Astro.props 
+const test_id = string_to_id(Astro.props.test_id || "");
 ---
-<div class={`card flex flex-col py-6 px-4 shadow-card rounded-md bg-white ${classes || ""}`} {...props}>
+<div data-id={test_id} class={`card flex flex-col py-6 px-4 shadow-card rounded-md bg-white ${classes || ""}`} {...props}>
   <slot />
 </div>
