@@ -2,9 +2,10 @@
 export interface Props {
   color: 'Pink' | 'Mint';
   classes?: string,
+  data_id?: string,
 }
 
-const { color, classes } = Astro.props;
+const { color, classes, data_id } = Astro.props;
 
 const getClassMod = (color: Props['color']) => {
   if (color === 'Pink') return 'bg-pink';
@@ -17,7 +18,7 @@ const dimensions = "w-full max-w-[150px] px-[2rem] h-[2.5rem] rounded-lg"
 const text = "text-black text-nowrap"
 ---
 
-<button
+<button data-id={data_id}
   class={`cursor-pointer ${animation} ${dimensions} ${text} ${buttonDisplay} ${getClassMod(color)} ${classes || ""}`}
 >
   <slot />
