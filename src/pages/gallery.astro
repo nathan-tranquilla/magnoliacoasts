@@ -27,7 +27,8 @@ let galleries = [
 ]
 ---
 <Main title="Magnolia Coasts Photgraphy | Gallery">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 self-center p-2 pb-8">
+  <div class="bg-[var(--section-bg-color)] flex flex-col justify-start items-center">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 self-center p-2 pb-8 max-w-[1200px]">
       <SectionHeader title="Galleries" classes="col-span-2 md:col-span-4 w-full"/>
       {galleries.map(gallery => (
         <Card classes="w-full max-w-[174px] lg:max-w-[250px] grid grid-cols-1 gap-2">

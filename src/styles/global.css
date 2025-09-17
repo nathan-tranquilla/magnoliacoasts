@@ -81,6 +81,7 @@
 
   --functional-max-width: 1440px;
   --color-app-active-grey: #939393;
+  --section-bg-color: rgb(243,234,233);
 }
 
 @theme {
