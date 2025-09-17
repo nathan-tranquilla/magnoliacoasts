@@ -1,0 +1,8 @@
+---
+import Gallery, { GalleryType } from "../../layouts/Gallery.astro"
+
+const images = Object.values(
+  import.meta.glob(`../../assets/galleries/branding/*.jpg`, { eager: true })
+).map((module: any) => module.default) as ImageMetadata[];
+---
+<Gallery title="Branding" galleryType={GalleryType.Branding} images={images}/>
