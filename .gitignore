@@ -31,3 +31,6 @@ pnpm-debug.log*
 src/assets/galleries/
 src/assets/__MACOSX
 *.zip
+
+ruby/doc/screenshots/**/*.base.png
+ruby/doc/screenshots/**/*.diff.png

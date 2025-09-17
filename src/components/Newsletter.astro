@@ -5,6 +5,9 @@ import newsletter from "../assets/Newsletter.png";
 import SectionTitle from './SectionTitle.astro';
 import Card from './Card.astro';
 let subscribeLink = "https://magnoliacoastsphotography.us14.list-manage.com/subscribe?u=4ebfced223d835c48a891029f&id=92c1de656f"
+let mobileDisplay = "flex justify-center items-center"
+let desktopDisplay = "md:grid grid-cols-5 grid-rows-6 gap-4"
+let dimensions = "p-3 md:max-w-[750px] w-full mx-4"
 ---
 <style>
   img {
@@ -14,8 +17,8 @@ let subscribeLink = "https://magnoliacoastsphotography.us14.list-manage.com/subs
   }
 </style>
 <div class="flex justify-center py-4">
-  <Card classes="grid grid-cols-5 grid-rows-6 gap-4 p-3 sm:max-w-[274px] sm:max-w-[750px]">
-    <div class="col-start-1 col-span-2 row-start-1 row-span-6 sm:row-span-6">
+  <Card classes={`${mobileDisplay} ${desktopDisplay} ${dimensions}`}>
+    <div class="col-start-1 col-span-2 row-start-1 row-span-6 sm:row-span-6 hidden md:block">
       <Image 
         layout="constrained" 
         src={newsletter} 
@@ -26,7 +29,7 @@ let subscribeLink = "https://magnoliacoastsphotography.us14.list-manage.com/subs
     </div>
     
     <div class="col-start-3 col-span-3 row-start-3 row-span-2 font-cormorant-garamond md:text-lg sm:text-base text-sm flex flex-col align-start sm:justify-around justify-start">
-      <SectionTitle title="Subscribe To Our Newsletter"/>
+      <SectionTitle title="Subscribe and get our latest promotions and news!"/>
       <Button color="Mint" classes="self-center" >
         <a href={subscribeLink} target="_blank" class="w-full h-full flex justify-center items-center font-cormorant-garamond">Subscribe</a>
       </Button>
