@@ -15,27 +15,28 @@ import SplotchyBackground from './SplotchyBackground.astro';
   
 </style>
 <SplotchyBackground>
-  <Card classes="my-[1.5rem] mx-[1rem] grid grid-cols-5 grid-rows-6 gap-3 sm:max-w-[274px] sm:max-w-[750px]">
-    <div class="rounded-sm overflow-hidden col-start-1 col-span-2 row-start-1 row-span-5 sm:row-span-6">
-      <Image
-        src={stephaniePortrait}
-        alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
-        widths={[152, 300]}
-      />
-    </div>
-    
-    <Button color="Mint" classes="col-start-1 col-span-2 row-start-6 row-span-1 flex font-cormorant-garamond sm:hidden">
-      <a href={`${BASE_URL}/about`} class="w-full h-full flex justify-center items-center">About Me</a>
-    </Button>
-    
-    <div class="col-start-3 col-span-3 row-start-1 row-span-6 font-cormorant-garamond md:text-lg sm:text-base text-sm flex flex-col align-start sm:justify-around justify-start">
-      <p class="font-bold">Welcome!</p>
-      <p >I’m Stephanie, the owner and photographer of Magnolia Coasts Photography. I’m the woman behind the camera making magic happen by creating custom sets, wrapping and hushing babies to sleep and making children laugh with all those animal noises and silly antics.  I have 10 years experience photographing children and families and cannot wait to work with you!</p>
+  <div class="m-0 md:m-4 md:bg-[#D7D7D7]/75 bg-unset rounded-md">
+    <Card classes="my-[1.5rem] mx-[1rem] grid grid-cols-5 grid-rows-6 gap-3 sm:max-w-[274px] sm:max-w-[750px]">
+      <div class="rounded-sm overflow-hidden col-start-1 col-span-2 row-start-1 row-span-5 sm:row-span-6">
+        <Image
+          src={stephaniePortrait}
+          alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
+          widths={[152, 300]}
+        />
+      </div>
       
-      <Button color="Mint" classes="font-cormorant-garamond hidden sm:flex self-center">
+      <Button color="Mint" classes="col-start-1 col-span-2 row-start-6 row-span-1 flex font-cormorant-garamond sm:hidden">
         <a href={`${BASE_URL}/about`} class="w-full h-full flex justify-center items-center">About Me</a>
       </Button>
-    </div>
-  </Card>
-  
+      
+      <div class="col-start-3 col-span-3 row-start-1 row-span-6 font-cormorant-garamond md:text-lg sm:text-base text-sm flex flex-col align-start sm:justify-around justify-start">
+        <p class="font-bold">Welcome!</p>
+        <p >I’m Stephanie, the owner and photographer of Magnolia Coasts Photography. I’m the woman behind the camera making magic happen by creating custom sets, wrapping and hushing babies to sleep and making children laugh with all those animal noises and silly antics.  I have 10 years experience photographing children and families and cannot wait to work with you!</p>
+        
+        <Button color="Mint" classes="font-cormorant-garamond hidden sm:flex self-center">
+          <a href={`${BASE_URL}/about`} class="w-full h-full flex justify-center items-center">About Me</a>
+        </Button>
+      </div>
+    </Card>
+  </div>
 </SplotchyBackground>
