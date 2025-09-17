@@ -6,6 +6,7 @@
   "@id": "https://magnoliacoastsphotography.com/",
   "url": "https://magnoliacoastsphotography.com/",
   "telephone": "+1-555-555-5555",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "Ontario",
