@@ -34,7 +34,7 @@ let { count } = Astro.props
 </style>
 <SplotchyBackground classes="carousel w-dvw flex flex-col justify-center items-center py-8">
   <SectionTitle title="What our clients say about us"/>
-  <div class="relative flex justify-center items-center max-w-dvw overflow-hidden">
+  <div class="relative flex justify-center items-center max-w-dvw overflow-hidden md:mx-0 mx-4">
     <div id="slot-container-0" class={`${slotContClass}`}><slot name="testimonial-1" /></div>
     <div id="slot-container-1" class={`${slotContClass} move-right`}><slot name="testimonial-2" /></div>
     <div id="slot-container-2" class={`${slotContClass} move-right`}><slot name="testimonial-3" /></div>
