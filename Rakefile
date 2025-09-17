@@ -60,6 +60,7 @@ end
 
 task :ruby_clean do 
   sh "rm -rf ruby/vendor/bundle"
+  sh "rm -f ruby/doc/screenshots/**/*.diff.png"
 end 
 
 task :res_clean do
