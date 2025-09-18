@@ -3,10 +3,11 @@ import { defineConfig } from 'astro/config';
 import rehypeUnwrapImages from 'rehype-unwrap-images';
 import tailwindcss from '@tailwindcss/vite';
 
-import cloudflare from '@astrojs/cloudflare';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+  site:'https://magnoliacoastsphotography.com',
   vite: {
     plugins: [tailwindcss()]
   },
@@ -16,10 +17,9 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [rehypeUnwrapImages],
   },
-
   build: {
     inlineStylesheets: 'always'
   },
 
-  // adapter: cloudflare()
+  integrations: [sitemap()]
 });
