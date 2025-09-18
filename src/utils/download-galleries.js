@@ -2,12 +2,10 @@
 import fs from 'fs';
 import { Dropbox } from 'dropbox';
 import AdmZip  from 'adm-zip';
-import {execSync} from 'child_process'
 
 // Initialize Dropbox client with your access token
 const dbx = new Dropbox({ 
   accessToken: process.env.DROPBOX_ACCESS_TOKEN ,
-  selectUser: process.env.DROPBOX_APP_USER
 });
 
 async function downloadFolderAsZip(folderPath, outputPath) {
@@ -35,4 +33,4 @@ async function downloadFolderAsZip(folderPath, outputPath) {
   }
 }
 
-downloadFolderAsZip('/public/galleries', './src/assets/');
+downloadFolderAsZip('/galleries', './src/assets/');
