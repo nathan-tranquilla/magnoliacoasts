@@ -1,13 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
-import Main from '../layouts/Main.astro'
-import SectionHeader from '../components/SectionHeader.astro';
-import { render } from 'astro:content';
-import { BASE_URL, INQUIRE_LINK } from '../data/links';
-import { get_surrounding_pkgs } from './InvestmentPackage.res.mjs'
-import SiblingPackageNav, { NavDir } from '../components/SiblingPackageNav.astro';
-import StandardInvestment from '../components/StandardInvestment.astro';
-import CollectionsInvestment from '../components/CollectionsInvestment.astro';
+import { getCollection } from "astro:content";
+import Main from "../layouts/Main.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import { render } from "astro:content";
+import { BASE_URL, INQUIRE_LINK } from "../data/links";
+import { get_surrounding_pkgs } from "./InvestmentPackage.res.mjs";
+import SiblingPackageNav, {
+  NavDir,
+} from "../components/SiblingPackageNav.astro";
+import StandardInvestment from "../components/StandardInvestment.astro";
+import CollectionsInvestment from "../components/CollectionsInvestment.astro";
 
 export enum PackageType {
   Maternity = "maternityPackages",
@@ -19,53 +21,89 @@ export enum PackageType {
 }
 
 const packageTypeToTuple: Record<PackageType, [string, string]> = {
-  [PackageType.Maternity]: ["Maternity Packages", `${BASE_URL}/investment/maternity`],
+  [PackageType.Maternity]: [
+    "Maternity Packages",
+    `${BASE_URL}/investment/maternity`,
+  ],
   [PackageType.Newborn]: ["Newborn Packages", `${BASE_URL}/investment/newborn`],
-  [PackageType.Milestone]: ["Milestone Packages", `${BASE_URL}/investment/milestone`],
+  [PackageType.Milestone]: [
+    "Milestone Packages",
+    `${BASE_URL}/investment/milestone`,
+  ],
   [PackageType.Family]: ["Family Packages", `${BASE_URL}/investment/family`],
-  [PackageType.Headshot]: ["Headshot, Branding & Portrait Packages", `${BASE_URL}/investment/headshot`],
-  [PackageType.Collections]: ["Collections Packages", `${BASE_URL}/investment/collections`],
+  [PackageType.Headshot]: [
+    "Headshot, Branding & Portrait Packages",
+    `${BASE_URL}/investment/headshot`,
+  ],
+  [PackageType.Collections]: [
+    "Collections Packages",
+    `${BASE_URL}/investment/collections`,
+  ],
 };
 
 export interface Props {
-  pkgType: PackageType,
-  title: string,
+  pkgType: PackageType;
+  title: string;
 }
 
 let { pkgType, title } = Astro.props;
 
-let packages = Object.values(packageTypeToTuple)
+let packages = Object.values(packageTypeToTuple);
 const pkg = packageTypeToTuple[pkgType];
-let pkgs = get_surrounding_pkgs(pkg, packages)
- 
-const collection = (await getCollection(pkgType)).sort((a,b) => a.data.sortOrder - b.data.sortOrder);
+let pkgs = get_surrounding_pkgs(pkg, packages);
 
-const desktopDisplay = "md:grid grid-cols-[20vw_50vw_20vw] gap-2" 
-const mobileDisplay = "flex justify-around items-center"
+const collection = (await getCollection(pkgType)).sort(
+  (a, b) => a.data.sortOrder - b.data.sortOrder,
+);
+
+const desktopDisplay = "md:grid grid-cols-[20vw_50vw_20vw] gap-2";
+const mobileDisplay = "flex justify-around items-center";
 ---
+
 <Main title={`Magnolia Coasts Photography | ${title}`}>
   <div class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
-    <SiblingPackageNav text={pkgs[0][0]} href={pkgs[0][1]} direction={NavDir.Left} />
+    <SiblingPackageNav
+      text={pkgs[0][0]}
+      href={pkgs[0][1]}
+      direction={NavDir.Left}
+    />
     <SectionHeader title={title} />
-    <SiblingPackageNav text={pkgs[1][0]} href={pkgs[1][1]} direction={NavDir.Right} />
+    <SiblingPackageNav
+      text={pkgs[1][0]}
+      href={pkgs[1][1]}
+      direction={NavDir.Right}
+    />
   </div>
-  <div class="flex justify-center items-start flex-wrap w-full p-4">
-    {collection.map(async pkg => {
-      let { Content } = await render(pkg);
-      switch (pkgType) {
-        case PackageType.Collections:
-          return (
-            <CollectionsInvestment photoCount={pkg.data.photoCount} title={pkg.data.title} price={pkg.data.price} priceDetails={pkg.data.priceDetails} detailsCollection={pkg.data.detailsCollection}>
-              <Content />
-            </CollectionsInvestment>
-          )
-        default:
-          return (
-            <StandardInvestment title={pkg.data.title} price={pkg.data.price} priceRange={pkg.data.priceRange} details={pkg.data.details}>
-              <Content />
-            </StandardInvestment>
-          )
-      }
-    })}
+  <div class="flex w-full flex-wrap items-start justify-center p-4">
+    {
+      collection.map(async (pkg) => {
+        let { Content } = await render(pkg);
+        switch (pkgType) {
+          case PackageType.Collections:
+            return (
+              <CollectionsInvestment
+                photoCount={pkg.data.photoCount}
+                title={pkg.data.title}
+                price={pkg.data.price}
+                priceDetails={pkg.data.priceDetails}
+                detailsCollection={pkg.data.detailsCollection}
+              >
+                <Content />
+              </CollectionsInvestment>
+            );
+          default:
+            return (
+              <StandardInvestment
+                title={pkg.data.title}
+                price={pkg.data.price}
+                priceRange={pkg.data.priceRange}
+                details={pkg.data.details}
+              >
+                <Content />
+              </StandardInvestment>
+            );
+        }
+      })
+    }
   </div>
 </Main>

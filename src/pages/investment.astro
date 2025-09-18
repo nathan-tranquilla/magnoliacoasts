@@ -1,20 +1,20 @@
 ---
-import Main from '../layouts/Main.astro';
-import SectionHeader from '../components/SectionHeader.astro';
-import InvestmentCard from '../components/InvestmentCard.astro';
-import { Image } from 'astro:assets';
+import Main from "../layouts/Main.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import InvestmentCard from "../components/InvestmentCard.astro";
+import { Image } from "astro:assets";
 
-import maternityPackages from '../assets/maternityPackages.avif'
-import newbornPackages from '../assets/newbornPackage.avif'
-import milestonePackages from '../assets/milestonePackages.avif'
-import familyPackages from '../assets/familyPackages.avif'
-import headshotPackages from '../assets/headshotPackages.avif'
-import collectionPackages from '../assets/collectionPackages.avif'
-import { BASE_URL } from '../data/links';
+import maternityPackages from "../assets/maternityPackages.avif";
+import newbornPackages from "../assets/newbornPackage.avif";
+import milestonePackages from "../assets/milestonePackages.avif";
+import familyPackages from "../assets/familyPackages.avif";
+import headshotPackages from "../assets/headshotPackages.avif";
+import collectionPackages from "../assets/collectionPackages.avif";
+import { BASE_URL } from "../data/links";
 
-
-const mobileGrid = "grid gap-2 grid-cols-2 grid-rows-auto"
-const desktopGrid = "md:mx-4 md:grid-cols-3 lg:gap-6 md:gap-4 md:pl-0  md:grid-rows-auto"
+const mobileGrid = "grid gap-2 grid-cols-2 grid-rows-auto";
+const desktopGrid =
+  "md:mx-4 md:grid-cols-3 lg:gap-6 md:gap-4 md:pl-0  md:grid-rows-auto";
 
 const investmentCards = [
   {
@@ -22,54 +22,66 @@ const investmentCards = [
     text: "Maternity Packages",
     classes: "col-start-1 col-span-1 row-start-2",
     img: maternityPackages,
-    alt: "Pregnant Woman"
+    alt: "Pregnant Woman",
   },
   {
     href: `${BASE_URL}/investment/newborn`,
     text: "Newborn Packages",
     classes: "col-start-2 col-span-1 row-start-2",
     img: newbornPackages,
-    alt: "Newborn baby"
+    alt: "Newborn baby",
   },
   {
     href: `${BASE_URL}/investment/milestone`,
     text: "Milestone Packages",
     classes: "col-start-1 col-span-1 row-start-3 md:col-start-3 md:row-start-2",
     img: milestonePackages,
-    alt: "Baby milestone"
+    alt: "Baby milestone",
   },
   {
     href: `${BASE_URL}/investment/family`,
     text: "Family Packages",
     classes: "col-start-2 col-span-1 row-start-3 md:col-start-1 md:row-start-3",
     img: familyPackages,
-    alt: "Family portrait"
+    alt: "Family portrait",
   },
   {
     href: `${BASE_URL}/investment/headshot`,
     text: "Headshot Packages",
     classes: "col-start-1 col-span-1 row-start-4 md:col-start-2 md:row-start-3",
     img: headshotPackages,
-    alt: "Professional headshot"
+    alt: "Professional headshot",
   },
   {
     href: `${BASE_URL}/investment/collections`,
     text: "Collection Packages",
     classes: "col-start-2 col-span-1 row-start-4 md:col-start-3 md:row-start-3",
     img: collectionPackages,
-    alt: "Photo collection"
+    alt: "Photo collection",
   },
 ];
 ---
+
 <Main title="Magnolia Coasts Photgraphy | Investment">
-  <div class={`w-full pb-4 box-border w-screen font-cormorant-garamond bg-[var(--section-bg-color)] flex justify-center items-center`}>
+  <div
+    class={`w-full pb-4 box-border w-screen font-cormorant-garamond bg-[var(--section-bg-color)] flex justify-center items-center`}
+  >
     <div class={`m-2 ${mobileGrid} ${desktopGrid} max-w-[1200px]`}>
-      <SectionHeader title="Investment" classes="col-start-1 col-span-2 md:col-span-3 row-span-1 w-full"/>
-      {investmentCards.map(card => (
-        <InvestmentCard href={card.href} text={card.text} classes={card.classes}>
-          <Image src={card.img} alt={card.alt} widths={[163, 213, 452]} />
-        </InvestmentCard>
-      ))}
+      <SectionHeader
+        title="Investment"
+        classes="col-start-1 col-span-2 md:col-span-3 row-span-1 w-full"
+      />
+      {
+        investmentCards.map((card) => (
+          <InvestmentCard
+            href={card.href}
+            text={card.text}
+            classes={card.classes}
+          >
+            <Image src={card.img} alt={card.alt} widths={[163, 213, 452]} />
+          </InvestmentCard>
+        ))
+      }
     </div>
   </div>
 </Main>

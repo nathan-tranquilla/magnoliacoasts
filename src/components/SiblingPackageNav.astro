@@ -1,26 +1,42 @@
 ---
-import FAButton from './FAButton.astro';
+import FAButton from "./FAButton.astro";
 export enum NavDir {
   Left = "left",
-  Right = "right"
+  Right = "right",
 }
 export interface Props {
-  direction: NavDir,
-  text: string,
-  href: string
+  direction: NavDir;
+  text: string;
+  href: string;
 }
 const { direction, text, href } = Astro.props;
-const arrowClass = "flex items-center text-2xl font-extralight -translate-y-0.5"
-const desktopDisplay = "hidden md:flex justify-center items-center" 
-const mobileDisplay = `md:hidden flex ${direction == NavDir.Left ? "justify-start" : "justify-end"} items-center`
-const overflowDisplay = "h-fit whitespace-nowrap overflow-hidden text-ellipsis font-cormorant-garamond"
-const textDisplay = "block vertical-middle text-center"
+const arrowClass =
+  "flex items-center text-2xl font-extralight -translate-y-0.5";
+const desktopDisplay = "hidden md:flex justify-center items-center";
+const mobileDisplay = `md:hidden flex ${direction == NavDir.Left ? "justify-start" : "justify-end"} items-center`;
+const overflowDisplay =
+  "h-fit whitespace-nowrap overflow-hidden text-ellipsis font-cormorant-garamond";
+const textDisplay = "block vertical-middle text-center";
 ---
-<a id={direction == NavDir.Left ? "prev" : "next"} href={href} class={`w-[20vw] px-4 ${desktopDisplay}`}>
-  { direction == NavDir.Left && (<span class={arrowClass}>{"<"}</span>) }
-  <span class={`${overflowDisplay} ${textDisplay} mx-2 text-base md:text-xl font-semibold`}>{text}</span>
-  { direction == NavDir.Right && (<span class={arrowClass}>{">"}</span>) }
+
+<a
+  id={direction == NavDir.Left ? "prev" : "next"}
+  href={href}
+  class={`w-[20vw] px-4 ${desktopDisplay}`}
+>
+  {direction == NavDir.Left && <span class={arrowClass}>{"<"}</span>}
+  <span
+    class={`${overflowDisplay} ${textDisplay} mx-2 text-base md:text-xl font-semibold`}
+    >{text}</span
+  >
+  {direction == NavDir.Right && <span class={arrowClass}>{">"}</span>}
 </a>
-<a id={direction == NavDir.Left ? "prev" : "next"} href={href} class={`w-[20vw] ${mobileDisplay} `}>
-  <FAButton title={direction == NavDir.Left ? "Previous Page" : "Next Page"} >{direction == NavDir.Left ? "<" : ">"}</FAButton>
+<a
+  id={direction == NavDir.Left ? "prev" : "next"}
+  href={href}
+  class={`w-[20vw] ${mobileDisplay} `}
+>
+  <FAButton title={direction == NavDir.Left ? "Previous Page" : "Next Page"}
+    >{direction == NavDir.Left ? "<" : ">"}</FAButton
+  >
 </a>

@@ -1,40 +1,67 @@
 ---
-import { Image } from 'astro:assets';
-import Button from '../components/Button.astro';
+import { Image } from "astro:assets";
+import Button from "../components/Button.astro";
 import stephaniePortrait from "../assets/StephaniePortrait.png";
-import { BASE_URL } from '../data/links';
-import Card from './Card.astro';
-import SplotchyBackground from './SplotchyBackground.astro';
+import { BASE_URL } from "../data/links";
+import Card from "./Card.astro";
+import SplotchyBackground from "./SplotchyBackground.astro";
 ---
+
 <style>
   img {
     object-fit: cover;
     height: 100%;
     width: 100%;
   }
-  
 </style>
 <SplotchyBackground>
-  <div class="m-0 md:m-4 md:bg-[#D7D7D7]/75 bg-unset rounded-md md:max-h-[611px]">
-    <Card classes="my-[1.5rem] mx-[1rem] grid grid-cols-5 grid-rows-6 gap-3 sm:max-w-[274px] sm:max-w-[750px]">
-      <div class="rounded-sm overflow-hidden col-start-1 col-span-2 row-start-1 row-span-5 sm:row-span-6">
+  <div
+    class="bg-unset m-0 rounded-md md:m-4 md:max-h-[611px] md:bg-[#D7D7D7]/75"
+  >
+    <Card
+      classes="my-[1.5rem] mx-[1rem] grid grid-cols-5 grid-rows-6 gap-3 sm:max-w-[274px] sm:max-w-[750px]"
+    >
+      <div
+        class="col-span-2 col-start-1 row-span-5 row-start-1 overflow-hidden rounded-sm sm:row-span-6"
+      >
         <Image
           src={stephaniePortrait}
           alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
           widths={[152, 300]}
         />
       </div>
-      
-      <Button color="Mint" classes="col-start-1 col-span-2 row-start-6 row-span-1 flex font-cormorant-garamond sm:hidden">
-        <a href={`${BASE_URL}/about`} class="w-full h-full flex justify-center items-center">About Me</a>
+
+      <Button
+        color="Mint"
+        classes="col-start-1 col-span-2 row-start-6 row-span-1 flex font-cormorant-garamond sm:hidden"
+      >
+        <a
+          href={`${BASE_URL}/about`}
+          class="flex h-full w-full items-center justify-center">About Me</a
+        >
       </Button>
-      
-      <div class="col-start-3 col-span-3 row-start-1 row-span-6 font-cormorant-garamond md:text-lg sm:text-base text-sm flex flex-col align-start sm:justify-around justify-start">
+
+      <div
+        class="font-cormorant-garamond align-start col-span-3 col-start-3 row-span-6 row-start-1 flex flex-col justify-start text-sm sm:justify-around sm:text-base md:text-lg"
+      >
         <p class="font-bold">Welcome!</p>
-        <p >I’m Stephanie, the owner and photographer of Magnolia Coasts Photography. I’m the woman behind the camera making magic happen by creating custom sets, wrapping and hushing babies to sleep and making children laugh with all those animal noises and silly antics.  I have 10 years experience photographing children and families and cannot wait to work with you!</p>
-        
-        <Button color="Mint" classes="font-cormorant-garamond hidden sm:flex self-center">
-          <a href={`${BASE_URL}/about`} class="w-full h-full flex justify-center items-center">About Me</a>
+        <p>
+          I’m Stephanie, the owner and photographer of Magnolia Coasts
+          Photography. I’m the woman behind the camera making magic happen by
+          creating custom sets, wrapping and hushing babies to sleep and making
+          children laugh with all those animal noises and silly antics. I have
+          10 years experience photographing children and families and cannot
+          wait to work with you!
+        </p>
+
+        <Button
+          color="Mint"
+          classes="font-cormorant-garamond hidden sm:flex self-center"
+        >
+          <a
+            href={`${BASE_URL}/about`}
+            class="flex h-full w-full items-center justify-center">About Me</a
+          >
         </Button>
       </div>
     </Card>

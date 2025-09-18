@@ -1,8 +1,13 @@
 ---
-import WelcomeBackground from '../assets/WelcomeBackground.png'
+import WelcomeBackground from "../assets/WelcomeBackground.png";
 export interface Props {
-  classes?: string
+  classes?: string;
 }
-const { classes } = Astro.props
+const { classes } = Astro.props;
 ---
-<div class={`bg-[url(../assets/WelcomeBackground.png)] bg-center bg-repeat card-bg flex justify-center ${classes || ''}`}><slot/></div>
+
+<div
+  class={`bg-[url(../assets/WelcomeBackground.png)] bg-center bg-repeat card-bg flex justify-center ${classes || ""}`}
+>
+  <slot />
+</div>

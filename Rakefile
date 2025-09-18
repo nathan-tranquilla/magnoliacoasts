@@ -85,17 +85,15 @@ task :build => ['node_modules', :res_build, :dl_galleries] do
   sh "npx astro build"
 end
 
-task :build_prod => [:node_modules_clean, :ci_install, :res_build, :dl_galleries] do
-  base_url = "/magnoliacoasts"
-  ENV["BASE_URL"] = base_url
-  sh "npx astro build --base #{base_url}"
+task :build_prod => [:node_modules_clean, :ci_install, :res_build] do
+  sh "npx astro build"
 end
 
 task :preview => [:build_prod] do
   sh "npx wrangler pages dev ./docs"
 end
 
-task :deploy => [] do 
+task :deploy => [:build_prod] do 
   sh "npx wrangler pages deploy ./docs"
 end 
 

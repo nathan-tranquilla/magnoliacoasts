@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 export interface Props {
   src: ImageMetadata;
   alt: string;
@@ -7,17 +7,15 @@ export interface Props {
   link: string;
 }
 const { src, alt, buttonText, link } = Astro.props;
-import Button from './Button.astro'
-import Card from './Card.astro';
+import Button from "./Button.astro";
+import Card from "./Card.astro";
 ---
+
 <Card classes="max-h-[440px] max-w-[240px] grid grid-cols-1 gap-4">
-  <Image 
-    layout="constrained" 
-    src={src} 
-    alt={alt} 
-    widths={[180, 280]}
-  />
+  <Image layout="constrained" src={src} alt={alt} widths={[180, 280]} />
   <Button color="Pink" classes="mx-auto mt-auto">
-    <a href={link} class="w-full h-full flex justify-center items-center">{buttonText}</a>
+    <a href={link} class="flex h-full w-full items-center justify-center"
+      >{buttonText}</a
+    >
   </Button>
 </Card>

@@ -1,76 +1,85 @@
 @import "tailwindcss";
 /* Self-hosted Cormorant Garamond font faces */
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.ttf') format('truetype');
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.ttf")
+    format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-LightItalic.ttf') format('truetype');
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-LightItalic.ttf")
+    format("truetype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf') format('truetype');
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Italic.ttf') format('truetype');
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Italic.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Medium.ttf') format('truetype');
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Medium.ttf")
+    format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-MediumItalic.ttf') format('truetype');
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-MediumItalic.ttf")
+    format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBold.ttf') format('truetype');
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBold.ttf")
+    format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBoldItalic.ttf') format('truetype');
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBoldItalic.ttf")
+    format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Bold.ttf') format('truetype');
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Bold.ttf")
+    format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-BoldItalic.ttf') format('truetype');
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-BoldItalic.ttf")
+    format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
-
 
 :root {
   --mobile-nav-height: 66px;
@@ -81,20 +90,20 @@
 
   --functional-max-width: 1440px;
   --color-app-active-grey: #939393;
-  --section-bg-color: rgb(243,234,233);
+  --section-bg-color: rgb(243, 234, 233);
 }
 
 @theme {
   --breakpoint-xs: 24rem;
-  --color-default: #FFFBFA;
-  --color-pink: #F9CFCD;
+  --color-default: #fffbfa;
+  --color-pink: #f9cfcd;
   --color-light-pink: #f1e2e1;
-  --color-pink-active: #FCC6C3;
-  --color-mint: #B2DAD7;
-  --color-mint-active: #94CCC9;
-  --color-app-grey: #DDDDDD;
+  --color-pink-active: #fcc6c3;
+  --color-mint: #b2dad7;
+  --color-mint-active: #94ccc9;
+  --color-app-grey: #dddddd;
   --color-app-active-grey: #939393;
-  --color-pastel-green: #6D8381;
+  --color-pastel-green: #6d8381;
   --color-dark-green: #3f6965;
 
   --font-cormorant-garamond: "Cormorant Garamond";

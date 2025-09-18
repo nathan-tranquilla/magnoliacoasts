@@ -3,7 +3,7 @@ title: Luxury Collection (6 Sessions)
 sortOrder: 5
 photoCount: 3
 price: 2450
-priceDetails: 
+priceDetails:
   - ($2750 Value)
   - $600 deposit
 detailsCollection:
@@ -13,10 +13,10 @@ detailsCollection:
     details:
       - 1.5-2 hour session
       - online proofing gallery
-      - 20 edited images 
+      - 20 edited images
       - option to purchase more
       - includes family members
-      - outfits, crowns, accessories etc. included 
+      - outfits, crowns, accessories etc. included
       - indoors or outdoors available
   Full Newborn:
     metadata:
@@ -25,7 +25,7 @@ detailsCollection:
     details:
       - 4 hours session
       - online proofing gallery
-      - 25 edited images 
+      - 25 edited images
       - option to purchase more
       - outfits, props & sets included
       - includes family members
@@ -36,7 +36,7 @@ detailsCollection:
     details:
       - 60 min session
       - online proofing gallery
-      - 15 edited images 
+      - 15 edited images
       - option to purchase more
       - includes family members
       - outfits, props & sets included
@@ -47,7 +47,7 @@ detailsCollection:
     details:
       - 60 min session
       - online proofing gallery
-      - 15 edited images 
+      - 15 edited images
       - option to purchase more
       - outfits, props & sets included
       - in studio or park
@@ -57,7 +57,7 @@ detailsCollection:
     details:
       - 60 min session
       - online proofing gallery
-      - 15 edited images 
+      - 15 edited images
       - option to purchase more
       - outfits, props & sets included
       - in studio or park
@@ -67,12 +67,13 @@ detailsCollection:
     details:
       - 2 hour session
       - online proofing gallery
-      - 20 edited images 
+      - 20 edited images
       - option to purchase more
       - includes family members
       - cake & decor included
       - in studio or park
 ---
+
 ![Pregnant woman in blue dress](../../assets/blueDressPrego.jpg)
 ![Baby In Sling](../../assets/BabyInSling.png)
 ![Baby in white dress and cake](../../assets/whiteDressBabyCake.jpg)

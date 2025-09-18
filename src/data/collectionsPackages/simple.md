@@ -3,7 +3,7 @@ title: Simple Collection (2 Sessions)
 sortOrder: 1
 photoCount: 1
 price: 1050
-priceDetails: 
+priceDetails:
   - ($1150 Value)
   - $200 deposit
 detailsCollection:
@@ -24,9 +24,10 @@ detailsCollection:
     details:
       - 2 hour session
       - online proofing gallery
-      - 20 edited images 
+      - 20 edited images
       - includes family members
       - cake & decor included
       - in studio or park
 ---
+
 ![Baby In Crib](../../assets/babyInCrib.jpg)

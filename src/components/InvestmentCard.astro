@@ -1,17 +1,23 @@
 ---
-import Card from './Card.astro'
+import Card from "./Card.astro";
 
 export interface Props {
-  href: string,
-  text: string,
-  classes?: string
+  href: string;
+  text: string;
+  classes?: string;
 }
-const { href, text, classes } = Astro.props 
+const { href, text, classes } = Astro.props;
 ---
+
 <Card>
-  <a href={href} class={`flex flex-col justify-start items-center ${classes || ''}`}>
+  <a
+    href={href}
+    class={`flex flex-col justify-start items-center ${classes || ""}`}
+  >
     <slot />
-    <div class="font-cormorant-garamond flex justify-center items-end h-[3rem] lg:h-[4rem] lg:text-2xl md:text-lg">
+    <div
+      class="font-cormorant-garamond flex h-[3rem] items-end justify-center md:text-lg lg:h-[4rem] lg:text-2xl"
+    >
       {text}
     </div>
   </a>

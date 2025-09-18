@@ -1,48 +1,79 @@
 ---
-
-import logo from '../assets/Logo.svg'
-import { Image } from 'astro:assets';
-import { BASE_URL } from '../data/links';
+import logo from "../assets/Logo.svg";
+import { Image } from "astro:assets";
+import { BASE_URL } from "../data/links";
 
 const leftLinks = [
-  { href: BASE_URL + '/', text: 'Home' },
-  { href: BASE_URL + '/about', text: 'About Photographer' },
+  { href: BASE_URL + "/", text: "Home" },
+  { href: BASE_URL + "/about", text: "About Photographer" },
 ];
 const rightLinks = [
-  { href: BASE_URL + '/gallery', text: 'Galleries' },
-  { href: BASE_URL + '/investment', text: 'Investment' }
+  { href: BASE_URL + "/gallery", text: "Galleries" },
+  { href: BASE_URL + "/investment", text: "Investment" },
 ];
-const links = [
-  ...leftLinks,
-  ...rightLinks
-];
+const links = [...leftLinks, ...rightLinks];
 ---
-<header class="md:text-xl flex justify-center z-10 shadow-md bg-white sticky top-0 w-screen h-[var(--mobile-nav-height)] md:h-[var(--tablet-nav-height)] lg:h-[var(--desktop-nav-height)]">
-  <nav class="static w-full h-full flex justify-center items-center md:hidden">
+
+<header
+  class="sticky top-0 z-10 flex h-[var(--mobile-nav-height)] w-screen justify-center bg-white shadow-md md:h-[var(--tablet-nav-height)] md:text-xl lg:h-[var(--desktop-nav-height)]"
+>
+  <nav class="static flex h-full w-full items-center justify-center md:hidden">
     <Image src={logo} width={162} height={51} alt="Magnolia Coasts Logo." />
-    <input type="checkbox" id="menu-toggle" class="hidden peer" />
-    <label for="menu-toggle" class="cursor-pointer absolute top-0 right-0 w-[24px] h-[13.5px] flex flex-col justify-between translate-y-[200%] -translate-x-[100%]">
-      {Array(3).fill(null).map(() => (
-        <span class="block bg-[#5A5A5A] w-full h-[2px] rounded-xs"></span>
-      ))}
+    <input type="checkbox" id="menu-toggle" class="peer hidden" />
+    <label
+      for="menu-toggle"
+      class="absolute top-0 right-0 flex h-[13.5px] w-[24px] -translate-x-[100%] translate-y-[200%] cursor-pointer flex-col justify-between"
+    >
+      {
+        Array(3)
+          .fill(null)
+          .map(() => (
+            <span class="block h-[2px] w-full rounded-xs bg-[#5A5A5A]" />
+          ))
+      }
     </label>
-    <div class="menu-links pb-4 shadow-md bg-white z-10 absolute top-[calc(var(--mobile-nav-height)-1px)] right-0 flex flex-col justify-center items-center w-full hidden peer-checked:flex">
-      {links.map(link => (
-        <a class="font-cormorant-garamond cursor-pointer p-2" href={link.href}>{link.text}</a>
-      ))}
+    <div
+      class="menu-links absolute top-[calc(var(--mobile-nav-height)-1px)] right-0 z-10 flex hidden w-full flex-col items-center justify-center bg-white pb-4 shadow-md peer-checked:flex"
+    >
+      {
+        links.map((link) => (
+          <a
+            class="font-cormorant-garamond cursor-pointer p-2"
+            href={link.href}
+          >
+            {link.text}
+          </a>
+        ))
+      }
     </div>
   </nav>
-  <nav class="justify-self-center static w-full h-full flex justify-around items-center hidden md:flex max-w-[1000px]">
-    <div class="flex justify-around w-full max-w-[275px]">
-      {leftLinks.map(link => (
-        <a class="font-cormorant-garamond cursor-pointer p-2" href={link.href}>{link.text}</a>
-      ))}
+  <nav
+    class="static flex hidden h-full w-full max-w-[1000px] items-center justify-around justify-self-center md:flex"
+  >
+    <div class="flex w-full max-w-[275px] justify-around">
+      {
+        leftLinks.map((link) => (
+          <a
+            class="font-cormorant-garamond cursor-pointer p-2"
+            href={link.href}
+          >
+            {link.text}
+          </a>
+        ))
+      }
     </div>
     <Image src={logo} width={162} height={51} alt="Magnolia Coasts Logo." />
-    <div class="flex justify-around w-full max-w-[275px]">
-      {rightLinks.map(link => (
-        <a class="font-cormorant-garamond cursor-pointer p-2" href={link.href}>{link.text}</a>
-      ))}
+    <div class="flex w-full max-w-[275px] justify-around">
+      {
+        rightLinks.map((link) => (
+          <a
+            class="font-cormorant-garamond cursor-pointer p-2"
+            href={link.href}
+          >
+            {link.text}
+          </a>
+        ))
+      }
     </div>
   </nav>
 </header>

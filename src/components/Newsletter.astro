@@ -1,14 +1,16 @@
 ---
-import { Image } from 'astro:assets';
-import Button from '../components/Button.astro';
+import { Image } from "astro:assets";
+import Button from "../components/Button.astro";
 import newsletter from "../assets/Newsletter.png";
-import SectionTitle from './SectionTitle.astro';
-import Card from './Card.astro';
-let subscribeLink = "https://magnoliacoastsphotography.us14.list-manage.com/subscribe?u=4ebfced223d835c48a891029f&id=92c1de656f"
-let mobileDisplay = "flex justify-center items-center"
-let desktopDisplay = "md:grid grid-cols-5 grid-rows-6 gap-4"
-let dimensions = "p-3 md:max-w-[750px] w-full mx-4"
+import SectionTitle from "./SectionTitle.astro";
+import Card from "./Card.astro";
+let subscribeLink =
+  "https://magnoliacoastsphotography.us14.list-manage.com/subscribe?u=4ebfced223d835c48a891029f&id=92c1de656f";
+let mobileDisplay = "flex justify-center items-center";
+let desktopDisplay = "md:grid grid-cols-5 grid-rows-6 gap-4";
+let dimensions = "p-3 md:max-w-[750px] w-full mx-4";
 ---
+
 <style>
   img {
     object-fit: cover;
@@ -18,23 +20,30 @@ let dimensions = "p-3 md:max-w-[750px] w-full mx-4"
 </style>
 <div class="flex justify-center py-4">
   <Card classes={`${mobileDisplay} ${desktopDisplay} ${dimensions}`}>
-    <div class="col-start-1 col-span-2 row-start-1 row-span-6 sm:row-span-6 hidden md:block">
-      <Image 
-        layout="constrained" 
-        src={newsletter} 
-        alt="Photo of woman on a laptop." 
+    <div
+      class="col-span-2 col-start-1 row-span-6 row-start-1 hidden sm:row-span-6 md:block"
+    >
+      <Image
+        layout="constrained"
+        src={newsletter}
+        alt="Photo of woman on a laptop."
         widths={[150, 244, 284, 340]}
         sizes="(max-width: 464px) 100vw, 284px"
       />
     </div>
-    
-    <div class="col-start-3 col-span-3 row-start-3 row-span-2 font-cormorant-garamond md:text-lg sm:text-base text-sm flex flex-col align-start sm:justify-around justify-start">
-      <SectionTitle title="Subscribe and get our latest promotions and news!"/>
-      <Button color="Mint" classes="self-center" >
-        <a href={subscribeLink} target="_blank" class="w-full h-full flex justify-center items-center font-cormorant-garamond">Subscribe</a>
+
+    <div
+      class="font-cormorant-garamond align-start col-span-3 col-start-3 row-span-2 row-start-3 flex flex-col justify-start text-sm sm:justify-around sm:text-base md:text-lg"
+    >
+      <SectionTitle title="Subscribe and get our latest promotions and news!" />
+      <Button color="Mint" classes="self-center">
+        <a
+          href={subscribeLink}
+          target="_blank"
+          class="font-cormorant-garamond flex h-full w-full items-center justify-center"
+          >Subscribe</a
+        >
       </Button>
-      </a>
     </div>
   </Card>
-  
 </div>

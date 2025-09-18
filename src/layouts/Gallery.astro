@@ -1,11 +1,13 @@
 ---
-import { Image } from 'astro:assets';
-import Main from './Main.astro';
-import type { ImageMetadata } from 'astro';
-import { BASE_URL } from '../data/links';
-import { get_surrounding_pkgs } from './InvestmentPackage.res.mjs';
-import SiblingPackageNav, { NavDir } from '../components/SiblingPackageNav.astro';
-import SectionHeader from '../components/SectionHeader.astro';
+import { Image } from "astro:assets";
+import Main from "./Main.astro";
+import type { ImageMetadata } from "astro";
+import { BASE_URL } from "../data/links";
+import { get_surrounding_pkgs } from "./InvestmentPackage.res.mjs";
+import SiblingPackageNav, {
+  NavDir,
+} from "../components/SiblingPackageNav.astro";
+import SectionHeader from "../components/SectionHeader.astro";
 
 export enum GalleryType {
   Maternity = "maternity",
@@ -22,60 +24,77 @@ const galleryTypeToTuple: Record<GalleryType, [string, string]> = {
   [GalleryType.Maternity]: ["Maternity", `${BASE_URL}/gallery/maternity`],
   [GalleryType.Newborn]: ["Newborn", `${BASE_URL}/gallery/newborn`],
   [GalleryType.Milestone]: ["Milestone", `${BASE_URL}/gallery/milestone`],
-  [GalleryType.CakeSmash]: ["Cake Smash & Birthday", `${BASE_URL}/gallery/cakesmash`],
+  [GalleryType.CakeSmash]: [
+    "Cake Smash & Birthday",
+    `${BASE_URL}/gallery/cakesmash`,
+  ],
   [GalleryType.Family]: ["Family", `${BASE_URL}/gallery/family`],
   [GalleryType.Children]: ["Children", `${BASE_URL}/gallery/children`],
   [GalleryType.Branding]: ["Branding", `${BASE_URL}/gallery/branding`],
   [GalleryType.Headshots]: ["Headshots", `${BASE_URL}/gallery/headshots`],
 };
 
-const desktopDisplay = "md:grid grid-cols-[20vw_50vw_20vw] gap-2" 
-const mobileDisplay = "flex justify-around items-center"
+const desktopDisplay = "md:grid grid-cols-[20vw_50vw_20vw] gap-2";
+const mobileDisplay = "flex justify-around items-center";
 
 export interface Props {
-  title: string,
-  images: ImageMetadata[],
-  galleryType: GalleryType
+  title: string;
+  images: ImageMetadata[];
+  galleryType: GalleryType;
 }
-const { title, galleryType, images } = Astro.props
+const { title, galleryType, images } = Astro.props;
 
-
-let galleries = Object.values(galleryTypeToTuple)
+let galleries = Object.values(galleryTypeToTuple);
 const pkg = galleryTypeToTuple[galleryType];
-let pkgs = get_surrounding_pkgs(pkg, galleries)
+let pkgs = get_surrounding_pkgs(pkg, galleries);
 
 const sortByFilename = (a: ImageMetadata, b: ImageMetadata) => {
   // Extract the numeric part from the filename (e.g., '01' from '01.jpg')
-  const numA = parseInt(a.src.match(/(\d+)/)?.[0] || '0', 10);
-  const numB = parseInt(b.src.match(/(\d+)/)?.[0] || '0', 10);
+  const numA = parseInt(a.src.match(/(\d+)/)?.[0] || "0", 10);
+  const numB = parseInt(b.src.match(/(\d+)/)?.[0] || "0", 10);
   return numA - numB;
-}
+};
 const sortedImages = images.sort(sortByFilename);
-
 ---
+
 <Main title={`Magnolia Coasts Photography | ${title}`}>
   <div class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
-    <SiblingPackageNav text={pkgs[0][0]} href={pkgs[0][1]} direction={NavDir.Left} />
+    <SiblingPackageNav
+      text={pkgs[0][0]}
+      href={pkgs[0][1]}
+      direction={NavDir.Left}
+    />
     <SectionHeader title={title} />
-    <SiblingPackageNav text={pkgs[1][0]} href={pkgs[1][1]} direction={NavDir.Right} />
+    <SiblingPackageNav
+      text={pkgs[1][0]}
+      href={pkgs[1][1]}
+      direction={NavDir.Right}
+    />
   </div>
-  <div class="self-center lg:max-w-[1200px] grid xs:grid-cols-3 grid-cols-1 gap-4 p-4">
-    {sortedImages.map((image: ImageMetadata, i) => {
-      const mod = i % 4
-      const isLandscape = mod == 0 || mod == 3
-      return (
-        <div id={`id-${i}-mod-${mod}`} class={`${isLandscape ? "xs:col-span-2" : "xs:col-span-1"} col-span-1`}>
-          <Image
-            src={image}
-            width={isLandscape ? 730 : 357}
-            height={500}
-            alt={`Gallery image for ${title}`}
-            layout="full-width"
-            decoding="async"
-            loading="lazy"
-          />
-        </div>
-      )
-    })}
+  <div
+    class="xs:grid-cols-3 grid grid-cols-1 gap-4 self-center p-4 lg:max-w-[1200px]"
+  >
+    {
+      sortedImages.map((image: ImageMetadata, i) => {
+        const mod = i % 4;
+        const isLandscape = mod == 0 || mod == 3;
+        return (
+          <div
+            id={`id-${i}-mod-${mod}`}
+            class={`${isLandscape ? "xs:col-span-2" : "xs:col-span-1"} col-span-1`}
+          >
+            <Image
+              src={image}
+              width={isLandscape ? 730 : 357}
+              height={500}
+              alt={`Gallery image for ${title}`}
+              layout="full-width"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+        );
+      })
+    }
   </div>
 </Main>

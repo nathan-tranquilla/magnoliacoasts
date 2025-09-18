@@ -1,30 +1,31 @@
 ---
-import { INQUIRE_LINK } from "../data/links"
-import Card from "./Card.astro"
+import { INQUIRE_LINK } from "../data/links";
+import Card from "./Card.astro";
 import Button from "./Button.astro";
 
 export interface Props {
-  title: string,
-  detailsCollection: Record<string, Record<string,Array<string>>>,
-  price: number,
-  priceDetails: string[],
-  photoCount: number
+  title: string;
+  detailsCollection: Record<string, Record<string, Array<string>>>;
+  price: number;
+  priceDetails: string[];
+  photoCount: number;
 }
 let { title, detailsCollection, price, priceDetails, photoCount } = Astro.props;
 
 let desktopColumns = photoCount;
 let tabletColumns = photoCount;
 if (photoCount == 1) {
-    desktopColumns = 3;
-    tabletColumns = 3;
+  desktopColumns = 3;
+  tabletColumns = 3;
 }
-let mobileDisplay = "grid grid-cols-1 gap-4"
-let tabletDisplay = `md:max-w-[750px] md:grid-cols-${tabletColumns}`
-let desktopDisplay = `lg:max-w-[1300px] lg:grid-cols-${desktopColumns}`
-let spanAllCols = `md:col-span-${tabletColumns} lg:col-span-${desktopColumns}`
-let _load = "lg:col-span-2 lg:col-span-3 lg:col-span-4 md:col-span-2 md:col-span-3 md:col-span-4 md:grid-cols-2 md:grid-cols-3 md:grid-cols-4 md:col-span-4 lg:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4"
-
+let mobileDisplay = "grid grid-cols-1 gap-4";
+let tabletDisplay = `md:max-w-[750px] md:grid-cols-${tabletColumns}`;
+let desktopDisplay = `lg:max-w-[1300px] lg:grid-cols-${desktopColumns}`;
+let spanAllCols = `md:col-span-${tabletColumns} lg:col-span-${desktopColumns}`;
+let _load =
+  "lg:col-span-2 lg:col-span-3 lg:col-span-4 md:col-span-2 md:col-span-3 md:col-span-4 md:grid-cols-2 md:grid-cols-3 md:grid-cols-4 md:col-span-4 lg:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4";
 ---
+
 <style>
   li::marker {
     color: var(--color-pink);
@@ -34,29 +35,50 @@ let _load = "lg:col-span-2 lg:col-span-3 lg:col-span-4 md:col-span-2 md:col-span
     max-height: 420px;
   }
 </style>
-<Card test_id={title} classes={`card w-full max-w-[1300px] m-2 ${mobileDisplay} ${tabletDisplay} ${desktopDisplay}`}>
-  <h2 class={`md:text-lg lg:text-2xl flex justify-center items-center mb-4 font-cormorant-garamond ${spanAllCols}`}>{title}</h2>
+<Card
+  test_id={title}
+  classes={`card w-full max-w-[1300px] m-2 ${mobileDisplay} ${tabletDisplay} ${desktopDisplay}`}
+>
+  <h2
+    class={`md:text-lg lg:text-2xl flex justify-center items-center mb-4 font-cormorant-garamond ${spanAllCols}`}
+  >
+    {title}
+  </h2>
   <slot />
-  {Object.entries(detailsCollection).map(([key, section]) => (
-    <div class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
-      <div>{key} <span class="pl-2 font-light text-sm">{section.metadata[0]}</span></div>
-      <ul class="flex flex-col justify-start items-start list-disc list-inside my-2 font-inter">
-        {section.details.map((detail: string) => (
-          <li class="text-sm my-[0.25rem] align-middle">{detail}</li>
-        ))}
-        <li class="text-sm my-[0.25rem] align-middle font-light text-xs">{section.metadata[1]}</li>
-      </ul>
-    </div>
-  ))}
+  {
+    Object.entries(detailsCollection).map(([key, section]) => (
+      <div class="font-inter my-2 flex list-inside list-disc flex-col items-start justify-start">
+        <div>
+          {key}{" "}
+          <span class="pl-2 text-sm font-light">{section.metadata[0]}</span>
+        </div>
+        <ul class="font-inter my-2 flex list-inside list-disc flex-col items-start justify-start">
+          {section.details.map((detail: string) => (
+            <li class="my-[0.25rem] align-middle text-sm">{detail}</li>
+          ))}
+          <li class="my-[0.25rem] align-middle text-sm text-xs font-light">
+            {section.metadata[1]}
+          </li>
+        </ul>
+      </div>
+    ))
+  }
   <div class={`flex justify-between items-center h-[62px] ${spanAllCols}`}>
-    <div class="class text-lg font-bold flex flex-col items-start">
+    <div class="class flex flex-col items-start text-lg font-bold">
       ${price} + Tax
-      {priceDetails.map(detail => (
-        <span class="pl-2 font-light text-sm">{detail}</span>
-      ))}
+      {
+        priceDetails.map((detail) => (
+          <span class="pl-2 text-sm font-light">{detail}</span>
+        ))
+      }
     </div>
     <Button color="Pink" classes="max-w-[150px] w-4/10 h-3/4 ">
-      <a href={INQUIRE_LINK} target="_blank" class="w-full flex justify-center items-center font-cormorant-garamond">Inquire</a>
+      <a
+        href={INQUIRE_LINK}
+        target="_blank"
+        class="font-cormorant-garamond flex w-full items-center justify-center"
+        >Inquire</a
+      >
     </Button>
   </div>
 </Card>

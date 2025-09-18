@@ -1,12 +1,14 @@
 ---
 export interface Props {
-  id?: string,
-  classes?: string,
-  title: string 
+  id?: string;
+  classes?: string;
+  title: string;
 }
-let buttonClass = "bg-white h-[3rem] w-[3rem] border border-[#C5C5C5] border-2 rounded-full flex justify-center items-center text-[#C5C5C5] cursor-pointer hover:scale-110 hover:shadow-lg hover:text-app-active-grey hover:border-app-active-grey focus:shadow-lg focus:text-app-active-grey focus:border-app-active-grey cursor-pointer transition-all "
-const { id, classes, title } = Astro.props
+let buttonClass =
+  "bg-white h-[3rem] w-[3rem] border border-[#C5C5C5] border-2 rounded-full flex justify-center items-center text-[#C5C5C5] cursor-pointer hover:scale-110 hover:shadow-lg hover:text-app-active-grey hover:border-app-active-grey focus:shadow-lg focus:text-app-active-grey focus:border-app-active-grey cursor-pointer transition-all ";
+const { id, classes, title } = Astro.props;
 ---
-<button id={id || ''} class={`${buttonClass} ${classes || ''}`} title={title}>
+
+<button id={id || ""} class={`${buttonClass} ${classes || ""}`} title={title}>
   <slot />
 </button>

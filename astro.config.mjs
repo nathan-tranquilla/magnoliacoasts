@@ -1,25 +1,25 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import rehypeUnwrapImages from 'rehype-unwrap-images';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import rehypeUnwrapImages from "rehype-unwrap-images";
+import tailwindcss from "@tailwindcss/vite";
 
-import sitemap from '@astrojs/sitemap';
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site:'https://magnoliacoastsphotography.com',
+  site: "https://magnoliacoastsphotography.com",
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
 
-  outDir: 'docs',
+  outDir: "docs",
 
   markdown: {
     rehypePlugins: [rehypeUnwrapImages],
   },
   build: {
-    inlineStylesheets: 'always'
+    inlineStylesheets: "always",
   },
 
-  integrations: [sitemap()]
+  integrations: [sitemap()],
 });

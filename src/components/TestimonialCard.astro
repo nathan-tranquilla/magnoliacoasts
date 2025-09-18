@@ -1,5 +1,5 @@
 ---
-import Card from './Card.astro';
+import Card from "./Card.astro";
 
 // Props
 export interface Props {
@@ -9,6 +9,7 @@ export interface Props {
 }
 const { title, date, testimony } = Astro.props;
 ---
+
 <style>
   img {
     height: 100%; /* Image takes full height of container */
@@ -17,17 +18,23 @@ const { title, date, testimony } = Astro.props;
     object-position: center; /* Center the image */
   }
 </style>
-<Card classes="md:h-[500px] h-[350px] max-w-[750px] grid grid-cols-10 grid-rows-[1rem_1rem_1rem_1fr] gap-4 font-cormorant-garamond text-sm sm:text-base md:text-lg border border-app-grey">
-  <div class="flex flex-col justify-start items-center col-start-1 col-span-4 row-start-1 row-span-4">
+<Card
+  classes="md:h-[500px] h-[350px] max-w-[750px] grid grid-cols-10 grid-rows-[1rem_1rem_1rem_1fr] gap-4 font-cormorant-garamond text-sm sm:text-base md:text-lg border border-app-grey"
+>
+  <div
+    class="col-span-4 col-start-1 row-span-4 row-start-1 flex flex-col items-center justify-start"
+  >
     <slot name="image" />
   </div>
-  <div class="col-start-5 col-span-6 row-start-1 md:row-start-2 font-semibold">
+  <div class="col-span-6 col-start-5 row-start-1 font-semibold md:row-start-2">
     {title}
   </div>
-  <div class="col-start-5 col-span-6 row-start-2 md:col-start-5 md:row-start-3 font-light">
+  <div
+    class="col-span-6 col-start-5 row-start-2 font-light md:col-start-5 md:row-start-3"
+  >
     {date}
   </div>
-  <div class="col-start-5 col-span-6 row-start-3 md:row-start-4 row-span-all">
+  <div class="row-span-all col-span-6 col-start-5 row-start-3 md:row-start-4">
     {testimony}
   </div>
 </Card>

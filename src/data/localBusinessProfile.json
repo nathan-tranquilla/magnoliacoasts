@@ -13,19 +13,21 @@
     "postalCode": "L4W 2G8",
     "addressCountry": "CA"
   },
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ],
-    "opens": "10:30",
-    "closes": "15:30"
-  }],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "10:30",
+      "closes": "15:30"
+    }
+  ],
   "sameAs": [
     "https://www.instagram.com/magnoliacoastsphotography/",
     "https://www.facebook.com/magnoliacoastsphotography/"

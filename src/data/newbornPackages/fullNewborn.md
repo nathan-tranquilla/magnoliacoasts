@@ -2,15 +2,16 @@
 title: Full Newborn
 sortOrder: 2
 details:
-- 4-11 days old or 30 days
-- 4 hour session
-- online proofing gallery
-- 25 edited images 
-- option to purchase more 
-- outfits, props & sets included
-- includes family
-- in studio only
-- additional travel fee for in-home
+  - 4-11 days old or 30 days
+  - 4 hour session
+  - online proofing gallery
+  - 25 edited images
+  - option to purchase more
+  - outfits, props & sets included
+  - includes family
+  - in studio only
+  - additional travel fee for in-home
 price: 650
 ---
+
 ![Full Newborn.](../../assets/fullNewborn.png)

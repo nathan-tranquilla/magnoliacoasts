@@ -1,14 +1,18 @@
 ---
 export interface Props {
-  title: string
-  classes?: string 
+  title: string;
+  classes?: string;
 }
-const { title, classes } = Astro.props
-const dimensionsMobile = "h-full w-[40vw]"
-const dimensionsDesktop = "md:h-[100px] md:w-full"
-const text = "font-semibold font-cormorant-garamond lg:text-5xl md:text-3xl text-xl text-black text-nowrap"
-const layout = "flex justify-center items-center"
+const { title, classes } = Astro.props;
+const dimensionsMobile = "h-full w-[40vw]";
+const dimensionsDesktop = "md:h-[100px] md:w-full";
+const text =
+  "font-semibold font-cormorant-garamond lg:text-5xl md:text-3xl text-xl text-black text-nowrap";
+const layout = "flex justify-center items-center";
 ---
-<h1 class={`py-4 ${dimensionsMobile} ${dimensionsDesktop} ${text} ${layout} ${classes || ""}`}>
+
+<h1
+  class={`py-4 ${dimensionsMobile} ${dimensionsDesktop} ${text} ${layout} ${classes || ""}`}
+>
   {title}
 </h1>

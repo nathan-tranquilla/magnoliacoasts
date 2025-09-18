@@ -1,14 +1,19 @@
 ---
-
-import { Image } from 'astro:assets';
-import artInYourHome from "../assets/ArtInYourHome.jpg"
+import { Image } from "astro:assets";
+import artInYourHome from "../assets/ArtInYourHome.jpg";
 ---
-<div class="relative flex justify-center bg-gradient-to-r from-[rgb(230,229,236)] to-[rgb(153,148,149)]">
-  <Image 
-    src={artInYourHome} 
-    alt="Art in your home." 
-    widths={[450, 800, 1200, 1800]} />
-  <div class="text-white absolute bottom-0 left-0 right-0 font-cormorant-garamond text-3xl lg:text-5xl flex justify-end items-center py-[1rem] px-[2rem] md:px-[5rem] lg:px-[7rem] bg-pink/50">
+
+<div
+  class="relative flex justify-center bg-gradient-to-r from-[rgb(230,229,236)] to-[rgb(153,148,149)]"
+>
+  <Image
+    src={artInYourHome}
+    alt="Art in your home."
+    widths={[450, 800, 1200, 1800]}
+  />
+  <div
+    class="font-cormorant-garamond bg-pink/50 absolute right-0 bottom-0 left-0 flex items-center justify-end px-[2rem] py-[1rem] text-3xl text-white md:px-[5rem] lg:px-[7rem] lg:text-5xl"
+  >
     Art In Your Home
   </div>
 </div>

@@ -1,36 +1,79 @@
 ---
-import prego from '../assets/PregnantWoman.png'
-import famJam from '../assets/FamilyByRoad.png'
-import babySling from '../assets/babyInSling2.png'
-import cakeSmash from '../assets/BabyBDayCake.png'
-import SpecialMoment from './SpecialMoment.astro'
-import Button from './Button.astro'
-import SectionTitle from './SectionTitle.astro'
-import { BASE_URL } from '../data/links'
+import prego from "../assets/PregnantWoman.png";
+import famJam from "../assets/FamilyByRoad.png";
+import babySling from "../assets/babyInSling2.png";
+import cakeSmash from "../assets/BabyBDayCake.png";
+import SpecialMoment from "./SpecialMoment.astro";
+import Button from "./Button.astro";
+import SectionTitle from "./SectionTitle.astro";
+import { BASE_URL } from "../data/links";
 ---
-<div class="self-center m-4 grid grid-cols-2 md:grid-cols-4 gap-4 font-cormorant-garamond max-w-[1439px]">
-  <SectionTitle title="What special moments would you like to capture?" classStyles="col-span-full" />
-  <SpecialMoment link={`${BASE_URL}/investment/maternity`} src={prego} alt="Pregnant woman." buttonText="Maternity"/>
-  <SpecialMoment link={`${BASE_URL}/investment/newborn`} src={babySling} alt="Baby in a sling." buttonText="Newborn"/>
-  <SpecialMoment link={`${BASE_URL}/investment/family`} src={famJam} alt="Family by the road." buttonText="Family"/>
-  <SpecialMoment link={`${BASE_URL}/investment/newborn`} src={cakeSmash} alt="Baby with a birthday cake." buttonText="Cake Smashes"/>
+
+<div
+  class="font-cormorant-garamond m-4 grid max-w-[1439px] grid-cols-2 gap-4 self-center md:grid-cols-4"
+>
+  <SectionTitle
+    title="What special moments would you like to capture?"
+    classStyles="col-span-full"
+  />
+  <SpecialMoment
+    link={`${BASE_URL}/investment/maternity`}
+    src={prego}
+    alt="Pregnant woman."
+    buttonText="Maternity"
+  />
+  <SpecialMoment
+    link={`${BASE_URL}/investment/newborn`}
+    src={babySling}
+    alt="Baby in a sling."
+    buttonText="Newborn"
+  />
+  <SpecialMoment
+    link={`${BASE_URL}/investment/family`}
+    src={famJam}
+    alt="Family by the road."
+    buttonText="Family"
+  />
+  <SpecialMoment
+    link={`${BASE_URL}/investment/newborn`}
+    src={cakeSmash}
+    alt="Baby with a birthday cake."
+    buttonText="Cake Smashes"
+  />
 </div>
-<div class="self-center m-4 mb-[30px] mt-2 grid grid-cols-2 sm:grid-cols-4 gap-4 font-cormorant-garamond max-w-[880px] w-[90vw]">
-  <SectionTitle title="Other types of photo sessions" classStyles="col-span-full mt-0 mb-0" />
-  
-    <Button data_id="special-moment-milestones" color="Mint" classes="mx-auto">
-      <a class="w-full h-full flex justify-center items-center" href={`${BASE_URL}/investment/milestone`}>Milestones</a>
-    </Button>
-  
-    <Button data_id="special-moment-children" color="Mint" classes="mx-auto">
-      <a class="w-full h-full flex justify-center items-center" href={`${BASE_URL}/investment/milestone`}>Children</a>
-    </Button>
-  
-    <Button data_id="special-moment-branding" color="Mint" classes="mx-auto">
-      <a class="w-full h-full flex justify-center items-center" href={`${BASE_URL}/investment/headshot`}>Branding</a>
-    </Button>
-  
-    <Button data_id="special-moment-headshots" color="Mint" classes="mx-auto">
-      <a class="w-full h-full flex justify-center items-center" href={`${BASE_URL}/investment/headshot`}>Headshots</a>
-    </Button>
+<div
+  class="font-cormorant-garamond m-4 mt-2 mb-[30px] grid w-[90vw] max-w-[880px] grid-cols-2 gap-4 self-center sm:grid-cols-4"
+>
+  <SectionTitle
+    title="Other types of photo sessions"
+    classStyles="col-span-full mt-0 mb-0"
+  />
+
+  <Button data_id="special-moment-milestones" color="Mint" classes="mx-auto">
+    <a
+      class="flex h-full w-full items-center justify-center"
+      href={`${BASE_URL}/investment/milestone`}>Milestones</a
+    >
+  </Button>
+
+  <Button data_id="special-moment-children" color="Mint" classes="mx-auto">
+    <a
+      class="flex h-full w-full items-center justify-center"
+      href={`${BASE_URL}/investment/milestone`}>Children</a
+    >
+  </Button>
+
+  <Button data_id="special-moment-branding" color="Mint" classes="mx-auto">
+    <a
+      class="flex h-full w-full items-center justify-center"
+      href={`${BASE_URL}/investment/headshot`}>Branding</a
+    >
+  </Button>
+
+  <Button data_id="special-moment-headshots" color="Mint" classes="mx-auto">
+    <a
+      class="flex h-full w-full items-center justify-center"
+      href={`${BASE_URL}/investment/headshot`}>Headshots</a
+    >
+  </Button>
 </div>
