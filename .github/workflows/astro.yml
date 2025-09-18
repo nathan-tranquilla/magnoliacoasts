@@ -44,16 +44,7 @@ jobs:
         env:
           DROPBOX_ACCESS_TOKEN: ${{ secrets.DROPBOX_ACCESS_TOKEN }}
           DROPBOX_APP_USER: ${{ secrets.DROPBOX_APP_USER }}
-        run: |
-          rake dl_galleries 
-          echo "in Galleries before: "
-          ls -la src/assets/Galleries
-          ls -la src/assets/galleries
-          mv src/assets/Galleries/* src/assets/galleries
-          ls -la src/assets/galleries
-          echo "in Galleries after: "
-          ls -la src/assets/Galleries
-          rake build_prod
+        run: rake build_prod
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
