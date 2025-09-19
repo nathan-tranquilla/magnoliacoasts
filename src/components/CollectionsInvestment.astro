@@ -56,9 +56,11 @@ let _load =
           {section.details.map((detail: string) => (
             <li class="my-[0.25rem] align-middle text-base">{detail}</li>
           ))}
-          { section.metadata[1] && (<span class="my-[0.25rem] align-middle text-base text-sm font-light">
-            {section.metadata[1]}
-          </span>)}
+          {section.metadata[1] && (
+            <span class="my-[0.25rem] align-middle text-base text-sm font-light">
+              {section.metadata[1]}
+            </span>
+          )}
         </ul>
       </div>
     ))

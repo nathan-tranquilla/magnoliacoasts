@@ -14,8 +14,8 @@ export default defineConfig({
 
   outDir: "docs",
   image: {
-    layout: 'constrained',
-    objectFit: 'cover',
+    layout: "constrained",
+    objectFit: "cover",
   },
   markdown: {
     rehypePlugins: [rehypeUnwrapImages],

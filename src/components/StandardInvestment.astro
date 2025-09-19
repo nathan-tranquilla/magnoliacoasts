@@ -4,7 +4,7 @@ import Card from "./Card.astro";
 import Button from "./Button.astro";
 
 export interface Props {
-  cardStyle?: string,
+  cardStyle?: string;
   title: string;
   details: string[];
   price?: number;
@@ -29,9 +29,11 @@ let { title, details, price, priceRange, cardStyle } = Astro.props;
     class="font-cormorant-garamond my-2 flex list-inside list-disc flex-col items-start justify-start"
   >
     {
-      details.filter(detail => detail.length > 0).map((detail: string) => (
-        <li class="my-[0.25rem] align-middle text-base">{detail}</li>
-      ))
+      details
+        .filter((detail) => detail.length > 0)
+        .map((detail: string) => (
+          <li class="my-[0.25rem] align-middle text-base">{detail}</li>
+        ))
     }
   </ul>
   <div class="flex h-[62px] items-center justify-between">

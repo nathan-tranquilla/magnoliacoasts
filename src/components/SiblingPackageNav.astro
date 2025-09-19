@@ -22,21 +22,25 @@ const textDisplay = "block vertical-middle text-center";
   href={href}
   class={`w-[20vw] px-4 ${desktopDisplay}`}
 >
-  {direction == NavDir.Left && <FAButton title={"Previous Page"}
-    >{"<"}</FAButton>}
+  {
+    direction == NavDir.Left && (
+      <FAButton title={"Previous Page"}>{"<"}</FAButton>
+    )
+  }
   <span
     class={`${overflowDisplay} ${textDisplay} mx-2 text-base md:text-xl font-semibold`}
     >{text}</span
   >
-  {direction == NavDir.Right && <FAButton title={"Next Page"}
-    >{">"}</FAButton>}
+  {direction == NavDir.Right && <FAButton title={"Next Page"}>{">"}</FAButton>}
 </a>
 <a
   id={direction == NavDir.Left ? "prev" : "next"}
   href={href}
   class={`w-[20vw] ${mobileDisplay} `}
 >
-  <FAButton title={direction == NavDir.Left ? "Previous Page" : "Next Page"} classes="max-h-[2rem] max-w-[2rem]"
+  <FAButton
+    title={direction == NavDir.Left ? "Previous Page" : "Next Page"}
+    classes="max-h-[2rem] max-w-[2rem]"
     >{direction == NavDir.Left ? "<" : ">"}</FAButton
   >
 </a>

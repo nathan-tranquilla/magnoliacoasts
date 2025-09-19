@@ -12,7 +12,7 @@ const packageSchema = z
     details: z.array(z.string()),
     price: z.number().optional(),
     priceRange: z.string().optional(),
-    cardStyle: z.string().optional()
+    cardStyle: z.string().optional(),
   })
   .refine(
     (data) =>
