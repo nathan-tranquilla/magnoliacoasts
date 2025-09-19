@@ -69,6 +69,14 @@ end
 
 task :clean => [:node_modules_clean, :docs_clean, :ruby_clean, :clean_galleries]
 
+task :lint => ['node_modules'] do 
+  sh "npx prettier . -c"
+end 
+
+task :format => ['node_modules'] do 
+  sh "npx prettier . --write"
+end 
+
 task :res_dev => 'node_modules' do
   sh "npx rescript -w"
 end
@@ -81,7 +89,7 @@ task :test => ['node_modules'] do
   sh "echo \"not implemented\""
 end 
 
-task :build => ['node_modules', :res_build, :dl_galleries] do
+task :build => ['node_modules', :res_build, :lint, :dl_galleries] do
   sh "npx astro build"
 end
 
