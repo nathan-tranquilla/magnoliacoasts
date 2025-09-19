@@ -93,7 +93,7 @@ task :build => ['node_modules', :res_build, :lint, :dl_galleries] do
   sh "npx astro build"
 end
 
-task :build_prod => [:node_modules_clean, :ci_install, :res_build] do
+task :build_prod => [:node_modules_clean, :ci_install, :res_build, :dl_galleries] do
   base_url = "/magnoliacoasts"
   ENV["BASE_URL"] = base_url
   sh "npx astro build --base #{base_url}"
