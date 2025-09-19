@@ -29,7 +29,7 @@ links = [
 ]
 
 [:cuprite, :cuprite_mobile].each do |driver|
-  RSpec.describe "pages are styled correctly", type: :feature, driver: driver, snapshot: true do
+  RSpec.describe "pages are styled correctly on #{driver}", type: :feature, driver: driver, snapshot: true do
     before { Capybara.current_driver = driver }
     after  { Capybara.use_default_driver }
 
