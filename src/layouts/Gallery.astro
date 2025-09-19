@@ -56,7 +56,13 @@ const sortByFilename = (a: ImageMetadata, b: ImageMetadata) => {
 };
 const sortedImages = images.sort(sortByFilename);
 ---
-
+<style>
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+</style>
 <Main title={`Magnolia Coasts Photography | ${title}`}>
   <div class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
     <SiblingPackageNav
@@ -88,7 +94,6 @@ const sortedImages = images.sort(sortByFilename);
               width={isLandscape ? 730 : 357}
               height={500}
               alt={`Gallery image for ${title}`}
-              layout="full-width"
               decoding="async"
               loading="lazy"
             />
