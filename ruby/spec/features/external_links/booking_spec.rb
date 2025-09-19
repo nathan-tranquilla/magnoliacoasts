@@ -70,6 +70,27 @@ links = [
   },
 ]
 
+titles = [
+  {
+    origin: "/",
+    class: "facebook",
+    external_link: Constants::FACEBOOK_LINK,
+    within: 'footer'
+  },
+  {
+    origin: "/",
+    class: "instagram",
+    external_link: Constants::INSTAGRAM_LINK,
+    within: 'footer'
+  },
+  {
+    origin: "/",
+    class: "pintrest",
+    external_link: Constants::PINTREST_LINK,
+    within: 'footer'
+  },
+]
+
 [:cuprite, :cuprite_mobile].each do |driver|
   RSpec.describe "external links with #{driver}", type: :feature, driver: driver, external_links: true do
     before { Capybara.current_driver = driver }
@@ -80,6 +101,15 @@ links = [
         visit test_case[:origin]
         within(test_case[:within]) do 
           links = all("a", text: test_case[:text], visible: :all).select { |a| a[:href] == test_case[:external_link] }
+        end 
+      end
+    end 
+
+    titles.each do |test_case|
+      it "has all expected links" do
+        visit test_case[:origin]
+        within(test_case[:within]) do 
+          links = all("a", class: test_case[:class], visible: :all).select { |a| a[:href] == test_case[:external_link] }
         end 
       end
     end 

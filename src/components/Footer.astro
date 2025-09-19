@@ -4,11 +4,17 @@ import fbIcon from "../assets/FacebookIcon.png";
 import instaIcon from "../assets/InstagramIcon.png";
 import pintrestIcon from "../assets/PintrestIcon.png";
 import logo from "../assets/LogoWhite.svg";
-import { INQUIRE_LINK, SUBSCRIBE_LINK } from "../data/links";
+import {
+  INQUIRE_LINK,
+  SUBSCRIBE_LINK,
+  FACEBOOK_LINK,
+  INSTAGRAM_LINK,
+  PINTREST_LINK,
+} from "../data/links";
 
 const footerClass =
-  "text-lg text-white font-cormorant-garamond bg-dark-green md:h-auto h-[250px] w-screen p-2";
-const mobileGrid = "grid grid-cols-3 grid-rows-3";
+  "flex justify-center items-center text-lg text-white font-cormorant-garamond bg-dark-green md:h-auto h-[250px] w-screen p-2";
+const mobileGrid = "grid grid-cols-3 md:grid-rows-3 grid-rows-[50px_1fr_1fr]";
 const grid = "md:grid-cols-8";
 const colHeaderClass = "pt-4 flex flex-col justify-start items-center";
 const colHeaderGrid = "row-start-1 col-span-1 md:row-span-1";
@@ -17,53 +23,90 @@ const cityColClass = "flex flex-col justify-center items-center";
 const cityColGrid = "row-start-3 col-span-1 md:row-start-1 md:row-span-3";
 const cityListClass = "flex flex-col items-start justify-between md:h-[75%]";
 
-let footerClasses = [footerClass, mobileGrid, grid].join(" ");
+let footerClasses = [mobileGrid, grid, "w-full max-w-[1500px]"].join(" ");
 let colHeaderClasses = [colHeaderClass, colHeaderGrid].join(" ");
+let linksClasses = "hover:underline";
 let cityColClasses = [cityColClass, cityColGrid].join(" ");
 let entryDisplay = "dbackdrop-contrast-200 px-0.5 rounded-md";
 ---
 
-<footer class={footerClasses}>
-  <div class={`${colHeaderClasses} col-start-1 md:row-span-1`}>
-    <a href={INQUIRE_LINK} class={entryDisplay}>Contact Us</a>
-  </div>
-  <div class={`${colHeaderClasses} col-start-2 md:row-span-1`}>
-    <a href="/investment" class={entryDisplay}>Investment</a>
-  </div>
-  <div class={`${colHeaderClasses} col-start-3 md:row-span-1`}>
-    <a href={SUBSCRIBE_LINK} class={entryDisplay}>Subscribe</a>
-  </div>
-  <div
-    class="col-span-3 col-start-1 row-start-2 flex items-center justify-center md:row-span-2"
-  >
-    <Image class={iconClass} src={fbIcon} alt="Facebook Icon" />
-    <Image class={iconClass} src={instaIcon} alt="Instagram Icon" />
-    <Image class={iconClass} src={pintrestIcon} alt="Pintrest Icon" />
-  </div>
-  <div
-    class="hidden items-center justify-center text-white md:col-span-2 md:col-start-4 md:row-span-3 md:row-start-1 md:flex"
-  >
-    <Image src={logo} width={162} height={51} alt="Magnolia Coasts Logo." />
-  </div>
-  <div class={`${cityColClasses} col-start-1 md:col-start-6 md:row-span-3`}>
-    <div class={cityListClass}>
-      <span class={entryDisplay}>Toronto</span>
-      <span class={entryDisplay}>Mississauga</span>
-      <span class={entryDisplay}>Oakville</span>
+<footer class={footerClass}>
+  <div class={footerClasses}>
+    <div class={`${colHeaderClasses} col-start-1 md:row-span-1`}>
+      <a
+        href={INQUIRE_LINK}
+        target="_blank"
+        class={`${entryDisplay} ${linksClasses}`}>Contact Us</a
+      >
     </div>
-  </div>
-  <div class={`${cityColClasses} col-start-2 md:col-start-7 md:row-span-3`}>
-    <div class={cityListClass}>
-      <span class={entryDisplay}>Brampton</span>
-      <span class={entryDisplay}>Caledon</span>
-      <span class={entryDisplay}>Barrie</span>
+    <div class={`${colHeaderClasses} col-start-2 md:row-span-1`}>
+      <a href="/investment" class={`${entryDisplay} ${linksClasses}`}
+        >Investment</a
+      >
     </div>
-  </div>
-  <div class={`${cityColClasses} col-start-3 md:col-start-8 md:row-span-3`}>
-    <div class={cityListClass}>
-      <span class={entryDisplay}>Scarborough</span>
-      <span class={entryDisplay}>Oshawa</span>
-      <span class={entryDisplay}>Whitby</span>
+    <div class={`${colHeaderClasses} col-start-3 md:row-span-1`}>
+      <a
+        href={SUBSCRIBE_LINK}
+        target="_blank"
+        class={`${entryDisplay} ${linksClasses}`}>Subscribe</a
+      >
+    </div>
+    <div
+      class="col-span-3 col-start-1 row-start-2 flex items-center justify-center md:row-span-2"
+    >
+      <a href={FACEBOOK_LINK} class="facebook"
+        ><Image
+          class={iconClass}
+          src={fbIcon}
+          alt="Facebook Icon"
+          width="30"
+          height="30"
+        /></a
+      >
+      <a href={INSTAGRAM_LINK} class="instagram"
+        ><Image
+          class={iconClass}
+          src={instaIcon}
+          alt="Instagram Icon"
+          width="30"
+          height="30"
+        /></a
+      >
+      <a href={PINTREST_LINK} class="pintrest"
+        ><Image
+          class={iconClass}
+          src={pintrestIcon}
+          alt="Pintrest Icon"
+          width="30"
+          height="30"
+        /></a
+      >
+    </div>
+    <div
+      class="hidden items-center justify-center text-white md:col-span-2 md:col-start-4 md:row-span-3 md:row-start-1 md:flex"
+    >
+      <Image src={logo} widths={[162]} alt="Magnolia Coasts Logo." />
+    </div>
+    <div class={`${cityColClasses} col-start-1 md:col-start-6 md:row-span-3`}>
+      <div class={cityListClass}>
+        <span class={entryDisplay}>Toronto</span>
+        <span class={entryDisplay}>Mississauga</span>
+        <span class={entryDisplay}>Oakville</span>
+      </div>
+    </div>
+    <div class={`${cityColClasses} col-start-2 md:col-start-7 md:row-span-3`}>
+      <div class={cityListClass}>
+        <span class={entryDisplay}>Brampton</span>
+        <span class={entryDisplay}>Caledon</span>
+        <span class={entryDisplay}>Barrie</span>
+      </div>
+    </div>
+    <div class={`${cityColClasses} col-start-3 md:col-start-8 md:row-span-3`}>
+      <div class={cityListClass}>
+        <span class={entryDisplay}>Scarborough</span>
+        <span class={entryDisplay}>Oshawa</span>
+        <span class={entryDisplay}>Whitby</span>
+      </div>
     </div>
   </div>
 </footer>
