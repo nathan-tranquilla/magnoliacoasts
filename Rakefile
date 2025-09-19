@@ -74,7 +74,7 @@ task :lint => ['node_modules'] do
 end 
 
 task :format => ['node_modules'] do 
-  sh "npx prettier . --write"
+  sh "npx prettier ./src --write"
 end 
 
 task :res_dev => 'node_modules' do

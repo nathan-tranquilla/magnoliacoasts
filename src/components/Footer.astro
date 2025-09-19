@@ -21,7 +21,7 @@ const colHeaderGrid = "row-start-1 col-span-1 md:row-span-1";
 const iconClass = "mx-4";
 const cityColClass = "flex flex-col justify-center items-center";
 const cityColGrid = "row-start-3 col-span-1 md:row-start-1 md:row-span-3";
-const cityListClass = "flex flex-col items-start justify-between md:h-[75%]";
+const cityListClass = "list-disc md:h-[75%]";
 
 let footerClasses = [mobileGrid, grid, "w-full max-w-[1500px]"].join(" ");
 let colHeaderClasses = [colHeaderClass, colHeaderGrid].join(" ");
@@ -88,25 +88,25 @@ let entryDisplay = "dbackdrop-contrast-200 px-0.5 rounded-md";
       <Image src={logo} widths={[162]} alt="Magnolia Coasts Logo." />
     </div>
     <div class={`${cityColClasses} col-start-1 md:col-start-6 md:row-span-3`}>
-      <div class={cityListClass}>
-        <span class={entryDisplay}>Toronto</span>
-        <span class={entryDisplay}>Mississauga</span>
-        <span class={entryDisplay}>Oakville</span>
-      </div>
+      <ul class={cityListClass}>
+        <li class={entryDisplay}>Toronto</li>
+        <li class={entryDisplay}>Mississauga</li>
+        <li class={entryDisplay}>Oakville</li>
+      </ul>
     </div>
     <div class={`${cityColClasses} col-start-2 md:col-start-7 md:row-span-3`}>
-      <div class={cityListClass}>
-        <span class={entryDisplay}>Brampton</span>
-        <span class={entryDisplay}>Caledon</span>
-        <span class={entryDisplay}>Barrie</span>
-      </div>
+      <ul class={cityListClass}>
+        <li class={entryDisplay}>Brampton</li>
+        <li class={entryDisplay}>Caledon</li>
+        <li class={entryDisplay}>Barrie</li>
+      </ul>
     </div>
     <div class={`${cityColClasses} col-start-3 md:col-start-8 md:row-span-3`}>
-      <div class={cityListClass}>
-        <span class={entryDisplay}>Scarborough</span>
-        <span class={entryDisplay}>Oshawa</span>
-        <span class={entryDisplay}>Whitby</span>
-      </div>
+      <ul class={cityListClass}>
+        <li class={entryDisplay}>Scarborough</li>
+        <li class={entryDisplay}>Oshawa</li>
+        <li class={entryDisplay}>Whitby</li>
+      </ul>
     </div>
   </div>
 </footer>
