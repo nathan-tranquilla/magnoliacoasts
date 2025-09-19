@@ -25,11 +25,11 @@ let { title, details, price, priceRange } = Astro.props;
   </h2>
   <slot />
   <ul
-    class="font-inter my-2 flex list-inside list-disc flex-col items-start justify-start"
+    class="font-cormorant-garamond my-2 flex list-inside list-disc flex-col items-start justify-start"
   >
     {
       details.map((detail: string) => (
-        <li class="my-[0.25rem] align-middle text-sm">{detail}</li>
+        <li class="my-[0.25rem] align-middle text-base">{detail}</li>
       ))
     }
   </ul>

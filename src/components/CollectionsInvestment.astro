@@ -47,16 +47,16 @@ let _load =
   <slot />
   {
     Object.entries(detailsCollection).map(([key, section]) => (
-      <div class="font-inter my-2 flex list-inside list-disc flex-col items-start justify-start">
+      <div class="font-cormorant-garamond my-2 flex list-inside list-disc flex-col items-start justify-start">
         <div>
           {key}{" "}
-          <span class="pl-2 text-sm font-light">{section.metadata[0]}</span>
+          <span class="pl-2 text-base font-light">{section.metadata[0]}</span>
         </div>
-        <ul class="font-inter my-2 flex list-inside list-disc flex-col items-start justify-start">
+        <ul class="font-cormorant-garamond my-2 flex list-inside list-disc flex-col items-start justify-start">
           {section.details.map((detail: string) => (
-            <li class="my-[0.25rem] align-middle text-sm">{detail}</li>
+            <li class="my-[0.25rem] align-middle text-base">{detail}</li>
           ))}
-          <li class="my-[0.25rem] align-middle text-sm text-xs font-light">
+          <li class="my-[0.25rem] align-middle text-base text-sm font-light">
             {section.metadata[1]}
           </li>
         </ul>
@@ -68,7 +68,7 @@ let _load =
       ${price} + Tax
       {
         priceDetails.map((detail) => (
-          <span class="pl-2 text-sm font-light">{detail}</span>
+          <span class="pl-2 text-base font-light">{detail}</span>
         ))
       }
     </div>
