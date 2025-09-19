@@ -24,5 +24,5 @@ export default defineConfig({
     inlineStylesheets: "always",
   },
 
-  // integrations: [sitemap()],
+  integrations: [sitemap()],
 });
