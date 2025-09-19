@@ -22,6 +22,7 @@ detailsCollection:
   Mini Newborn:
     metadata:
       - (worth $450)
+      - $75 weekend fee if booked outside of Mon-Fri 10:30 am - 3:30 pm
     details:
       - 2 hours session
       - online proofing gallery
@@ -30,7 +31,6 @@ detailsCollection:
       - includes family members
       - outfits, props & sets included
       - in studio only
-      - $75 weekend fee if booked outside of Mon-Fri 10:30 am - 3:30 pm
   Milestone:
     metadata:
       - (worth $400)
