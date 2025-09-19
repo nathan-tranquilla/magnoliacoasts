@@ -4,6 +4,7 @@ import fbIcon from "../assets/FacebookIcon.png";
 import instaIcon from "../assets/InstagramIcon.png";
 import pintrestIcon from "../assets/PintrestIcon.png";
 import logo from "../assets/LogoWhite.svg";
+import { INQUIRE_LINK, SUBSCRIBE_LINK } from "../data/links";
 
 const footerClass =
   "text-lg text-white font-cormorant-garamond bg-dark-green md:h-auto h-[250px] w-screen p-2";
@@ -24,13 +25,13 @@ let entryDisplay = "dbackdrop-contrast-200 px-0.5 rounded-md";
 
 <footer class={footerClasses}>
   <div class={`${colHeaderClasses} col-start-1 md:row-span-1`}>
-    <span class={entryDisplay}>Contact Us</span>
+    <a href={INQUIRE_LINK} class={entryDisplay}>Contact Us</a>
   </div>
   <div class={`${colHeaderClasses} col-start-2 md:row-span-1`}>
-    <span class={entryDisplay}>Investment</span>
+    <a href="/investment" class={entryDisplay}>Investment</a>
   </div>
   <div class={`${colHeaderClasses} col-start-3 md:row-span-1`}>
-    <span class={entryDisplay}>Subscribe</span>
+    <a href={SUBSCRIBE_LINK} class={entryDisplay}>Subscribe</a>
   </div>
   <div
     class="col-span-3 col-start-1 row-start-2 flex items-center justify-center md:row-span-2"

@@ -26,7 +26,7 @@ links = [
 
 RSpec.describe "cross links with cuprite", type: :feature do
   links.each do |test_case|
-    it "works from #{test_case[:origin]} to #{test_case[:dest]}" do
+    it "works from #{test_case[:origin]} to #{test_case[:dest]}", cross_links: true do
       visit test_case[:origin]
       within("nav") do
         find("a", text: test_case[:text]).click

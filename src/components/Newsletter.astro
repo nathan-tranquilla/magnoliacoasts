@@ -4,8 +4,7 @@ import Button from "../components/Button.astro";
 import newsletter from "../assets/Newsletter.png";
 import SectionTitle from "./SectionTitle.astro";
 import Card from "./Card.astro";
-let subscribeLink =
-  "https://magnoliacoastsphotography.us14.list-manage.com/subscribe?u=4ebfced223d835c48a891029f&id=92c1de656f";
+import { SUBSCRIBE_LINK } from "../data/links";
 let mobileDisplay = "flex justify-center items-center";
 let desktopDisplay = "md:grid grid-cols-5 grid-rows-6 gap-4";
 let dimensions = "p-3 md:max-w-[750px] w-full mx-4";
@@ -38,7 +37,7 @@ let dimensions = "p-3 md:max-w-[750px] w-full mx-4";
       <SectionTitle title="Subscribe and get our latest promotions and news!" />
       <Button color="Mint" classes="self-center">
         <a
-          href={subscribeLink}
+          href={SUBSCRIBE_LINK}
           target="_blank"
           class="font-cormorant-garamond flex h-full w-full items-center justify-center"
           >Subscribe</a

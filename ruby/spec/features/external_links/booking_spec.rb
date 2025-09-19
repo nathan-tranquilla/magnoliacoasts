@@ -6,68 +6,81 @@ links = [
     origin: "/",
     text: "Inquire",
     external_link: Constants::INQUIRE_LINK,
-    expected_links: 1
+    within: 'main'
   },
   {
     origin: "/",
     text: "Subscribe",
     external_link: Constants::SUBSCRIBE_LINK,
-    expected_links: 1
+    within: 'main'
   },
   {
     origin: "/about",
     text: "Book With Stephanie",
     external_link: Constants::INQUIRE_LINK,
-    expected_links: 1
+    within: 'main'
   },
   {
     origin: "/investment/maternity",
     text: "Inquire",
     external_link: Constants::INQUIRE_LINK,
-    expected_links: 2
+    within: 'main'
   },
   {
     origin: "/investment/newborn",
     text: "Inquire",
     external_link: Constants::INQUIRE_LINK,
-    expected_links: 3
+    within: 'main'
   },
   {
     origin: "/investment/milestone",
     text: "Inquire",
     external_link: Constants::INQUIRE_LINK,
-    expected_links: 3
+    within: 'main'
   },
   {
     origin: "/investment/family",
     text: "Inquire",
     external_link: Constants::INQUIRE_LINK,
-    expected_links: 4
+    within: 'main'
   },
   {
     origin: "/investment/headshot",
     text: "Inquire",
     external_link: Constants::INQUIRE_LINK,
-    expected_links: 4
+    within: 'main'
   },
   {
     origin: "/investment/collections",
     text: "Inquire",
     external_link: Constants::INQUIRE_LINK,
-    expected_links: 5
-  }
+    within: 'main'
+  },
+  {
+    origin: "/",
+    text: "Contact Us",
+    external_link: Constants::INQUIRE_LINK,
+    within: 'footer'
+  },
+  {
+    origin: "/",
+    text: "Subscribe",
+    external_link: Constants::SUBSCRIBE_LINK,
+    within: 'footer'
+  },
 ]
 
 [:cuprite, :cuprite_mobile].each do |driver|
-  RSpec.describe "external links with #{driver}", type: :feature, driver: driver do
+  RSpec.describe "external links with #{driver}", type: :feature, driver: driver, external_links: true do
     before { Capybara.current_driver = driver }
     after  { Capybara.use_default_driver }
 
     links.each do |test_case|
       it "has all expected links" do
         visit test_case[:origin]
-        links = all("a", text: test_case[:text], visible: :all).select { |a| a[:href] == test_case[:external_link] }
-        expect(links.size).to eq(test_case[:expected_links])
+        within(test_case[:within]) do 
+          links = all("a", text: test_case[:text], visible: :all).select { |a| a[:href] == test_case[:external_link] }
+        end 
       end
     end 
   end

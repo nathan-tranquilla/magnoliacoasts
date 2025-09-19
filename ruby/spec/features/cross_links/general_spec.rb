@@ -74,7 +74,7 @@ links = [
 ]
 
 [:cuprite, :cuprite_mobile].each do |driver|
-  RSpec.describe "cross links with #{driver}", type: :feature, driver: driver do
+  RSpec.describe "cross links with #{driver}", type: :feature, driver: driver, cross_links: true do
     before { Capybara.current_driver = driver }
     after  { Capybara.use_default_driver }
 
