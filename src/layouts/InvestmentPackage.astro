@@ -74,7 +74,7 @@ const mobileDisplay = "flex justify-around items-center";
       direction={NavDir.Right}
     />
   </div>
-  <div class="flex w-full flex-wrap items-start justify-center p-4">
+  <div class="flex w-full flex-wrap items-stretch justify-center p-4">
     {
       collection.map(async (pkg) => {
         let { Content } = await render(pkg);
