@@ -28,7 +28,7 @@ pnpm-debug.log*
 .bsb.lock
 **/*.res.mjs
 
-src/assets/galleries/
+# src/assets/galleries/
 src/assets/__MACOSX
 *.zip
 
