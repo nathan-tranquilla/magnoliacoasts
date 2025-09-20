@@ -49,11 +49,6 @@ task :node_modules_clean do
   sh "rm -rf node_modules"
 end
 
-task :clean_galleries do 
-  sh 'rm -rf src/assets/galleries'
-  sh 'rm -rf out.zip'
-end 
-
 task :docs_clean do 
   sh "rm -rf docs"
 end 
@@ -67,7 +62,7 @@ task :res_clean do
   sh "npx rescript clean"
 end
 
-task :clean => [:node_modules_clean, :docs_clean, :ruby_clean, :clean_galleries]
+task :clean => [:node_modules_clean, :docs_clean, :ruby_clean]
 
 task :lint => ['node_modules'] do 
   sh "npx prettier . -c"
@@ -89,14 +84,12 @@ task :test => ['node_modules'] do
   sh "echo \"not implemented\""
 end 
 
-task :build => ['node_modules', :res_build, :lint, :dl_galleries] do
+task :build => ['node_modules', :res_build, :lint] do
   sh "npx astro build"
 end
 
-task :build_prod => [:node_modules_clean, :ci_install, :res_build, :dl_galleries] do
-  base_url = "/magnoliacoasts"
-  ENV["BASE_URL"] = base_url
-  sh "npx astro build --base #{base_url}"
+task :build_prod => [:node_modules_clean, :ci_install, :res_build] do
+  sh "npx astro build "
 end
 
 task :preview => [:build_prod] do
