@@ -20,8 +20,8 @@ if (photoCount == 1) {
   tabletColumns = 3;
 }
 let mobileDisplay = "grid grid-cols-1 gap-4";
-let tabletDisplay = `md:max-w-[750px] md:grid-cols-${tabletColumns}`;
-let desktopDisplay = `lg:max-w-[1300px] lg:grid-cols-${desktopColumns}`;
+let tabletDisplay = `md:grid-cols-${tabletColumns}`;
+let desktopDisplay = `lg:max-w-[1000px] lg:grid-cols-${desktopColumns}`;
 let spanAllCols = `md:col-span-${tabletColumns} lg:col-span-${desktopColumns}`;
 let _load =
   "lg:col-span-2 lg:col-span-3 lg:col-span-4 md:col-span-2 md:col-span-3 md:col-span-4 md:grid-cols-2 md:grid-cols-3 md:grid-cols-4 md:col-span-4 lg:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4";
@@ -38,7 +38,7 @@ let _load =
 </style>
 <Card
   test_id={title}
-  classes={`card w-full max-w-[1300px] m-2 ${mobileDisplay} ${tabletDisplay} ${desktopDisplay}`}
+  classes={`card w-full max-w-[1000px] m-2 ${mobileDisplay} ${tabletDisplay} ${desktopDisplay}`}
 >
   <InvestmentHeader title={title} classes={spanAllCols} />
   <slot />
