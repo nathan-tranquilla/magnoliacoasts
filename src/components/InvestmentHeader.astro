@@ -1,0 +1,16 @@
+---
+export interface Props {
+  title: string
+  classes?: string
+}
+const { title, classes } = Astro.props;
+const fontDisplay = "font-cormorant-garamond font-semibold md:text-lg lg:text-2xl"
+const flexDisplay = "flex items-center justify-center"
+const spacingDisplay = "mb-4"
+---
+
+<h2
+  class={`${fontDisplay} ${flexDisplay} ${spacingDisplay} ${classes || ''}`}
+>
+  {title}
+</h2>

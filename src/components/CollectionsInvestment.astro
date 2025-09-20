@@ -2,6 +2,7 @@
 import { INQUIRE_LINK } from "../data/links";
 import Card from "./Card.astro";
 import Button from "./Button.astro";
+import InvestmentHeader from "./InvestmentHeader.astro";
 
 export interface Props {
   title: string;
@@ -39,11 +40,7 @@ let _load =
   test_id={title}
   classes={`card w-full max-w-[1300px] m-2 ${mobileDisplay} ${tabletDisplay} ${desktopDisplay}`}
 >
-  <h2
-    class={`md:text-lg lg:text-2xl flex justify-center items-center mb-4 font-cormorant-garamond ${spanAllCols}`}
-  >
-    {title}
-  </h2>
+  <InvestmentHeader title={title} classes={spanAllCols} />
   <slot />
   {
     Object.entries(detailsCollection).map(([key, section]) => (

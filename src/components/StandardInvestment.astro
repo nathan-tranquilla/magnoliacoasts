@@ -2,6 +2,7 @@
 import { INQUIRE_LINK } from "../data/links";
 import Card from "./Card.astro";
 import Button from "./Button.astro";
+import InvestmentHeader from "./InvestmentHeader.astro";
 
 export interface Props {
   cardStyle?: string;
@@ -19,11 +20,7 @@ let { title, details, price, priceRange, cardStyle } = Astro.props;
   }
 </style>
 <Card test_id={title} classes={`w-full max-w-[400px] m-2 ${cardStyle || ""}`}>
-  <h2
-    class="font-cormorant-garamond mb-4 flex items-center justify-center md:text-lg lg:text-2xl"
-  >
-    {title}
-  </h2>
+  <InvestmentHeader title={title} />
   <slot />
   <ul
     class="font-cormorant-garamond my-2 flex list-inside list-disc flex-col items-start justify-start"
