@@ -20,8 +20,11 @@ let dimensions = "p-3 md:max-w-[750px] w-full mx-4";
 <div class="flex justify-center py-4">
   <Card classes={`${mobileDisplay} ${desktopDisplay} ${dimensions}`}>
     <div
-      class="col-span-2 col-start-1 row-span-6 row-start-1 hidden sm:row-span-6 md:block"
+      class="relative col-span-2 col-start-1 row-span-6 row-start-1 sm:row-span-6"
     >
+      <div class="absolute top-5 left-5 right-5 bg-[#fafafa]/50 rounded-lg text-2xl p-2 font-dancing flex justify-center items-center">
+        Get notified with latest promotions and news!
+      </div>
       <Image
         layout="constrained"
         src={newsletter}
@@ -34,7 +37,7 @@ let dimensions = "p-3 md:max-w-[750px] w-full mx-4";
     <div
       class="font-cormorant-garamond align-start col-span-3 col-start-3 row-span-2 row-start-3 flex flex-col justify-start text-sm sm:justify-around sm:text-base md:text-lg"
     >
-      <SectionTitle title="Subscribe and get our latest promotions and news!" />
+      <SectionTitle title="Subscribe To Our Newsletter" />
       <Button color="Mint" classes="self-center">
         <a
           href={SUBSCRIBE_LINK}
