@@ -21,7 +21,9 @@ let aestheticClasses = "cursor-pointer rounded-3xl bg-pink p-4 px-6";
     <Image
       src={heroImage}
       alt="Baby in a basket."
-      widths={[412, 500, 800, 900, 1200, 1800]}
+      widths={[412, 900, 1800]}
+      sizes="(max-width: 600px) 412px, (max-width: 900px) 800px, 1800px"
+
     />
   </div>
   <a
