@@ -29,12 +29,12 @@ let { title, details, price, priceRange, cardStyle } = Astro.props;
       details
         .filter((detail) => detail.length > 0)
         .map((detail: string) => (
-          <li class="my-[0.25rem] align-middle text-base">{detail}</li>
+          <li class="my-[0.25rem] align-middle text-lg">{detail}</li>
         ))
     }
   </ul>
   <div class="pl-2 flex h-[62px] items-center justify-between">
-    <div class="font-cormorant-garamond class text-lg font-bold">${price || priceRange} + Tax</div>
+    <div class="font-cormorant-garamond class text-xl font-bold">${price || priceRange} + Tax</div>
 
     <Button color="Pink" classes="w-4/10 h-3/4">
       <a
