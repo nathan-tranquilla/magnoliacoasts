@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import fbIcon from "../assets/FacebookIcon.png";
 import instaIcon from "../assets/InstagramIcon.png";
 import pintrestIcon from "../assets/PintrestIcon.png";
-import logo from "../assets/LogoWhite.svg";
+import logo from "../assets/LogoWhite.png";
 import {
   INQUIRE_LINK,
   SUBSCRIBE_LINK,
@@ -59,8 +59,7 @@ let entryDisplay = "dbackdrop-contrast-200 px-0.5 rounded-md";
           class={iconClass}
           src={fbIcon}
           alt="Facebook Icon"
-          width="30"
-          height="30"
+          width="24"
         /></a
       >
       <a href={INSTAGRAM_LINK} class="instagram"
@@ -68,8 +67,7 @@ let entryDisplay = "dbackdrop-contrast-200 px-0.5 rounded-md";
           class={iconClass}
           src={instaIcon}
           alt="Instagram Icon"
-          width="30"
-          height="30"
+          width="24"
         /></a
       >
       <a href={PINTREST_LINK} class="pintrest"
@@ -77,15 +75,14 @@ let entryDisplay = "dbackdrop-contrast-200 px-0.5 rounded-md";
           class={iconClass}
           src={pintrestIcon}
           alt="Pintrest Icon"
-          width="30"
-          height="30"
+          width="24"
         /></a
       >
     </div>
     <div
       class="hidden items-center justify-center text-white md:col-span-2 md:col-start-4 md:row-span-3 md:row-start-1 md:flex"
     >
-      <Image src={logo} widths={[162]} alt="Magnolia Coasts Logo." />
+      <Image src={logo} width="200" alt="Magnolia Coasts Logo." />
     </div>
     <div class={`${cityColClasses} col-start-1 md:col-start-6 md:row-span-3`}>
       <ul class={cityListClass}>

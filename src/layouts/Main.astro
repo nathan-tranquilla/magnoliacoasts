@@ -13,6 +13,7 @@ import heroImage from "../assets/HeroImage.png";
 import welcomeBackground from "../assets/WelcomeBackground.png";
 
 import { BASE_URL } from "../data/links";
+import logo from "../assets/Logo.png"
 
 const { title } = Astro.props;
 
@@ -84,7 +85,7 @@ const websiteUrl = "https://magnoliacoastsphotography.com/";
       type="image/png"
     />
 
-    <link rel="icon" href={`${BASE_URL}/favicon.ico`} type="image/x-icon" />
+    <link rel="icon" href={`${BASE_URL}/${logo.src}`} type="image/png" />
     <script type="application/ld+json" set:html={localBusinessProfile} />
     <meta name="email" content="info@magnoliacoastsphotography.com" />
     <link rel="canonical" href={websiteUrl} />
@@ -92,7 +93,7 @@ const websiteUrl = "https://magnoliacoastsphotography.com/";
     <!-- Open Graph Meta Tags -->
     <meta
       property="og:image"
-      content="https://magnoliacoastsphotography.com/favicon.svg"
+      content={`${websiteUrl}${logo.src}`}
     />
     <meta
       property="article:publisher"
@@ -125,7 +126,7 @@ const websiteUrl = "https://magnoliacoastsphotography.com/";
     />
     <meta
       name="twitter:image"
-      content="https://magnoliacoastsphotography.com/favicon.svg"
+      content={`${websiteUrl}${logo.src}`}
     />
 
     <meta

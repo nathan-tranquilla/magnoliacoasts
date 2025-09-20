@@ -6,7 +6,7 @@ file 'node_modules' do
 end
 
 file 'src/assets/galleries' => ['node_modules'] do 
-  sh 'node src/utils/download-galleries.js'
+  # sh 'node src/utils/download-galleries.js'
 end
 task :dl_galleries => 'src/assets/galleries'
 
