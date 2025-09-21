@@ -15,7 +15,6 @@ import { getImage } from "astro:assets";
 import WelcomeBackground from "../assets/WelcomeBackground.png";
 const optimizedBackground = await getImage({src: WelcomeBackground, format: 'avif'})
 
-import { BASE_URL } from "../data/links";
 import logo from "../assets/Logo.png"
 
 const { title } = Astro.props;
@@ -95,7 +94,7 @@ const websiteUrl = "https://magnoliacoastsphotography.com/";
       type="image/avif"
     />
 
-    <link rel="icon" href={`${BASE_URL}/${logo.src}`} type="image/png" />
+    <link rel="icon" href={`${logo.src}`} type="image/png" />
     <script type="application/ld+json" set:html={localBusinessProfile} />
     <meta name="email" content="info@magnoliacoastsphotography.com" />
     <link rel="canonical" href={websiteUrl} />
