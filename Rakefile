@@ -100,7 +100,11 @@ task :res_clean do
   sh "npx rescript clean"
 end
 
-task :clean => [:node_modules_clean, :docs_clean, :ruby_clean]
+task :clean_astro_pid do 
+  sh "rm astro.pid"
+end 
+
+task :clean => [:node_modules_clean, :docs_clean, :ruby_clean, :clean_astro_pid]
 
 task :lint => ['node_modules'] do 
   sh "npx prettier . -c"
@@ -138,7 +142,11 @@ task :dev, [:flags] => ['node_modules', :res_build, :dl_galleries] do |t, args|
     exit
   end
 
-  Process.wait(pid)
+  begin
+    Process.wait(pid)
+  rescue SignalException, Errno::ECHILD
+    puts "Astro dev process was terminated externally."
+  end
   File.delete("astro.pid") if File.exist?("astro.pid")
   puts "Astro dev exited successfully."
 end
