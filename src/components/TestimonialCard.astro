@@ -9,32 +9,23 @@ export interface Props {
 }
 const { title, date, testimony } = Astro.props;
 ---
-
-<style>
-  img {
-    height: 100%; /* Image takes full height of container */
-    width: auto; /* Width adjusts to maintain aspect ratio */
-    object-fit: cover; /* Scale image to cover container, cropping excess width */
-    object-position: center; /* Center the image */
-  }
-</style>
 <Card
-  classes="md:h-[500px] h-[350px] max-w-[750px] grid grid-cols-10 grid-rows-[1rem_1rem_1rem_1fr] gap-4 font-cormorant-garamond text-sm sm:text-base md:text-lg border border-app-grey"
+  classes="h-auto max-w-[750px] grid grid-cols-10 grid-rows-[1rem_1rem_1rem_1fr] gap-2 sm:gap-4 font-cormorant-garamond text-sm sm:text-base md:text-lg border border-app-grey min-h-[230px]"
 >
   <div
     class="col-span-4 col-start-1 row-span-4 row-start-1 flex flex-col items-center justify-start"
   >
     <slot name="image" />
   </div>
-  <div class="col-span-6 col-start-5 row-start-1 font-semibold md:row-start-2">
+  <div class="col-span-3 col-start-5 row-start-1 font-semibold md:row-start-2 whitespace-nowrap">
     {title}
   </div>
   <div
-    class="col-span-6 col-start-5 row-start-2 font-light md:col-start-5 md:row-start-3"
+    class="col-span-3 col-start-8 row-start-1 font-light md:col-start-5 md:row-start-3"
   >
     {date}
   </div>
-  <div class="row-span-all col-span-6 col-start-5 row-start-3 md:row-start-4">
+  <div class="row-span-all col-span-6 col-start-5 row-start-2 md:row-start-4 text-xs sm:text-base">
     {testimony}
   </div>
 </Card>

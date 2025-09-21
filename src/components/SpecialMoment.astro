@@ -10,9 +10,8 @@ const { src, alt, buttonText, link } = Astro.props;
 import Button from "./Button.astro";
 import Card from "./Card.astro";
 ---
-
 <Card classes="max-h-[440px] max-w-[240px] grid grid-cols-1 gap-4">
-  <Image layout="constrained" src={src} alt={alt} widths={[200, 300]} />
+  <Image layout="full-width" fit="cover"  src={src} alt={alt}/>
   <Button color="Pink" classes="mx-auto mt-auto">
     <a href={link} class="flex h-full w-full items-center justify-center"
       >{buttonText}</a
