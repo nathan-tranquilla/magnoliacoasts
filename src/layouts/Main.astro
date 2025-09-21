@@ -13,9 +13,12 @@ import dancingRegular from "../assets/fonts/Dancing_Script/static/DancingScript-
 import heroImage from "../assets/HeroImage.png";
 import { getImage } from "astro:assets";
 import WelcomeBackground from "../assets/WelcomeBackground.png";
-const optimizedBackground = await getImage({src: WelcomeBackground, format: 'avif'})
+const optimizedBackground = await getImage({
+  src: WelcomeBackground,
+  format: "avif",
+});
 
-import logo from "../assets/Logo.png"
+import logo from "../assets/Logo.png";
 
 const { title } = Astro.props;
 
@@ -100,10 +103,7 @@ const websiteUrl = "https://magnoliacoastsphotography.com/";
     <link rel="canonical" href={websiteUrl} />
 
     <!-- Open Graph Meta Tags -->
-    <meta
-      property="og:image"
-      content={`${websiteUrl}${logo.src}`}
-    />
+    <meta property="og:image" content={`${websiteUrl}${logo.src}`} />
     <meta
       property="article:publisher"
       content="https://www.facebook.com/magnoliacoastsphotography/"
@@ -133,10 +133,7 @@ const websiteUrl = "https://magnoliacoastsphotography.com/";
       name="twitter:description"
       content="Magnolia Coasts Photography. Family, newborn, and portrait photography in Toronto, Mississauga, and the GTA."
     />
-    <meta
-      name="twitter:image"
-      content={`${websiteUrl}${logo.src}`}
-    />
+    <meta name="twitter:image" content={`${websiteUrl}${logo.src}`} />
 
     <meta
       name="keywords"

@@ -44,14 +44,15 @@ let _load =
   <slot />
   {
     Object.entries(detailsCollection).map(([key, section]) => (
-      <div class="font-semibold font-cormorant-garamond my-2 flex list-inside list-disc flex-col items-start justify-start">
+      <div class="font-cormorant-garamond my-2 flex list-inside list-disc flex-col items-start justify-start font-semibold">
         <div class="text-xl">
-          {key}{" "}
-          <h3 class="pl-2 text-base font-light">{section.metadata[0]}</h3>
+          {key} <h3 class="pl-2 text-base font-light">{section.metadata[0]}</h3>
         </div>
         <ul class="font-cormorant-garamond my-2 flex list-inside list-disc flex-col items-start justify-start">
           {section.details.map((detail: string) => (
-            <li class="font-light my-[0.25rem] align-middle text-lg">{detail}</li>
+            <li class="my-[0.25rem] align-middle text-lg font-light">
+              {detail}
+            </li>
           ))}
           {section.metadata[1] && (
             <span class="my-[0.25rem] align-middle text-base text-sm font-light">
@@ -63,13 +64,11 @@ let _load =
     ))
   }
   <div class={`flex justify-between items-center h-[62px] ${spanAllCols}`}>
-    <div class="pl-2 font-cormorant-garamond class flex flex-col items-start text-xl font-bold">
+    <div
+      class="font-cormorant-garamond class flex flex-col items-start pl-2 text-xl font-bold"
+    >
       ${price} + Tax
-      {
-        priceDetails.map((detail) => (
-          <span class="font-light">{detail}</span>
-        ))
-      }
+      {priceDetails.map((detail) => <span class="font-light">{detail}</span>)}
     </div>
     <Button color="Pink" classes="max-w-[150px] w-4/10 h-3/4 ">
       <a

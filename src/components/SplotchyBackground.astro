@@ -1,7 +1,10 @@
 ---
 import { getImage } from "astro:assets";
 import WelcomeBackground from "../assets/WelcomeBackground.png";
-const optimizedBackground = await getImage({src: WelcomeBackground, format: 'avif'})
+const optimizedBackground = await getImage({
+  src: WelcomeBackground,
+  format: "avif",
+});
 
 export interface Props {
   classes?: string;
