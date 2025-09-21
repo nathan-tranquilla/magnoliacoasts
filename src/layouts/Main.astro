@@ -11,7 +11,9 @@ import cormorantGaramondLight from "../assets/fonts/Cormorant_Garamond/static/Co
 import dancingRegular from "../assets/fonts/Dancing_Script/static/DancingScript-Regular.ttf";
 
 import heroImage from "../assets/HeroImage.png";
-import welcomeBackground from "../assets/WelcomeBackground.png";
+import { getImage } from "astro:assets";
+import WelcomeBackground from "../assets/WelcomeBackground.png";
+const optimizedBackground = await getImage({src: WelcomeBackground, format: 'avif'})
 
 import { BASE_URL } from "../data/links";
 import logo from "../assets/Logo.png"
@@ -89,8 +91,8 @@ const websiteUrl = "https://magnoliacoastsphotography.com/";
       rel="preload"
       fetchpriority="high"
       as="image"
-      href={welcomeBackground.src}
-      type="image/png"
+      href={optimizedBackground.src}
+      type="image/avif"
     />
 
     <link rel="icon" href={`${BASE_URL}/${logo.src}`} type="image/png" />
