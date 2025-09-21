@@ -34,3 +34,5 @@ src/assets/__MACOSX
 
 ruby/doc/screenshots/**/*.base.png
 ruby/doc/screenshots/**/*.diff.png
+
+astro.pid

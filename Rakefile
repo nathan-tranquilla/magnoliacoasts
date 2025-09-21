@@ -19,15 +19,53 @@ task :ruby_install => 'ruby/vendor/bundle'
 
 task :install => [:ruby_install, 'node_modules']
 
+task :kill_dev do 
+  begin
+    pid = File.read("astro.pid").to_i
+    Process.kill("TERM", pid)
+    puts "Killed Astro dev process with PID #{pid}"
+  rescue Errno::ENOENT
+    puts "astro.pid file not found, nothing to kill."
+  rescue Errno::ESRCH
+    puts "Process not found, nothing to kill."
+  rescue Exception => e
+    puts "Could not kill process: #{e.message}"
+  end
+end 
+
 desc "Run integration tests. Optionally pass TAG=yourtag to filter by tag."
-task :it, [:tag] => [:ruby_install] do |t, args|
-  Dir.chdir('ruby') do
-    tag = ENV['TAG'] || args[:tag]
-    if tag && !tag.empty?
-      sh "bundle exec rspec --tag #{tag}"
-    else
-      sh 'bundle exec rspec'
+task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
+  # Trap SIGINT to ensure rake kill_dev is executed
+  interrupted = false
+  Signal.trap("INT") do
+    puts "Received SIGINT, cleaning up..."
+    interrupted = true
+  end
+
+  # Start dev server and keep PID
+  pid = spawn("rake dev['--silent']")
+  puts "Started dev server with PID #{pid}"
+  sleep 5 # Give dev server time to start
+
+  begin
+    Dir.chdir('ruby') do
+      tag = ENV['TAG'] || args[:tag]
+      if tag && !tag.empty?
+        sh "bundle exec rspec --tag #{tag}"
+      else
+        sh 'bundle exec rspec'
+      end
     end
+  ensure
+    # Always kill dev server after tests or interrupt
+    begin
+      Process.kill("TERM", pid)
+      puts "Killed dev server with PID #{pid}"
+    rescue Exception => e
+      puts "Could not kill dev server: #{e.message}"
+    end
+    sh "rake kill_dev"
+    exit(1) if interrupted
   end
 end
 
@@ -76,8 +114,33 @@ task :res_dev => 'node_modules' do
   sh "npx rescript -w"
 end
 
-task :dev => ['node_modules', :res_build, :dl_galleries] do
-  sh "npx astro dev --host"
+task :dev, [:flags] => ['node_modules', :res_build, :dl_galleries] do |t, args|
+  # Accept flags as an argument, like :it uses args[:tag]
+  flags = args[:flags] || '--host'
+  if File.exist?("astro.pid")
+    puts "Astro dev is already running (astro.pid exists)."
+    exit(1)
+  end
+  pid = spawn("npx astro dev #{flags}")
+  puts "Astro dev PID: #{pid}"
+  File.write("astro.pid", pid)
+
+  # Trap SIGINT and clean up pid file
+  Signal.trap("INT") do
+    puts "Received SIGINT, terminating Astro dev..."
+    begin
+      Process.kill("TERM", pid)
+    rescue Exception => e
+      puts "Could not kill Astro dev: #{e.message}"
+    end
+    File.delete("astro.pid") if File.exist?("astro.pid")
+    puts "Astro dev stopped and pid file removed."
+    exit
+  end
+
+  Process.wait(pid)
+  File.delete("astro.pid") if File.exist?("astro.pid")
+  puts "Astro dev exited successfully."
 end
 
 task :test => ['node_modules'] do 
