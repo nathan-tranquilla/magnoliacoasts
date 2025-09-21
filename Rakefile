@@ -107,7 +107,7 @@ end
 task :clean => [:node_modules_clean, :docs_clean, :ruby_clean, :clean_astro_pid]
 
 task :lint => ['node_modules'] do 
-  sh "npx prettier . -c"
+  sh "npx prettier ./src -c"
 end 
 
 task :format => ['node_modules'] do 
