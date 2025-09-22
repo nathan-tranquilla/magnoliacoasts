@@ -115,7 +115,7 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
               width={width}
               height={height}
               class="h-[100%] object-cover object-center"
-              alt={`Gallery image for ${title}`}
+              alt={`Gallery image-${i} for ${title}`}
               decoding="async"
               loading={i < 6 ? "eager" : "lazy"}
             />
