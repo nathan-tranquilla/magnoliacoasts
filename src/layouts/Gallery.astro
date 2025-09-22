@@ -55,15 +55,35 @@ const sortByFilename = (a: ImageMetadata, b: ImageMetadata) => {
   return numA - numB;
 };
 const sortedImages = images.sort(sortByFilename);
----
-
-<style>
-  img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
+let getDimensions = (i: number, galleryType: GalleryType) => {
+  let mod;
+  let isLandscape;
+  let classes;
+  switch (galleryType) {
+    case GalleryType.Maternity:
+    case GalleryType.Newborn:
+    case GalleryType.Milestone:
+    case GalleryType.CakeSmash:
+    case GalleryType.Family:
+    case GalleryType.Children:
+    case GalleryType.Branding:
+      mod = i % 4;
+      isLandscape = mod == 0 || mod == 3;
+      classes = `${isLandscape ? "xs:col-span-2" : "xs:col-span-1"} col-span-1`
+      break;
+    case GalleryType.Headshots:
+      mod = i % 6;
+      isLandscape = mod == 4 || mod == 5;
+      classes = `${isLandscape ? "xs:col-span-2" : "xs:col-span-1"} col-span-1`
+      break;
   }
-</style>
+  return { 
+    width: isLandscape ? 730 : 357,
+    height: 500,
+    classes: classes
+  }
+}
+---
 <Main title={`Magnolia Coasts Photography | ${title}`}>
   <div class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
     <SiblingPackageNav
@@ -79,24 +99,25 @@ const sortedImages = images.sort(sortByFilename);
     />
   </div>
   <div
-    class="xs:grid-cols-3 grid grid-cols-1 gap-4 self-center p-4 lg:max-w-[1200px]"
+    class=`${galleryType == GalleryType.Headshots ? "xs:grid-cols-4" : "xs:grid-cols-3"} grid grid-cols-1 gap-4 self-center p-4 lg:max-w-[1200px]`
   >
     {
       sortedImages.map((image: ImageMetadata, i) => {
-        const mod = i % 4;
-        const isLandscape = mod == 0 || mod == 3;
+        const { width, height, classes } = getDimensions(i, galleryType);
         return (
           <div
-            id={`id-${i}-mod-${mod}`}
-            class={`${isLandscape ? "xs:col-span-2" : "xs:col-span-1"} col-span-1`}
+            class={classes}
           >
             <Image
+              style="content-visibility: auto"
               src={image}
-              width={isLandscape ? 730 : 357}
-              height={500}
+              layout="full-width"
+              width={width}
+              height={height}
+              class="h-[100%] object-cover object-center"
               alt={`Gallery image for ${title}`}
               decoding="async"
-              loading="lazy"
+              loading={i < 6 ? "eager" : "lazy"}
             />
           </div>
         );

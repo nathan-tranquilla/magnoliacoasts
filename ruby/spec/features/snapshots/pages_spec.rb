@@ -17,6 +17,9 @@ galleries = [
   "/newborn",
   "/family",
   "/cakesmash",
+  "/headshots",
+  "/branding",
+  "/milestones",
 ]
 
 links = [
