@@ -1,12 +1,15 @@
 ---
-import prego from "../assets/PregnantWoman.png";
-import famJam from "../assets/FamilyByRoad.png";
-import babySling from "../assets/babyInSling2.png";
+import specialMoment1 from "../assets/special_moments/maternity.jpg";
+import specialMoment2 from "../assets/special_moments/newborn.jpg";
+import specialMoment3 from "../assets/special_moments/family.jpg";
+import specialMoment4 from "../assets/special_moments/cake_smash.jpg";
+
 import cakeSmash from "../assets/BabyBDayCake.png";
 import SpecialMoment from "./SpecialMoment.astro";
 import Button from "./Button.astro";
 import SectionTitle from "./SectionTitle.astro";
 import { BASE_URL } from "../data/links";
+import { Image } from "astro:assets";
 ---
 
 <div
@@ -18,28 +21,42 @@ import { BASE_URL } from "../data/links";
   />
   <SpecialMoment
     link={`${BASE_URL}/investment/maternity`}
-    src={prego}
-    alt="Pregnant woman."
     buttonText="Maternity"
-  />
+  >
+    <Image
+      class="h-[100%] w-auto object-cover object-center"
+      src={specialMoment1}
+      alt="Pregnant Woman"
+      layout="full-width"
+    />
+  </SpecialMoment>
+  <SpecialMoment link={`${BASE_URL}/investment/newborn`} buttonText="Newborn">
+    <Image
+      class="h-[100%] w-auto object-cover object-center"
+      src={specialMoment2}
+      alt="Baby in a sling."
+      layout="full-width"
+    />
+  </SpecialMoment>
+  <SpecialMoment link={`${BASE_URL}/investment/family`} buttonText="Family">
+    <Image
+      class="h-[100%] w-auto object-cover object-center"
+      src={specialMoment3}
+      alt="Family by the road."
+      layout="full-width"
+    />
+  </SpecialMoment>
   <SpecialMoment
     link={`${BASE_URL}/investment/newborn`}
-    src={babySling}
-    alt="Baby in a sling."
-    buttonText="Newborn"
-  />
-  <SpecialMoment
-    link={`${BASE_URL}/investment/family`}
-    src={famJam}
-    alt="Family by the road."
-    buttonText="Family"
-  />
-  <SpecialMoment
-    link={`${BASE_URL}/investment/newborn`}
-    src={cakeSmash}
-    alt="Baby with a birthday cake."
     buttonText="Cake Smashes"
-  />
+  >
+    <Image
+      class="h-[100%] w-auto object-cover object-center"
+      src={specialMoment4}
+      alt="Family by the road."
+      layout="full-width"
+    />
+  </SpecialMoment>
 </div>
 <div
   class="font-cormorant-garamond m-4 mt-2 mb-[30px] grid w-[90vw] max-w-[880px] grid-cols-2 gap-4 self-center sm:grid-cols-4"

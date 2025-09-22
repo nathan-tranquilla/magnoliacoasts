@@ -69,21 +69,22 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
     case GalleryType.Branding:
       mod = i % 4;
       isLandscape = mod == 0 || mod == 3;
-      classes = `${isLandscape ? "xs:col-span-2" : "xs:col-span-1"} col-span-1`
+      classes = `${isLandscape ? "xs:col-span-2" : "xs:col-span-1"} col-span-1`;
       break;
     case GalleryType.Headshots:
       mod = i % 15;
-      isLandscape = mod == 4 || mod == 5 || mod == 13 ;
-      classes = `${isLandscape ? "xs:col-span-2" : "xs:col-span-1"} col-span-1`
+      isLandscape = mod == 4 || mod == 5 || mod == 13;
+      classes = `${isLandscape ? "xs:col-span-2" : "xs:col-span-1"} col-span-1`;
       break;
   }
-  return { 
+  return {
     width: isLandscape ? 730 : 357,
     height: 500,
-    classes: classes
-  }
-}
+    classes: classes,
+  };
+};
 ---
+
 <Main title={`Magnolia Coasts Photography | ${title}`}>
   <div class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
     <SiblingPackageNav
@@ -105,10 +106,7 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
       sortedImages.map((image: ImageMetadata, i) => {
         const { width, height, classes } = getDimensions(i, galleryType);
         return (
-          <div
-            id={`image-${i}`}
-            class={classes}
-          >
+          <div id={`image-${i}`} class={classes}>
             <Image
               style="content-visibility: auto"
               src={image}
