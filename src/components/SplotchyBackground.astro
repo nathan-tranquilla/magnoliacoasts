@@ -1,6 +1,6 @@
 ---
 import { getImage } from "astro:assets";
-import WelcomeBackground from "../assets/WelcomeBackground.png";
+import WelcomeBackground from "../assets/WelcomeBackground.jpg";
 const optimizedBackground = await getImage({
   src: WelcomeBackground,
   format: "avif",
@@ -14,7 +14,7 @@ const { classes } = Astro.props;
 
 <div
   style={`background-image: url(${optimizedBackground.src});`}
-  class={`bg-center bg-repeat card-bg flex justify-center ${classes || ""}`}
+  class={`bg-center bg-cover bg-white/50 bg-blend-lighten flex justify-center ${classes || ""}`}
 >
   <slot />
 </div>
