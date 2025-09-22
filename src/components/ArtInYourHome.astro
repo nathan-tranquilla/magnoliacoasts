@@ -6,13 +6,14 @@ import artInYourHome from "../assets/ArtInYourHome.jpg";
 <div
   class="relative flex justify-center bg-gradient-to-r from-[rgb(230,229,236)] to-[rgb(153,148,149)]"
 >
-  <Image
-    src={artInYourHome}
-    alt="Art in your home."
-    layout="full-width"
-    width={3840}
-    height={1846}
-  />
+  <picture>
+    <source srcset="/ArtInYourHome.414w.webp" media="(max-width: 414px)" />
+    <source srcset="/ArtInYourHome.600w.webp" media="(max-width: 600px)" />
+    <source srcset="/ArtInYourHome.900w.webp" media="(max-width: 900px)" />
+    <source srcset="/ArtInYourHome.1200w.webp" media="(max-width: 1200px)" />
+    <source srcset="/ArtInYourHome.1800w.webp" media="(max-width: 1800px)" />
+    <img src="/ArtInYourHome.1800w.webp" alt="Hero Image" />
+  </picture>
   <div
     class="font-cormorant-garamond bg-pink/50 absolute right-0 bottom-0 left-0 flex items-center justify-end px-[2rem] py-[1rem] text-3xl text-white md:px-[5rem] lg:px-[7rem] lg:text-5xl"
   >
