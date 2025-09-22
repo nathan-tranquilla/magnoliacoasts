@@ -10,7 +10,6 @@ import cormorantGaramondSemibold from "../assets/fonts/Cormorant_Garamond/static
 import cormorantGaramondLight from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.ttf";
 import dancingRegular from "../assets/fonts/Dancing_Script/static/DancingScript-Regular.ttf";
 
-import heroImage from "../assets/HeroImage.png";
 import { getImage } from "astro:assets";
 import WelcomeBackground from "../assets/WelcomeBackground.jpg";
 const optimizedBackground = await getImage({
@@ -121,7 +120,7 @@ const websiteUrl = "https://magnoliacoastsphotography.com/";
     />
     <meta property="og:url" content={websiteUrl} />
     <meta property="og:site_name" content="Magnolia Coasts Photography" />
-    <meta property="og:image" content={`${websiteUrl}${heroImage.src}`} />
+    <meta property="og:image" content={`${websiteUrl}HeroImage.414w.webp`} />
     <meta property="og:image:width" content="3840" />
     <meta property="og:image:height" content="1838" />
     <meta property="og:image:type" content="image/png" />

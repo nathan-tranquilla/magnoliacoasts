@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import heroImage from "../assets/HeroImage.png";
 import { INQUIRE_LINK } from "../data/links";
 
 let textClasses =
@@ -18,12 +16,14 @@ let aestheticClasses = "cursor-pointer rounded-3xl bg-pink p-4 px-6";
   class="relative flex justify-center bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(211,208,194)]"
 >
   <div class="flex w-full max-w-[1800px] items-center justify-center">
-    <Image
-      src={heroImage}
-      alt="Baby in a basket."
-      layout="full-width"
-      widths={[414, 600, 900, 1200, 1800]}
-    />
+    <picture>
+      <source srcset="/HeroImage.414w.webp" media="(max-width: 414px)" />
+      <source srcset="/HeroImage.600w.webp" media="(max-width: 600px)" />
+      <source srcset="/HeroImage.900w.webp" media="(max-width: 900px)" />
+      <source srcset="/HeroImage.1200w.webp" media="(max-width: 1200px)" />
+      <source srcset="/HeroImage.1800w.webp" media="(max-width: 1800px)" />
+      <img src="/HeroImage.414w.webp" alt="Hero Image" />
+    </picture>
   </div>
   <a
     role="button"
