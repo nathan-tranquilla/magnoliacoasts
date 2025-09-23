@@ -60,5 +60,5 @@ detailsCollection:
 
 ![Pregnant Woman on Beach](../../assets/pregoLookingDown.jpg)
 ![Newborn Baby in Sling](../../assets/swaddledBabyInArms.png)
-![Baby Looking at Camera](../../assets/babyLookingAtCamera.jpg)
+![Baby Looking at Camera](../../assets/gallery_index/babyLookingAtCamera.jpg)
 ![Baby Eating Cake During Cake Smash](../../assets/babyEatingCake.jpg)
