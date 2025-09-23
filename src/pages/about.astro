@@ -3,8 +3,8 @@ import { Image } from "astro:assets";
 import Main from "../layouts/Main.astro";
 import stephAndKids from "../assets/stephAndKids.png";
 import potterDavieFam from "../assets/potterDavieFamily.png";
-import Button from "../components/Button.astro";
 import stephanieCoffee from "../assets/stephCoffee.png";
+import Button from "../components/Button.astro";
 import { INQUIRE_LINK } from "../data/links";
 import SectionHeader from "../components/SectionHeader.astro";
 import Card from "../components/Card.astro";
@@ -28,7 +28,7 @@ let desktopLayout = "md:grid md:grid-cols-2 md:grid-rows-12 md:m-4";
         <Image
           src={stephAndKids}
           alt="Stephanie and the kids."
-          layout="constrained"
+          priority
         />
       </div>
       <div
@@ -76,14 +76,12 @@ let desktopLayout = "md:grid md:grid-cols-2 md:grid-rows-12 md:m-4";
         <Image
           src={potterDavieFam}
           alt="Potter-Davie family."
-          layout="constrained"
         />
       </div>
       <div class="col-span-1 col-start-1 row-span-4 row-start-9 py-2">
         <Image
           src={stephanieCoffee}
           alt="Stephanie and coffee."
-          layout="constrained"
         />
       </div>
 
