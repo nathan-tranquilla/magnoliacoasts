@@ -1,0 +1,49 @@
+---
+import { INQUIRE_LINK } from "../data/links"
+
+let flexDisplay = "flex justify-center items-center"
+let dimensions = "w-full h-fit"
+let font = "text-sm font-mono text-white"
+let messageDimensions = ""
+
+let dismissPositioning = "absolute top-0 bottom-0 right-5 translate-y-[35%]"
+let dismissDimensions = "w-[1rem] h-[1rem] rounded-full"
+let generalLayout= "flex justify-center items-center"
+let dismissInteractivity = "cursor-pointer bg-white/25 hover:bg-white/35 hover:scale-110 focus:scale-110 focus:bg-white/35"
+
+enum MessageCycle {
+  YEARLY = "yearly",
+  MONTHLY = "monthly"
+}
+
+let messages = [
+  {
+    cycle: MessageCycle.YEARLY,
+    startDate: '08-01',
+    endDate: '09-01',
+    message: `<div>Christmas photos are available! Book <a href={${INQUIRE_LINK}} class="underline">now!</a></div>`
+  }
+]
+
+---
+<script>
+  import { init } from "../utils/banner.res.mjs";
+  init(".banner_message", "banner_dismiss");
+</script>
+<style>
+  .message--show {
+    height: 28px;
+  }
+  .message--hide {
+    height: 0px;
+  }
+</style>
+<div class=`relative ${flexDisplay} ${dimensions} ${font} bg-blue-400`>
+  {messages.map(({ cycle, startDate, endDate, message}, i) => (
+    <span id={`message-${i}`} class={`banner_message ${messageDimensions} ${generalLayout} message--hide`} data-cycle={cycle} data-startdate={startDate} data-enddate={endDate}>
+      <Fragment set:html={message} />
+    </span>
+  ))}
+  <button id="banner_dismiss" class={`${dismissPositioning} ${dismissDimensions} ${generalLayout} ${dismissInteractivity}`} >x</button>
+</div>
+

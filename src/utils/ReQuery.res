@@ -26,6 +26,7 @@ module Query = {
     ->NodeList.toArray
     ->Belt.Array.keepMap(Element.ofNode)
 }
+
 //   let getBySelector = (selector: string): array<n> =>
 //     document->Document.querySelectorAll(selector)->NodeList.toArray
 //   let firstBySelector = (selector: string): option<t> =>
@@ -63,6 +64,16 @@ module Element = {
   }
   let onClick = (el: t, callback: unit => unit): unit => {
     el->Element.addEventListener("click", _ => callback())
+  }
+  
+}
+
+module Dataset = {
+  type t = Dom.domStringMap
+  type el = Dom.element
+
+  let getDataset = (el: el): option<t> => {
+    el->Webapi.Dom.Element.asHtmlElement->Belt.Option.map(_, HtmlElement.dataset)
   }
 }
 //   // Generic element creation
