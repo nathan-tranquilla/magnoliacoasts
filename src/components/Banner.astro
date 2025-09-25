@@ -37,18 +37,25 @@ let messages = await getCollection("bannerMessages");
     target="_blank"
     class="flex w-screen items-center justify-center bg-gradient-to-r from-[#539279] to-[#52957a]"
   >
-    <Image
-      class="md:block hidden w-screen max-w-[1100px]"
-      src={HolidayMinis}
-      alt="Holiday Minis Banner"
-      widths={[800, 1100, 1500]}
-      layout="full-width"
-    />
-    <Image
-      class="md:hidden w-screen"
-      src={HolidayMinisMobile}
-      alt="Holiday Minis Banner"
-    />
+    <picture class="w-screen flex items-center justify-center">
+      <source
+        srcset={HolidayMinisMobile.src}
+        media="(max-width: 767px)"
+        type="image/webp"
+      />
+      <source
+        srcset={HolidayMinis.src}
+        media="(min-width: 767px)"
+        type="image/webp"
+      />
+      <img
+        src="/HolidayMinis.1100w.webp"
+        alt="Holiday Minis Banner"
+        class="w-screen max-w-[1100px]"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
   </a>
 </template>
 <div class=`relative ${flexDisplay} ${dimensions} ${font} bg-blue-400`>
