@@ -120,3 +120,14 @@
 
   --shadow-card: 0 0 10px rgba(96, 96, 96, 0.25);
 }
+
+@layer utilities {
+  .bg-splotchy-mobile {
+    background-image: url('/WelcomeBackground.avif');
+  }
+  @media (min-width: 768px) {
+    .bg-splotchy-desktop {
+      background-image: url('/WelcomeBackgroundDesktop.avif');
+    }
+  }
+}

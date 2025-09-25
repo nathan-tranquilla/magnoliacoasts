@@ -1,31 +1,11 @@
 ---
-import { getImage } from "astro:assets";
-import WelcomeBackground from "../assets/WelcomeBackground.jpg";
-const optimizedBackground = await getImage({
-  src: WelcomeBackground,
-  format: "avif",
-});
-import WelcomeBackgroundDesktop from "../assets/WelcomeBackgroundDesktop.jpg";
-const optimizedBackgroundDesktop = await getImage({
-  src: WelcomeBackgroundDesktop,
-  format: "avif",
-});
-
 export interface Props {
   classes?: string;
 }
 const { classes } = Astro.props;
 ---
-
 <div
-  style={`background-image: url(${optimizedBackground.src});`}
-  class={`md:hidden bg-center bg-cover bg-white/50 bg-blend-lighten flex justify-center ${classes || ""}`}
->
-  <slot />
-</div>
-<div
-  style={`background-image: url(${optimizedBackgroundDesktop.src});`}
-  class={`hidden bg-center bg-cover bg-white/50 bg-blend-lighten md:flex justify-center ${classes || ""}`}
+  class={`bg-center bg-cover bg-white/50 bg-blend-lighten flex justify-center ${classes || ""} bg-splotchy-mobile bg-splotchy-desktop`}
 >
   <slot />
 </div>
