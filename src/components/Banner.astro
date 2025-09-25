@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
 import FAButton from "./FAButton.astro";
 import HolidayMinis from "../assets/HolidayMinis.jpg";
 import HolidayMinisMobile from "../assets/HolidayMinisMobile.jpg";
+import HolidayMinisUltraWide from "../assets/HolidayMinisUltraWide.jpg"
 import { INQUIRE_LINK } from "../data/links";
 
 let flexDisplay = "flex justify-center items-center";
@@ -35,7 +35,7 @@ let messages = await getCollection("bannerMessages");
   <a
     href={INQUIRE_LINK}
     target="_blank"
-    class="flex w-screen items-center justify-center bg-gradient-to-r from-[#539279] to-[#52957a]"
+    class="flex w-screen items-center justify-center bg-gradient-to-r from-[#52947a] to-[#52957a]"
   >
     <picture class="w-screen flex items-center justify-center">
       <source
@@ -45,13 +45,18 @@ let messages = await getCollection("bannerMessages");
       />
       <source
         srcset={HolidayMinis.src}
-        media="(min-width: 767px)"
+        media="(min-width: 768px) and (max-width: 1099px)"
+        type="image/webp"
+      />
+      <source
+        srcset={HolidayMinisUltraWide.src}
+        media="(min-width: 1100px)"
         type="image/webp"
       />
       <img
-        src="/HolidayMinis.1100w.webp"
+        src={HolidayMinis.src}
         alt="Holiday Minis Banner"
-        class="w-screen max-w-[1100px]"
+        class="w-screen max-w-[2560px]"
         loading="lazy"
         decoding="async"
       />
