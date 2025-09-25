@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import FAButton from "./FAButton.astro";
 import HolidayMinis from "../assets/HolidayMinis.jpg";
+import HolidayMinisMobile from "../assets/HolidayMinisMobile.jpg";
 import { INQUIRE_LINK } from "../data/links";
 
 let flexDisplay = "flex justify-center items-center";
@@ -37,11 +38,16 @@ let messages = await getCollection("bannerMessages");
     class="flex w-screen items-center justify-center bg-gradient-to-r from-[#539279] to-[#52957a]"
   >
     <Image
-      class="w-screen max-w-[1100px]"
+      class="md:block hidden w-screen max-w-[1100px]"
       src={HolidayMinis}
       alt="Holiday Minis Banner"
-      widths={[500, 800, 1100, 1500]}
+      widths={[800, 1100, 1500]}
       layout="full-width"
+    />
+    <Image
+      class="md:hidden w-screen"
+      src={HolidayMinisMobile}
+      alt="Holiday Minis Banner"
     />
   </a>
 </template>
