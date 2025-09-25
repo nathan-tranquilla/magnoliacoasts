@@ -1,5 +1,6 @@
 require "spec_helper"
 require 'capybara_screenshot_diff/rspec'
+require_relative '../../support/utils'
 Capybara::Screenshot::Diff.tolerance = 0.35
 
 
@@ -39,6 +40,7 @@ links = [
     links.each do |link|
       it "on page #{link}" do
         visit link
+        Utils.set_browser_date(page, 2024, 01, 01)
         sleep 1
         driver_name = driver.to_s
         filename = link == '/' ? 'home' : link.sub(/^\//, '').gsub('/', '-')

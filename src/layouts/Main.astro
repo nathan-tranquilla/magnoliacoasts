@@ -18,6 +18,7 @@ const optimizedBackground = await getImage({
 });
 
 import logo from "../assets/Logo.png";
+import Banner from "../components/Banner.astro";
 
 const { title } = Astro.props;
 
@@ -142,6 +143,7 @@ const websiteUrl = "https://magnoliacoastsphotography.com/";
   <body
     class="bg-default relative flex min-h-dvh w-screen flex-col items-stretch justify-start"
   >
+    <Banner />
     <Nav />
     <main
       class="bg-default flex min-h-dvh w-screen flex-col items-stretch justify-start"

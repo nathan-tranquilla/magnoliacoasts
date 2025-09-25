@@ -65,6 +65,9 @@ module Element = {
   let onClick = (el: t, callback: unit => unit): unit => {
     el->Element.addEventListener("click", _ => callback())
   }
+  let getChildren = (el: t): array<t> => {
+    el->Element.children->Webapi.Dom.HtmlCollection.toArray
+  }
   
 }
 

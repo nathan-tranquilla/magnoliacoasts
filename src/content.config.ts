@@ -21,6 +21,15 @@ const packageSchema = z
     { message: "Either price or priceRange must be specified." },
   );
 
+const bannerMessages = defineCollection({
+  loader: glob({ pattern: "*.md", base: "./src/data/bannerMessages" }),
+  schema: z.object({
+    templateId: z.string(),
+    startDate: z.string(),
+    endDate: z.string(),
+  }),
+});
+
 const maternityPackages = defineCollection({
   loader: glob({ pattern: "*.md", base: "./src/data/maternityPackages" }),
   schema: packageSchema,
@@ -75,4 +84,5 @@ export const collections = {
   familyPackages,
   headshotPackages,
   collectionsPackages,
+  bannerMessages,
 };

@@ -1,49 +1,66 @@
 ---
-import { INQUIRE_LINK } from "../data/links"
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import FAButton from "./FAButton.astro";
+import HolidayMinis from "../assets/HolidayMinis.jpg";
+import { INQUIRE_LINK } from "../data/links";
 
-let flexDisplay = "flex justify-center items-center"
-let dimensions = "w-full h-fit"
-let font = "text-sm font-mono text-white"
-let messageDimensions = ""
+let flexDisplay = "flex justify-center items-center";
+let dimensions = "w-full h-fit";
+let font = "text-sm font-mono text-white";
+let messageDimensions = "";
 
-let dismissPositioning = "absolute top-0 bottom-0 right-5 translate-y-[35%]"
-let dismissDimensions = "w-[1rem] h-[1rem] rounded-full"
-let generalLayout= "flex justify-center items-center"
-let dismissInteractivity = "cursor-pointer bg-white/25 hover:bg-white/35 hover:scale-110 focus:scale-110 focus:bg-white/35"
+let dismissPositioning = "absolute top-0 right-0 translate-y-2 -translate-x-2";
+let dismissDimensions = "w-[1rem] h-[1rem] rounded-full";
+let generalLayout = "flex justify-center items-center";
 
-enum MessageCycle {
-  YEARLY = "yearly",
-  MONTHLY = "monthly"
-}
-
-let messages = [
-  {
-    cycle: MessageCycle.YEARLY,
-    startDate: '08-01',
-    endDate: '09-01',
-    message: `<div>Christmas photos are available! Book <a href={${INQUIRE_LINK}} class="underline">now!</a></div>`
-  }
-]
-
+let messages = await getCollection("bannerMessages");
 ---
+
 <script>
   import { init } from "../utils/banner.res.mjs";
   init(".banner_message", "banner_dismiss");
 </script>
 <style>
   .message--show {
-    height: 28px;
+    height: fit-content;
+    max-height: 175px;
   }
   .message--hide {
-    height: 0px;
+    max-height: 0px;
   }
 </style>
+<template id="holiday-minis">
+  <a
+    href={INQUIRE_LINK}
+    target="_blank"
+    class="flex w-screen items-center justify-center bg-gradient-to-r from-[#539279] to-[#52957a]"
+  >
+    <Image
+      class="w-screen max-w-[1100px]"
+      src={HolidayMinis}
+      alt="Holiday Minis Banner"
+      widths={[500, 800, 1100, 1500]}
+      layout="full-width"
+    />
+  </a>
+</template>
 <div class=`relative ${flexDisplay} ${dimensions} ${font} bg-blue-400`>
-  {messages.map(({ cycle, startDate, endDate, message}, i) => (
-    <span id={`message-${i}`} class={`banner_message ${messageDimensions} ${generalLayout} message--hide`} data-cycle={cycle} data-startdate={startDate} data-enddate={endDate}>
-      <Fragment set:html={message} />
-    </span>
-  ))}
-  <button id="banner_dismiss" class={`${dismissPositioning} ${dismissDimensions} ${generalLayout} ${dismissInteractivity}`} >x</button>
+  {
+    messages.map(({ data: { startDate, endDate, templateId } }, i) => (
+      <span
+        id={`message-${i}`}
+        class={`banner_message transition-all ease-in ${messageDimensions} ${generalLayout} message--hide`}
+        data-startdate={startDate}
+        data-enddate={endDate}
+        data-templateid={templateId}
+      />
+    ))
+  }
+  <FAButton
+    id="banner_dismiss"
+    title="dismiss announcement"
+    classes={`hover:opacity-100 focus:opacity-100 opacity-50 max-h-[24px] max-w-[24px] ${dismissPositioning} ${dismissDimensions} ${generalLayout}`}
+    >x</FAButton
+  >
 </div>
-

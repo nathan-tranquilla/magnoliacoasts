@@ -2,7 +2,6 @@
 import logo from "../assets/Logo.png";
 import { Image } from "astro:assets";
 import { BASE_URL } from "../data/links";
-import Banner from './Banner.astro'
 
 const leftLinks = [
   { href: BASE_URL + "/", text: "Home" },
@@ -16,9 +15,8 @@ const links = [...leftLinks, ...rightLinks];
 ---
 
 <header
-  class="sticky top-0 z-10 flex flex-col justify-center items-center h-[var(--mobile-nav-height)] w-screen bg-white shadow-md md:h-[var(--tablet-nav-height)] md:text-xl lg:h-[var(--desktop-nav-height)]"
+  class="sticky top-0 z-10 flex h-[var(--mobile-nav-height)] w-screen flex-col items-center justify-center bg-white shadow-md md:h-[var(--tablet-nav-height)] md:text-xl lg:h-[var(--desktop-nav-height)]"
 >
-  <Banner />
   <nav class="static flex h-full w-full items-center justify-center md:hidden">
     <Image src={logo} width={162} alt="Magnolia Coasts Logo." />
     <input type="checkbox" id="menu-toggle" class="peer hidden" />

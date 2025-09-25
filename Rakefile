@@ -101,7 +101,7 @@ task :res_clean do
 end
 
 task :clean_astro_pid do 
-  sh "rm astro.pid"
+  sh "rm astro.pid || true"
 end 
 
 task :clean => [:node_modules_clean, :docs_clean, :ruby_clean, :clean_astro_pid]
