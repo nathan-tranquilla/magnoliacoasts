@@ -29,7 +29,7 @@ end
 PAGES = gallery_nav_cases(GALLERIES)
 
 [:cuprite, :cuprite_mobile].each do |driver|
-  RSpec.describe "gallery sibling navigation with ", type: :feature, driver: driver, gallery_nav: true do
+  RSpec.describe "gallery sibling navigation with ", type: :feature, driver: driver, cross_links: true do
     before { Capybara.current_driver = driver }
     after  { Capybara.use_default_driver }
 
