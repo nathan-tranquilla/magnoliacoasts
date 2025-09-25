@@ -1,0 +1,9 @@
+---
+import Gallery, { GalleryType } from "../../layouts/Gallery.astro";
+
+const images = Object.values(
+  import.meta.glob(`../../assets/galleries/children/*.jpg`, { eager: true }),
+).map((module: any) => module.default) as ImageMetadata[];
+---
+
+<Gallery title="Children" galleryType={GalleryType.Children} images={images} />
