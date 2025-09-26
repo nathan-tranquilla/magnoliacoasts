@@ -11,7 +11,6 @@ details:
   - includes family
   - in studio or outdoor
   - in home (no set) quote available
-  - in studio or outdoor
 price: 400
 ---
 
