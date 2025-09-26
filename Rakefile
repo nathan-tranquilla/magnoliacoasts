@@ -33,6 +33,14 @@ task :kill_dev do
   end
 end 
 
+task :tier1 do 
+  sh "rake it TAG=~snapshot"
+end 
+
+task :tier2 do 
+  sh "rake it"
+end 
+
 desc "Run integration tests. Optionally pass TAG=yourtag to filter by tag. Or TAG=~yourtag to filter OUT by tag."
 task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
   # Trap SIGINT to ensure rake kill_dev is executed
