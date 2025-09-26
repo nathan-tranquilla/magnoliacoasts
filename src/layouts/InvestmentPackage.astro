@@ -3,7 +3,15 @@ import { getCollection } from "astro:content";
 import Main from "../layouts/Main.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import { render } from "astro:content";
-import { BASE_URL, INQUIRE_LINK } from "../data/links";
+import {
+  BASE_URL,
+  FAMILY_LINK,
+  HEADSHOTS_LINK,
+  INQUIRE_LINK,
+  MATERNITY_LINK,
+  MILESTONES_LINK,
+  NEWBORN_LINK,
+} from "../data/links";
 import { get_surrounding_pkgs } from "./InvestmentPackage.res.mjs";
 import SiblingPackageNav, {
   NavDir,
@@ -19,6 +27,15 @@ export enum PackageType {
   Headshot = "headshotPackages",
   Collections = "collectionsPackages",
 }
+
+const packageLink: Record<PackageType, string> = {
+  [PackageType.Maternity]: MATERNITY_LINK,
+  [PackageType.Newborn]: NEWBORN_LINK,
+  [PackageType.Milestone]: MILESTONES_LINK,
+  [PackageType.Family]: FAMILY_LINK,
+  [PackageType.Headshot]: HEADSHOTS_LINK,
+  [PackageType.Collections]: INQUIRE_LINK,
+};
 
 const packageTypeToTuple: Record<PackageType, [string, string]> = {
   [PackageType.Maternity]: [
@@ -50,6 +67,7 @@ let { pkgType, title } = Astro.props;
 
 let packages = Object.values(packageTypeToTuple);
 const pkg = packageTypeToTuple[pkgType];
+const link = packageLink[pkgType];
 let pkgs = get_surrounding_pkgs(pkg, packages);
 
 const collection = (await getCollection(pkgType)).sort(
@@ -99,6 +117,7 @@ const mobileDisplay = "flex justify-around items-center";
                 price={pkg.data.price}
                 priceRange={pkg.data.priceRange}
                 details={pkg.data.details}
+                link={link}
               >
                 <Content />
               </StandardInvestment>

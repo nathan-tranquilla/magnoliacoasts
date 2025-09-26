@@ -1,5 +1,4 @@
 ---
-import { INQUIRE_LINK } from "../data/links";
 import Card from "./Card.astro";
 import Button from "./Button.astro";
 import InvestmentHeader from "./InvestmentHeader.astro";
@@ -10,8 +9,9 @@ export interface Props {
   details: string[];
   price?: number;
   priceRange?: string;
+  link: string;
 }
-let { title, details, price, priceRange, cardStyle } = Astro.props;
+let { title, details, price, priceRange, cardStyle, link } = Astro.props;
 ---
 
 <style>
@@ -40,7 +40,7 @@ let { title, details, price, priceRange, cardStyle } = Astro.props;
 
     <Button color="Pink" classes="w-4/10 h-3/4">
       <a
-        href={INQUIRE_LINK}
+        href={link}
         target="_blank"
         class="font-cormorant-garamond flex h-full w-full items-center justify-center"
         >Inquire</a

@@ -3,8 +3,8 @@ import { getCollection } from "astro:content";
 import FAButton from "./FAButton.astro";
 import HolidayMinis from "../assets/HolidayMinis.jpg";
 import HolidayMinisMobile from "../assets/HolidayMinisMobile.jpg";
-import HolidayMinisUltraWide from "../assets/HolidayMinisUltraWide.jpg"
-import { INQUIRE_LINK } from "../data/links";
+import HolidayMinisUltraWide from "../assets/HolidayMinisUltraWide.jpg";
+import { HOLIDAY_MINIS_LINK } from "../data/links";
 
 let flexDisplay = "flex justify-center items-center";
 let dimensions = "w-full h-fit";
@@ -33,11 +33,11 @@ let messages = await getCollection("bannerMessages");
 </style>
 <template id="holiday-minis">
   <a
-    href={INQUIRE_LINK}
+    href={HOLIDAY_MINIS_LINK}
     target="_blank"
     class="flex w-screen items-center justify-center bg-gradient-to-r from-[#52947a] to-[#52957a]"
   >
-    <picture class="w-screen flex items-center justify-center">
+    <picture class="flex w-screen items-center justify-center">
       <source
         srcset={HolidayMinisMobile.src}
         media="(max-width: 767px)"
