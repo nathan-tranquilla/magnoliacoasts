@@ -7,4 +7,4 @@ details:
   - ""
 ---
 
-![Mini Family Session](../../assets/miniFamilyPackage.png)
+![Mini Family Session](../../assets/seasons.jpg)
