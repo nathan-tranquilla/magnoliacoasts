@@ -10,5 +10,6 @@ module Constants
   HEADSHOTS_LINK = "https://book.usesession.com/t/MuL13nQbW";
   MILESTONES_LINK = "https://book.usesession.com/t/aOqs7teEf";
   FAMILY_LINK = "https://book.usesession.com/t/qSKGXDFg9";
+  CHILDREN_LINK = "https://book.usesession.com/t/T_j3GdwJze";
   CAKE_SMASH_LINK = "https://book.usesession.com/t/v0bCgBueC";
 end 

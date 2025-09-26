@@ -46,7 +46,7 @@ links = [
   },
   {
     origin: "/",
-    external_link: Constants::MILESTONES_LINK,
+    external_link: Constants::CHILDREN_LINK,
     text: "Children",
     within: "#other_special_moments"
   },
