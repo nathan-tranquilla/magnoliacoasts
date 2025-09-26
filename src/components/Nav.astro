@@ -5,7 +5,7 @@ import { BASE_URL } from "../data/links";
 
 const leftLinks = [
   { href: BASE_URL + "/", text: "Home" },
-  { href: BASE_URL + "/about", text: "About Photographer" },
+  { href: BASE_URL + "/about", text: "Photographer" },
 ];
 const rightLinks = [
   { href: BASE_URL + "/gallery", text: "Galleries" },
@@ -18,7 +18,7 @@ const links = [...leftLinks, ...rightLinks];
   class="sticky top-0 z-10 flex h-[var(--mobile-nav-height)] w-screen flex-col items-center justify-center bg-white shadow-md md:h-[var(--tablet-nav-height)] md:text-xl lg:h-[var(--desktop-nav-height)]"
 >
   <nav class="static flex h-full w-full items-center justify-center md:hidden">
-    <Image src={logo} width={162} alt="Magnolia Coasts Logo." />
+    <Image class="translate-y-[10px]" src={logo} height={61} width={195} alt="Magnolia Coasts Logo." />
     <input type="checkbox" id="menu-toggle" class="peer hidden" />
     <label
       for="menu-toggle"
@@ -62,7 +62,13 @@ const links = [...leftLinks, ...rightLinks];
         ))
       }
     </div>
-    <Image src={logo} width={162} height={51} alt="Magnolia Coasts Logo." />
+    <Image
+      class="translate-y-[10px]"
+      src={logo}
+      width={280}
+      height={91}
+      alt="Magnolia Coasts Logo."
+    />
     <div class="flex w-full max-w-[275px] justify-around">
       {
         rightLinks.map((link) => (
