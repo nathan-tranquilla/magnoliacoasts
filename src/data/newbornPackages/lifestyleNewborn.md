@@ -10,7 +10,7 @@ details:
   - natural, no props included
   - includes family in your home
   - travel within 20 km of studio
-  - in studio or outdoor
+  - in studio or in home
 price: 500
 ---
 

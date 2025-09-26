@@ -9,7 +9,7 @@ details:
   - option to purchase more
   - outfits, props & sets included
   - includes family
-  - in studio or outdoor
+  - in studio or in home
 price: 450
 ---
 
