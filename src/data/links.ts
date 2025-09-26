@@ -7,7 +7,7 @@ export const HEADSHOTS_LINK = "https://book.usesession.com/t/MuL13nQbW";
 export const MILESTONES_LINK = "https://book.usesession.com/t/aOqs7teEf";
 export const FAMILY_LINK = "https://book.usesession.com/t/qSKGXDFg9";
 export const CAKE_SMASH_LINK = "https://book.usesession.com/t/v0bCgBueC";
-export const CHILDREN_LINK = "https://book.usesession.com/t/T_j3GdwJze"
+export const CHILDREN_LINK = "https://book.usesession.com/t/T_j3GdwJze";
 export const HOLIDAY_MINIS_LINK = "https://book.usesession.com/i/_ji73Jr_e";
 export const SUBSCRIBE_LINK =
   "https://magnoliacoastsphotography.us14.list-manage.com/subscribe?u=4ebfced223d835c48a891029f&id=92c1de656f";

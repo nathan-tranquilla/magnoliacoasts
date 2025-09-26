@@ -14,8 +14,10 @@ import Card from "./Card.astro";
 >
   <slot />
   <Button color="Pink" classes="mx-auto mt-auto">
-    <a href={link} class="flex h-full w-full items-center justify-center"
-      >{buttonText}</a
+    <a
+      href={link}
+      target="_blank"
+      class="flex h-full w-full items-center justify-center">{buttonText}</a
     >
   </Button>
 </Card>
