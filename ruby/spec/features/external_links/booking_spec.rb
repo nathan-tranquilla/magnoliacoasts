@@ -144,6 +144,9 @@ titles = [
         within(test_case[:within]) do 
           links = all("a", text: test_case[:text], visible: :all).select { |a| a[:href] == test_case[:external_link] }
           expect(links.size).to be > 0
+          links.each do |a|
+            expect(a[:target]).to eq("_blank")
+          end
         end 
       end
     end 
@@ -154,6 +157,9 @@ titles = [
         within(test_case[:within]) do 
           links = all("a", class: test_case[:class], visible: :all).select { |a| a[:href] == test_case[:external_link] }
           expect(links.size).to be > 0
+          links.each do |a|
+            expect(a[:target]).to eq("_blank")
+          end
         end 
       end
     end 
