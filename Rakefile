@@ -33,7 +33,7 @@ task :kill_dev do
   end
 end 
 
-desc "Run integration tests. Optionally pass TAG=yourtag to filter by tag."
+desc "Run integration tests. Optionally pass TAG=yourtag to filter by tag. Or TAG=~yourtag to filter OUT by tag."
 task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
   # Trap SIGINT to ensure rake kill_dev is executed
   interrupted = false
