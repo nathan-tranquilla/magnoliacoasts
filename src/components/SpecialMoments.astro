@@ -7,22 +7,28 @@ import specialMoment4 from "../assets/special_moments/cake_smash.jpg";
 import SpecialMoment from "./SpecialMoment.astro";
 import Button from "./Button.astro";
 import SectionTitle from "./SectionTitle.astro";
-import { BASE_URL } from "../data/links";
+import {
+  BRANDING_LINK,
+  CAKE_SMASH_LINK,
+  FAMILY_LINK,
+  HEADSHOTS_LINK,
+  MATERNITY_LINK,
+  MILESTONES_LINK,
+  NEWBORN_LINK,
+} from "../data/links";
 import { Image } from "astro:assets";
 ---
 
 <div
+  id="special_moments"
   class="font-cormorant-garamond m-4 grid max-w-[1439px] grid-cols-2 gap-4 self-center md:grid-cols-4"
 >
   <SectionTitle
     title="What special moments would you like to capture?"
     classStyles="col-span-full"
   />
-  <SpecialMoment
-    link={`${BASE_URL}/investment/maternity`}
-    buttonText="Maternity"
-  >
-    <div class="h-auto flex items-stretch">
+  <SpecialMoment link={MATERNITY_LINK} buttonText="Maternity">
+    <div class="flex h-auto items-stretch">
       <Image
         class="h-full object-cover object-center"
         src={specialMoment1}
@@ -31,8 +37,8 @@ import { Image } from "astro:assets";
       />
     </div>
   </SpecialMoment>
-  <SpecialMoment link={`${BASE_URL}/investment/newborn`} buttonText="Newborn">
-    <div class="h-auto flex items-stretch">
+  <SpecialMoment link={NEWBORN_LINK} buttonText="Newborn">
+    <div class="flex h-auto items-stretch">
       <Image
         class="h-full object-cover object-center"
         src={specialMoment2}
@@ -41,8 +47,8 @@ import { Image } from "astro:assets";
       />
     </div>
   </SpecialMoment>
-  <SpecialMoment link={`${BASE_URL}/investment/family`} buttonText="Family">
-    <div class="h-auto flex items-stretch">
+  <SpecialMoment link={FAMILY_LINK} buttonText="Family">
+    <div class="flex h-auto items-stretch">
       <Image
         class="h-full object-cover object-center"
         src={specialMoment3}
@@ -51,11 +57,8 @@ import { Image } from "astro:assets";
       />
     </div>
   </SpecialMoment>
-  <SpecialMoment
-    link={`${BASE_URL}/investment/newborn`}
-    buttonText="Cake Smashes"
-  >
-    <div class="h-auto flex items-stretch">
+  <SpecialMoment link={CAKE_SMASH_LINK} buttonText="Cake Smashes">
+    <div class="flex h-auto items-stretch">
       <Image
         class="h-full object-cover object-center"
         src={specialMoment4}
@@ -66,6 +69,7 @@ import { Image } from "astro:assets";
   </SpecialMoment>
 </div>
 <div
+  id="other_special_moments"
   class="font-cormorant-garamond m-4 mt-2 mb-[30px] grid w-[90vw] max-w-[880px] grid-cols-2 gap-4 self-center sm:grid-cols-4"
 >
   <SectionTitle
@@ -76,28 +80,28 @@ import { Image } from "astro:assets";
   <Button data_id="special-moment-milestones" color="Mint" classes="mx-auto">
     <a
       class="flex h-full w-full items-center justify-center"
-      href={`${BASE_URL}/investment/milestone`}>Milestones</a
+      href={MILESTONES_LINK}>Milestones</a
     >
   </Button>
 
   <Button data_id="special-moment-children" color="Mint" classes="mx-auto">
     <a
       class="flex h-full w-full items-center justify-center"
-      href={`${BASE_URL}/investment/milestone`}>Children</a
+      href={MILESTONES_LINK}>Children</a
     >
   </Button>
 
   <Button data_id="special-moment-branding" color="Mint" classes="mx-auto">
     <a
       class="flex h-full w-full items-center justify-center"
-      href={`${BASE_URL}/investment/headshot`}>Branding</a
+      href={BRANDING_LINK}>Branding</a
     >
   </Button>
 
   <Button data_id="special-moment-headshots" color="Mint" classes="mx-auto">
     <a
       class="flex h-full w-full items-center justify-center"
-      href={`${BASE_URL}/investment/headshot`}>Headshots</a
+      href={HEADSHOTS_LINK}>Headshots</a
     >
   </Button>
 </div>
