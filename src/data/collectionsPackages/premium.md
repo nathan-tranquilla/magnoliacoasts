@@ -17,7 +17,7 @@ detailsCollection:
       - option to purchase more
       - outfits, crowns, accessories etc. included
       - indoors or outdoors available
-      - in studio only
+      - in studio or outdoor
   Full Newborn:
     metadata:
       - (worth $650)
@@ -41,7 +41,7 @@ detailsCollection:
       - includes family members
       - cake & decor included
       - in studio or park
-      - in studio only
+      - in studio or outdoor
 ---
 
 ![Pregnant woman On Beach](../../assets/pregoOnBeach.jpg)

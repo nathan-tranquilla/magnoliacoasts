@@ -11,8 +11,7 @@ details:
   - natural, no props included
   - $50 to include family + 5 photos
   - $50 to include cake
-  - $50 to include cake
-  - in studio only
+  - in studio or outdoor
 ---
 
 ![Birthday](../../assets/birthdayMilestone.png)

@@ -9,7 +9,7 @@ details:
   - includes studio rental
   - print release
   - 5 group shots
-  - in studio only
+  - in studio or outdoor
 ---
 
 ![Branding Session](../../assets/brandingSession.png)

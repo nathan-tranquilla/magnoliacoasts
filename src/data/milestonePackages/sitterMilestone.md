@@ -12,7 +12,6 @@ details:
   - includes family
   - in studio or outdoor
   - in home (no set) quote available
-  - in home (no set) quote available
 ---
 
 ![Sitter Milestone](../../assets/sitterMilestone.png)

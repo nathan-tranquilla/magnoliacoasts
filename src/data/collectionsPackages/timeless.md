@@ -18,7 +18,7 @@ detailsCollection:
       - includes family members
       - outfits, crowns, accessories etc. included
       - indoors or outdoors available
-      - in studio only
+      - in studio or outdoor
   Mini Newborn:
     metadata:
       - (worth $450)
@@ -30,7 +30,7 @@ detailsCollection:
       - option to purchase more
       - includes family members
       - outfits, props & sets included
-      - in studio only
+      - in studio or outdoor
   Milestone:
     metadata:
       - (worth $400)
@@ -43,7 +43,7 @@ detailsCollection:
       - includes family members
       - outfits, props & sets included
       - in studio or park
-      - in studio only
+      - in studio or outdoor
   Family Cake Smash:
     metadata:
       - (worth $500)
@@ -55,7 +55,7 @@ detailsCollection:
       - includes family members
       - cake & decor included
       - in studio or park
-      - in studio only
+      - in studio or outdoor
 ---
 
 ![Pregnant Woman on Beach](../../assets/pregoLookingDown.jpg)

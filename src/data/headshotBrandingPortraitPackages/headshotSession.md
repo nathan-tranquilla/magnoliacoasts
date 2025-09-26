@@ -9,7 +9,7 @@ details:
   - print release
   - 3 outfits
   - 3 outfits
-  - in studio only
+  - in studio or outdoor
 ---
 
 ![Head Shot Session](../../assets/headshotSession.png)
