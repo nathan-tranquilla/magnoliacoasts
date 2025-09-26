@@ -18,7 +18,15 @@ const links = [...leftLinks, ...rightLinks];
   class="sticky top-0 z-10 flex h-[var(--mobile-nav-height)] w-screen flex-col items-center justify-center bg-white shadow-md md:h-[var(--tablet-nav-height)] md:text-xl lg:h-[var(--desktop-nav-height)]"
 >
   <nav class="static flex h-full w-full items-center justify-center md:hidden">
-    <Image class="translate-y-[10px]" src={logo} height={61} width={195} alt="Magnolia Coasts Logo." />
+    <a href="/"
+      ><Image
+        class="translate-y-[10px]"
+        src={logo}
+        height={61}
+        width={195}
+        alt="Magnolia Coasts Logo."
+      /></a
+    >
     <input type="checkbox" id="menu-toggle" class="peer hidden" />
     <label
       for="menu-toggle"
@@ -62,13 +70,15 @@ const links = [...leftLinks, ...rightLinks];
         ))
       }
     </div>
-    <Image
-      class="translate-y-[10px]"
-      src={logo}
-      width={280}
-      height={91}
-      alt="Magnolia Coasts Logo."
-    />
+    <a href="/"
+      ><Image
+        class="translate-y-[10px]"
+        src={logo}
+        width={280}
+        height={91}
+        alt="Magnolia Coasts Logo."
+      /></a
+    >
     <div class="flex w-full max-w-[275px] justify-around">
       {
         rightLinks.map((link) => (
