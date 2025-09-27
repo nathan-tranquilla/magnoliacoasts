@@ -18,7 +18,7 @@ detailsCollection:
       - option to purchase more
       - includes family members
       - outfits, crowns, accessories etc. included
-      - indoors or outdoors available
+      - in studio or outdoors 
   Full Newborn:
     metadata:
       - (worth $650)
@@ -30,7 +30,7 @@ detailsCollection:
       - option to purchase more
       - outfits, props & sets included
       - includes family members
-      - in studio or outdoor
+      - in studio or in home (quote available for travel)
   3+ Month Milestone:
     metadata:
       - (worth $400)
@@ -41,7 +41,7 @@ detailsCollection:
       - option to purchase more
       - includes family members
       - outfits, props & sets included
-      - in studio or park
+      - in studio or outdoors
   6+ Month Milestone:
     metadata:
       - (worth $400)
@@ -51,7 +51,7 @@ detailsCollection:
       - 15 edited images
       - option to purchase more
       - outfits, props & sets included
-      - in studio or park
+      - in studio or outdoors
   9+ Month Milestone:
     metadata:
       - (worth $400)
@@ -61,7 +61,7 @@ detailsCollection:
       - 15 edited images
       - option to purchase more
       - outfits, props & sets included
-      - in studio or park
+      - in studio or outdoors
   Family Cake Smash:
     metadata:
       - (worth $500)
@@ -72,7 +72,7 @@ detailsCollection:
       - option to purchase more
       - includes family members
       - cake & decor included
-      - in studio or park
+      - in studio or outdoors
 ---
 
 ![Pregnant woman in blue dress](../../assets/blueDressPrego.jpg)
