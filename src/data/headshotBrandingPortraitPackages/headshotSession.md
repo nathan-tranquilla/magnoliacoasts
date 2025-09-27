@@ -2,7 +2,7 @@
 title: Head Shot Session
 sortOrder: 1
 price: 250
-productLink: <your link here>
+productLink: https://book.usesession.com/t/MuL13nQbW
 details:
   - 45 min session
   - online proofing gallery

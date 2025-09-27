@@ -2,7 +2,7 @@
 title: Headshot Mini Sessions
 sortOrder: 4
 price: 150
-productLink: <your link here>
+productLink: https://book.usesession.com/t/MuL13nQbW
 details:
   - Offered once per month only
 ---

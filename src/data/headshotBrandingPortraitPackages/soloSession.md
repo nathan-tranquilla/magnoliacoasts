@@ -2,7 +2,7 @@
 title: Branding/Portrait Solo
 sortOrder: 2
 price: 400
-productLink: <your link here>
+productLink: https://book.usesession.com/t/MuL13nQbW
 details:
   - 60 min session
   - online proofing gallery

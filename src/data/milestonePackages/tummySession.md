@@ -1,7 +1,7 @@
 ---
 title: Tummy Session
 sortOrder: 1
-productLink: <your link here>
+productLink: https://book.usesession.com/t/jzCdVHVNT
 details:
   - 3+ months
   - 1 hour session

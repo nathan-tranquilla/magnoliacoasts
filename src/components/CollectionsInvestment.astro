@@ -10,8 +10,10 @@ export interface Props {
   price: number;
   priceDetails: string[];
   photoCount: number;
+  productLink: string;
 }
-let { title, detailsCollection, price, priceDetails, photoCount } = Astro.props;
+let { title, detailsCollection, price, priceDetails, photoCount, productLink } =
+  Astro.props;
 
 let desktopColumns = photoCount;
 let tabletColumns = photoCount;
@@ -74,7 +76,7 @@ let _load =
     </div>
     <Button color="Pink" classes="max-w-[150px] w-4/10 h-3/4 ">
       <a
-        href={INQUIRE_LINK}
+        href={productLink}
         target="_blank"
         class="font-cormorant-garamond flex w-full items-center justify-center"
         >Inquire</a

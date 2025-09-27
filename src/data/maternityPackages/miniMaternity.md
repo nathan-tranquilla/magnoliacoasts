@@ -1,7 +1,7 @@
 ---
 title: Mini Maternity
 sortOrder: 1
-productLink: <your link here>
+productLink: https://book.usesession.com/t/m-PqP2slk
 details:
   - 30 - 40 minute session
   - online proofing gallery

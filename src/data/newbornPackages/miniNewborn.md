@@ -1,7 +1,7 @@
 ---
 title: Mini Newborn
 sortOrder: 1
-productLink: <your link here>
+productLink: https://book.usesession.com/t/jzCdVHVNT
 details:
   - 4-11 days old or 30 days
   - 2 hour session

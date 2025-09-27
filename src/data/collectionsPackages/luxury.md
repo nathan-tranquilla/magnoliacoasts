@@ -8,7 +8,7 @@ priceDetails:
   - $600 deposit
 detailsCollection:
   Full Maternity:
-    productLink: <your link here>
+    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $400)
     details:
@@ -20,7 +20,7 @@ detailsCollection:
       - outfits, crowns, accessories etc. included
       - indoors or outdoors available
   Full Newborn:
-    productLink: <your link here>
+    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $650)
       - $75 weekend fee if booked outside of Mon-Fri 10:30 am - 3:30 pm
@@ -33,7 +33,7 @@ detailsCollection:
       - includes family members
       - in studio or outdoor
   3+ Month Milestone:
-    productLink: <your link here>
+    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $400)
     details:
@@ -45,7 +45,7 @@ detailsCollection:
       - outfits, props & sets included
       - in studio or park
   6+ Month Milestone:
-    productLink: <your link here>
+    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $400)
     details:
@@ -56,7 +56,7 @@ detailsCollection:
       - outfits, props & sets included
       - in studio or park
   9+ Month Milestone:
-    productLink: <your link here>
+    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $400)
     details:
@@ -67,7 +67,7 @@ detailsCollection:
       - outfits, props & sets included
       - in studio or park
   Family Cake Smash:
-    productLink: <your link here>
+    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $500)
     details:

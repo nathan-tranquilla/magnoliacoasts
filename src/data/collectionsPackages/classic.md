@@ -8,7 +8,7 @@ priceDetails:
   - $300 deposit
 detailsCollection:
   Mini Maternity:
-    productLink: <your link here>
+    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $250)
     details:
@@ -20,7 +20,7 @@ detailsCollection:
       - indoors or outdoors available
       - in studio or outdoor
   Mini Newborn:
-    productLink: <your link here>
+    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $450)
       - $75 weekend fee if booked outside of Mon-Fri 10:30 am - 3:30 pm
@@ -33,7 +33,7 @@ detailsCollection:
       - includes family members
       - in studio only
   Family Cake Smash:
-    productLink: <your link here>
+    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $500)
     details:
