@@ -9,9 +9,9 @@ details:
   - option to purchase more
   - natural, no props included
   - includes family in your home
-  - travel within 20 km of studio
-  - in studio or in home
-price: 500
+  - travel within 25 km of studio
+  - in studio option
+price: 550
 ---
 
 ![Lifestyle Newborn.](../../assets/lifestyleNewborn.png)
