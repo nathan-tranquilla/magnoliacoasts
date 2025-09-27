@@ -9,7 +9,6 @@ details:
   - 5 edited images
   - print release
   - 3 outfits
-  - 3 outfits
   - in studio or outdoor
 ---
 
