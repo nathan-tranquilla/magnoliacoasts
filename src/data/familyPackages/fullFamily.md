@@ -10,8 +10,8 @@ details:
   - no props included
   - outfit & wardrobe consult
   - candid and posed
-  - candid and posed
-  - outdoor or studio rental
+  - outdoor option
+  - studio rental (costs incur)
 ---
 
 ![Full Family Package](../../assets/fullFamilyPackage.png)
