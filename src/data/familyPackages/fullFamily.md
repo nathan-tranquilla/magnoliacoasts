@@ -11,7 +11,7 @@ details:
   - outfit & wardrobe consult
   - candid and posed
   - candid and posed
-  - in studio or outdoor
+  - outdoor or studio rental
 ---
 
 ![Full Family Package](../../assets/fullFamilyPackage.png)
