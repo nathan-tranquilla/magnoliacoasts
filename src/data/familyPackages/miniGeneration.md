@@ -13,5 +13,6 @@ details:
   - captures 3-4  generations
   - outdoor option
   - studio rental (costs incur)
+---
 
 ![Mini Generation Package](../../assets/miniGenerationPackage.png)

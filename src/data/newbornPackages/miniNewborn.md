@@ -10,7 +10,6 @@ details:
   - outfits, props & sets included
   - includes family
   - in studio only
-  - 
 price: 450
 ---
 
