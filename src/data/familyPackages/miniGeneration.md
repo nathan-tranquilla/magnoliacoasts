@@ -11,7 +11,7 @@ details:
   - outfit & wardrobe consult
   - different family combinations
   - captures 3-4  generations
-  - in home (no set) quote available
----
+  - outdoor option
+  - studio rental (costs incur)
 
 ![Mini Generation Package](../../assets/miniGenerationPackage.png)
