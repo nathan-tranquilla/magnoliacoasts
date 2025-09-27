@@ -29,7 +29,7 @@ detailsCollection:
       - option to purchase more
       - includes family members
       - outfits, props & sets included
-      - in studio or outdoor
+      - in studio only
   Milestone:
     metadata:
       - (worth $400)
