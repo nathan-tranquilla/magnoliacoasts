@@ -4,7 +4,7 @@ sortOrder: 1
 details:
   - 30 - 40 minute session
   - online proofing gallery
-  - 10 edited images
+  - 10 images per person
   - option to purchase more
   - outfits & crowns included
   - includes family
