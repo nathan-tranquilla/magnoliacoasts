@@ -16,7 +16,7 @@ jobs:
       uses: flox/install-flox-action@v2
       
     - name: Activate Flox environment and deploy
-      uses: flox/activate-action@v1
+      uses: flox/activate-action@v2
       with:
         command: rake deploy
       env:
