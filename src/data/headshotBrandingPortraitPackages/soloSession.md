@@ -10,6 +10,7 @@ details:
   - includes studio rental
   - print release
   - multiple outfits
+  - outdoor option available
 ---
 
 ![Solo Session](../../assets/soloSession.png)
