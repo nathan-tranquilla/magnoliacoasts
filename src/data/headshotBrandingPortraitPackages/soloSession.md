@@ -9,7 +9,7 @@ details:
   - includes studio rental
   - print release
   - multiple outfits
-  - in home (no set) quote available
+  
 ---
 
 ![Solo Session](../../assets/soloSession.png)
