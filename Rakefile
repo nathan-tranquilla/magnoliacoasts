@@ -1,6 +1,6 @@
 ENV["BROWSER_PATH"] = `which google-chrome-stable`.chomp
 ENV["RUBYOPT"] = "-W0"
-ENV["FLOX_DISABLE_METRICS"] = true
+ENV["FLOX_DISABLE_METRICS"] = "true"
 
 file 'node_modules' do
   sh 'npm install'
