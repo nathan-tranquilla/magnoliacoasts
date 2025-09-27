@@ -2,7 +2,7 @@
 title: Sitter Session
 sortOrder: 2
 price: 400
-productLink: https://book.usesession.com/t/jzCdVHVNT
+productLink: https://book.usesession.com/t/aOqs7teEf
 details:
   - 6+ months
   - 1 hour session

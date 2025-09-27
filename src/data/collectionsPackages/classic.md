@@ -3,12 +3,12 @@ title: Classic Collection (3 Sessions)
 sortOrder: 2
 photoCount: 3
 price: 1200
+productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
 priceDetails:
   - ($1150 Value)
   - $300 deposit
 detailsCollection:
   Mini Maternity:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $250)
     details:
@@ -20,7 +20,6 @@ detailsCollection:
       - indoors or outdoors available
       - in studio or outdoor
   Mini Newborn:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $450)
       - $75 weekend fee if booked outside of Mon-Fri 10:30 am - 3:30 pm
@@ -33,7 +32,6 @@ detailsCollection:
       - includes family members
       - in studio only
   Family Cake Smash:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $500)
     details:

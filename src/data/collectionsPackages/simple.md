@@ -3,12 +3,12 @@ title: Simple Collection (2 Sessions)
 sortOrder: 1
 photoCount: 1
 price: 1050
+productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
 priceDetails:
   - ($1150 Value)
   - $200 deposit
 detailsCollection:
   Full Newborn:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $650)
       - $75 weekend fee if booked outside of Mon-Fri 10:30 am - 3:30 pm
@@ -20,7 +20,6 @@ detailsCollection:
       - in studio (quote available for travel)
       - outfits, props & sets included
   Family Cake Smash:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $500)
     details:

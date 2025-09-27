@@ -2,7 +2,7 @@
 title: Birthday
 sortOrder: 3
 priceRange: 400-500
-productLink: https://book.usesession.com/t/jzCdVHVNT
+productLink: https://book.usesession.com/t/aOqs7teEf
 details:
   - 11+ months
   - 1.5 hour session

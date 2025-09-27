@@ -65,10 +65,10 @@ const collectionsPackages = defineCollection({
     title: z.string(),
     sortOrder: z.number(),
     photoCount: z.number(),
+    productLink: z.string(),
     detailsCollection: z.record(
       z.string(),
       z.object({
-        productLink: z.string(),
         metadata: z.array(z.string()),
         details: z.array(z.string()),
       }),

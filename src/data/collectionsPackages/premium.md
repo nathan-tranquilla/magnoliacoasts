@@ -3,12 +3,12 @@ title: Premium Collection (3 Sessions)
 sortOrder: 3
 photoCount: 3
 price: 1200
+productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
 priceDetails:
   - ($1350 Value)
   - $300 deposit
 detailsCollection:
   Full Maternity:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $400)
     details:
@@ -19,7 +19,6 @@ detailsCollection:
       - outfits, crowns, accessories etc. included
       - in studio or outdoor
   Full Newborn:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $650)
       - $75 weekend fee if booked outside of Mon-Fri 10:30 am - 3:30 pm
@@ -32,7 +31,6 @@ detailsCollection:
       - includes family members
       - in studio (quote available for travel)
   Family Cake Smash:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $500)
     details:

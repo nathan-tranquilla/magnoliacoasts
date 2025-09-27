@@ -3,12 +3,12 @@ title: Luxury Collection (6 Sessions)
 sortOrder: 5
 photoCount: 3
 price: 2450
+productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
 priceDetails:
   - ($2750 Value)
   - $600 deposit
 detailsCollection:
   Full Maternity:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $400)
     details:
@@ -20,7 +20,6 @@ detailsCollection:
       - outfits, crowns, accessories etc. included
       - indoors or outdoors available
   Full Newborn:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $650)
       - $75 weekend fee if booked outside of Mon-Fri 10:30 am - 3:30 pm
@@ -33,7 +32,6 @@ detailsCollection:
       - includes family members
       - in studio or outdoor
   3+ Month Milestone:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $400)
     details:
@@ -45,7 +43,6 @@ detailsCollection:
       - outfits, props & sets included
       - in studio or park
   6+ Month Milestone:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $400)
     details:
@@ -56,7 +53,6 @@ detailsCollection:
       - outfits, props & sets included
       - in studio or park
   9+ Month Milestone:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $400)
     details:
@@ -67,7 +63,6 @@ detailsCollection:
       - outfits, props & sets included
       - in studio or park
   Family Cake Smash:
-    productLink: https://book.usesession.com/i/_ji73Jr_e/inquire
     metadata:
       - (worth $500)
     details:
