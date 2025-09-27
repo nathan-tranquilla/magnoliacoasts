@@ -29,7 +29,7 @@ detailsCollection:
       - option to purchase more
       - outfits, props & sets included
       - includes family members
-      - in studio or outdoor
+      - in studio only
   Family Cake Smash:
     metadata:
       - (worth $500)
@@ -40,7 +40,6 @@ detailsCollection:
       - option to purchase more
       - includes family members
       - cake & decor included
-      - in studio or park
       - in studio or outdoor
 ---
 
