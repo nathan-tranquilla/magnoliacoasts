@@ -1,6 +1,7 @@
 ---
 title: Tummy Session
 sortOrder: 1
+productLink: <your link here>
 details:
   - 3+ months
   - 1 hour session

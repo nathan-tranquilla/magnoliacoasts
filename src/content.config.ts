@@ -13,6 +13,7 @@ const packageSchema = z
     price: z.number().optional(),
     priceRange: z.string().optional(),
     cardStyle: z.string().optional(),
+    productLink: z.string(),
   })
   .refine(
     (data) =>
@@ -67,6 +68,7 @@ const collectionsPackages = defineCollection({
     detailsCollection: z.record(
       z.string(),
       z.object({
+        productLink: z.string(),
         metadata: z.array(z.string()),
         details: z.array(z.string()),
       }),

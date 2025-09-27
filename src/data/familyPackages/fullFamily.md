@@ -2,6 +2,7 @@
 title: Full Family Session
 sortOrder: 1
 price: 400
+productLink: <your link here>
 details:
   - 1 hour session
   - online proofing gallery

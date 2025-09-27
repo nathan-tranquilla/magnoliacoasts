@@ -1,6 +1,7 @@
 ---
 title: Full Newborn
 sortOrder: 2
+productLink: <your link here>
 details:
   - 4-11 days old or 30 days
   - 4 hour session

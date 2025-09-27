@@ -8,6 +8,7 @@ priceDetails:
   - $300 deposit
 detailsCollection:
   Full Maternity:
+    productLink: <your link here>
     metadata:
       - (worth $400)
     details:
@@ -18,6 +19,7 @@ detailsCollection:
       - outfits, crowns, accessories etc. included
       - in studio or outdoor
   Full Newborn:
+    productLink: <your link here>
     metadata:
       - (worth $650)
       - $75 weekend fee if booked outside of Mon-Fri 10:30 am - 3:30 pm
@@ -30,6 +32,7 @@ detailsCollection:
       - includes family members
       - in studio (quote available for travel)
   Family Cake Smash:
+    productLink: <your link here>
     metadata:
       - (worth $500)
     details:

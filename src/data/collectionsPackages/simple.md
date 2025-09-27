@@ -8,6 +8,7 @@ priceDetails:
   - $200 deposit
 detailsCollection:
   Full Newborn:
+    productLink: <your link here>
     metadata:
       - (worth $650)
       - $75 weekend fee if booked outside of Mon-Fri 10:30 am - 3:30 pm
@@ -19,6 +20,7 @@ detailsCollection:
       - in studio (quote available for travel)
       - outfits, props & sets included
   Family Cake Smash:
+    productLink: <your link here>
     metadata:
       - (worth $500)
     details:

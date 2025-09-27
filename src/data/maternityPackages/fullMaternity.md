@@ -1,6 +1,7 @@
 ---
 title: Full Maternity
 sortOrder: 2
+productLink: <your link here>
 details:
   - 1.5-2 hour session
   - online proofing gallery

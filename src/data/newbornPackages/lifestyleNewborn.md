@@ -1,6 +1,7 @@
 ---
 title: Lifestyle Newborn (Natural)
 sortOrder: 3
+productLink: <your link here>
 details:
   - up to 30 days
   - 2 hour session

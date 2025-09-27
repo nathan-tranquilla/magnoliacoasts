@@ -2,6 +2,7 @@
 title: Mini Generation Session
 sortOrder: 2
 price: 350
+productLink: <your link here>
 details:
   - 30-45 min session
   - online proofing gallery

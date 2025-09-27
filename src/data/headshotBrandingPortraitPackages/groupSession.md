@@ -2,6 +2,7 @@
 title: Branding/Portrait Group (Max 5)
 sortOrder: 3
 priceRange: 500-800
+productLink: <your link here>
 details:
   - 60 min session
   - online proofing gallery
