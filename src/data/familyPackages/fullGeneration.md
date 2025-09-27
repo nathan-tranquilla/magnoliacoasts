@@ -11,7 +11,8 @@ details:
   - outfit & wardrobe consult
   - different family combinations
   - captures 3-4 generations
-  - in studio or outdoor
+  - outdoor option
+  - studio rental (costs incur)
 ---
 
 ![Full Generation Session](../../assets/fullGenerationPackage.png)
