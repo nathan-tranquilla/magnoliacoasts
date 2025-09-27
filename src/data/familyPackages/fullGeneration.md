@@ -3,7 +3,7 @@ title: Full Generation Session
 sortOrder: 3
 price: 550
 details:
-  - 1.5-2 hour session
+  - 1-2 hour session
   - online proofing gallery
   - 30 edited images
   - option to purchase more
