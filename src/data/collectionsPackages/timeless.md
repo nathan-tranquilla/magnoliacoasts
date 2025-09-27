@@ -17,7 +17,6 @@ detailsCollection:
       - option to purchase more
       - includes family members
       - outfits, crowns, accessories etc. included
-      - indoors or outdoors available
       - in studio or outdoor
   Mini Newborn:
     metadata:
@@ -42,7 +41,6 @@ detailsCollection:
       - option to purchase more
       - includes family members
       - outfits, props & sets included
-      - in studio or park
       - in studio or outdoor
   Family Cake Smash:
     metadata:
@@ -54,7 +52,6 @@ detailsCollection:
       - option to purchase more
       - includes family members
       - cake & decor included
-      - in studio or park
       - in studio or outdoor
 ---
 
