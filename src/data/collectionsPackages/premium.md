@@ -16,7 +16,6 @@ detailsCollection:
       - 20 edited images
       - option to purchase more
       - outfits, crowns, accessories etc. included
-      - indoors or outdoors available
       - in studio or outdoor
   Full Newborn:
     metadata:
@@ -40,7 +39,6 @@ detailsCollection:
       - option to purchase more
       - includes family members
       - cake & decor included
-      - in studio or park
       - in studio or outdoor
 ---
 
