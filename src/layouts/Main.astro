@@ -18,6 +18,7 @@ const optimizedBackground = await getImage({
 });
 
 import logo from "../assets/Logo.png";
+import appleIcon from "../assets/AppleIcon.png"
 import Banner from "../components/Banner.astro";
 
 const { title } = Astro.props;
@@ -95,6 +96,7 @@ const websiteUrl = "https://magnoliacoastsphotography.com/";
     />
 
     <link rel="icon" href={`${logo.src}`} type="image/png" />
+    <link rel="apple-touch-icon" href={`${appleIcon.src}`} />
     <script type="application/ld+json" set:html={localBusinessProfile} />
     <meta name="email" content="info@magnoliacoastsphotography.com" />
     <link rel="canonical" href={websiteUrl} />
