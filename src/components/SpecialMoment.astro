@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 export interface Props {
   buttonText: string;
   link: string;
@@ -7,6 +6,7 @@ export interface Props {
 const { buttonText, link } = Astro.props;
 import Button from "./Button.astro";
 import Card from "./Card.astro";
+import ExternalLink from "./ExternalLink.astro";
 ---
 
 <Card
@@ -14,10 +14,10 @@ import Card from "./Card.astro";
 >
   <slot />
   <Button color="Pink" classes="mx-auto mt-auto">
-    <a
+    <ExternalLink
       href={link}
-      target="_blank"
-      class="flex h-full w-full items-center justify-center">{buttonText}</a
+      class="flex h-full w-full items-center justify-center"
+      >{buttonText}</ExternalLink
     >
   </Button>
 </Card>

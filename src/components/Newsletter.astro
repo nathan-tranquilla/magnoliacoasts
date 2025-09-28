@@ -5,6 +5,7 @@ import newsletter from "../assets/Newsletter.png";
 import SectionTitle from "./SectionTitle.astro";
 import Card from "./Card.astro";
 import { SUBSCRIBE_LINK } from "../data/links";
+import ExternalLink from "./ExternalLink.astro";
 let mobileDisplay = "flex justify-center items-center";
 let desktopDisplay = "md:grid grid-cols-5 grid-rows-6 gap-4";
 let dimensions = "p-3 md:max-w-[750px] w-full mx-4";
@@ -32,11 +33,10 @@ let dimensions = "p-3 md:max-w-[750px] w-full mx-4";
     >
       <SectionTitle title="Subscribe To Our Newsletter" />
       <Button color="Mint" classes="self-center">
-        <a
+        <ExternalLink
           href={SUBSCRIBE_LINK}
-          target="_blank"
           class="font-cormorant-garamond flex h-full w-full items-center justify-center"
-          >Subscribe</a
+          >Subscribe</ExternalLink
         >
       </Button>
     </div>

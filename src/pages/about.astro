@@ -8,6 +8,7 @@ import Button from "../components/Button.astro";
 import { INQUIRE_LINK } from "../data/links";
 import SectionHeader from "../components/SectionHeader.astro";
 import Card from "../components/Card.astro";
+import ExternalLink from "../components/ExternalLink.astro";
 let mobileLayout = "flex flex-col justify-start items-start";
 let desktopLayout = "md:grid md:grid-cols-2 md:grid-rows-12 md:m-4";
 ---
@@ -79,10 +80,9 @@ let desktopLayout = "md:grid md:grid-cols-2 md:grid-rows-12 md:m-4";
         color="Pink"
         classes="md:text-lg lg:text-xl md:justify-self-center self-center col-start-2 col-span-1 row-start-12 max-w-[300px]"
       >
-        <a
+        <ExternalLink
           class="flex h-[24px] h-full w-full items-center justify-center"
-          href={INQUIRE_LINK}
-          target="_blank">Book With Stephanie</a
+          href={INQUIRE_LINK}>Book With Stephanie</ExternalLink
         >
       </Button>
     </Card>

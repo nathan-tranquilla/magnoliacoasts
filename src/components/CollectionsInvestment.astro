@@ -3,6 +3,7 @@ import { INQUIRE_LINK } from "../data/links";
 import Card from "./Card.astro";
 import Button from "./Button.astro";
 import InvestmentHeader from "./InvestmentHeader.astro";
+import ExternalLink from "./ExternalLink.astro";
 
 export interface Props {
   title: string;
@@ -75,11 +76,10 @@ let _load =
       {priceDetails.map((detail) => <span class="font-light">{detail}</span>)}
     </div>
     <Button color="Pink" classes="max-w-[150px] w-4/10 h-3/4 ">
-      <a
+      <ExternalLink
         href={productLink}
-        target="_blank"
         class="font-cormorant-garamond flex w-full items-center justify-center"
-        >Inquire</a
+        >Inquire</ExternalLink
       >
     </Button>
   </div>

@@ -11,6 +11,7 @@ import {
   INSTAGRAM_LINK,
   PINTREST_LINK,
 } from "../data/links";
+import ExternalLink from "./ExternalLink.astro";
 
 const footerClass =
   "flex justify-center items-center text-lg text-white font-cormorant-garamond bg-dark-green md:h-auto h-[250px] w-screen p-2";
@@ -33,10 +34,9 @@ let entryDisplay = "dbackdrop-contrast-200 px-0.5 rounded-md";
 <footer class={footerClass}>
   <div class={footerClasses}>
     <div class={`${colHeaderClasses} col-start-1 md:row-span-1`}>
-      <a
+      <ExternalLink
         href={INQUIRE_LINK}
-        target="_blank"
-        class={`${entryDisplay} ${linksClasses}`}>Contact Us</a
+        class={`${entryDisplay} ${linksClasses}`}>Contact Us</ExternalLink
       >
     </div>
     <div class={`${colHeaderClasses} col-start-2 md:row-span-1`}>
@@ -45,38 +45,37 @@ let entryDisplay = "dbackdrop-contrast-200 px-0.5 rounded-md";
       >
     </div>
     <div class={`${colHeaderClasses} col-start-3 md:row-span-1`}>
-      <a
+      <ExternalLink
         href={SUBSCRIBE_LINK}
-        target="_blank"
-        class={`${entryDisplay} ${linksClasses}`}>Subscribe</a
+        class={`${entryDisplay} ${linksClasses}`}>Subscribe</ExternalLink
       >
     </div>
     <div
       class="col-span-3 col-start-1 row-start-2 flex items-center justify-center md:row-span-2"
     >
-      <a href={FACEBOOK_LINK} target="_blank" class="facebook"
+      <ExternalLink href={FACEBOOK_LINK} class="facebook"
         ><Image
           class={iconClass}
           src={fbIcon}
           alt="Facebook Icon"
           layout="constrained"
-        /></a
+        /></ExternalLink
       >
-      <a href={INSTAGRAM_LINK} target="_blank" class="instagram"
+      <ExternalLink href={INSTAGRAM_LINK} class="instagram"
         ><Image
           class={iconClass}
           src={instaIcon}
           alt="Instagram Icon"
           layout="constrained"
-        /></a
+        /></ExternalLink
       >
-      <a href={PINTREST_LINK} target="_blank" class="pintrest"
+      <ExternalLink href={PINTREST_LINK} class="pintrest"
         ><Image
           class={iconClass}
           src={pintrestIcon}
           alt="Pintrest Icon"
           layout="constrained"
-        /></a
+        /></ExternalLink
       >
     </div>
     <div

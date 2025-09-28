@@ -1,5 +1,6 @@
 ---
 import { INQUIRE_LINK } from "../data/links";
+import ExternalLink from "./ExternalLink.astro";
 
 let textClasses =
   "text-[#392C2C] font-cormorant-garamond text-black lg:text-2xl md:text-lg text-sm";
@@ -51,10 +52,9 @@ let aestheticClasses = "cursor-pointer rounded-3xl bg-pink p-4 px-6";
       />
     </picture>
   </div>
-  <a
+  <ExternalLink
     role="button"
     class={`${textClasses} ${dimensionClasses} ${displayClasss} ${positionClasses} ${animationClasses} ${aestheticClasses}`}
-    href={INQUIRE_LINK}
-    target="_blank">Inquire</a
+    href={INQUIRE_LINK}>Inquire</ExternalLink
   >
 </div>

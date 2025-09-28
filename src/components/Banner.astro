@@ -5,6 +5,7 @@ import HolidayMinis from "../assets/HolidayMinis.jpg";
 import HolidayMinisMobile from "../assets/HolidayMinisMobile.jpg";
 import HolidayMinisUltraWide from "../assets/HolidayMinisUltraWide.jpg";
 import { HOLIDAY_MINIS_LINK } from "../data/links";
+import ExternalLink from "./ExternalLink.astro";
 
 let flexDisplay = "flex justify-center items-center";
 let dimensions = "w-full h-fit";
@@ -32,9 +33,8 @@ let messages = await getCollection("bannerMessages");
   }
 </style>
 <template id="holiday-minis">
-  <a
+  <ExternalLink
     href={HOLIDAY_MINIS_LINK}
-    target="_blank"
     class="flex w-screen items-center justify-center bg-gradient-to-r from-[#52947a] to-[#52957a]"
   >
     <picture class="flex w-screen items-center justify-center">
@@ -61,7 +61,7 @@ let messages = await getCollection("bannerMessages");
         decoding="async"
       />
     </picture>
-  </a>
+  </ExternalLink>
 </template>
 <div class=`relative ${flexDisplay} ${dimensions} ${font} bg-blue-400`>
   {

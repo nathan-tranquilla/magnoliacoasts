@@ -2,6 +2,7 @@
 import Card from "./Card.astro";
 import Button from "./Button.astro";
 import InvestmentHeader from "./InvestmentHeader.astro";
+import ExternalLink from "./ExternalLink.astro";
 
 export interface Props {
   cardStyle?: string;
@@ -39,11 +40,10 @@ let { title, details, price, priceRange, cardStyle, productLink } = Astro.props;
     </div>
 
     <Button color="Pink" classes="w-4/10 h-3/4">
-      <a
+      <ExternalLink
         href={productLink}
-        target="_blank"
         class="font-cormorant-garamond flex h-full w-full items-center justify-center"
-        >Inquire</a
+        >Inquire</ExternalLink
       >
     </Button>
   </div>

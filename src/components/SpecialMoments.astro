@@ -18,6 +18,7 @@ import {
   NEWBORN_LINK,
 } from "../data/links";
 import { Image } from "astro:assets";
+import ExternalLink from "./ExternalLink.astro";
 ---
 
 <div
@@ -79,34 +80,30 @@ import { Image } from "astro:assets";
   />
 
   <Button data_id="special-moment-milestones" color="Mint" classes="mx-auto">
-    <a
-      target="_blank"
+    <ExternalLink
       class="flex h-full w-full items-center justify-center"
-      href={MILESTONES_LINK}>Milestones</a
+      href={MILESTONES_LINK}>Milestones</ExternalLink
     >
   </Button>
 
   <Button data_id="special-moment-children" color="Mint" classes="mx-auto">
-    <a
-      target="_blank"
+    <ExternalLink
       class="flex h-full w-full items-center justify-center"
-      href={CHILDREN_LINK}>Children</a
+      href={CHILDREN_LINK}>Children</ExternalLink
     >
   </Button>
 
   <Button data_id="special-moment-branding" color="Mint" classes="mx-auto">
-    <a
-      target="_blank"
+    <ExternalLink
       class="flex h-full w-full items-center justify-center"
-      href={BRANDING_LINK}>Branding</a
+      href={BRANDING_LINK}>Branding</ExternalLink
     >
   </Button>
 
   <Button data_id="special-moment-headshots" color="Mint" classes="mx-auto">
-    <a
-      target="_blank"
+    <ExternalLink
       class="flex h-full w-full items-center justify-center"
-      href={HEADSHOTS_LINK}>Headshots</a
+      href={HEADSHOTS_LINK}>Headshots</ExternalLink
     >
   </Button>
 </div>
