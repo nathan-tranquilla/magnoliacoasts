@@ -24,7 +24,8 @@ import Banner from "../components/Banner.astro";
 const { title } = Astro.props;
 
 const localBusinessProfile = JSON.stringify(businessData);
-const websiteUrl = "https://magnoliacoastsphotography.com/";
+const websiteUrl = "https://magnoliacoastsphotography.com";
+const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
 ---
 
 <html lang="en">
@@ -99,7 +100,7 @@ const websiteUrl = "https://magnoliacoastsphotography.com/";
     <link rel="apple-touch-icon" href={`${appleIcon.src}`} />
     <script type="application/ld+json" set:html={localBusinessProfile} />
     <meta name="email" content="info@magnoliacoastsphotography.com" />
-    <link rel="canonical" href={websiteUrl} />
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:image" content={`${websiteUrl}${logo.src}`} />
