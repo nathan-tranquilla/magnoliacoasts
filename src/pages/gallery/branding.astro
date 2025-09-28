@@ -6,4 +6,9 @@ const images = Object.values(
 ).map((module: any) => module.default) as ImageMetadata[];
 ---
 
-<Gallery title="Branding" galleryType={GalleryType.Branding} images={images} />
+<Gallery
+  metaTitle="Branding Gallery"
+  title="Branding"
+  galleryType={GalleryType.Branding}
+  images={images}
+/>

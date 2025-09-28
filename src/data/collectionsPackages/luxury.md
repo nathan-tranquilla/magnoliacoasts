@@ -18,7 +18,7 @@ detailsCollection:
       - option to purchase more
       - includes family members
       - outfits, crowns, accessories etc. included
-      - in studio or outdoors 
+      - in studio or outdoors
   Full Newborn:
     metadata:
       - (worth $650)
