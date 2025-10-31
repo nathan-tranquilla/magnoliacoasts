@@ -5,6 +5,10 @@ import stephaniePortrait from "../assets/StephaniePortrait.png";
 import { BASE_URL } from "../data/links";
 import Card from "./Card.astro";
 import SplotchyBackground from "./SplotchyBackground.astro";
+import { getCollection, render } from "astro:content";
+
+let welcomeContent = (await getCollection("welcomeContent"))[0];
+let { Content } = await render(welcomeContent);
 ---
 
 <style>
@@ -45,15 +49,8 @@ import SplotchyBackground from "./SplotchyBackground.astro";
       <div
         class="font-cormorant-garamond align-start col-span-3 col-start-3 row-span-6 row-start-1 flex flex-col justify-start text-sm sm:justify-between sm:pb-20 sm:text-base md:text-lg"
       >
-        <p class="font-bold">Welcome!</p>
-        <p>
-          I’m Stephanie, the owner and photographer of Magnolia Coasts
-          Photography. I’m the woman behind the camera making magic happen by
-          creating custom sets, wrapping and hushing babies to sleep and making
-          children laugh with all those animal noises and silly antics. I have
-          10 years experience photographing children and families and cannot
-          wait to work with you!
-        </p>
+        <p class="font-bold">{welcomeContent.data.title}</p>
+        <Content />
 
         <Button
           color="Mint"
