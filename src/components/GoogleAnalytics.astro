@@ -1,0 +1,22 @@
+---
+---
+<script is:inline>
+  // Only load Google Analytics if not on localhost or 127.0.0.1
+  if (!window.location.hostname.match(/^(localhost|127\.0\.0\.1)$/)) {
+    // Load gtag script
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-L4MNKNZVNM';
+    document.head.appendChild(script);
+    
+    // Initialize Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L4MNKNZVNM');
+    
+    console.log('Google Analytics loaded');
+  } else {
+    console.log('Google Analytics disabled on localhost');
+  }
+</script>

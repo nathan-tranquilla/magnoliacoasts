@@ -20,6 +20,7 @@ const optimizedBackground = await getImage({
 import logo from "../assets/Logo.png";
 import appleIcon from "../assets/AppleIcon.png";
 import Banner from "../components/Banner.astro";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
 const { title } = Astro.props;
 
@@ -30,15 +31,7 @@ const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
 
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MNKNZVNM"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-L4MNKNZVNM');
-    </script>
+    <GoogleAnalytics />
     <meta charset="UTF-8" />
     <meta
       name="viewport"
