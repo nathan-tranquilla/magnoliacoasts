@@ -85,8 +85,16 @@ const welcomeContent = defineCollection({
   })
 })
 
+const aboutContent = defineCollection({
+  loader: glob({ pattern: "about.md", base: "./src/content" }),
+  schema: z.object({
+    
+  })
+})
+
 // 4. Export a single `collections` object to register your collection(s)
 export const collections = {
+  aboutContent,
   welcomeContent,
   maternityPackages,
   newbornPackages,
