@@ -1,5 +1,6 @@
 ---
 ---
+
 I'm Stephanie, the owner and photographer of Magnolia Coasts
 Photography. I'm the woman behind the camera making magic happen by
 creating custom sets, wrapping and hushing babies to sleep and making

@@ -1,7 +1,23 @@
 ---
-const { ...props } = Astro.props;
+export interface Props {
+  href: string;
+  class: string;
+}
+const { href, class: classes } = Astro.props;
 ---
 
-<a target="_blank" rel="noopener" {...props}>
+<a target="_blank" rel="noopener" href={href} class={classes}>
   <slot />
+  <script define:vars={{href}}>
+    const link = document.currentScript.parentElement;
+    
+    link.addEventListener('click', () => {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "button_click", {
+          page: window.location.pathname,
+          external_link: href,
+        });
+      }
+    });
+  </script>
 </a>

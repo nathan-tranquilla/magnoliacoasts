@@ -1,22 +1,33 @@
 ---
+
 ---
+
 <script is:inline>
+  // Create a stub gtag function if it doesn't exist
+  window.gtag =
+    window.gtag ||
+    function () {
+      console.log("gtag called (disabled):", arguments);
+    };
+
   // Only load Google Analytics if not on localhost or 127.0.0.1
   if (!window.location.hostname.match(/^(localhost|127\.0\.0\.1)$/)) {
     // Load gtag script
-    var script = document.createElement('script');
+    var script = document.createElement("script");
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-L4MNKNZVNM';
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-L4MNKNZVNM";
     document.head.appendChild(script);
-    
+
     // Initialize Google Analytics
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-L4MNKNZVNM');
-    
-    console.log('Google Analytics loaded');
+    window.gtag = function () {
+      dataLayer.push(arguments);
+    };
+    window.gtag("js", new Date());
+    window.gtag("config", "G-L4MNKNZVNM");
+
+    console.log("Google Analytics loaded");
   } else {
-    console.log('Google Analytics disabled on localhost');
+    console.log("Google Analytics disabled on localhost");
   }
 </script>
