@@ -10,7 +10,7 @@ const test_id = string_to_id(Astro.props.test_id || "");
 
 <div
   data-id={test_id}
-  class={`card flex flex-col py-6 px-4 shadow-card rounded-md bg-white ${classes || ""}`}
+  class={`card flex flex-col p-6 shadow-card rounded-md bg-white ${classes || ""}`}
   {...props}
 >
   <slot />
