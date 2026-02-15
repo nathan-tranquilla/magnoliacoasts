@@ -9,6 +9,6 @@
     "in-source": true
   },
   "suffix": ".res.mjs",
-  "jsx": { "version": 4 },
-  "dependencies": ["rescript-webapi"]
+  "jsx": { "version": 4, "mode": "automatic" },
+  "dependencies": ["rescript-webapi", "@rescript/react"]
 }
