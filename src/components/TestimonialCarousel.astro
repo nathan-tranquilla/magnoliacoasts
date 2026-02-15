@@ -1,11 +1,14 @@
 ---
-import { make as TestimonialCarouselReact } from "./TestimonialCarouselReact.res.mjs";
+import { make as Carousel } from "./Carousel.res.mjs";
 import SectionTitle from "./SectionTitle.astro";
 import SplotchyBackground from "./SplotchyBackground.astro";
 
 export interface Props {
   count: number;
 }
+
+let itemBase = "carousel-item row-start-1 col-start-1 duration-600 transition-all";
+let hiddenRight = itemBase + " opacity-0 translate-x-[50rem]";
 
 let { count } = Astro.props;
 
@@ -20,27 +23,13 @@ for (let i = 1; i <= count; i++) {
 }
 ---
 
-<style>
-  .active-dot {
-    transform: scale(130%);
-    background-color: var(--color-app-active-grey) !important;
-  }
-  .move-left {
-    position: absolute;
-    opacity: 0;
-    transform: translateX(-50rem);
-  }
-  .move-right {
-    position: absolute;
-    opacity: 0;
-    transform: translateX(50rem);
-  }
-</style>
 <SplotchyBackground
   classes="carousel w-dvw flex flex-col justify-center items-center py-8 testimonials"
 >
   <SectionTitle title="What our clients say about us" />
-  <TestimonialCarouselReact client:load count={count}>
-    {slots.map((slot, i) => <div key={i} set:html={slot} />)}
-  </TestimonialCarouselReact>
+  <Carousel client:load count={count}>
+    {slots.map((slot, i) => (
+      <div class={i === 0 ? itemBase : hiddenRight} set:html={slot} />
+    ))}
+  </Carousel>
 </SplotchyBackground>
