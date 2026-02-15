@@ -1,84 +1,58 @@
 ---
 import { getCollection } from "astro:content";
-import FAButton from "./FAButton.astro";
+import { make as BannerReact } from "./BannerReact.res.mjs";
+import { shouldShowBanner } from "../utils/bannerUtils.res.mjs";
 import HolidayMinis from "../assets/HolidayMinis.jpg";
 import HolidayMinisMobile from "../assets/HolidayMinisMobile.jpg";
 import HolidayMinisUltraWide from "../assets/HolidayMinisUltraWide.jpg";
 import { HOLIDAY_MINIS_LINK } from "../data/links";
 import ExternalLink from "./ExternalLink.astro";
 
-let flexDisplay = "flex justify-center items-center";
-let dimensions = "w-full h-fit";
-let font = "text-sm font-mono text-white";
-let messageDimensions = "";
-
-let dismissPositioning = "absolute top-0 right-0 translate-y-2 -translate-x-2";
-let dismissDimensions = "w-[1rem] h-[1rem] rounded-full";
-let generalLayout = "flex justify-center items-center";
-
 let messages = await getCollection("bannerMessages");
+
+// Server-side date checking to determine which banner to show
+let activeBanner = messages.find(({ data: { startDate, endDate } }) =>
+  shouldShowBanner(startDate, endDate),
+);
+
+const shouldShow = activeBanner !== undefined;
+const templateId = activeBanner?.data.templateId;
 ---
 
-<script>
-  import { init } from "../utils/banner.res.mjs";
-  init(".banner_message", "banner_dismiss");
-</script>
-<style>
-  .message--show {
-    height: fit-content;
-    max-height: 175px;
-  }
-  .message--hide {
-    max-height: 0px;
-  }
-</style>
-<template id="holiday-minis">
-  <ExternalLink
-    href={HOLIDAY_MINIS_LINK}
-    class="flex w-screen items-center justify-center bg-gradient-to-r from-[#52947a] to-[#52957a]"
-  >
-    <picture class="flex w-screen items-center justify-center">
-      <source
-        srcset={HolidayMinisMobile.src}
-        media="(max-width: 767px)"
-        type="image/webp"
-      />
-      <source
-        srcset={HolidayMinis.src}
-        media="(min-width: 768px) and (max-width: 1099px)"
-        type="image/webp"
-      />
-      <source
-        srcset={HolidayMinisUltraWide.src}
-        media="(min-width: 1100px)"
-        type="image/webp"
-      />
-      <img
-        src={HolidayMinis.src}
-        alt="Holiday Minis Banner"
-        class="w-screen max-w-[2560px]"
-        loading="lazy"
-        decoding="async"
-      />
-    </picture>
-  </ExternalLink>
-</template>
-<div class=`relative ${flexDisplay} ${dimensions} ${font} bg-blue-400`>
-  {
-    messages.map(({ data: { startDate, endDate, templateId } }, i) => (
-      <span
-        id={`message-${i}`}
-        class={`banner_message transition-all ease-in ${messageDimensions} ${generalLayout} message--hide`}
-        data-startdate={startDate}
-        data-enddate={endDate}
-        data-templateid={templateId}
-      />
-    ))
-  }
-  <FAButton
-    id="banner_dismiss"
-    title="dismiss announcement"
-    classes={`hover:opacity-100 focus:opacity-100 opacity-50 max-h-[24px] max-w-[24px] ${dismissPositioning} ${dismissDimensions} ${generalLayout}`}
-    >x</FAButton
-  >
-</div>
+{
+  shouldShow && templateId === "holiday-minis" ? (
+    <BannerReact client:load shouldShow={shouldShow}>
+      <ExternalLink
+        href={HOLIDAY_MINIS_LINK}
+        class="flex w-screen items-center justify-center bg-gradient-to-r from-[#52947a] to-[#52957a]"
+      >
+        <picture class="flex w-screen items-center justify-center">
+          <source
+            srcset={HolidayMinisMobile.src}
+            media="(max-width: 767px)"
+            type="image/webp"
+          />
+          <source
+            srcset={HolidayMinis.src}
+            media="(min-width: 768px) and (max-width: 1099px)"
+            type="image/webp"
+          />
+          <source
+            srcset={HolidayMinisUltraWide.src}
+            media="(min-width: 1100px)"
+            type="image/webp"
+          />
+          <img
+            src={HolidayMinis.src}
+            alt="Holiday Minis Banner"
+            class="w-screen max-w-[2560px]"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </ExternalLink>
+    </BannerReact>
+  ) : (
+    <BannerReact client:load shouldShow={false} />
+  )
+}

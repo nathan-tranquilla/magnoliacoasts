@@ -1,7 +1,7 @@
 // Testimonial carousel component with SSR support and client-side hydration
 // Server-renders all testimonials, hydrates navigation functionality
 @react.component
-let make = (~children: array<React.element>, ~count: int) => {
+let make = (~children, ~count: int) => {
   let (currentIndex, setCurrentIndex) = React.useState(() => 0)
 
   let goLeft = () => {
@@ -19,12 +19,12 @@ let make = (~children: array<React.element>, ~count: int) => {
   let dotClass = "m-4 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer bg-app-grey transition-all"
   let slotContClass = "duration-600 transition-all"
 
-  <div className="carousel w-dvw flex flex-col justify-center items-center py-8">
-    <h2 className="text-center mb-8 text-2xl font-bold">
-      {React.string("What our clients say about us")}
-    </h2>
+  // Convert children to array if it isn't already
+  let childrenArray = React.Children.toArray(children)
+
+  <div>
     <div className="relative mx-4 flex max-w-dvw items-center justify-center overflow-hidden md:mx-0">
-      {children
+      {childrenArray
       ->Array.mapWithIndex((child, index) => {
         let isActive = index == currentIndex
         let moveClass = if isActive {

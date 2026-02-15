@@ -1,12 +1,13 @@
 // Banner component with SSR support and client-side hydration
 // Server-renders content based on date range, hydrates dismiss functionality
+open Webapi.Dom
+
 @react.component
-let make = (~content: React.element, ~shouldShow: bool) => {
+let make = (~children, ~shouldShow: bool) => {
   let (dismissed, setDismissed) = React.useState(() => false)
 
   // Load dismissed state from localStorage on mount
   React.useEffect(() => {
-    open Webapi.Dom
     switch Dom.Storage.getItem("banner_dismissed", Dom.Storage.localStorage) {
     | Some(value) if value == "true" => setDismissed(_ => true)
     | _ => ()
@@ -15,7 +16,6 @@ let make = (~content: React.element, ~shouldShow: bool) => {
   }, [])
 
   let handleDismiss = () => {
-    open Webapi.Dom
     Dom.Storage.setItem("banner_dismissed", "true", Dom.Storage.localStorage)
     setDismissed(_ => true)
   }
@@ -24,7 +24,7 @@ let make = (~content: React.element, ~shouldShow: bool) => {
   
   let style = ReactDOMStyle.unsafeAddStyle(
     ReactDOMStyle.unsafeAddProp(
-      ReactDOMStyle._dictToStyle(Js.Dict.empty()),
+      ReactDOMStyle._dictToStyle(Dict.make()),
       "maxHeight",
       if isVisible { "175px" } else { "0px" }
     ),
@@ -35,7 +35,7 @@ let make = (~content: React.element, ~shouldShow: bool) => {
     className="relative flex justify-center items-center w-full h-fit text-sm font-mono text-white bg-blue-400 transition-all ease-in"
     style>
     <div className="flex justify-center items-center w-full">
-      {content}
+      {children}
     </div>
     <button
       id="banner_dismiss"
