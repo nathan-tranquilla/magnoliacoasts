@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import { make as BannerReact } from "./BannerReact.res.mjs";
 import { shouldShowBanner } from "../utils/bannerUtils.res.mjs";
 import HolidayMinis from "../assets/HolidayMinis.jpg";
 import HolidayMinisMobile from "../assets/HolidayMinisMobile.jpg";
@@ -16,13 +15,12 @@ let activeBanner = messages.find(({ data: { startDate, endDate } }) =>
   shouldShowBanner(startDate, endDate),
 );
 
-const shouldShow = activeBanner !== undefined;
 const templateId = activeBanner?.data.templateId;
 ---
 
 {
-  shouldShow && templateId === "holiday-minis" ? (
-    <BannerReact client:load shouldShow={shouldShow}>
+  templateId === "holiday-minis" && (
+    <div class="relative flex w-full items-center justify-center bg-blue-400 font-mono text-sm text-white">
       <ExternalLink
         href={HOLIDAY_MINIS_LINK}
         class="flex w-screen items-center justify-center bg-gradient-to-r from-[#52947a] to-[#52957a]"
@@ -52,8 +50,6 @@ const templateId = activeBanner?.data.templateId;
           />
         </picture>
       </ExternalLink>
-    </BannerReact>
-  ) : (
-    <BannerReact client:load shouldShow={false} />
+    </div>
   )
 }
