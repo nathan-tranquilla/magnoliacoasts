@@ -11,6 +11,7 @@ import ExternalLink from "./ExternalLink.astro";
 let messages = await getCollection("bannerMessages");
 
 // Server-side date checking to determine which banner to show
+// Note: If multiple banners have overlapping date ranges, only the first matching banner will be displayed
 let activeBanner = messages.find(({ data: { startDate, endDate } }) =>
   shouldShowBanner(startDate, endDate),
 );

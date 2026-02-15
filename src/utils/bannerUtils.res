@@ -5,7 +5,8 @@ let parseDate = (dateStr: string): option<Date.t> => {
   switch (parts[0], parts[1]) {
   | (Some(Some(month)), Some(Some(day))) => {
       let currentYear = Date.make()->Date.getFullYear
-      Some(Date.makeWithYMD(~year=currentYear, ~month, ~day))
+      // JavaScript months are 0-indexed (0 = January, 11 = December)
+      Some(Date.makeWithYMD(~year=currentYear, ~month=month - 1, ~day))
     }
   | _ => None
   }

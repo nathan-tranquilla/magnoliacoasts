@@ -64,7 +64,9 @@ let make = (~children, ~count: int) => {
             role="button"
             tabIndex={0}
             onKeyDown={e => {
-              if e->ReactEvent.Keyboard.key == "Enter" || e->ReactEvent.Keyboard.key == " " {
+              let key = e->ReactEvent.Keyboard.key
+              if key == "Enter" || key == " " {
+                ReactEvent.Keyboard.preventDefault(e)
                 goTo(i)
               }
             }}
