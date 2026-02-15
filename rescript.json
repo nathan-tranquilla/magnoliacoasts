@@ -10,6 +10,6 @@
   },
   "suffix": ".res.mjs",
   "jsx": { "version": 4 },
-  "bs-dependencies": ["@rescript/core", "rescript-webapi"],
-  "bsc-flags": ["-open RescriptCore"]
+  "dependencies": ["@rescript/core", "rescript-webapi"],
+  "compiler-flags": ["-open RescriptCore"]
 }
