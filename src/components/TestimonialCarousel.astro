@@ -1,5 +1,5 @@
 ---
-import FAButton from "./FAButton.astro";
+import { make as TestimonialCarouselReact } from "./TestimonialCarouselReact.res.mjs";
 import SectionTitle from "./SectionTitle.astro";
 import SplotchyBackground from "./SplotchyBackground.astro";
 
@@ -7,17 +7,19 @@ export interface Props {
   count: number;
 }
 
-let dotClass =
-  "m-4 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer bg-app-grey ";
-let slotContClass = "duration-600 transition-all";
-
 let { count } = Astro.props;
+
+// Extract slot content
+const slots = [];
+for (let i = 1; i <= count; i++) {
+  const slotName = `testimonial-${i}`;
+  const hasSlot = Astro.slots.has(slotName);
+  if (hasSlot) {
+    slots.push(await Astro.slots.render(slotName));
+  }
+}
 ---
 
-<script>
-  import { init } from "../utils/carousel.res.mjs";
-  init();
-</script>
 <style>
   .active-dot {
     transform: scale(130%);
@@ -38,50 +40,7 @@ let { count } = Astro.props;
   classes="carousel w-dvw flex flex-col justify-center items-center py-8 testimonials"
 >
   <SectionTitle title="What our clients say about us" />
-  <div
-    class="relative mx-4 flex max-w-dvw items-center justify-center overflow-hidden md:mx-0"
-  >
-    <div id="slot-container-0" class={`${slotContClass}`}>
-      <slot name="testimonial-1" />
-    </div>
-    <div id="slot-container-1" class={`${slotContClass} move-right`}>
-      <slot name="testimonial-2" />
-    </div>
-    <div id="slot-container-2" class={`${slotContClass} move-right`}>
-      <slot name="testimonial-3" />
-    </div>
-    <div id="slot-container-3" class={`${slotContClass} move-right`}>
-      <slot name="testimonial-4" />
-    </div>
-    <div id="slot-container-4" class={`${slotContClass} move-right`}>
-      <slot name="testimonial-5" />
-    </div>
-    <div id="slot-container-5" class={`${slotContClass} move-right`}>
-      <slot name="testimonial-6" />
-    </div>
-    <div id="slot-container-6" class={`${slotContClass} move-right`}>
-      <slot name="testimonial-7" />
-    </div>
-    <div id="slot-container-7" class={`${slotContClass} move-right`}>
-      <slot name="testimonial-8" />
-    </div>
-    <div id="slot-container-8" class={`${slotContClass} move-right`}>
-      <slot name="testimonial-9" />
-    </div>
-    <div id="slot-container-9" class={`${slotContClass} move-right`}>
-      <slot name="testimonial-10" />
-    </div>
-  </div>
-  <div class="mt-8 flex items-center justify-around">
-    <FAButton id="carousel-go-left" title="Previous Slide">{"<"}</FAButton>
-    <div class="flex items-center">
-      <div id="carousel-go-0" class={"dots " + dotClass + " active-dot"}></div>
-      {
-        Array.from({ length: count - 1 }).map((_, i) => (
-          <div id={`carousel-go-${i + 1}`} class={"dots " + dotClass} />
-        ))
-      }
-    </div>
-    <FAButton id="carousel-go-right" title="Next Slide">{">"}</FAButton>
-  </div>
+  <TestimonialCarouselReact client:load count={count}>
+    {slots.map((slot, i) => <div key={i} set:html={slot} />)}
+  </TestimonialCarouselReact>
 </SplotchyBackground>

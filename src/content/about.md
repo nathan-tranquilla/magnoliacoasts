@@ -15,8 +15,8 @@ husband and close friends, I launched a new career in something I was
 passionate about. I decided after my son was born that I wanted more
 flexibility, the ability to travel and less stress in my life. I fell
 in love with photography while traveling with my babies, documenting
-each milestone. After settling in Mississauga, Ontario, this 
-obsessive hobby morphed into a bustling business and I haven’t 
+each milestone. After settling in Mississauga, Ontario, this
+obsessive hobby morphed into a bustling business and I haven’t
 looked back.
 
 In January 2015, I photographed my first baby. The baby boy had the
