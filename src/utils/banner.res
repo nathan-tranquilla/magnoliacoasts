@@ -14,7 +14,7 @@ let hideBanner = el => {
 let parseDate = (dateStr, year) => {
   let parts = dateStr->String.split("-")->Array.map(str => Belt.Int.fromString(str))
   switch (parts[0], parts[1]) {
-  | (Some(Some(month)), Some(Some(day))) => Some(Date.makeWithYMD(~year=year, ~month=month, ~date=day))
+  | (Some(Some(month)), Some(Some(day))) => Some(Date.makeWithYMD(~year=year, ~month=month, ~day=day))
   | _ => None
   }
 }
@@ -84,7 +84,7 @@ let addInteractivity = (message_selector, dismiss_id) => {
 
 let init = (message_selector, dismiss_id) => {
   ReQuery.onReady(() => {
-    ignore(Js.Global.setTimeout(() => {
+    ignore(setTimeout(() => {
       addInteractivity(message_selector, dismiss_id)
     }, 1000))
   })
