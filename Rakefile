@@ -160,9 +160,9 @@ task :dev, [:flags] => ['node_modules', :res_build, :dl_galleries] do |t, args|
   puts "Astro dev exited successfully."
 end
 
-task :test => ['node_modules'] do 
-  sh "echo \"not implemented\""
-end 
+task :test => ['node_modules', :res_build] do
+  sh "node --test src/**/*.test.mjs"
+end
 
 task :build => ['node_modules', :res_build, :lint] do
   sh "npx astro build"

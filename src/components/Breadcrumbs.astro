@@ -1,0 +1,43 @@
+---
+import { BASE_URL } from "../data/links";
+import { getPathInfo } from "../utils/breadcrumbs.res.mjs";
+
+const { segments, names, hrefs } = getPathInfo(Astro.url.pathname, BASE_URL);
+---
+
+{
+  segments.length > 0 && (
+    <nav
+      aria-label="Breadcrumb"
+      class="font-cormorant-garamond w-full max-w-[1200px] self-center px-4 py-3 text-sm text-gray-500"
+    >
+      <ol class="flex flex-wrap items-center gap-1">
+        <li>
+          <a href={BASE_URL + "/"} class="hover:text-dark-green transition-colors">
+            Home
+          </a>
+        </li>
+        {segments.map((_, i) => {
+          const isLast = i === segments.length - 1;
+          return (
+            <li class="flex items-center gap-1">
+              <span aria-hidden="true">/</span>
+              {isLast ? (
+                <span class="text-gray-700" aria-current="page">
+                  {names[i]}
+                </span>
+              ) : (
+                <a
+                  href={hrefs[i]}
+                  class="hover:text-dark-green transition-colors"
+                >
+                  {names[i]}
+                </a>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  )
+}

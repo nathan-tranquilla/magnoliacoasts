@@ -20,6 +20,7 @@ const optimizedBackground = await getImage({
 import logo from "../assets/Logo.png";
 import appleIcon from "../assets/AppleIcon.png";
 import Banner from "../components/Banner.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
 const { title } = Astro.props;
@@ -27,6 +28,11 @@ const { title } = Astro.props;
 const localBusinessProfile = JSON.stringify(businessData);
 const websiteUrl = "https://magnoliacoastsphotography.com";
 const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
+
+// Breadcrumb structured data
+import { buildBreadcrumbSchema } from "../utils/breadcrumbs.res.mjs";
+
+const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
 ---
 
 <html lang="en">
@@ -101,6 +107,7 @@ const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
     <link rel="icon" href={`${logo.src}`} type="image/png" />
     <link rel="apple-touch-icon" href={`${appleIcon.src}`} />
     <script type="application/ld+json" set:html={localBusinessProfile} />
+    {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema} />}
     <meta name="email" content="info@magnoliacoastsphotography.com" />
     <link rel="canonical" href={canonicalUrl} />
 
@@ -150,6 +157,7 @@ const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
     <main
       class="bg-default flex min-h-dvh w-screen flex-col items-stretch justify-start"
     >
+      <Breadcrumbs />
       <slot />
     </main>
     <Footer />
