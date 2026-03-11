@@ -8,6 +8,7 @@ import SiblingPackageNav, {
   NavDir,
 } from "../components/SiblingPackageNav.astro";
 import SectionHeader from "../components/SectionHeader.astro";
+import { buildImageGallerySchema } from "../utils/structuredData.res.mjs";
 
 export enum GalleryType {
   Maternity = "maternity",
@@ -56,6 +57,7 @@ const sortByFilename = (a: ImageMetadata, b: ImageMetadata) => {
   return numA - numB;
 };
 const sortedImages = images.sort(sortByFilename);
+const gallerySchema = buildImageGallerySchema(title, Astro.url.pathname, sortedImages.length);
 let getDimensions = (i: number, galleryType: GalleryType) => {
   let mod;
   let isLandscape;
@@ -86,42 +88,44 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
 };
 ---
 
-<Main title={`Magnolia Coasts | ${metaTitle}`}>
-  <div class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
-    <SiblingPackageNav
-      text={pkgs[0][0]}
-      href={pkgs[0][1]}
-      direction={NavDir.Left}
-    />
-    <SectionHeader title={title} />
-    <SiblingPackageNav
-      text={pkgs[1][0]}
-      href={pkgs[1][1]}
-      direction={NavDir.Right}
-    />
-  </div>
-  <div
+<Main title={`Magnolia Coasts | ${metaTitle}`} extraSchemas={[gallerySchema]}>
+  <section aria-label={`${title} gallery navigation`} class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
+      <SiblingPackageNav
+        text={pkgs[0][0]}
+        href={pkgs[0][1]}
+        direction={NavDir.Left}
+      />
+      <SectionHeader title={title} />
+      <SiblingPackageNav
+        text={pkgs[1][0]}
+        href={pkgs[1][1]}
+        direction={NavDir.Right}
+      />
+  </section>
+  <section
+    aria-label={`${title} photos`}
     class=`xs:grid-cols-3 grid grid-cols-1 gap-4 self-center p-4 lg:max-w-[1200px]`
   >
-    {
-      sortedImages.map((image: ImageMetadata, i) => {
-        const { width, height, classes } = getDimensions(i, galleryType);
-        return (
-          <div id={`image-${i}`} class={classes}>
-            <Image
-              style="content-visibility: auto"
-              src={image}
-              layout="full-width"
-              width={width}
-              height={height}
-              class="h-[100%] object-cover object-center"
-              alt={`Gallery image-${i} for ${title}`}
-              decoding="async"
-              loading={i < 6 ? "eager" : "lazy"}
-            />
-          </div>
-        );
-      })
-    }
-  </div>
+      {
+        sortedImages.map((image: ImageMetadata, i) => {
+          const { width, height, classes } = getDimensions(i, galleryType);
+          return (
+            <figure id={`image-${i}`} class={classes}>
+              <Image
+                style="content-visibility: auto"
+                src={image}
+                layout="full-width"
+                width={width}
+                height={height}
+                class="h-[100%] object-cover object-center"
+                alt={`${title} photography – photo ${i + 1}`}
+                decoding="async"
+                loading={i < 6 ? "eager" : "lazy"}
+              />
+              <figcaption class="sr-only">{`${title} photo ${i + 1}`}</figcaption>
+            </figure>
+          );
+        })
+      }
+  </section>
 </Main>

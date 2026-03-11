@@ -49,6 +49,7 @@ let make = (~count: int, ~children: React.element) => {
     </div>
     <div className="mt-8 flex w-full items-center justify-around">
       <button
+        id="carousel-go-left"
         className={buttonClass}
         title="Previous Slide"
         onClick={_ => setIndex(prev => max(0, prev - 1))}
@@ -65,6 +66,7 @@ let make = (~count: int, ~children: React.element) => {
         )->React.array}
       </div>
       <button
+        id="carousel-go-right"
         className={buttonClass}
         title="Next Slide"
         onClick={_ => setIndex(prev => min(count - 1, prev + 1))}

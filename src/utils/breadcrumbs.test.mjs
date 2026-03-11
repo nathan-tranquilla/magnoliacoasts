@@ -60,8 +60,12 @@ describe("buildBreadcrumbItems", () => {
 describe("buildBreadcrumbSchema", () => {
   const url = "https://magnoliacoastsphotography.com";
 
-  it("returns null for root path", () => {
-    assert.equal(buildBreadcrumbSchema("/", url), null);
+  it("returns valid JSON-LD with Home only for root path", () => {
+    const schema = JSON.parse(buildBreadcrumbSchema("/", url));
+    assert.equal(schema["@context"], "https://schema.org");
+    assert.equal(schema["@type"], "BreadcrumbList");
+    assert.equal(schema.itemListElement.length, 1);
+    assert.equal(schema.itemListElement[0].name, "Home");
   });
 
   it("returns valid JSON-LD for non-root paths", () => {

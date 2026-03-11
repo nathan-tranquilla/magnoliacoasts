@@ -23,16 +23,24 @@ import Banner from "../components/Banner.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
-const { title } = Astro.props;
+export interface Props {
+  title: string;
+  extraSchemas?: string[];
+}
+const { title, extraSchemas = [] } = Astro.props;
 
 const localBusinessProfile = JSON.stringify(businessData);
 const websiteUrl = "https://magnoliacoastsphotography.com";
 const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
+const description = "Toronto-based photographer capturing family, newborn, maternity, headshots, and milestone moments with a natural, timeless style. Book your session today!";
 
 // Breadcrumb structured data
 import { buildBreadcrumbSchema } from "../utils/breadcrumbs.res.mjs";
-
 const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
+
+// WebPage structured data
+import { buildWebPageSchema } from "../utils/structuredData.res.mjs";
+const webPageSchema = buildWebPageSchema(Astro.url.pathname, title, description);
 ---
 
 <html lang="en">
@@ -107,7 +115,11 @@ const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
     <link rel="icon" href={`${logo.src}`} type="image/png" />
     <link rel="apple-touch-icon" href={`${appleIcon.src}`} />
     <script type="application/ld+json" set:html={localBusinessProfile} />
-    {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema} />}
+    <script type="application/ld+json" set:html={breadcrumbSchema} />
+    <script type="application/ld+json" set:html={webPageSchema} />
+    {extraSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={schema} />
+    ))}
     <meta name="email" content="info@magnoliacoastsphotography.com" />
     <link rel="canonical" href={canonicalUrl} />
 

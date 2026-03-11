@@ -50,25 +50,13 @@ let buildBreadcrumbItems = (pathname: string, websiteUrl: string): array<breadcr
   [home]->Array.concat(items)
 }
 
-let buildBreadcrumbSchema = (pathname: string, websiteUrl: string): Nullable.t<string> => {
-  let pathSegments =
-    pathname
-    ->String.replaceRegExp(%re("/\/$/"), "")
-    ->String.split("/")
-    ->Array.filter(s => s !== "")
-
-  if pathSegments->Array.length > 0 {
-    let items = buildBreadcrumbItems(pathname, websiteUrl)
-    Nullable.make(
-      JSON.stringifyAny({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": items,
-      })->Option.getOr(""),
-    )
-  } else {
-    Nullable.null
-  }
+let buildBreadcrumbSchema = (pathname: string, websiteUrl: string): string => {
+  let items = buildBreadcrumbItems(pathname, websiteUrl)
+  JSON.stringifyAny({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items,
+  })->Option.getOr("")
 }
 
 type pathInfo = {

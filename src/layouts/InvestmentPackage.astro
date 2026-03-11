@@ -4,20 +4,18 @@ import Main from "../layouts/Main.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import { render } from "astro:content";
 import {
-  BASE_URL,
-  FAMILY_LINK,
-  HEADSHOTS_LINK,
-  INQUIRE_LINK,
-  MATERNITY_LINK,
-  MILESTONES_LINK,
-  NEWBORN_LINK,
-} from "../data/links";
-import { get_surrounding_pkgs } from "./InvestmentPackage.res.mjs";
+  get_surrounding_pkgs,
+  getPackageLink,
+  getPackageTuple,
+  allPackageTuples,
+  extractPrices,
+} from "./InvestmentPackage.res.mjs";
 import SiblingPackageNav, {
   NavDir,
 } from "../components/SiblingPackageNav.astro";
 import StandardInvestment from "../components/StandardInvestment.astro";
 import CollectionsInvestment from "../components/CollectionsInvestment.astro";
+import { buildServiceSchema } from "../utils/structuredData.res.mjs";
 
 export enum PackageType {
   Maternity = "maternityPackages",
@@ -28,36 +26,6 @@ export enum PackageType {
   Collections = "collectionsPackages",
 }
 
-const packageLink: Record<PackageType, string> = {
-  [PackageType.Maternity]: MATERNITY_LINK,
-  [PackageType.Newborn]: NEWBORN_LINK,
-  [PackageType.Milestone]: MILESTONES_LINK,
-  [PackageType.Family]: FAMILY_LINK,
-  [PackageType.Headshot]: HEADSHOTS_LINK,
-  [PackageType.Collections]: INQUIRE_LINK,
-};
-
-const packageTypeToTuple: Record<PackageType, [string, string]> = {
-  [PackageType.Maternity]: [
-    "Maternity Packages",
-    `${BASE_URL}/investment/maternity`,
-  ],
-  [PackageType.Newborn]: ["Newborn Packages", `${BASE_URL}/investment/newborn`],
-  [PackageType.Milestone]: [
-    "Milestone Packages",
-    `${BASE_URL}/investment/milestone`,
-  ],
-  [PackageType.Family]: ["Family Packages", `${BASE_URL}/investment/family`],
-  [PackageType.Headshot]: [
-    "Headshot, Branding & Portrait Packages",
-    `${BASE_URL}/investment/headshot`,
-  ],
-  [PackageType.Collections]: [
-    "Collections Packages",
-    `${BASE_URL}/investment/collections`,
-  ],
-};
-
 export interface Props {
   pkgType: PackageType;
   title: string;
@@ -65,10 +33,9 @@ export interface Props {
 
 let { pkgType, title } = Astro.props;
 
-let packages = Object.values(packageTypeToTuple);
-const pkg = packageTypeToTuple[pkgType];
-const link = packageLink[pkgType];
-let pkgs = get_surrounding_pkgs(pkg, packages);
+const pkg = getPackageTuple(pkgType);
+const link = getPackageLink(pkgType);
+let pkgs = get_surrounding_pkgs(pkg, allPackageTuples);
 
 const collection = (await getCollection(pkgType)).sort(
   (a, b) => a.data.sortOrder - b.data.sortOrder,
@@ -76,55 +43,65 @@ const collection = (await getCollection(pkgType)).sort(
 
 const desktopDisplay = "md:grid grid-cols-[20vw_50vw_20vw] gap-2";
 const mobileDisplay = "flex justify-around items-center";
+
+const prices = extractPrices(collection.map((p) => ({
+  price: p.data.price,
+  priceRange: (p.data as any).priceRange,
+})));
+const serviceSchema = buildServiceSchema(title, Astro.url.pathname, prices);
 ---
 
-<Main title={`Magnolia Coasts | Toronto | ${title}`}>
-  <div class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
-    <SiblingPackageNav
-      text={pkgs[0][0]}
-      href={pkgs[0][1]}
-      direction={NavDir.Left}
-    />
-    <SectionHeader title={title} />
-    <SiblingPackageNav
-      text={pkgs[1][0]}
-      href={pkgs[1][1]}
-      direction={NavDir.Right}
-    />
-  </div>
-  <div class="flex w-full flex-wrap items-stretch justify-center p-4">
-    {
-      collection.map(async (pkg) => {
-        let { Content } = await render(pkg);
-        switch (pkgType) {
-          case PackageType.Collections:
-            return (
-              <CollectionsInvestment
-                photoCount={pkg.data.photoCount}
-                title={pkg.data.title}
-                price={pkg.data.price}
-                priceDetails={pkg.data.priceDetails}
-                detailsCollection={pkg.data.detailsCollection}
-                productLink={pkg.data.productLink}
-              >
-                <Content />
-              </CollectionsInvestment>
-            );
-          default:
-            return (
-              <StandardInvestment
-                cardStyle={pkg.data.cardStyle}
-                title={pkg.data.title}
-                price={pkg.data.price}
-                priceRange={pkg.data.priceRange}
-                details={pkg.data.details}
-                productLink={pkg.data.productLink}
-              >
-                <Content />
-              </StandardInvestment>
-            );
-        }
-      })
-    }
-  </div>
+<Main title={`Magnolia Coasts | Toronto | ${title}`} extraSchemas={[serviceSchema]}>
+  <section aria-label={`${title} navigation`} class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
+      <SiblingPackageNav
+        text={pkgs[0][0]}
+        href={pkgs[0][1]}
+        direction={NavDir.Left}
+      />
+      <SectionHeader title={title} />
+      <SiblingPackageNav
+        text={pkgs[1][0]}
+        href={pkgs[1][1]}
+        direction={NavDir.Right}
+      />
+  </section>
+  <section aria-label={`${title} options`} class="flex w-full flex-wrap items-stretch justify-center p-4">
+      {
+        collection.map(async (pkg) => {
+          let { Content } = await render(pkg);
+          switch (pkgType) {
+            case PackageType.Collections:
+              return (
+                <article>
+                  <CollectionsInvestment
+                    photoCount={pkg.data.photoCount}
+                    title={pkg.data.title}
+                    price={pkg.data.price}
+                    priceDetails={pkg.data.priceDetails}
+                    detailsCollection={pkg.data.detailsCollection}
+                    productLink={pkg.data.productLink}
+                  >
+                    <Content />
+                  </CollectionsInvestment>
+                </article>
+              );
+            default:
+              return (
+                <article>
+                  <StandardInvestment
+                    cardStyle={pkg.data.cardStyle}
+                    title={pkg.data.title}
+                    price={pkg.data.price}
+                    priceRange={pkg.data.priceRange}
+                    details={pkg.data.details}
+                    productLink={pkg.data.productLink}
+                  >
+                    <Content />
+                  </StandardInvestment>
+                </article>
+              );
+          }
+        })
+      }
+  </section>
 </Main>

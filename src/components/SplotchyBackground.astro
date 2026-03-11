@@ -1,12 +1,14 @@
 ---
 export interface Props {
   classes?: string;
+  "aria-label"?: string;
 }
-const { classes } = Astro.props;
+const { classes, "aria-label": ariaLabel } = Astro.props;
 ---
 
-<div
+<section
+  aria-label={ariaLabel}
   class={`bg-center bg-cover bg-white/50 bg-blend-lighten flex justify-center ${classes || ""} bg-splotchy-mobile bg-splotchy-desktop`}
 >
   <slot />
-</div>
+</section>

@@ -21,7 +21,8 @@ import { Image } from "astro:assets";
 import ExternalLink from "./ExternalLink.astro";
 ---
 
-<div
+<section
+  aria-label="Photo session types"
   id="special_moments"
   class="font-cormorant-garamond m-4 grid max-w-[1439px] grid-cols-2 gap-4 self-center md:grid-cols-4"
 >
@@ -69,8 +70,9 @@ import ExternalLink from "./ExternalLink.astro";
       />
     </div>
   </SpecialMoment>
-</div>
-<div
+</section>
+<section
+  aria-label="Other photo session types"
   id="other_special_moments"
   class="font-cormorant-garamond m-4 grid w-[90vw] max-w-[880px] grid-cols-2 gap-4 self-center sm:grid-cols-4"
 >
@@ -106,4 +108,4 @@ import ExternalLink from "./ExternalLink.astro";
       href={HEADSHOTS_LINK}>Headshots</ExternalLink
     >
   </Button>
-</div>
+</section>
