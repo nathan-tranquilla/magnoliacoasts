@@ -61,9 +61,9 @@
 - [x] Audit heading hierarchy (H1→H2→H3) for proper nesting on all pages (SectionTitle→h2, Welcome title→h2, ArtInYourHome→h2; homepage H1 deferred)
 - [x] Add per-page keyword targeting (unique keywords on all 18 pages)
 - [x] Improve image filenames — currently generic (`01.jpg`, `02.jpg`), should be descriptive (e.g., `newborn-baby-sleeping.jpg`)
-- [ ] Add contextual internal cross-links between related pages (e.g., gallery→investment)
-- [ ] Add more descriptive text content on gallery pages (currently image-only)
-- [ ] Add more descriptive text content on investment pages (currently mostly pricing)
+- [x] Add contextual internal cross-links between related pages (e.g., gallery→investment)
+- [x] Add more descriptive text content on gallery pages (currently image-only)
+- [x] Add more descriptive text content on investment pages (currently mostly pricing)
 
 ### Structured Data — Additional
 
