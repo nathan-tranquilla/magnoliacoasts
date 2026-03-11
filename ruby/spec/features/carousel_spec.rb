@@ -15,6 +15,12 @@ require "support/constants"
         end
       end
 
+      def click_carousel_button(id)
+        # Use execute_script to avoid ObsoleteNode errors from React
+        # hydration replacing server-rendered DOM nodes
+        page.execute_script("document.getElementById('#{id}').click()")
+      end
+
       it "works" do
         visit "/"
         review_titles = ["Erika McNabb", "Nritya Bhumi Studio", "Tisha McNama"]
@@ -23,26 +29,26 @@ require "support/constants"
         assert_visible_review(review_titles, 0)
 
         # Click right: Nritya
-        find('button#carousel-go-right', visible: :all).click
+        click_carousel_button('carousel-go-right')
         assert_visible_review(review_titles, 1)
 
         # Click right: Tisha
-        find('button#carousel-go-right', visible: :all).click
+        click_carousel_button('carousel-go-right')
         assert_visible_review(review_titles, 2)
 
         # Click right: Still Tisha (end of carousel)
-        find('button#carousel-go-right', visible: :all).click
+        click_carousel_button('carousel-go-right')
         assert_visible_review(review_titles, 2)
 
         # Go backwards
-        find('button#carousel-go-left', visible: :all).click
+        click_carousel_button('carousel-go-left')
         assert_visible_review(review_titles, 1)
 
-        find('button#carousel-go-left', visible: :all).click
+        click_carousel_button('carousel-go-left')
         assert_visible_review(review_titles, 0)
 
         # Clicking left again should still show Erika (start of carousel)
-        find('button#carousel-go-left', visible: :all).click
+        click_carousel_button('carousel-go-left')
         assert_visible_review(review_titles, 0)
       end
   end
