@@ -1,5 +1,6 @@
 ---
 import Card from "./Card.astro";
+import FAButton from "./FAButton.astro";
 
 // Props
 export interface Props {
@@ -11,7 +12,7 @@ const { title, date, testimony } = Astro.props;
 ---
 
 <Card
-  classes="h-auto sm:min-h-[450px] min-h-[290px] max-w-[750px] grid grid-cols-10 grid-rows-[1rem_1rem_1rem_1fr] gap-2 sm:gap-4 font-cormorant-garamond text-sm sm:text-base md:text-lg border border-app-grey min-h-[230px]"
+  classes="h-auto sm:min-h-[450px] min-h-[290px] max-w-[750px] grid grid-cols-10 grid-rows-[1rem_1rem_1rem_1fr_auto] gap-2 sm:gap-4 font-cormorant-garamond text-sm sm:text-base md:text-lg border border-app-grey min-h-[230px]"
 >
   <div
     class="col-span-4 col-start-1 row-span-4 row-start-1 flex items-stretch justify-start"
@@ -32,5 +33,12 @@ const { title, date, testimony } = Astro.props;
     class="row-span-all col-span-6 col-start-5 row-start-3 text-sm sm:text-base md:row-start-4"
   >
     {testimony}
+  </div>
+  <div
+    class="col-span-10 col-start-1 row-start-5 flex items-center justify-around pt-2"
+  >
+    <FAButton title="More" aria-label="More">...</FAButton>
+    <FAButton title="Reaction" aria-label="Reaction">&#10084;</FAButton>
+    <FAButton title="Share" aria-label="Share">&#8599;</FAButton>
   </div>
 </Card>
