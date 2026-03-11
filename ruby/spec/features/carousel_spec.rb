@@ -8,9 +8,9 @@ require "support/constants"
       def assert_visible_review(review_titles, visible_index)
         review_titles.each_with_index do |title, i|
           if i == visible_index
-            expect(page).to have_selector(".testimonials .card", text: title, visible: true)
+            expect(page).to have_selector(".testimonials .carousel-item:not(.opacity-0) .card", text: title, visible: :all)
           else
-            expect(page).to have_no_selector(".testimonials .card", text: title, visible: true)
+            expect(page).to have_selector(".testimonials .carousel-item.opacity-0 .card", text: title, visible: :all)
           end
         end
       end
