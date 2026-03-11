@@ -51,7 +51,7 @@ const prices = extractPrices(collection.map((p) => ({
 const serviceSchema = buildServiceSchema(title, Astro.url.pathname, prices);
 ---
 
-<Main title={`Magnolia Coasts | Toronto | ${title}`} extraSchemas={[serviceSchema]}>
+<Main title={`Magnolia Coasts | Mississauga | ${title}`} extraSchemas={[serviceSchema]}>
   <section aria-label={`${title} navigation`} class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
       <SiblingPackageNav
         text={pkgs[0][0]}

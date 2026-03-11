@@ -100,7 +100,7 @@ let buildServiceSchema = (
       providerType: "LocalBusiness",
       providerName: "Magnolia Coasts Photography",
     },
-    areaServed: "Toronto, Ontario",
+    areaServed: "Mississauga, Ontario",
     offers: offers,
   }
   JSON.stringifyAny(schema)->Option.getOr("")

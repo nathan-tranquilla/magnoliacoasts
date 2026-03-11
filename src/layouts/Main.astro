@@ -32,7 +32,7 @@ const { title, extraSchemas = [] } = Astro.props;
 const localBusinessProfile = JSON.stringify(businessData);
 const websiteUrl = "https://magnoliacoastsphotography.com";
 const canonicalUrl = new URL(Astro.url.pathname, websiteUrl).href;
-const description = "Toronto-based photographer capturing family, newborn, maternity, headshots, and milestone moments with a natural, timeless style. Book your session today!";
+const description = "Mississauga-based photographer capturing family, newborn, maternity, headshots, and milestone moments with a natural, timeless style. Book your session today!";
 
 // Breadcrumb structured data
 import { buildBreadcrumbSchema } from "../utils/breadcrumbs.res.mjs";
@@ -55,7 +55,7 @@ const webPageSchema = buildWebPageSchema(Astro.url.pathname, title, description)
     <title>{title}</title>
     <meta
       name="description"
-      content="Toronto-based photographer capturing family, newborn, maternity, headshots, and milestone moments with a natural, timeless style. Book your session today!"
+      content="Mississauga-based photographer capturing family, newborn, maternity, headshots, and milestone moments with a natural, timeless style. Book your session today!"
     />
     <meta name="author" content="Magnolia Coasts" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -134,11 +134,11 @@ const webPageSchema = buildWebPageSchema(Astro.url.pathname, title, description)
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Toronto Family & Newborn Photographer | Magnolia Coasts Photography"
+      content="Mississauga Family & Newborn Photographer | Magnolia Coasts Photography"
     />
     <meta
       property="og:description"
-      content="Toronto-based photographer capturing family, newborn, maternity, headshots, and milestone moments with a natural, timeless style. Book your session today!"
+      content="Mississauga-based photographer capturing family, newborn, maternity, headshots, and milestone moments with a natural, timeless style. Book your session today!"
     />
     <meta property="og:url" content={websiteUrl} />
     <meta property="og:site_name" content="Magnolia Coasts Photography" />
@@ -152,13 +152,13 @@ const webPageSchema = buildWebPageSchema(Astro.url.pathname, title, description)
     <meta name="twitter:title" content={title} />
     <meta
       name="twitter:description"
-      content="Magnolia Coasts Photography. Family, newborn, and portrait photography in Toronto, Mississauga, and the GTA."
+      content="Magnolia Coasts Photography. Family, newborn, and portrait photography in Mississauga, Toronto, and the GTA."
     />
     <meta name="twitter:image" content={`${websiteUrl}${logo.src}`} />
 
     <meta
       name="keywords"
-      content="Toronto family photographer, newborn photography Toronto, maternity photographer, headshots Toronto, milestone photography, branding photography, family portraits GTA"
+      content="Mississauga family photographer, newborn photography Mississauga, maternity photographer Mississauga, headshots Mississauga, milestone photography, branding photography, family portraits GTA, Toronto family photographer"
     />
   </head>
   <body
