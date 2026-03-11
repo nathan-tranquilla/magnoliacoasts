@@ -35,6 +35,63 @@ links = [
     origin: "/investment",
     dest: "/investment/collections",
     text: "Collection Packages",
+  },
+  # Gallery → Investment cross-links
+  {
+    origin: "/gallery/maternity",
+    dest: "/investment/maternity",
+    text: "View Maternity Packages",
+  },
+  {
+    origin: "/gallery/newborn",
+    dest: "/investment/newborn",
+    text: "View Newborn Packages",
+  },
+  {
+    origin: "/gallery/milestones",
+    dest: "/investment/milestone",
+    text: "View Milestone Packages",
+  },
+  {
+    origin: "/gallery/family",
+    dest: "/investment/family",
+    text: "View Family Packages",
+  },
+  {
+    origin: "/gallery/headshots",
+    dest: "/investment/headshot",
+    text: "View Headshot Packages",
+  },
+  {
+    origin: "/gallery/branding",
+    dest: "/investment/headshot",
+    text: "View Headshot & Branding Packages",
+  },
+  # Investment → Gallery cross-links
+  {
+    origin: "/investment/maternity",
+    dest: "/gallery/maternity",
+    text: "View Maternity Gallery",
+  },
+  {
+    origin: "/investment/newborn",
+    dest: "/gallery/newborn",
+    text: "View Newborn Gallery",
+  },
+  {
+    origin: "/investment/milestone",
+    dest: "/gallery/milestones",
+    text: "View Milestone Gallery",
+  },
+  {
+    origin: "/investment/family",
+    dest: "/gallery/family",
+    text: "View Family Gallery",
+  },
+  {
+    origin: "/investment/headshot",
+    dest: "/gallery/headshots",
+    text: "View Headshot Gallery",
   }
 ]
 
