@@ -15,7 +15,7 @@ let aestheticClasses = "cursor-pointer rounded-lg bg-pink px-6 py-2";
 
 <section
   aria-label="Hero"
-  class="relative flex justify-center bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(211,208,194)]"
+  class="relative flex justify-center bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(211,208,194)] md:max-h-[85vh] overflow-hidden"
 >
   <div class="flex w-full max-w-[1800px] items-center justify-center">
     <picture>
@@ -44,6 +44,7 @@ let aestheticClasses = "cursor-pointer rounded-lg bg-pink px-6 py-2";
         alt="Hero Image"
         width="1800"
         height="861"
+        class="md:object-cover md:w-full"
         fetchpriority="high"
       />
     </picture>
