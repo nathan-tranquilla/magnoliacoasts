@@ -28,7 +28,7 @@ let packageTuples = [
   ("newbornPackages", ("Newborn Packages", "/investment/newborn")),
   ("milestonePackages", ("Milestone Packages", "/investment/milestone")),
   ("familyPackages", ("Family Packages", "/investment/family")),
-  ("headshotPackages", ("Headshot, Branding & Portrait Packages", "/investment/headshot")),
+  ("headshotPackages", ("Headshot & Branding Packages", "/investment/headshot")),
   ("collectionsPackages", ("Collections Packages", "/investment/collections")),
 ]
 

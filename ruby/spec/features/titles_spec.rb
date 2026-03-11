@@ -5,79 +5,79 @@ page_titles = [
   # Main pages
   {
     path: "/",
-    expected_title: "Magnolia Coasts | Toronto Family & Maternity Photography"
+    expected_title: "Magnolia Coasts | Mississauga Family & Maternity Photography"
   },
   {
     path: "/about",
-    expected_title: "Magnolia Coasts | Toronto and GTA Photographer"
+    expected_title: "Magnolia Coasts | Mississauga and GTA Photographer"
   },
   {
     path: "/gallery",
-    expected_title: "Magnolia Coasts | Toronto | Photography Gallery"
+    expected_title: "Magnolia Coasts | Mississauga | Photography Gallery"
   },
   {
     path: "/investment",
-    expected_title: "Magnolia Coasts | Toronto | Photography Investment"
+    expected_title: "Magnolia Coasts | Mississauga | Photography Investment"
   },
 
   # Gallery pages (using Gallery layout with metaTitle pattern)
   {
     path: "/gallery/maternity",
-    expected_title: "Magnolia Coasts | Toronto | Maternity Photos"
+    expected_title: "Magnolia Coasts | Mississauga | Maternity Photos"
   },
   {
     path: "/gallery/newborn",
-    expected_title: "Magnolia Coasts | Toronto | Newborn Photos"
+    expected_title: "Magnolia Coasts | Mississauga | Newborn Photos"
   },
   {
     path: "/gallery/family",
-    expected_title: "Magnolia Coasts | Toronto | Family Photos"
+    expected_title: "Magnolia Coasts | Mississauga | Family Photos"
   },
   {
     path: "/gallery/children",
-    expected_title: "Magnolia Coasts | Toronto | Children's Photos"
+    expected_title: "Magnolia Coasts | Mississauga | Children's Photos"
   },
   {
     path: "/gallery/milestones",
-    expected_title: "Magnolia Coasts | Toronto | Milestone Photos"
+    expected_title: "Magnolia Coasts | Mississauga | Milestone Photos"
   },
   {
     path: "/gallery/headshots",
-    expected_title: "Magnolia Coasts | Toronto | Headshot Photos"
+    expected_title: "Magnolia Coasts | Mississauga | Headshot Photos"
   },
   {
     path: "/gallery/branding",
-    expected_title: "Magnolia Coasts | Toronto | Branding Photos"
+    expected_title: "Magnolia Coasts | Mississauga | Branding Photos"
   },
   {
     path: "/gallery/cakesmash",
-    expected_title: "Magnolia Coasts | Toronto | Cake Smash Photos"
+    expected_title: "Magnolia Coasts | Mississauga | Cake Smash Photos"
   },
 
   # Investment pages (using InvestmentPackage layout with title pattern)
   {
     path: "/investment/maternity",
-    expected_title: "Magnolia Coasts | Toronto | Maternity Packages"
+    expected_title: "Magnolia Coasts | Mississauga | Maternity Packages"
   },
   {
     path: "/investment/newborn",
-    expected_title: "Magnolia Coasts | Toronto | Newborn Packages"
+    expected_title: "Magnolia Coasts | Mississauga | Newborn Packages"
   },
   {
     path: "/investment/family",
-    expected_title: "Magnolia Coasts | Toronto | Family Packages"
+    expected_title: "Magnolia Coasts | Mississauga | Family Packages"
   },
   {
     path: "/investment/milestone",
-    expected_title: "Magnolia Coasts | Toronto | Milestone Packages"
+    expected_title: "Magnolia Coasts | Mississauga | Milestone Packages"
   },
   {
     path: "/investment/headshot",
-    expected_title: "Magnolia Coasts | Toronto | Headshot, Branding & Portrait"
+    expected_title: "Magnolia Coasts | Mississauga | Headshot & Branding Packages"
   },
   {
     path: "/investment/collections",
-    expected_title: "Magnolia Coasts | Toronto | Collections Packages"
+    expected_title: "Magnolia Coasts | Mississauga | Collections Packages"
   }
 ]
 
@@ -110,7 +110,7 @@ page_titles = [
         
         # Ensure it contains the site name
         expect(actual_title).to include("Magnolia Coasts")
-        expect(actual_title).to include("Toronto")
+        expect(actual_title).to include("Mississauga")
         # Check title length is 60 characters or less for optimal SEO
         # puts actual_title.length
         expect(actual_title.length).to be <= 60, 

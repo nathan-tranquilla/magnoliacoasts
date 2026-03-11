@@ -6,79 +6,29 @@
 
 ---
 
-## Semantic HTML
-
-### Passing
-
-- All pages have `<header>`, `<nav>`, `<main>`, `<footer>` landmarks
-- `lang="en"` on all pages
-- 100% alt text coverage (367+ images)
-- Canonical URLs, OG tags, and Twitter cards present on all pages
-- Responsive images with `srcset`
-- Font preloading for Cormorant Garamond and Dancing Script
-- `<section>` tags with `aria-label` on all pages
-- Gallery images wrapped in `<figure>` / `<figcaption>`
-- Investment packages wrapped in `<article>` tags
-
-### Remaining Issues
-
-| Issue | Severity | Pages |
-|-------|----------|-------|
-| Homepage missing `<h1>` | High | `/` |
-
----
-
-## LD+JSON Structured Data
-
-### Current Coverage
-
-| Schema Type | Pages |
-|-------------|-------|
-| LocalBusiness | All 19 |
-| BreadcrumbList | All 19 (including homepage) |
-| WebPage | All 19 |
-| WebSite | Homepage |
-| Review / AggregateRating | Homepage |
-| ImageGallery / ImageObject | 8 gallery pages |
-| Service / Offer | 6 investment pages |
-
-### LocalBusiness Details
-
-- `addressLocality`: Mississauga
-- `addressRegion`: Ontario
-- `postalCode`: L4W 2G8
-- `image`: HeroImage.900w.webp
-- `email`: info@magnoliacoastsphotography.com
-- `description`: present
-- `areaServed`: Mississauga, Toronto, Oakville, Brampton, Caledon, Barrie, Scarborough, Oshawa, Whitby
-
----
-
-## Checklist
+## Completed Work
 
 ### Semantic HTML
 
-- [ ] Add `<h1>` to homepage
-- [x] Add `<section>` tags with `aria-label` to all pages
-- [x] Wrap gallery images in `<figure>` / `<figcaption>`
-- [x] Add `<article>` tags where appropriate (investment pages)
+- [x] All pages have `<header>`, `<nav>`, `<main>`, `<footer>` landmarks
+- [x] `lang="en"` on all pages
+- [x] 100% alt text coverage (367+ images)
+- [x] Canonical URLs, OG tags, and Twitter cards present on all pages
+- [x] Responsive images with `srcset`
+- [x] Font preloading for Cormorant Garamond and Dancing Script
+- [x] `<section>` tags with `aria-label` on all pages
+- [x] Gallery images wrapped in `<figure>` / `<figcaption>`
+- [x] Investment packages wrapped in `<article>` tags
 
-### LD+JSON — Fix Existing
+### LD+JSON Structured Data
 
-- [x] LocalBusiness: change `image` from favicon to real business photo
-- [x] LocalBusiness: add `email`
-- [ ] LocalBusiness: add `streetAddress`
-- [x] LocalBusiness: add `addressLocality` (Mississauga)
-- [x] LocalBusiness: add `description`
-- [x] Add BreadcrumbList to homepage
-
-### LD+JSON — Add Missing Types
-
-- [x] Add WebSite schema to homepage
-- [x] Add ImageGallery / ImageObject schemas to gallery pages
-- [x] Add Service / Offer schemas to investment pages
-- [x] Add WebPage schema to all pages
-- [x] Add Review / AggregateRating schema for testimonials
+- [x] LocalBusiness on all 19 pages (with image, email, description, addressLocality)
+- [x] BreadcrumbList on all 19 pages (including homepage)
+- [x] WebPage on all 19 pages
+- [x] WebSite on homepage
+- [x] Review / AggregateRating on homepage
+- [x] ImageGallery / ImageObject on 8 gallery pages
+- [x] Service / Offer on 6 investment pages
 
 ### Location & Metadata
 
@@ -88,6 +38,68 @@
 - [x] Keywords prioritize Mississauga, Toronto as secondary
 - [x] Service schema `areaServed` set to Mississauga, Ontario
 - [x] Twitter card description lists Mississauga first
+
+---
+
+## Remaining Checklist
+
+### Technical SEO
+
+- [x] Audit `robots.txt` — exists, allows all crawlers, links to sitemap
+- [ ] Add custom 404 page
+- [ ] Audit for redirect chains / broken links
+- [ ] Audit render-blocking resources (CSS/JS)
+- [ ] Measure Core Web Vitals (LCP, CLS, INP) via PageSpeed Insights
+- [ ] Verify CLS mitigation — explicit width/height on all images to prevent layout shifts
+- [ ] Verify TTFB performance (static site on Cloudflare Pages — likely good)
+
+### On-Page SEO
+
+- [ ] Add `<h1>` to homepage
+- [x] Unique meta descriptions per page (all 18 pages have unique descriptions)
+- [x] Unique OG and Twitter descriptions per page (match meta description)
+- [ ] Audit heading hierarchy (H1→H2→H3) for proper nesting on all pages
+- [ ] Add per-page keyword targeting (currently same keywords meta on all pages)
+- [ ] Improve image filenames — currently generic (`01.jpg`, `02.jpg`), should be descriptive (e.g., `newborn-baby-sleeping.jpg`)
+- [ ] Add contextual internal cross-links between related pages (e.g., gallery→investment)
+- [ ] Add more descriptive text content on gallery pages (currently image-only)
+- [ ] Add more descriptive text content on investment pages (currently mostly pricing)
+
+### Structured Data — Additional
+
+- [ ] LocalBusiness: add `streetAddress`
+- [ ] Add FAQPage schema (if FAQ content is created)
+- [ ] Add Person schema for photographer on `/about`
+
+### Accessibility (SEO-adjacent)
+
+- [ ] Add skip-to-content link
+- [ ] Audit color contrast ratios
+- [ ] Full keyboard navigation audit (beyond carousel)
+
+### Off-Page / External
+
+- [ ] Verify Google Business Profile matches LocalBusiness data (NAP consistency)
+- [ ] Verify directory listings (Yelp, etc.) match NAP
+- [ ] Audit backlink profile
+
+### Content Strategy
+
+- [ ] Consider adding a blog for fresh content signals
+- [ ] Consider location-specific landing pages for secondary markets (Toronto, Oakville, Brampton)
+- [ ] Add more service description copy beyond pricing
+
+---
+
+## LocalBusiness Details
+
+- `addressLocality`: Mississauga
+- `addressRegion`: Ontario
+- `postalCode`: L4W 2G8
+- `image`: HeroImage.900w.webp
+- `email`: info@magnoliacoastsphotography.com
+- `description`: present
+- `areaServed`: Mississauga, Toronto, Oakville, Brampton, Caledon, Barrie, Scarborough, Oshawa, Whitby
 
 ---
 
