@@ -35,6 +35,39 @@ const galleryTypeToTuple: Record<GalleryType, [string, string]> = {
   [GalleryType.Headshots]: ["Headshots", `${BASE_URL}/gallery/headshots`],
 };
 
+const galleryIntro: Record<GalleryType, { text: string; cta?: [string, string] }> = {
+  [GalleryType.Maternity]: {
+    text: "Elegant studio and outdoor maternity sessions in Mississauga, celebrating the beauty of pregnancy with soft, natural light and timeless poses.",
+    cta: ["View Maternity Packages", `${BASE_URL}/investment/maternity`],
+  },
+  [GalleryType.Newborn]: {
+    text: "Gentle, natural newborn portraits captured during baby's first days in our warm, safe Mississauga studio.",
+    cta: ["View Newborn Packages", `${BASE_URL}/investment/newborn`],
+  },
+  [GalleryType.Milestone]: {
+    text: "Milestone photography capturing your baby's personality and growth at 3, 6, and 9 months in our Mississauga studio.",
+    cta: ["View Milestone Packages", `${BASE_URL}/investment/milestone`],
+  },
+  [GalleryType.CakeSmash]: {
+    text: "Colourful, fun cake smash and first birthday sessions capturing your little one's milestone celebration in our Mississauga studio.",
+  },
+  [GalleryType.Family]: {
+    text: "Natural, candid family moments in beautiful Mississauga locations — from playful park sessions to intimate studio portraits.",
+    cta: ["View Family Packages", `${BASE_URL}/investment/family`],
+  },
+  [GalleryType.Children]: {
+    text: "Playful, natural portraits of children in beautiful settings around Mississauga, capturing their unique personality and spirit.",
+  },
+  [GalleryType.Branding]: {
+    text: "Professional lifestyle and brand imagery for entrepreneurs and small businesses in the Greater Toronto Area.",
+    cta: ["View Headshot & Branding Packages", `${BASE_URL}/investment/headshot`],
+  },
+  [GalleryType.Headshots]: {
+    text: "Polished studio headshot portraits for corporate professionals, actors, and creatives in Mississauga.",
+    cta: ["View Headshot Packages", `${BASE_URL}/investment/headshot`],
+  },
+};
+
 const desktopDisplay = "md:grid grid-cols-[20vw_50vw_20vw] gap-2";
 const mobileDisplay = "flex justify-around items-center";
 
@@ -103,6 +136,17 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
         direction={NavDir.Right}
       />
   </section>
+  <p class="max-w-[800px] self-center px-6 py-4 text-center font-cormorant-garamond text-lg text-gray-700">
+    {galleryIntro[galleryType].text}
+    {galleryIntro[galleryType].cta && (
+      <a
+        href={galleryIntro[galleryType].cta![1]}
+        class="ml-1 font-semibold text-dark-green underline decoration-1 underline-offset-2 hover:text-green-900"
+      >
+        {galleryIntro[galleryType].cta![0]} &rarr;
+      </a>
+    )}
+  </p>
   <section
     aria-label={`${title} photos`}
     class=`xs:grid-cols-3 grid grid-cols-1 gap-4 self-center p-4 lg:max-w-[1200px]`

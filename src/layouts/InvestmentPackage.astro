@@ -16,6 +16,7 @@ import SiblingPackageNav, {
 import StandardInvestment from "../components/StandardInvestment.astro";
 import CollectionsInvestment from "../components/CollectionsInvestment.astro";
 import { buildServiceSchema } from "../utils/structuredData.res.mjs";
+import { BASE_URL } from "../data/links";
 
 export enum PackageType {
   Maternity = "maternityPackages",
@@ -25,6 +26,32 @@ export enum PackageType {
   Headshot = "headshotPackages",
   Collections = "collectionsPackages",
 }
+
+const investmentIntro: Record<PackageType, { text: string; cta?: [string, string] }> = {
+  [PackageType.Maternity]: {
+    text: "Celebrate your pregnancy journey with a maternity photography session in our Mississauga studio or at a scenic outdoor location.",
+    cta: ["View Maternity Gallery", `${BASE_URL}/gallery/maternity`],
+  },
+  [PackageType.Newborn]: {
+    text: "Welcome your newest family member with a gentle newborn session, best booked for babies under 14 days old in our warm Mississauga studio.",
+    cta: ["View Newborn Gallery", `${BASE_URL}/gallery/newborn`],
+  },
+  [PackageType.Milestone]: {
+    text: "Capture your baby's growth with milestone sessions at 3, 6, and 9 months, each tailored to your baby's personality.",
+    cta: ["View Milestone Gallery", `${BASE_URL}/gallery/milestones`],
+  },
+  [PackageType.Family]: {
+    text: "Create lasting memories with a family photography session in Mississauga — indoor studio and outdoor locations available.",
+    cta: ["View Family Gallery", `${BASE_URL}/gallery/family`],
+  },
+  [PackageType.Headshot]: {
+    text: "Professional headshot and branding photography for corporate professionals, entrepreneurs, and creatives in the Greater Toronto Area.",
+    cta: ["View Headshot Gallery", `${BASE_URL}/gallery/headshots`],
+  },
+  [PackageType.Collections]: {
+    text: "Save with our bundled photography collections combining maternity, newborn, and family sessions at a discounted rate.",
+  },
+};
 
 export interface Props {
   pkgType: PackageType;
@@ -67,6 +94,17 @@ const serviceSchema = buildServiceSchema(title, Astro.url.pathname, prices);
         direction={NavDir.Right}
       />
   </section>
+  <p class="max-w-[800px] self-center px-6 py-4 text-center font-cormorant-garamond text-lg text-gray-700">
+    {investmentIntro[pkgType].text}
+    {investmentIntro[pkgType].cta && (
+      <a
+        href={investmentIntro[pkgType].cta![1]}
+        class="ml-1 font-semibold text-dark-green underline decoration-1 underline-offset-2 hover:text-green-900"
+      >
+        {investmentIntro[pkgType].cta![0]} &rarr;
+      </a>
+    )}
+  </p>
   <section aria-label={`${title} options`} class="flex w-full flex-wrap items-stretch justify-center p-4">
       {
         collection.map(async (pkg) => {
