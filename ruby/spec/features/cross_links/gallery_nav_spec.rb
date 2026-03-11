@@ -36,14 +36,14 @@ PAGES = gallery_nav_cases(GALLERIES)
     PAGES.each do |test_case|
       it "navigates forward from #{test_case[:url]} to next gallery and checks h1" do
         visit test_case[:url]
-        find("a#next").trigger("click")
+        find("a[id^='next']", match: :first, visible: :all).trigger("click")
         expect(page).to have_current_path(test_case[:next], ignore_query: true)
         expect(page).to have_selector("h1", text: test_case[:next_h1])
       end
 
       it "navigates backward from #{test_case[:url]} to previous gallery and checks h1" do
         visit test_case[:url]
-        find("a#prev").trigger("click")
+        find("a[id^='prev']", match: :first, visible: :all).trigger("click")
         expect(page).to have_current_path(test_case[:prev], ignore_query: true)
         expect(page).to have_selector("h1", text: test_case[:prev_h1])
       end

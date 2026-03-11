@@ -18,8 +18,9 @@ const textDisplay = "block vertical-middle text-center";
 ---
 
 <a
-  id={direction == NavDir.Left ? "prev" : "next"}
+  id={direction == NavDir.Left ? "prev-desktop" : "next-desktop"}
   href={href}
+  aria-label={`${direction == NavDir.Left ? "Previous" : "Next"}: ${text}`}
   class={`w-[20vw] px-4 ${desktopDisplay}`}
 >
   {
@@ -34,10 +35,12 @@ const textDisplay = "block vertical-middle text-center";
   {direction == NavDir.Right && <FAButton title={"Next Page"}>{">"}</FAButton>}
 </a>
 <a
-  id={direction == NavDir.Left ? "prev" : "next"}
+  id={direction == NavDir.Left ? "prev-mobile" : "next-mobile"}
   href={href}
+  aria-label={`${direction == NavDir.Left ? "Previous" : "Next"}: ${text}`}
   class={`w-[20vw] ${mobileDisplay} `}
 >
+  <span class="sr-only">{text}</span>
   <FAButton
     title={direction == NavDir.Left ? "Previous Page" : "Next Page"}
     classes="max-h-[2rem] max-w-[2rem]"

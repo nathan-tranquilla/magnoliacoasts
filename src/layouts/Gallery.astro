@@ -47,7 +47,6 @@ export interface Props {
   galleryType: GalleryType;
 }
 const { metaTitle, title, description, keywords, galleryType, images } = Astro.props;
-
 let galleries = Object.values(galleryTypeToTuple);
 const pkg = galleryTypeToTuple[galleryType];
 let pkgs = get_surrounding_pkgs(pkg, galleries);
