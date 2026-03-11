@@ -61,6 +61,7 @@ task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
     begin
       Net::HTTP.get(URI("http://localhost:4321"))
       puts "Dev server is ready."
+      sleep 5
       break
     rescue Errno::ECONNREFUSED, Errno::EADDRNOTAVAIL, SocketError
       sleep 1
