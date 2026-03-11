@@ -54,7 +54,18 @@ task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
   # Start dev server and keep PID
   pid = spawn("rake dev['--silent']")
   puts "Started dev server with PID #{pid}"
-  sleep 5 # Give dev server time to start
+
+  # Wait for dev server to accept connections (up to 60 seconds)
+  require 'net/http'
+  60.times do
+    begin
+      Net::HTTP.get(URI("http://localhost:4321"))
+      puts "Dev server is ready."
+      break
+    rescue Errno::ECONNREFUSED, Errno::EADDRNOTAVAIL, SocketError
+      sleep 1
+    end
+  end
 
   begin
     Dir.chdir('ruby') do

@@ -3,6 +3,9 @@
   "manifest": {
     "version": 1,
     "install": {
+      "gh": {
+        "pkg-path": "gh"
+      },
       "google-chrome": {
         "pkg-path": "google-chrome",
         "systems": [
@@ -23,6 +26,122 @@
     "options": {}
   },
   "packages": [
+    {
+      "attr_path": "gh",
+      "broken": false,
+      "derivation": "/nix/store/8arnv07dwynjhi3sc4ifbxc761yqqjd2-gh-2.78.0.drv",
+      "description": "GitHub CLI tool",
+      "install_id": "gh",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "gh-2.78.0",
+      "pname": "gh",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T03:40:12.547452Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.78.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/886src1jhm94xdrllnzz0aww9qmfc50l-gh-2.78.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gh",
+      "broken": false,
+      "derivation": "/nix/store/j383h2gq5kwqrdxjp17xihy3s5shsr63-gh-2.78.0.drv",
+      "description": "GitHub CLI tool",
+      "install_id": "gh",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "gh-2.78.0",
+      "pname": "gh",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T03:52:22.426057Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.78.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/fj5v9hzpzr9jvcpb4d1zqlsacll9n2mp-gh-2.78.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gh",
+      "broken": false,
+      "derivation": "/nix/store/j2j15dll0pg12qghz43kikds95hkq7rk-gh-2.78.0.drv",
+      "description": "GitHub CLI tool",
+      "install_id": "gh",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "gh-2.78.0",
+      "pname": "gh",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T04:22:02.435164Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.78.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/sfpszlvhvlh9alfjfdv4dn5acjalihnl-gh-2.78.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gh",
+      "broken": false,
+      "derivation": "/nix/store/bknn8xxqbaiplbzg0mjnmghbg5fvsm87-gh-2.78.0.drv",
+      "description": "GitHub CLI tool",
+      "install_id": "gh",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "gh-2.78.0",
+      "pname": "gh",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T04:54:31.033566Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.78.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/2dpvjfrvc4h2b67ji259xrja5ggh4f17-gh-2.78.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
     {
       "attr_path": "google-chrome",
       "broken": false,
