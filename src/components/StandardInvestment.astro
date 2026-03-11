@@ -20,7 +20,7 @@ let { title, details, price, priceRange, cardStyle, productLink } = Astro.props;
     color: var(--color-pink);
   }
 </style>
-<Card test_id={title} classes={`w-full max-w-[400px] m-2 ${cardStyle || ""}`}>
+<Card test_id={title} as="article" classes={`w-full max-w-[400px] m-2 ${cardStyle || ""}`}>
   <InvestmentHeader title={title} />
   <slot />
   <ul

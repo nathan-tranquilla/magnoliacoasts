@@ -2,16 +2,17 @@
 export interface Props {
   test_id?: string;
   classes?: string;
+  as?: "div" | "article";
 }
 import { string_to_id } from "../utils/utils.res.mjs";
-const { classes, ...props } = Astro.props;
+const { classes, as: Tag = "div", ...props } = Astro.props;
 const test_id = string_to_id(Astro.props.test_id || "");
 ---
 
-<div
+<Tag
   data-id={test_id}
   class={`card flex flex-col p-6 shadow-card rounded-md bg-white ${classes || ""}`}
   {...props}
 >
   <slot />
-</div>
+</Tag>

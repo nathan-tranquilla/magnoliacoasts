@@ -112,33 +112,29 @@ const serviceSchema = buildServiceSchema(title, Astro.url.pathname, prices);
           switch (pkgType) {
             case PackageType.Collections:
               return (
-                <article>
-                  <CollectionsInvestment
-                    photoCount={pkg.data.photoCount}
-                    title={pkg.data.title}
-                    price={pkg.data.price}
-                    priceDetails={pkg.data.priceDetails}
-                    detailsCollection={pkg.data.detailsCollection}
-                    productLink={pkg.data.productLink}
-                  >
-                    <Content />
-                  </CollectionsInvestment>
-                </article>
+                <CollectionsInvestment
+                  photoCount={pkg.data.photoCount}
+                  title={pkg.data.title}
+                  price={pkg.data.price}
+                  priceDetails={pkg.data.priceDetails}
+                  detailsCollection={pkg.data.detailsCollection}
+                  productLink={pkg.data.productLink}
+                >
+                  <Content />
+                </CollectionsInvestment>
               );
             default:
               return (
-                <article>
-                  <StandardInvestment
-                    cardStyle={pkg.data.cardStyle}
-                    title={pkg.data.title}
-                    price={pkg.data.price}
-                    priceRange={pkg.data.priceRange}
-                    details={pkg.data.details}
-                    productLink={pkg.data.productLink}
-                  >
-                    <Content />
-                  </StandardInvestment>
-                </article>
+                <StandardInvestment
+                  cardStyle={pkg.data.cardStyle}
+                  title={pkg.data.title}
+                  price={pkg.data.price}
+                  priceRange={pkg.data.priceRange}
+                  details={pkg.data.details}
+                  productLink={pkg.data.productLink}
+                >
+                  <Content />
+                </StandardInvestment>
               );
           }
         })
