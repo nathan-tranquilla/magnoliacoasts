@@ -10,6 +10,30 @@ import ExternalLink from "./ExternalLink.astro";
   .hero-cta {
     corner-shape: notch;
   }
+  .hero-divider {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(57, 44, 44, 0.3) 20%,
+      rgba(57, 44, 44, 0.3) 80%,
+      transparent
+    );
+  }
+  .hero-divider::before,
+  .hero-divider::after {
+    content: "\2726";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(57, 44, 44, 0.3);
+    font-size: 0.5rem;
+  }
+  .hero-divider::before {
+    left: -0.75rem;
+  }
+  .hero-divider::after {
+    right: -0.75rem;
+  }
 </style>
 
 <section
@@ -50,16 +74,16 @@ import ExternalLink from "./ExternalLink.astro";
       </picture>
     </div>
     <!-- Desktop overlay -->
-    <div class="hero-overlay hidden md:flex absolute bottom-0 flex-col items-center gap-4 lg:-translate-y-28 md:-translate-y-14 rounded-2xl border border-white/30 bg-white/50 backdrop-blur-md px-12 py-8 shadow-lg">
-      <h1 class="font-cormorant-garamond italic font-light text-[#392C2C] text-center md:text-5xl lg:text-6xl tracking-wide">
+    <div class="hero-overlay hidden md:flex absolute bottom-0 flex-col items-center gap-5 lg:-translate-y-28 md:-translate-y-14 rounded-2xl border border-white/20 bg-white/60 backdrop-blur-lg px-14 py-10 shadow-xl">
+      <h1 class="font-cormorant-garamond italic font-light text-[#392C2C] text-center md:text-5xl lg:text-6xl tracking-wide leading-tight">
         Magnolia Coasts Photography
       </h1>
-      <div class="h-px w-24 bg-[#392C2C]/30"></div>
-      <h2 class="font-cormorant-garamond text-[#392C2C]/80 text-center md:text-lg lg:text-xl tracking-widest uppercase">
+      <div class="hero-divider relative h-px w-28"></div>
+      <h2 class="font-cormorant-garamond font-light text-[#392C2C]/70 text-center md:text-base lg:text-lg tracking-[0.25em] uppercase">
         Family &amp; Newborn Photography in Mississauga
       </h2>
       <ExternalLink
-        class="hero-cta font-cormorant-garamond text-[#392C2C] md:text-lg lg:text-xl tracking-wider flex justify-center items-center cursor-pointer rounded-lg bg-pink/80 border border-pink px-8 py-2.5 transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md hover:bg-pink"
+        class="hero-cta font-cormorant-garamond text-[#392C2C] md:text-base lg:text-lg tracking-[0.2em] uppercase flex justify-center items-center cursor-pointer rounded-lg bg-pink/70 border border-[#392C2C]/15 px-10 py-3 transition-all duration-300 hover:scale-102 focus:scale-102 hover:shadow-lg focus:shadow-lg hover:bg-pink/90"
         href={INQUIRE_LINK}>Inquire</ExternalLink
       >
     </div>
