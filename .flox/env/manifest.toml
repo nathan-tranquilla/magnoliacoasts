@@ -19,6 +19,7 @@ nodejs.pkg-path = "nodejs"
 ruby.pkg-path = "ruby"
 google-chrome.pkg-path = "google-chrome"
 google-chrome.systems = ["aarch64-darwin", "x86_64-darwin", "x86_64-linux"]
+gh.pkg-path = "gh"
 
 
 ## Environment Variables ---------------------------------------------
