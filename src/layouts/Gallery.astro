@@ -42,10 +42,11 @@ export interface Props {
   title: string;
   metaTitle: string;
   description: string;
+  keywords?: string;
   images: ImageMetadata[];
   galleryType: GalleryType;
 }
-const { metaTitle, title, description, galleryType, images } = Astro.props;
+const { metaTitle, title, description, keywords, galleryType, images } = Astro.props;
 
 let galleries = Object.values(galleryTypeToTuple);
 const pkg = galleryTypeToTuple[galleryType];
@@ -89,7 +90,7 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
 };
 ---
 
-<Main title={`Magnolia Coasts | ${metaTitle}`} description={description} extraSchemas={[gallerySchema]}>
+<Main title={`Magnolia Coasts | ${metaTitle}`} description={description} keywords={keywords} extraSchemas={[gallerySchema]}>
   <section aria-label={`${title} gallery navigation`} class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
       <SiblingPackageNav
         text={pkgs[0][0]}

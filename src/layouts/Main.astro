@@ -26,10 +26,12 @@ import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 export interface Props {
   title: string;
   description?: string;
+  keywords?: string;
   extraSchemas?: string[];
 }
 const defaultDescription = "Mississauga-based photographer capturing family, newborn, maternity, headshots, and milestone moments with a natural, timeless style. Book your session today!";
-const { title, description = defaultDescription, extraSchemas = [] } = Astro.props;
+const defaultKeywords = "Mississauga photographer, family photography, newborn photography, maternity photographer, headshots, milestone photography, GTA photographer";
+const { title, description = defaultDescription, keywords = defaultKeywords, extraSchemas = [] } = Astro.props;
 
 const localBusinessProfile = JSON.stringify(businessData);
 const websiteUrl = "https://magnoliacoastsphotography.com";
@@ -159,7 +161,7 @@ const webPageSchema = buildWebPageSchema(Astro.url.pathname, title, description)
 
     <meta
       name="keywords"
-      content="Mississauga family photographer, newborn photography Mississauga, maternity photographer Mississauga, headshots Mississauga, milestone photography, branding photography, family portraits GTA, Toronto family photographer"
+      content={keywords}
     />
   </head>
   <body

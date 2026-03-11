@@ -30,9 +30,10 @@ export interface Props {
   pkgType: PackageType;
   title: string;
   description: string;
+  keywords?: string;
 }
 
-let { pkgType, title, description } = Astro.props;
+let { pkgType, title, description, keywords } = Astro.props;
 
 const pkg = getPackageTuple(pkgType);
 const link = getPackageLink(pkgType);
@@ -52,7 +53,7 @@ const prices = extractPrices(collection.map((p) => ({
 const serviceSchema = buildServiceSchema(title, Astro.url.pathname, prices);
 ---
 
-<Main title={`Magnolia Coasts | Mississauga | ${title}`} description={description} extraSchemas={[serviceSchema]}>
+<Main title={`Magnolia Coasts | Mississauga | ${title}`} description={description} keywords={keywords} extraSchemas={[serviceSchema]}>
   <section aria-label={`${title} navigation`} class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
       <SiblingPackageNav
         text={pkgs[0][0]}
