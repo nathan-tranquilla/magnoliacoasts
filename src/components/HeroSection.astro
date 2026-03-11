@@ -3,6 +3,15 @@ import { INQUIRE_LINK } from "../data/links";
 import ExternalLink from "./ExternalLink.astro";
 ---
 
+<style>
+  .hero-overlay {
+    corner-shape: notch;
+  }
+  .hero-cta {
+    corner-shape: notch;
+  }
+</style>
+
 <section
   aria-label="Hero"
   class="flex flex-col bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(211,208,194)]"
@@ -41,15 +50,16 @@ import ExternalLink from "./ExternalLink.astro";
       </picture>
     </div>
     <!-- Desktop overlay -->
-    <div class="hidden md:flex absolute bottom-0 flex-col items-center gap-3 lg:-translate-y-28 md:-translate-y-14 rounded-xl bg-white/60 backdrop-blur-sm px-10 py-6">
-      <h1 class="font-cormorant-garamond italic font-light text-[#392C2C] text-center md:text-5xl lg:text-6xl">
+    <div class="hero-overlay hidden md:flex absolute bottom-0 flex-col items-center gap-4 lg:-translate-y-28 md:-translate-y-14 rounded-2xl border border-white/30 bg-white/50 backdrop-blur-md px-12 py-8 shadow-lg">
+      <h1 class="font-cormorant-garamond italic font-light text-[#392C2C] text-center md:text-5xl lg:text-6xl tracking-wide">
         Magnolia Coasts Photography
       </h1>
-      <h2 class="font-cormorant-garamond text-[#392C2C] text-center md:text-xl lg:text-2xl">
+      <div class="h-px w-24 bg-[#392C2C]/30"></div>
+      <h2 class="font-cormorant-garamond text-[#392C2C]/80 text-center md:text-lg lg:text-xl tracking-widest uppercase">
         Family &amp; Newborn Photography in Mississauga
       </h2>
       <ExternalLink
-        class="font-cormorant-garamond text-[#392C2C] md:text-lg lg:text-2xl flex justify-center items-center cursor-pointer rounded-lg bg-pink px-6 py-2 transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md"
+        class="hero-cta font-cormorant-garamond text-[#392C2C] md:text-lg lg:text-xl tracking-wider flex justify-center items-center cursor-pointer rounded-lg bg-pink/80 border border-pink px-8 py-2.5 transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md hover:bg-pink"
         href={INQUIRE_LINK}>Inquire</ExternalLink
       >
     </div>
