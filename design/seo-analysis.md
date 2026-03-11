@@ -58,7 +58,7 @@
 - [ ] Add `<h1>` to homepage
 - [x] Unique meta descriptions per page (all 18 pages have unique descriptions)
 - [x] Unique OG and Twitter descriptions per page (match meta description)
-- [ ] Audit heading hierarchy (H1→H2→H3) for proper nesting on all pages
+- [x] Audit heading hierarchy (H1→H2→H3) for proper nesting on all pages (SectionTitle→h2, Welcome title→h2, ArtInYourHome→h2; homepage H1 deferred)
 - [ ] Add per-page keyword targeting (currently same keywords meta on all pages)
 - [ ] Improve image filenames — currently generic (`01.jpg`, `02.jpg`), should be descriptive (e.g., `newborn-baby-sleeping.jpg`)
 - [ ] Add contextual internal cross-links between related pages (e.g., gallery→investment)
