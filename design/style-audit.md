@@ -8,11 +8,11 @@
   - **Files:** `src/components/Nav.astro`, `src/utils/utils.res`
 
 - [x] **2. Gallery index cards feel plain**
-  Replaced pink button labels with gradient overlay that fades in on hover.
+  Replaced pink button labels with gradient overlay title. Always visible on mobile, fade-in on hover for desktop.
   - **File:** `src/pages/gallery.astro`
 
 - [x] **3. Investment index cards inconsistent with gallery cards**
-  Unified with gallery cards — same overlay style with fade-in title on hover.
+  Unified with gallery cards — same overlay style. Always visible on mobile, fade-in on hover for desktop.
   - **File:** `src/components/InvestmentCard.astro`
 
 - [ ] **4. Investment detail cards — price/Inquire row feels cramped**
