@@ -36,9 +36,9 @@
   - 1800w: 7.0 MB → 105 KB | 1200w: new, 53 KB | 900w: 30 → 35 KB | 600w: 17 → 20 KB | 414w: 19 → 10 KB
   - **Files:** `public/HeroImage.*.webp`, `src/components/HeroSection.astro`
 
-- [ ] **3. Image elements do not have explicit `width` and `height`**
-  Missing dimensions prevent the browser from reserving layout space, contributing to CLS and slower rendering.
-  - **Action:** Add explicit `width` and `height` to all `<Image>` components that lack them.
+- [x] **3. Image elements do not have explicit `width` and `height`**
+  Added `width`/`height` to all raw `<img>` elements: Newsletter (367×600), SpecialMoments (300×400), Banner (2000×315). Astro `<Image>` components already handled via `layout` props.
+  - **Files:** `Newsletter.astro`, `SpecialMoments.astro`, `Banner.astro`
 
 - [ ] **4. Reduce unused JavaScript — est. savings of 92 KB**
   - **Action:** Audit JS bundles. Check for unused client-side scripts or libraries being shipped unnecessarily.
