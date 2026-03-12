@@ -17,6 +17,8 @@ const portrait = await getImage({ src: stephaniePortrait });
     <div class="font-cormorant-garamond text-sm text-text rounded-xl bg-white/60 backdrop-blur-md p-4 shadow-sm">
       <img
         src={portrait.src}
+        width="333"
+        height="500"
         alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
         class="float-left w-24 sm:w-32 mr-3 mb-2 rounded-md shadow-card object-cover"
         loading="lazy"
@@ -38,12 +40,13 @@ const portrait = await getImage({ src: stephaniePortrait });
 
   <!-- Desktop: side-by-side -->
   <div class="hidden md:flex w-full max-w-[1200px] flex-row items-center gap-12 px-4">
-    <div class="w-80 shrink-0 overflow-hidden rounded-md shadow-card">
+    <div class="w-80 shrink-0 overflow-hidden rounded-md shadow-card" style="aspect-ratio: 333/500;">
       <img
         src={portrait.src}
+        width="333"
+        height="500"
         alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
         class="w-full h-full object-cover"
-        loading="lazy"
       />
     </div>
     <div class="font-cormorant-garamond flex flex-col items-start gap-4 text-left text-lg text-text rounded-xl bg-white/60 backdrop-blur-md p-8 shadow-sm">
