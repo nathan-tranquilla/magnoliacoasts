@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Flox
-        uses: flox/install-flox-action@v2
+        uses: flox/install-flox-action@v2.3.0
 
       - name: Run unit tests
         uses: flox/activate-action@v1
@@ -24,10 +24,10 @@ jobs:
     needs: unit-test
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Flox
-        uses: flox/install-flox-action@v2
+        uses: flox/install-flox-action@v2.3.0
 
       - name: Run tier1 integration tests
         uses: flox/activate-action@v1
@@ -39,10 +39,10 @@ jobs:
     needs: tier1
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Flox
-        uses: flox/install-flox-action@v2
+        uses: flox/install-flox-action@v2.3.0
 
       - name: Deploy to Cloudflare Pages
         uses: flox/activate-action@v1
@@ -56,10 +56,10 @@ jobs:
     needs: deploy
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Flox
-        uses: flox/install-flox-action@v2
+        uses: flox/install-flox-action@v2.3.0
 
       - name: Build static site
         uses: flox/activate-action@v1
