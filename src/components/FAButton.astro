@@ -1,14 +1,16 @@
 ---
+import ChevronSvg from "./ChevronSvg.astro";
 export interface Props {
   id?: string;
   classes?: string;
   title: string;
+  direction: "left" | "right";
 }
 let buttonClass =
-  "bg-white shrink-0 h-[3rem] w-[3rem] border border-[#C5C5C5] border-2 rounded-full flex justify-center items-center text-[#C5C5C5] cursor-pointer hover:scale-102 hover:shadow-md hover:text-app-active-grey hover:border-app-active-grey focus:shadow-md focus:text-app-active-grey focus:border-app-active-grey cursor-pointer transition-all ";
-const { id, classes, title } = Astro.props;
+  "group shrink-0 h-[3rem] w-[3rem] rounded-full flex justify-center items-center cursor-pointer border-2 border-[#d4c5c5] bg-white/80 text-[#b8a8a8] transition-all hover:scale-105 hover:border-[#392C2C]/40 hover:text-[#392C2C]/60 hover:shadow-md focus:border-[#392C2C]/40 focus:text-[#392C2C]/60 focus:shadow-md active:scale-95";
+const { id, classes, title, direction } = Astro.props;
 ---
 
 <button id={id || ""} class={`${buttonClass} ${classes || ""}`} title={title}>
-  <slot />
+  <ChevronSvg direction={direction} />
 </button>

@@ -25,14 +25,14 @@ const textDisplay = "block vertical-middle text-center";
 >
   {
     direction == NavDir.Left && (
-      <FAButton title={"Previous Page"}>{"<"}</FAButton>
+      <FAButton title={"Previous Page"} direction="left" />
     )
   }
   <span
     class={`${overflowDisplay} ${textDisplay} mx-2 text-base md:text-xl font-semibold`}
     >{text}</span
   >
-  {direction == NavDir.Right && <FAButton title={"Next Page"}>{">"}</FAButton>}
+  {direction == NavDir.Right && <FAButton title={"Next Page"} direction="right" />}
 </a>
 <a
   id={direction == NavDir.Left ? "prev-mobile" : "next-mobile"}
@@ -43,7 +43,7 @@ const textDisplay = "block vertical-middle text-center";
   <span class="sr-only">{text}</span>
   <FAButton
     title={direction == NavDir.Left ? "Previous Page" : "Next Page"}
+    direction={direction == NavDir.Left ? "left" : "right"}
     classes="max-h-[2rem] max-w-[2rem]"
-    >{direction == NavDir.Left ? "<" : ">"}</FAButton
-  >
+  />
 </a>

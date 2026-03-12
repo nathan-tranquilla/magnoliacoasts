@@ -1,0 +1,20 @@
+---
+export interface Props {
+  direction: "left" | "right";
+  class?: string;
+}
+const { direction, class: className } = Astro.props;
+const rotation = direction === "left" ? "rotate-180" : "";
+---
+
+<svg
+  class={`h-5 w-5 ${rotation} ${className || ""}`}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="3"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M9 18l6-6-6-6" />
+</svg>

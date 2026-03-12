@@ -35,7 +35,19 @@ let itemVisible = itemBase
 let itemLeft = itemBase ++ " opacity-0 -translate-x-[50rem]"
 let itemRight = itemBase ++ " opacity-0 translate-x-[50rem]"
 
-let buttonClass = "bg-white shrink-0 h-[3rem] w-[3rem] border-2 border-[#C5C5C5] rounded-full flex justify-center items-center text-[#C5C5C5] cursor-pointer hover:scale-110 hover:shadow-lg hover:text-app-active-grey hover:border-app-active-grey focus:shadow-lg focus:text-app-active-grey focus:border-app-active-grey transition-all"
+let btnClass = "group shrink-0 h-[3rem] w-[3rem] rounded-full flex justify-center items-center cursor-pointer border-2 border-[#d4c5c5] bg-white/80 text-[#b8a8a8] transition-all hover:scale-105 hover:border-[#392C2C]/40 hover:text-[#392C2C]/60 hover:shadow-md focus:border-[#392C2C]/40 focus:text-[#392C2C]/60 focus:shadow-md active:scale-95"
+
+let chevron = (~rotation) =>
+  <svg
+    className={`h-5 w-5 ${rotation}`}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round">
+    <path d="M9 18l6-6-6-6" />
+  </svg>
 
 let dotBase = "m-4 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer transition-all"
 let dotInactive = dotBase ++ " bg-app-grey"
@@ -84,10 +96,10 @@ let make = (~images: array<string>) => {
     <div className="mt-8 flex w-full items-center justify-around">
       <button
         id="carousel-go-left"
-        className={buttonClass}
+        className={btnClass}
         title="Previous Slide"
         onClick={_ => setIndex(prev => max(0, prev - 1))}>
-        {React.string("<")}
+        {chevron(~rotation="rotate-180")}
       </button>
       <div className="flex items-center">
         {Belt.Array.makeBy(count, i =>
@@ -110,10 +122,10 @@ let make = (~images: array<string>) => {
       </div>
       <button
         id="carousel-go-right"
-        className={buttonClass}
+        className={btnClass}
         title="Next Slide"
         onClick={_ => setIndex(prev => min(count - 1, prev + 1))}>
-        {React.string(">")}
+        {chevron(~rotation="")}
       </button>
     </div>
   </div>
