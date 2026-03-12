@@ -40,8 +40,9 @@
   Added `width`/`height` to all raw `<img>` elements: Newsletter (367×600), SpecialMoments (300×400), Banner (2000×315). Astro `<Image>` components already handled via `layout` props.
   - **Files:** `Newsletter.astro`, `SpecialMoments.astro`, `Banner.astro`
 
-- [ ] **4. Reduce unused JavaScript — est. savings of 92 KB**
-  - **Action:** Audit JS bundles. Check for unused client-side scripts or libraries being shipped unnecessarily.
+- [x] **4. Reduce unused JavaScript — est. savings of 92 KB**
+  Switched testimonial carousel from `client:load` to `client:visible` so React (195 KB) only loads when scrolled into view. Eliminates the "unused JS" flag on initial paint. Full elimination would require replacing React with Preact or vanilla JS.
+  - **File:** `src/components/TestimonialCarousel.astro`
 
 - [x] **5. Avoid enormous network payloads — total size 8,522 KiB (desktop)**
   Resolved by item 2 — hero image re-encoding reduced payload by ~6,900 KiB.
@@ -76,5 +77,4 @@
   - **Action:** Profile with DevTools to identify the tasks. May be related to JS bundle size (item 3).
 
 - [ ] **8. robots.txt is not valid — 1 error found**
-  SEO audit flagged a robots.txt parsing error.
-  - **Action:** Validate and fix `robots.txt` (or `public/robots.txt`).
+  SEO audit flagged a robots.txt parsing error. Managed by Cloudflare — fix in Cloudflare dashboard.
