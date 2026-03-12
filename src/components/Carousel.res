@@ -39,14 +39,15 @@ let btnClass = "group shrink-0 h-[3rem] w-[3rem] rounded-full flex justify-cente
 
 let chevron = (~rotation) =>
   <svg
-    className={`h-5 w-5 ${rotation}`}
-    viewBox="0 0 24 24"
+    className={`h-6 w-6 ${rotation}`}
+    viewBox="0 0 32 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="3"
+    strokeWidth="1.4"
     strokeLinecap="round"
     strokeLinejoin="round">
-    <path d="M9 18l6-6-6-6" />
+    <line x1="2" y1="12" x2="28" y2="12" />
+    <polyline points="22 6 28 12 22 18" />
   </svg>
 
 let dotBase = "mx-2 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer transition-all"
