@@ -7,12 +7,9 @@ import stephanieCoffee from "../assets/stephCoffee.png";
 import Button from "../components/Button.astro";
 import { INQUIRE_LINK } from "../data/links";
 import SectionHeader from "../components/SectionHeader.astro";
-import Card from "../components/Card.astro";
 import ExternalLink from "../components/ExternalLink.astro";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
-let mobileLayout = "flex flex-col justify-start items-start";
-let desktopLayout = "md:grid md:grid-cols-2 md:grid-rows-12 md:m-4";
 
 let aboutContent = (await getCollection("aboutContent"))[0];
 let { Content } = await render(aboutContent);
@@ -63,7 +60,7 @@ let { Content } = await render(aboutContent);
           </div>
         </div>
         <!-- Right: text content -->
-        <div class="md:text-base lg:text-lg text-[#392C2C] leading-relaxed">
+        <div class="md:text-base lg:text-lg text-text leading-relaxed">
           <Content />
         </div>
       </div>

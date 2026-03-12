@@ -35,7 +35,7 @@ let itemVisible = itemBase
 let itemLeft = itemBase ++ " opacity-0 -translate-x-[50rem]"
 let itemRight = itemBase ++ " opacity-0 translate-x-[50rem]"
 
-let btnClass = "group shrink-0 h-[3rem] w-[3rem] rounded-full flex justify-center items-center cursor-pointer border-2 border-[#d4c5c5] bg-white/80 text-[#b8a8a8] transition-all hover:scale-105 hover:border-[#392C2C]/40 hover:text-[#392C2C]/60 hover:shadow-md focus:border-[#392C2C]/40 focus:text-[#392C2C]/60 focus:shadow-md active:scale-95"
+let btnClass = "group shrink-0 h-[3rem] w-[3rem] rounded-full flex justify-center items-center cursor-pointer border-2 border-border-warm bg-white/80 text-muted transition-all hover:scale-105 hover:border-text/40 hover:text-text/60 hover:shadow-md focus:border-text/40 focus:text-text/60 focus:shadow-md active:scale-95"
 
 let chevron = (~rotation) =>
   <svg
@@ -50,7 +50,7 @@ let chevron = (~rotation) =>
     <polyline points="22 6 28 12 22 18" />
   </svg>
 
-let dotBase = "mx-2 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer transition-all"
+let dotBase = "mx-2 h-[0.75rem] w-[0.75rem] rounded-full border border-border-mid hover:scale-130 cursor-pointer transition-all"
 let dotInactive = dotBase ++ " bg-app-grey"
 let dotActive = dotBase ++ " scale-130 !bg-app-active-grey"
 

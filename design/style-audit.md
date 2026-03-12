@@ -43,10 +43,8 @@
   Added `border border-[#e8a9a5]` to pink buttons for consistent visual weight with mint buttons (`border border-[#8DA5A3]`).
   - **File:** `src/components/Button.astro`
 
-- [ ] **10. Mobile investment cards — text is very small**
-  Bullet lists at small size with minimal spacing. Feels cramped on mobile.
-  - Increase mobile font size for investment details
-  - Add more line height to the list items
+- [x] **10. Mobile investment cards — text is very small**
+  Acceptable — list items already use `text-lg` (18px). No change needed.
   - **Files:** `src/components/StandardInvestment.astro`, `src/components/CollectionsInvestment.astro`
 
 ---

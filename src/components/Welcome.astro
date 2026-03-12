@@ -14,7 +14,7 @@ const portrait = await getImage({ src: stephaniePortrait });
 <SplotchyBackground aria-label="Welcome" classes="py-6 md:py-16">
   <!-- Mobile: float layout -->
   <div class="md:hidden w-full max-w-[1200px] px-4">
-    <div class="font-cormorant-garamond text-sm text-[#392C2C] rounded-xl bg-white/60 backdrop-blur-md p-4 shadow-sm">
+    <div class="font-cormorant-garamond text-sm text-text rounded-xl bg-white/60 backdrop-blur-md p-4 shadow-sm">
       <img
         src={portrait.src}
         alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
@@ -46,7 +46,7 @@ const portrait = await getImage({ src: stephaniePortrait });
         loading="lazy"
       />
     </div>
-    <div class="font-cormorant-garamond flex flex-col items-start gap-4 text-left text-lg text-[#392C2C] rounded-xl bg-white/60 backdrop-blur-md p-8 shadow-sm">
+    <div class="font-cormorant-garamond flex flex-col items-start gap-4 text-left text-lg text-text rounded-xl bg-white/60 backdrop-blur-md p-8 shadow-sm">
       <h2 class="text-3xl font-bold">{welcomeContent.data.title}</h2>
       <div class="leading-relaxed">
         <Content />

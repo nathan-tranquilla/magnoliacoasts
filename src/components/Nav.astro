@@ -19,9 +19,9 @@ const links = [...leftLinks, ...rightLinks];
 const isActive = (href: string) => is_active_link(currentPath, href, BASE_URL);
 
 const linkBase =
-  "font-cormorant-garamond cursor-pointer p-2 tracking-wide transition-colors hover:text-[#392C2C]/60";
-const linkActive = "text-[#392C2C] underline decoration-2 underline-offset-4 decoration-[#392C2C]/30";
-const linkInactive = "text-[#392C2C]/80";
+  "font-cormorant-garamond cursor-pointer p-2 tracking-wide transition-colors hover:text-text/60";
+const linkActive = "text-text underline decoration-2 underline-offset-4 decoration-text/30";
+const linkInactive = "text-text/80";
 ---
 
 <header
@@ -46,7 +46,7 @@ const linkInactive = "text-[#392C2C]/80";
         Array(3)
           .fill(null)
           .map(() => (
-            <span class="block h-[2px] w-full rounded-xs bg-[#5A5A5A]" />
+            <span class="block h-[2px] w-full rounded-xs bg-text-secondary" />
           ))
       }
     </label>
