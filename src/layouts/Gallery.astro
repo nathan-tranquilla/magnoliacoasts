@@ -92,10 +92,11 @@ const sortByFilename = (a: ImageMetadata, b: ImageMetadata) => {
 };
 const sortedImages = images.sort(sortByFilename);
 const gallerySchema = buildImageGallerySchema(title, Astro.url.pathname, sortedImages.length);
-let getDimensions = (i: number, galleryType: GalleryType) => {
+let getDimensions = (i: number, galleryType: GalleryType, total: number) => {
   let mod;
   let isLandscape;
   let classes;
+  const isLast = i === total - 1;
   switch (galleryType) {
     case GalleryType.Maternity:
     case GalleryType.Newborn:
@@ -106,7 +107,18 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
     case GalleryType.Branding:
       mod = i % 4;
       isLandscape = mod == 0 || mod == 3;
-      classes = `${isLandscape ? "xs:col-span-2" : "xs:col-span-1"} col-span-1`;
+      // If last image would leave a gap, span remaining columns
+      if (isLast && mod == 1) {
+        // Only 1 portrait after a landscape row — span all 3
+        classes = "xs:col-span-3 col-span-1";
+        isLandscape = true;
+      } else if (isLast && mod == 2) {
+        // 2 items in second row (portrait + this) — make this span 2
+        classes = "xs:col-span-2 col-span-1";
+        isLandscape = true;
+      } else {
+        classes = `${isLandscape ? "xs:col-span-2" : "xs:col-span-1"} col-span-1`;
+      }
       break;
     case GalleryType.Headshots:
       mod = i % 15;
@@ -153,7 +165,7 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
   >
       {
         sortedImages.map((image: ImageMetadata, i) => {
-          const { width, height, classes } = getDimensions(i, galleryType);
+          const { width, height, classes } = getDimensions(i, galleryType, sortedImages.length);
           return (
             <figure id={`image-${i}`} class={classes}>
               <Image

@@ -51,16 +51,16 @@
 
 ## LOWER PRIORITY
 
-- [ ] **11. Gallery grid visual rhythm**
-  The masonry layout aspect ratio logic (every 3rd/4th image landscape) creates some awkward combinations depending on image count.
+- [x] **11. Gallery grid visual rhythm**
+  Last image in incomplete rows now spans remaining columns to fill the row, avoiding gaps.
+  - **File:** `src/layouts/Gallery.astro`
 
 - [x] **12. Testimonial carousel dots are generic**
   Replaced circles with rotated squares (`rotate-45 rounded-[2px]`) for a diamond/gem effect. Colors updated to warm palette: inactive `bg-light-pink`/`border-border-warm`, active `bg-pink`/`border-pink-border`.
   - **File:** `src/components/Carousel.res`
 
-- [ ] **13. SectionHeader uses `text-nowrap`**
-  Prevents wrapping on small screens — could cause overflow with long titles like "Collections Packages".
-  - Remove `text-nowrap` or add `overflow-hidden text-ellipsis` as fallback
+- [x] **13. SectionHeader uses `text-nowrap`**
+  Replaced `text-nowrap` with `text-center` to allow wrapping on small screens.
   - **File:** `src/components/SectionHeader.astro`
 
 - [x] **14. Card shadow is very soft**
