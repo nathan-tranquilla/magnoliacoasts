@@ -63,11 +63,10 @@
   - Remove `text-nowrap` or add `overflow-hidden text-ellipsis` as fallback
   - **File:** `src/components/SectionHeader.astro`
 
-- [ ] **14. Card shadow is very soft**
-  `shadow-card: 0 0 10px rgba(96, 96, 96, 0.25)` is a centered glow with no offset. Professional cards typically use a subtle downward shadow.
-  - Change to `0 2px 12px rgba(96, 96, 96, 0.15)` for a more natural look
+- [x] **14. Card shadow is very soft**
+  Changed to `0 2px 12px rgba(96, 96, 96, 0.15)` — subtle downward offset with softer opacity.
   - **File:** `src/styles/global.css` (`@theme` block)
 
-- [ ] **15. Color consolidation**
-  Several one-off hex values: `#392C2C`, `#5A5A5A`, `#D7D7D7`, `#d4c5c5`, `#b8a8a8`, `#ACABAC`, `#8DA5A3`, `#C5C5C5`. Should be named theme tokens.
+- [x] **15. Color consolidation**
+  Added 8 named theme tokens (`--color-text`, `--color-text-secondary`, `--color-muted`, `--color-border`, `--color-border-warm`, `--color-border-mid`, `--color-pink-border`, `--color-mint-border`) and replaced all inline hex values across 9 component files.
   - **File:** `src/styles/global.css` (`@theme` block)

@@ -126,7 +126,7 @@
   --font-cormorant-garamond: "Cormorant Garamond";
   --font-dancing: "Dancing";
 
-  --shadow-card: 0 0 10px rgba(96, 96, 96, 0.25);
+  --shadow-card: 0 2px 12px rgba(96, 96, 96, 0.15);
 }
 
 @layer utilities {
