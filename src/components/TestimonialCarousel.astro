@@ -1,26 +1,16 @@
 ---
+import { getImage } from "astro:assets";
 import { make as Carousel } from "./Carousel.res.mjs";
 import SectionTitle from "./SectionTitle.astro";
 import SplotchyBackground from "./SplotchyBackground.astro";
 
-export interface Props {
-  count: number;
-}
+import erikaSrc from "../assets/testimonials/erika.jpg";
+import nrityaSrc from "../assets/testimonials/nritya.jpg";
+import tishaSrc from "../assets/testimonials/tisha.jpg";
 
-let itemBase = "carousel-item row-start-1 col-start-1 duration-600 transition-all";
-let hiddenRight = itemBase + " opacity-0 translate-x-[50rem]";
-
-let { count } = Astro.props;
-
-// Extract slot content
-const slots = [];
-for (let i = 1; i <= count; i++) {
-  const slotName = `testimonial-${i}`;
-  const hasSlot = Astro.slots.has(slotName);
-  if (hasSlot) {
-    slots.push(await Astro.slots.render(slotName));
-  }
-}
+const erika = await getImage({ src: erikaSrc });
+const nritya = await getImage({ src: nrityaSrc });
+const tisha = await getImage({ src: tishaSrc });
 ---
 
 <SplotchyBackground
@@ -28,9 +18,5 @@ for (let i = 1; i <= count; i++) {
   classes="carousel w-dvw flex flex-col justify-center items-center py-8 testimonials"
 >
   <SectionTitle title="What our clients say about us" />
-  <Carousel client:load count={count}>
-    {slots.map((slot, i) => (
-      <div class={i === 0 ? itemBase : hiddenRight} set:html={slot} />
-    ))}
-  </Carousel>
+  <Carousel client:load images={[erika.src, nritya.src, tisha.src]} />
 </SplotchyBackground>
