@@ -51,23 +51,20 @@
 
 ## MEDIUM PRIORITY
 
-- [ ] **4. Image compression can be improved**
-  Several images could benefit from better compression:
-  - `StephaniePortrait`: 14.8 KB → 11.0 KB (est. savings 3.8 KB)
-  - `Newsletter` image: 19.2 KB → 8.5 KB (compression factor)
-  - `childrenInSwing`: 17.0 KB → 6.7 KB (compression factor)
-  - `familyByRoad` (gallery card): 24.0 KB → 4.4 KB (compression factor)
-  - **Action:** Re-export source images at tighter quality or let Astro Image handle quality settings.
+- [x] **4. Image compression can be improved**
+  Added `format: "webp"` and `quality: "high"` to Astro image config. All processed images now serve as optimized WebPs. Also resized SpecialMoments images to 600px width (from full resolution) for proper 2x retina sizing.
+  - **Files:** `astro.config.mjs`, `src/components/SpecialMoments.astro`
 
-- [ ] **5. Contrast ratio — background/foreground colors insufficient**
-  Accessibility audit flagged insufficient contrast on some text elements.
-  - **Action:** Identify affected elements and adjust colors to meet WCAG AA (4.5:1 for normal text, 3:1 for large text).
+- [x] **5. Contrast ratio — background/foreground colors insufficient**
+  Improved contrast on low-opacity text elements:
+  - Footer "Service Areas" header: `text-white/50` → `text-white/75`
+  - Footer copyright: `text-white/40` → `text-white/60`
+  - ArtInYourHome overlay: `bg-pink/50` → `bg-dark-green/70` (white text on dark background)
+  - **Files:** `Footer.astro`, `ArtInYourHome.astro`
 
-- [ ] **6. Touch targets too small or too close together**
-  The "About Me" button/link area in the hero section has failing touch targets:
-  - `<button class="cursor-pointer transition-all hover:scale-102 focus:scale-102 hover:shadow...">`
-  - `<a href="/about" class="flex h-full w-full items-center justify-center">`
-  - **Action:** Ensure touch targets are at least 48×48 px with adequate spacing.
+- [x] **6. Touch targets too small or too close together**
+  Added `min-h-[48px]` to Button component to ensure all buttons meet the 48px minimum touch target size.
+  - **File:** `Button.astro`
 
 ---
 
