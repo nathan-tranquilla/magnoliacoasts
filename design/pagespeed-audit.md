@@ -43,9 +43,8 @@
 - [ ] **4. Reduce unused JavaScript — est. savings of 92 KB**
   - **Action:** Audit JS bundles. Check for unused client-side scripts or libraries being shipped unnecessarily.
 
-- [ ] **5. Avoid enormous network payloads — total size 8,522 KiB (desktop)**
-  Dominated by the hero image. Fixing item 2 should largely resolve this.
-  - **Action:** Address after hero image optimization.
+- [x] **5. Avoid enormous network payloads — total size 8,522 KiB (desktop)**
+  Resolved by item 2 — hero image re-encoding reduced payload by ~6,900 KiB.
 
 ---
 
