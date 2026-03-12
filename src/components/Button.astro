@@ -8,7 +8,7 @@ export interface Props {
 const { color, classes, data_id } = Astro.props;
 
 const getClassMod = (color: Props["color"]) => {
-  if (color === "Pink") return "bg-pink";
+  if (color === "Pink") return "bg-pink border border-[#e8a9a5]";
   if (color === "Mint") return "bg-mint border border-[#8DA5A3]";
   return "";
 };

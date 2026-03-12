@@ -35,16 +35,12 @@
   Diamond separator (✦), site palette colors (`text-[#392C2C]/80`), WCAG AA contrast (6.3:1+ on all backgrounds). Consistent background via `mainClass` prop on `Main.astro` so breadcrumbs blend into page content.
   - **Files:** `src/components/Breadcrumbs.astro`, `src/layouts/Main.astro`, `src/pages/about.astro`, `src/pages/gallery.astro`, `src/pages/investment.astro`
 
-- [ ] **8. About page — text wall**
-  Long block of body text not broken up visually.
-  - Add a pull quote or larger first paragraph
-  - Consider a divider between sections (similar to the hero diamond divider)
+- [x] **8. About page — text wall**
+  Redesigned layout: drop cap on first paragraph (`::first-letter`), image collage (hero + two smaller side-by-side) in left column with text on right (desktop), cleaner spacing and rounded shadow cards.
   - **File:** `src/pages/about.astro`
 
-- [ ] **9. Button color inconsistency**
-  Pink buttons (primary CTA) have no border. Mint buttons (secondary) have `border border-[#8DA5A3]`. Different visual weight.
-  - Add a subtle border to pink buttons (`border border-pink-active`)
-  - Or remove the border from mint and rely on background color alone
+- [x] **9. Button color inconsistency**
+  Added `border border-[#e8a9a5]` to pink buttons for consistent visual weight with mint buttons (`border border-[#8DA5A3]`).
   - **File:** `src/components/Button.astro`
 
 - [ ] **10. Mobile investment cards — text is very small**
