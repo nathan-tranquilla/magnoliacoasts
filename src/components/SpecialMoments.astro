@@ -1,11 +1,14 @@
 ---
+import { getImage } from "astro:assets";
 import specialMoment1 from "../assets/special_moments/maternity.jpg";
 import specialMoment2 from "../assets/special_moments/newborn.jpg";
 import specialMoment3 from "../assets/special_moments/family.jpg";
 import specialMoment4 from "../assets/special_moments/cake_smash.jpg";
+import milestonesImg from "../assets/gallery_index/babyLookingAtCamera.jpg";
+import childrenImg from "../assets/gallery_index/kidsInSwing.png";
+import brandingImg from "../assets/gallery_index/womanInOffice.png";
+import headshotsImg from "../assets/gallery_index/laughingInChair.png";
 
-import SpecialMoment from "./SpecialMoment.astro";
-import Button from "./Button.astro";
 import SectionTitle from "./SectionTitle.astro";
 import {
   BRANDING_LINK,
@@ -17,95 +20,89 @@ import {
   MILESTONES_LINK,
   NEWBORN_LINK,
 } from "../data/links";
-import { Image } from "astro:assets";
-import ExternalLink from "./ExternalLink.astro";
+
+const mainMoments = [
+  { text: "Maternity", imgSrc: specialMoment1, href: MATERNITY_LINK, alt: "Pregnant Woman" },
+  { text: "Newborn", imgSrc: specialMoment2, href: NEWBORN_LINK, alt: "Baby in a sling" },
+  { text: "Family", imgSrc: specialMoment3, href: FAMILY_LINK, alt: "Family by the road" },
+  { text: "Cake Smashes", imgSrc: specialMoment4, href: CAKE_SMASH_LINK, alt: "Baby with birthday cake" },
+];
+
+const otherMoments = [
+  { text: "Milestones", imgSrc: milestonesImg, href: MILESTONES_LINK, alt: "Baby looking at camera" },
+  { text: "Children", imgSrc: childrenImg, href: CHILDREN_LINK, alt: "Children on a swing" },
+  { text: "Branding", imgSrc: brandingImg, href: BRANDING_LINK, alt: "Woman in office" },
+  { text: "Headshots", imgSrc: headshotsImg, href: HEADSHOTS_LINK, alt: "Person laughing in chair" },
+];
+
+const allMoments = [...mainMoments, ...otherMoments];
+const resolved = await Promise.all(
+  allMoments.map(async (m) => ({
+    ...m,
+    src: (await getImage({ src: m.imgSrc })).src,
+  }))
+);
+const mainResolved = resolved.slice(0, 4);
+const otherResolved = resolved.slice(4);
 ---
 
 <section
   aria-label="Photo session types"
   id="special_moments"
-  class="font-cormorant-garamond py-6 md:py-16 px-4 grid max-w-[1439px] grid-cols-2 gap-4 self-center md:grid-cols-4"
+  class="font-cormorant-garamond py-6 md:py-16 px-4 grid w-full max-w-[1200px] grid-cols-2 gap-4 self-center md:grid-cols-4"
 >
   <SectionTitle
     title="What special moments would you like to capture?"
     classStyles="col-span-full"
   />
-  <SpecialMoment link={MATERNITY_LINK} buttonText="Maternity">
-    <div class="flex h-auto items-stretch">
-      <Image
-        class="h-full object-cover object-center"
-        src={specialMoment1}
-        alt="Pregnant Woman"
-        widths={[275]}
-      />
-    </div>
-  </SpecialMoment>
-  <SpecialMoment link={NEWBORN_LINK} buttonText="Newborn">
-    <div class="flex h-auto items-stretch">
-      <Image
-        class="h-full object-cover object-center"
-        src={specialMoment2}
-        alt="Baby in a sling."
-        widths={[275]}
-      />
-    </div>
-  </SpecialMoment>
-  <SpecialMoment link={FAMILY_LINK} buttonText="Family">
-    <div class="flex h-auto items-stretch">
-      <Image
-        class="h-full object-cover object-center"
-        src={specialMoment3}
-        alt="Family by the road."
-        widths={[275]}
-      />
-    </div>
-  </SpecialMoment>
-  <SpecialMoment link={CAKE_SMASH_LINK} buttonText="Cake Smashes">
-    <div class="flex h-auto items-stretch">
-      <Image
-        class="h-full object-cover object-center"
-        src={specialMoment4}
-        alt="Family by the road."
-        widths={[275]}
-      />
-    </div>
-  </SpecialMoment>
+  {
+    mainResolved.map((moment) => (
+      <a
+        href={moment.href}
+        class="group relative w-full aspect-[3/4] overflow-hidden rounded-md shadow-card"
+      >
+        <img
+          src={moment.src}
+          alt={moment.alt}
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-2 py-4 opacity-100 md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100 flex items-end justify-center">
+          <span class="text-white text-base lg:text-xl font-semibold tracking-wide">
+            {moment.text}
+          </span>
+        </div>
+      </a>
+    ))
+  }
 </section>
 <section
   aria-label="Other photo session types"
   id="other_special_moments"
-  class="font-cormorant-garamond pb-6 md:pb-16 px-4 grid w-[90vw] max-w-[880px] grid-cols-2 gap-4 self-center sm:grid-cols-4"
+  class="font-cormorant-garamond pb-6 md:pb-16 px-4 grid w-full max-w-[1200px] grid-cols-2 gap-4 self-center sm:grid-cols-4"
 >
   <SectionTitle
     title="Other types of photo sessions"
     classStyles="col-span-full mt-0 mb-0"
   />
-
-  <Button data_id="special-moment-milestones" color="Mint" classes="mx-auto">
-    <ExternalLink
-      class="flex h-full w-full items-center justify-center"
-      href={MILESTONES_LINK}>Milestones</ExternalLink
-    >
-  </Button>
-
-  <Button data_id="special-moment-children" color="Mint" classes="mx-auto">
-    <ExternalLink
-      class="flex h-full w-full items-center justify-center"
-      href={CHILDREN_LINK}>Children</ExternalLink
-    >
-  </Button>
-
-  <Button data_id="special-moment-branding" color="Mint" classes="mx-auto">
-    <ExternalLink
-      class="flex h-full w-full items-center justify-center"
-      href={BRANDING_LINK}>Branding</ExternalLink
-    >
-  </Button>
-
-  <Button data_id="special-moment-headshots" color="Mint" classes="mx-auto">
-    <ExternalLink
-      class="flex h-full w-full items-center justify-center"
-      href={HEADSHOTS_LINK}>Headshots</ExternalLink
-    >
-  </Button>
+  {
+    otherResolved.map((moment) => (
+      <a
+        href={moment.href}
+        class="group relative w-full aspect-[3/4] overflow-hidden rounded-md shadow-card"
+      >
+        <img
+          src={moment.src}
+          alt={moment.alt}
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-2 py-4 opacity-100 md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100 flex items-end justify-center">
+          <span class="text-white text-base lg:text-xl font-semibold tracking-wide">
+            {moment.text}
+          </span>
+        </div>
+      </a>
+    ))
+  }
 </section>
