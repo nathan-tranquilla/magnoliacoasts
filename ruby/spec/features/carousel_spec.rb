@@ -16,8 +16,6 @@ require "support/constants"
       end
 
       def click_carousel_button(id)
-        # Use execute_script to avoid ObsoleteNode errors from React
-        # hydration replacing server-rendered DOM nodes
         page.execute_script("document.getElementById('#{id}').click()")
       end
 

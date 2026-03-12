@@ -1,5 +1,4 @@
 ---
-import { make as Carousel } from "./Carousel.res.mjs";
 import SectionTitle from "./SectionTitle.astro";
 import SplotchyBackground from "./SplotchyBackground.astro";
 
@@ -7,17 +6,24 @@ export interface Props {
   count: number;
 }
 
-let itemBase = "carousel-item row-start-1 col-start-1 duration-600 transition-all";
-let hiddenRight = itemBase + " opacity-0 translate-x-[50rem]";
+const itemBase =
+  "carousel-item row-start-1 col-start-1 duration-600 transition-all";
+const itemLeft = itemBase + " opacity-0 -translate-x-[50rem]";
+const itemRight = itemBase + " opacity-0 translate-x-[50rem]";
+
+const buttonClass =
+  "bg-white shrink-0 h-[3rem] w-[3rem] border-2 border-[#C5C5C5] rounded-full flex justify-center items-center text-[#C5C5C5] cursor-pointer hover:scale-110 hover:shadow-lg hover:text-app-active-grey hover:border-app-active-grey focus:shadow-lg focus:text-app-active-grey focus:border-app-active-grey transition-all";
+const dotBase =
+  "m-4 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer transition-all";
+const dotInactive = dotBase + " bg-app-grey";
+const dotActive = dotBase + " scale-130 !bg-app-active-grey";
 
 let { count } = Astro.props;
 
-// Extract slot content
 const slots = [];
 for (let i = 1; i <= count; i++) {
   const slotName = `testimonial-${i}`;
-  const hasSlot = Astro.slots.has(slotName);
-  if (hasSlot) {
+  if (Astro.slots.has(slotName)) {
     slots.push(await Astro.slots.render(slotName));
   }
 }
@@ -29,11 +35,80 @@ for (let i = 1; i <= count; i++) {
 >
   <SectionTitle title="What our clients say about us" />
   <div class="mx-4 flex max-w-dvw flex-col items-center justify-center md:mx-0">
-    <div id="carousel-container" class="grid grid-cols-1 overflow-hidden">
+    <div
+      id="carousel-container"
+      class="grid grid-cols-1 overflow-hidden"
+      data-item-base={itemBase}
+      data-item-left={itemLeft}
+      data-item-right={itemRight}
+      data-dot-inactive={dotInactive}
+      data-dot-active={dotActive}
+    >
       {slots.map((slot, i) => (
-        <div class={i === 0 ? itemBase : hiddenRight} set:html={slot} />
+        <div class={i === 0 ? itemBase : itemRight} set:html={slot} />
       ))}
     </div>
-    <Carousel client:load count={count} containerId="carousel-container" />
+    <div class="mt-8 flex w-full items-center justify-around">
+      <button
+        id="carousel-go-left"
+        class={buttonClass}
+        title="Previous Slide"
+        aria-label="Previous Slide"
+      >
+        {"<"}
+      </button>
+      <div class="flex items-center">
+        {Array.from({ length: count }, (_, i) => (
+          <button
+            data-carousel-dot={i}
+            class={i === 0 ? dotActive : dotInactive}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+      <button
+        id="carousel-go-right"
+        class={buttonClass}
+        title="Next Slide"
+        aria-label="Next Slide"
+      >
+        {">"}
+      </button>
+    </div>
   </div>
 </SplotchyBackground>
+
+<script>
+  const track = document.getElementById("carousel-container");
+  if (track) {
+    const items = [...track.querySelectorAll(".carousel-item")];
+    const dots = [...document.querySelectorAll("[data-carousel-dot]")].filter(
+      (el): el is HTMLElement => el instanceof HTMLElement,
+    );
+    const count = items.length;
+    let index = 0;
+
+    const { itemBase, itemLeft, itemRight, dotInactive, dotActive } =
+      track.dataset;
+    if (itemBase && itemLeft && itemRight && dotInactive && dotActive) {
+      function update(newIndex: number) {
+        index = Math.max(0, Math.min(count - 1, newIndex));
+        items.forEach((item, i) => {
+          item.className =
+            i === index ? itemBase! : i < index ? itemLeft! : itemRight!;
+        });
+        dots.forEach((dot, i) => {
+          dot.className = i === index ? dotActive! : dotInactive!;
+        });
+      }
+
+      document
+        .getElementById("carousel-go-left")
+        ?.addEventListener("click", () => update(index - 1));
+      document
+        .getElementById("carousel-go-right")
+        ?.addEventListener("click", () => update(index + 1));
+      dots.forEach((dot, i) => dot.addEventListener("click", () => update(i)));
+    }
+  }
+</script>
