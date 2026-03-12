@@ -7,17 +7,13 @@
   Active detection via ReScript `is_active_link` helper.
   - **Files:** `src/components/Nav.astro`, `src/utils/utils.res`
 
-- [ ] **2. Gallery index cards feel plain**
-  Cards show an image + pink label with no interaction feedback or refinement.
-  - Add subtle hover lift (`hover:-translate-y-1 hover:shadow-lg transition-all`)
-  - Consider overlaying the title on the image with a semi-transparent gradient instead of the separate pink box
-  - **File:** `src/components/InvestmentCard.astro`, `src/pages/gallery.astro`
+- [x] **2. Gallery index cards feel plain**
+  Replaced pink button labels with gradient overlay that fades in on hover.
+  - **File:** `src/pages/gallery.astro`
 
-- [ ] **3. Investment index cards inconsistent with gallery cards**
-  Investment index cards have no pink label background, just text below images — more sparse than gallery cards.
-  - Unify card styles between gallery and investment index pages
-  - Both should have the same hover behavior and visual weight
-  - **File:** `src/pages/investment.astro`
+- [x] **3. Investment index cards inconsistent with gallery cards**
+  Unified with gallery cards — same overlay style with fade-in title on hover.
+  - **File:** `src/components/InvestmentCard.astro`
 
 - [ ] **4. Investment detail cards — price/Inquire row feels cramped**
   The price and Inquire button at the bottom are squeezed together. The button is small and easy to miss.

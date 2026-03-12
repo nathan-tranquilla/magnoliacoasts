@@ -10,9 +10,7 @@ import headshots from "../assets/gallery_index/laughingInChair.png";
 
 import { BASE_URL } from "../data/links";
 import Main from "../layouts/Main.astro";
-import Card from "../components/Card.astro";
 import { Image } from "astro:assets";
-import Button from "../components/Button.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 
 let galleries = [
@@ -61,26 +59,23 @@ let galleries = [
       />
       {
         galleries.map((gallery, i) => (
-          <Card classes="w-full max-w-[174px] lg:max-w-[250px] grid grid-cols-1 gap-2">
+          <a
+            href={gallery.href}
+            class="group relative w-full max-w-[174px] lg:max-w-[250px] overflow-hidden rounded-md shadow-card"
+          >
             <Image
               src={gallery.imgSrc}
               alt={gallery.text}
               layout="constrained"
               priority={i < 4}
+              class="w-full h-full object-cover"
             />
-
-            <Button
-              color="Pink"
-              classes="max-w-full mt-auto font-cormorant-garamond flex items-end"
-            >
-              <a
-                class="flex h-full w-full items-center justify-center"
-                href={gallery.href}
-              >
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-2 py-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center">
+              <span class="font-cormorant-garamond text-white text-base lg:text-xl font-semibold tracking-wide">
                 {gallery.text}
-              </a>
-            </Button>
-          </Card>
+              </span>
+            </div>
+          </a>
         ))
       }
     </div>

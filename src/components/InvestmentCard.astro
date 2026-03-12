@@ -1,6 +1,4 @@
 ---
-import Card from "./Card.astro";
-
 export interface Props {
   href: string;
   text: string;
@@ -9,16 +7,14 @@ export interface Props {
 const { href, text, classes } = Astro.props;
 ---
 
-<Card>
-  <a
-    href={href}
-    class={`flex flex-col justify-start items-center ${classes || ""}`}
-  >
-    <slot />
-    <div
-      class="font-cormorant-garamond flex h-[3rem] items-end justify-center md:text-lg lg:h-[4rem] lg:text-2xl"
-    >
+<a
+  href={href}
+  class={`group relative overflow-hidden rounded-md shadow-card ${classes || ""}`}
+>
+  <slot />
+  <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-2 py-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center">
+    <span class="font-cormorant-garamond text-white text-base lg:text-xl font-semibold tracking-wide">
       {text}
-    </div>
-  </a>
-</Card>
+    </span>
+  </div>
+</a>
