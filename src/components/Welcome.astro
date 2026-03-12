@@ -1,67 +1,62 @@
 ---
-import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
 import Button from "../components/Button.astro";
 import stephaniePortrait from "../assets/StephaniePortrait.png";
 import { BASE_URL } from "../data/links";
-import Card from "./Card.astro";
 import SplotchyBackground from "./SplotchyBackground.astro";
 import { getCollection, render } from "astro:content";
 
 let welcomeContent = (await getCollection("welcomeContent"))[0];
 let { Content } = await render(welcomeContent);
+const portrait = await getImage({ src: stephaniePortrait });
 ---
 
-<style>
-  img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-</style>
 <SplotchyBackground aria-label="Welcome" classes="py-6 md:py-16">
-  <div
-    class="bg-unset m-0 rounded-md md:m-4 md:max-h-[611px] md:bg-[#D7D7D7]/75"
-  >
-    <Card
-      classes="my-[1.5rem] mx-[1rem] grid grid-cols-5 grid-rows-6 gap-3 sm:max-w-[274px] sm:max-w-[750px]"
-    >
-      <div
-        class="col-span-2 col-start-1 row-span-5 row-start-1 overflow-hidden rounded-sm sm:row-span-6"
-      >
-        <Image
-          src={stephaniePortrait}
-          alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
-          layout="full-width"
-          widths={[190, 420]}
-        />
-      </div>
-
-      <Button
-        color="Mint"
-        classes="self-center justify-self-center col-start-1 col-span-2 row-start-6 row-span-1 flex font-cormorant-garamond sm:hidden"
-      >
-        <a
-          href={`${BASE_URL}/about`}
-          class="flex h-full w-full items-center justify-center">About Me</a
-        >
-      </Button>
-
-      <div
-        class="font-cormorant-garamond align-start col-span-3 col-start-3 row-span-6 row-start-1 flex flex-col justify-start text-sm sm:justify-between sm:pb-20 sm:text-base md:text-lg"
-      >
-        <h2 class="font-bold">{welcomeContent.data.title}</h2>
+  <!-- Mobile: float layout -->
+  <div class="md:hidden w-full max-w-[1200px] px-4">
+    <div class="font-cormorant-garamond text-sm text-[#392C2C] rounded-xl bg-white/60 backdrop-blur-md p-4 shadow-sm">
+      <img
+        src={portrait.src}
+        alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
+        class="float-left w-24 sm:w-32 mr-3 mb-2 rounded-md shadow-card object-cover"
+        loading="lazy"
+      />
+      <h2 class="text-lg font-bold">{welcomeContent.data.title}</h2>
+      <div class="leading-relaxed">
         <Content />
-
-        <Button
-          color="Mint"
-          classes="font-cormorant-garamond hidden sm:flex self-center"
-        >
+      </div>
+      <div class="clear-left pt-2 flex justify-center">
+        <Button color="Mint" classes="font-cormorant-garamond">
           <a
             href={`${BASE_URL}/about`}
             class="flex h-full w-full items-center justify-center">About Me</a
           >
         </Button>
       </div>
-    </Card>
+    </div>
+  </div>
+
+  <!-- Desktop: side-by-side -->
+  <div class="hidden md:flex w-full max-w-[1200px] flex-row items-center gap-12 px-4">
+    <div class="w-80 shrink-0 overflow-hidden rounded-md shadow-card">
+      <img
+        src={portrait.src}
+        alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+    <div class="font-cormorant-garamond flex flex-col items-start gap-4 text-left text-lg text-[#392C2C] rounded-xl bg-white/60 backdrop-blur-md p-8 shadow-sm">
+      <h2 class="text-3xl font-bold">{welcomeContent.data.title}</h2>
+      <div class="leading-relaxed">
+        <Content />
+      </div>
+      <Button color="Mint" classes="font-cormorant-garamond">
+        <a
+          href={`${BASE_URL}/about`}
+          class="flex h-full w-full items-center justify-center">About Me</a
+        >
+      </Button>
+    </div>
   </div>
 </SplotchyBackground>
