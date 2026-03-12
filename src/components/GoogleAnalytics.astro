@@ -3,31 +3,35 @@
 ---
 
 <script is:inline>
-  // Create a stub gtag function if it doesn't exist
+  // Defer GA loading until after page render
   window.gtag =
     window.gtag ||
     function () {
       console.log("gtag called (disabled):", arguments);
     };
 
-  // Only load Google Analytics if not on localhost or 127.0.0.1
-  if (!window.location.hostname.match(/^(localhost|127\.0\.0\.1)$/)) {
-    // Load gtag script
+  function loadGA() {
+    if (window.location.hostname.match(/^(localhost|127\.0\.0\.1)$/)) {
+      console.log("Google Analytics disabled on localhost");
+      return;
+    }
     var script = document.createElement("script");
     script.async = true;
     script.src = "https://www.googletagmanager.com/gtag/js?id=G-L4MNKNZVNM";
     document.head.appendChild(script);
 
-    // Initialize Google Analytics
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () {
       dataLayer.push(arguments);
     };
     window.gtag("js", new Date());
     window.gtag("config", "G-L4MNKNZVNM");
+  }
 
-    console.log("Google Analytics loaded");
+  // Load after page is interactive
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(loadGA);
   } else {
-    console.log("Google Analytics disabled on localhost");
+    setTimeout(loadGA, 3000);
   }
 </script>
