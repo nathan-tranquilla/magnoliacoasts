@@ -3,7 +3,7 @@ module.exports = {
     collect: {
       // CI overrides this with --collect.staticDistDir=./docs
       // Local uses the dev server via `rake lighthouse`
-      url: ["http://localhost:4321/"],
+      url: ["https://magnoliacoastsphotography.com/"],
       startServerCommand: "",
       numberOfRuns: 3,
     },

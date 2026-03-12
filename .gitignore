@@ -32,7 +32,8 @@ pnpm-debug.log*
 src/assets/__MACOSX
 *.zip
 
-ruby/doc/screenshots/**/*.base.png
-ruby/doc/screenshots/**/*.diff.png
+/ruby/doc/screenshots/**/*.base.png
+/ruby/doc/screenshots/**/*.diff.png
 
-astro.pid.lighthouseci/
+/astro.pid.lighthouseci/
+/lighthouseci/

@@ -8,7 +8,6 @@ import cormorantGaramondRegular from "../assets/fonts/Cormorant_Garamond/static/
 import cormorantGaramondBold from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Bold.ttf";
 import cormorantGaramondSemibold from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBold.ttf";
 import cormorantGaramondLight from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.ttf";
-import dancingRegular from "../assets/fonts/Dancing_Script/static/DancingScript-Regular.ttf";
 
 import { getImage } from "astro:assets";
 import WelcomeBackground from "../assets/WelcomeBackground.jpg";
@@ -79,13 +78,6 @@ const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
       type="font/ttf"
       crossorigin
       href={cormorantGaramondLight}
-    />
-    <link
-      rel="preload"
-      as="font"
-      type="font/ttf"
-      crossorigin
-      href={dancingRegular}
     />
 
     <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
