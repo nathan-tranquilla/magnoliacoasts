@@ -12,97 +12,68 @@ import {
   PINTREST_LINK,
 } from "../data/links";
 import ExternalLink from "./ExternalLink.astro";
-
-const footerClass =
-  "flex justify-center items-center text-lg text-white font-cormorant-garamond bg-dark-green md:h-auto h-[250px] w-screen p-2";
-const mobileGrid = "grid grid-cols-3 md:grid-rows-3 grid-rows-[50px_1fr_1fr]";
-const grid = "md:grid-cols-8";
-const colHeaderClass = "pt-4 flex flex-col justify-start items-center";
-const colHeaderGrid = "row-start-1 col-span-1 md:row-span-1";
-const iconClass = "mx-4";
-const cityColClass = "flex flex-col justify-center items-center";
-const cityColGrid = "row-start-3 col-span-1 md:row-start-1 md:row-span-3";
-const cityListClass = "list-disc md:h-[75%]";
-
-let footerClasses = [mobileGrid, grid, "w-full max-w-[1500px]"].join(" ");
-let colHeaderClasses = [colHeaderClass, colHeaderGrid].join(" ");
-let linksClasses = "hover:underline";
-let cityColClasses = [cityColClass, cityColGrid].join(" ");
-let entryDisplay = "dbackdrop-contrast-200 px-0.5 rounded-md";
 ---
 
-<footer class={footerClass}>
-  <div class={footerClasses}>
-    <div class={`${colHeaderClasses} col-start-1 md:row-span-1`}>
-      <ExternalLink
-        href={INQUIRE_LINK}
-        class={`${entryDisplay} ${linksClasses}`}>Contact Us</ExternalLink
-      >
+<footer class="bg-dark-green py-12 border-t border-white/10">
+  <div class="max-w-4xl mx-auto px-4 font-cormorant-garamond text-white">
+
+    <!-- Zone 1: Logo + Social -->
+    <div class="flex flex-col items-center gap-4">
+      <Image src={logo} width="160" alt="Magnolia Coasts Logo." />
+      <div class="flex gap-4">
+        <ExternalLink href={FACEBOOK_LINK} class="transition-opacity hover:opacity-70">
+          <Image class="h-8 w-8" src={fbIcon} alt="Facebook" layout="constrained" />
+        </ExternalLink>
+        <ExternalLink href={INSTAGRAM_LINK} class="transition-opacity hover:opacity-70">
+          <Image class="h-8 w-8" src={instaIcon} alt="Instagram" layout="constrained" />
+        </ExternalLink>
+        <ExternalLink href={PINTREST_LINK} class="transition-opacity hover:opacity-70">
+          <Image class="h-8 w-8" src={pintrestIcon} alt="Pinterest" layout="constrained" />
+        </ExternalLink>
+      </div>
     </div>
-    <div class={`${colHeaderClasses} col-start-2 md:row-span-1`}>
-      <a href="/investment" class={`${entryDisplay} ${linksClasses}`}
-        >Investment</a
-      >
+
+    <!-- Zone 2: Navigation -->
+    <div class="mt-8 pt-8 border-t border-white/10 flex justify-center gap-8 text-lg tracking-wide">
+      <ExternalLink href={INQUIRE_LINK} class="text-white/80 transition-colors hover:text-white">
+        Contact Us
+      </ExternalLink>
+      <a href="/investment" class="text-white/80 transition-colors hover:text-white">
+        Investment
+      </a>
+      <ExternalLink href={SUBSCRIBE_LINK} class="text-white/80 transition-colors hover:text-white">
+        Subscribe
+      </ExternalLink>
     </div>
-    <div class={`${colHeaderClasses} col-start-3 md:row-span-1`}>
-      <ExternalLink
-        href={SUBSCRIBE_LINK}
-        class={`${entryDisplay} ${linksClasses}`}>Subscribe</ExternalLink
-      >
+
+    <!-- Zone 3: Service Areas -->
+    <div class="mt-8 pt-8 border-t border-white/10">
+      <h3 class="text-sm font-semibold text-white/50 uppercase tracking-widest text-center mb-4">
+        Service Areas
+      </h3>
+      <div class="flex justify-center gap-10 text-sm text-white/70">
+        <ul class="flex flex-col items-center gap-1">
+          <li>Toronto</li>
+          <li>Mississauga</li>
+          <li>Oakville</li>
+        </ul>
+        <ul class="flex flex-col items-center gap-1">
+          <li>Brampton</li>
+          <li>Caledon</li>
+          <li>Barrie</li>
+        </ul>
+        <ul class="flex flex-col items-center gap-1">
+          <li>Scarborough</li>
+          <li>Oshawa</li>
+          <li>Whitby</li>
+        </ul>
+      </div>
     </div>
-    <div
-      class="col-span-3 col-start-1 row-start-2 flex items-center justify-center md:row-span-2"
-    >
-      <ExternalLink href={FACEBOOK_LINK} class="facebook"
-        ><Image
-          class={iconClass}
-          src={fbIcon}
-          alt="Facebook Icon"
-          layout="constrained"
-        /></ExternalLink
-      >
-      <ExternalLink href={INSTAGRAM_LINK} class="instagram"
-        ><Image
-          class={iconClass}
-          src={instaIcon}
-          alt="Instagram Icon"
-          layout="constrained"
-        /></ExternalLink
-      >
-      <ExternalLink href={PINTREST_LINK} class="pintrest"
-        ><Image
-          class={iconClass}
-          src={pintrestIcon}
-          alt="Pintrest Icon"
-          layout="constrained"
-        /></ExternalLink
-      >
+
+    <!-- Zone 4: Copyright -->
+    <div class="mt-8 pt-6 border-t border-white/10 text-center text-xs text-white/40">
+      <p>&copy; {new Date().getFullYear()} Magnolia Coasts Photography</p>
     </div>
-    <div
-      class="hidden items-center justify-center text-white md:col-span-2 md:col-start-4 md:row-span-3 md:row-start-1 md:flex"
-    >
-      <Image src={logo} width="200" alt="Magnolia Coasts Logo." />
-    </div>
-    <div class={`${cityColClasses} col-start-1 md:col-start-6 md:row-span-3`}>
-      <ul class={cityListClass}>
-        <li class={entryDisplay}>Toronto</li>
-        <li class={entryDisplay}>Mississauga</li>
-        <li class={entryDisplay}>Oakville</li>
-      </ul>
-    </div>
-    <div class={`${cityColClasses} col-start-2 md:col-start-7 md:row-span-3`}>
-      <ul class={cityListClass}>
-        <li class={entryDisplay}>Brampton</li>
-        <li class={entryDisplay}>Caledon</li>
-        <li class={entryDisplay}>Barrie</li>
-      </ul>
-    </div>
-    <div class={`${cityColClasses} col-start-3 md:col-start-8 md:row-span-3`}>
-      <ul class={cityListClass}>
-        <li class={entryDisplay}>Scarborough</li>
-        <li class={entryDisplay}>Oshawa</li>
-        <li class={entryDisplay}>Whitby</li>
-      </ul>
-    </div>
+
   </div>
 </footer>
