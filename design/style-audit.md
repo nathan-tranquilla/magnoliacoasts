@@ -27,17 +27,13 @@
 
 ## MEDIUM PRIORITY
 
-- [ ] **6. Footer feels dense and utilitarian**
-  The dark green footer with 3-column city lists looks functional but not elegant. Links are plain text.
-  - Add more vertical padding
-  - Consider a lighter divider line between sections
+- [x] **6. Footer feels dense and utilitarian**
+  Redesigned with zone-based layout: logo + social icons, navigation links, service areas, and copyright — separated by `border-t border-white/10` dividers. More vertical padding and elegant spacing.
   - **File:** `src/components/Footer.astro`
 
-- [ ] **7. Breadcrumbs are unstyled**
-  Bare gray text, looks like an afterthought.
-  - Add a subtle separator character with proper spacing
-  - Match the font weight to the nav
-  - **File:** `src/components/Breadcrumbs.astro`
+- [x] **7. Breadcrumbs are unstyled**
+  Diamond separator (✦), site palette colors (`text-[#392C2C]/80`), WCAG AA contrast (6.3:1+ on all backgrounds). Consistent background via `mainClass` prop on `Main.astro` so breadcrumbs blend into page content.
+  - **Files:** `src/components/Breadcrumbs.astro`, `src/layouts/Main.astro`, `src/pages/about.astro`, `src/pages/gallery.astro`, `src/pages/investment.astro`
 
 - [ ] **8. About page — text wall**
   Long block of body text not broken up visually.

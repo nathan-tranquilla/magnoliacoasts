@@ -28,10 +28,11 @@ export interface Props {
   description?: string;
   keywords?: string;
   extraSchemas?: string[];
+  mainClass?: string;
 }
 const defaultDescription = "Mississauga-based photographer capturing family, newborn, maternity, headshots, and milestone moments with a natural, timeless style. Book your session today!";
 const defaultKeywords = "Mississauga photographer, family photography, newborn photography, maternity photographer, headshots, milestone photography, GTA photographer";
-const { title, description = defaultDescription, keywords = defaultKeywords, extraSchemas = [] } = Astro.props;
+const { title, description = defaultDescription, keywords = defaultKeywords, extraSchemas = [], mainClass = "" } = Astro.props;
 
 const localBusinessProfile = JSON.stringify(businessData);
 const websiteUrl = "https://magnoliacoastsphotography.com";
@@ -170,7 +171,7 @@ const webPageSchema = buildWebPageSchema(Astro.url.pathname, title, description)
     <Banner />
     <Nav />
     <main
-      class="bg-default flex min-h-dvh w-screen flex-col items-stretch justify-start"
+      class={`flex min-h-dvh w-screen flex-col items-stretch justify-start ${mainClass}`}
     >
       <Breadcrumbs />
       <slot />
