@@ -1,57 +1,104 @@
 ---
 import { INQUIRE_LINK } from "../data/links";
 import ExternalLink from "./ExternalLink.astro";
-
-let textClasses =
-  "text-[#392C2C] font-cormorant-garamond text-black lg:text-2xl md:text-lg text-sm";
-let dimensionClasses = "md:w-[200px] md:h-[78px] w-[100px]";
-let displayClasss = "flex justify-center items-center";
-let positionClasses =
-  "absolute bottom-0 lg:-translate-y-40 md:-translate-y-20 -translate-y-10";
-let animationClasses =
-  "transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md";
-let aestheticClasses = "cursor-pointer rounded-lg bg-pink px-6 py-2";
 ---
+
+<style>
+  .hero-overlay {
+    corner-shape: notch;
+  }
+  .hero-cta {
+    corner-shape: notch;
+  }
+  .hero-divider {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(57, 44, 44, 0.3) 20%,
+      rgba(57, 44, 44, 0.3) 80%,
+      transparent
+    );
+  }
+  .hero-divider::before,
+  .hero-divider::after {
+    content: "\2726";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(57, 44, 44, 0.3);
+    font-size: 0.5rem;
+  }
+  .hero-divider::before {
+    left: -0.75rem;
+  }
+  .hero-divider::after {
+    right: -0.75rem;
+  }
+</style>
 
 <section
   aria-label="Hero"
-  class="relative flex justify-center bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(211,208,194)] md:max-h-[85vh] overflow-hidden"
+  class="flex flex-col bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(211,208,194)]"
 >
-  <div class="flex w-full max-w-[1800px] items-center justify-center">
-    <picture>
-      <source
-        srcset="/HeroImage.414w.webp"
-        media="(max-width: 414px)"
-        type="image/webp"
-      />
-      <source
-        srcset="/HeroImage.600w.webp"
-        media="(max-width: 600px)"
-        type="image/webp"
-      />
-      <source
-        srcset="/HeroImage.900w.webp"
-        media="(max-width: 900px)"
-        type="image/webp"
-      />
-      <source
-        srcset="/HeroImage.1800w.webp"
-        media="(max-width: 1800px)"
-        type="image/webp"
-      />
-      <img
-        src="/HeroImage.1800w.webp"
-        alt="Hero Image"
-        width="1800"
-        height="861"
-        class="md:object-cover md:w-full"
-        fetchpriority="high"
-      />
-    </picture>
+  <div class="relative flex w-full justify-center md:max-h-[85vh] overflow-hidden">
+    <div class="flex w-full max-w-[1800px] items-center justify-center">
+      <picture>
+        <source
+          srcset="/HeroImage.414w.webp"
+          media="(max-width: 414px)"
+          type="image/webp"
+        />
+        <source
+          srcset="/HeroImage.600w.webp"
+          media="(max-width: 600px)"
+          type="image/webp"
+        />
+        <source
+          srcset="/HeroImage.900w.webp"
+          media="(max-width: 900px)"
+          type="image/webp"
+        />
+        <source
+          srcset="/HeroImage.1800w.webp"
+          media="(max-width: 1800px)"
+          type="image/webp"
+        />
+        <img
+          src="/HeroImage.1800w.webp"
+          alt="Newborn baby swaddled in pink surrounded by flowers — Magnolia Coasts Photography, Mississauga"
+          width="1800"
+          height="861"
+          class="md:object-cover md:w-full"
+          fetchpriority="high"
+        />
+      </picture>
+    </div>
+    <!-- Desktop overlay -->
+    <div class="hero-overlay hidden md:flex absolute bottom-0 flex-col items-center gap-5 lg:-translate-y-28 md:-translate-y-14 rounded-2xl border border-white/20 bg-white/60 backdrop-blur-lg px-14 py-10 shadow-xl">
+      <h1 class="font-cormorant-garamond italic font-light text-[#392C2C] text-center md:text-5xl lg:text-6xl tracking-wide leading-tight">
+        Magnolia Coasts Photography
+      </h1>
+      <div class="hero-divider relative h-px w-28"></div>
+      <h2 class="font-cormorant-garamond font-light text-[#392C2C]/70 text-center md:text-base lg:text-lg tracking-[0.25em] uppercase">
+        Family &amp; Newborn Photography in Mississauga
+      </h2>
+      <ExternalLink
+        class="hero-cta font-cormorant-garamond text-[#392C2C] md:text-base lg:text-lg tracking-[0.2em] uppercase flex justify-center items-center cursor-pointer rounded-lg bg-pink/70 border border-[#392C2C]/15 px-10 py-3 transition-all duration-300 hover:scale-102 focus:scale-102 hover:shadow-lg focus:shadow-lg hover:bg-pink/90"
+        href={INQUIRE_LINK}>Inquire</ExternalLink
+      >
+    </div>
   </div>
-  <ExternalLink
-    role="button"
-    class={`${textClasses} ${dimensionClasses} ${displayClasss} ${positionClasses} ${animationClasses} ${aestheticClasses}`}
-    href={INQUIRE_LINK}>Inquire</ExternalLink
-  >
+  <!-- Mobile below image -->
+  <div class="flex md:hidden flex-col items-center gap-2 px-4 py-4">
+    <h1 class="font-cormorant-garamond italic font-light text-[#392C2C] text-center text-2xl sm:text-3xl">
+      Magnolia Coasts Photography
+    </h1>
+    <h2 class="font-cormorant-garamond text-[#392C2C] text-center text-sm sm:text-base">
+      Family &amp; Newborn Photography in Mississauga
+    </h2>
+    <ExternalLink
+      class="font-cormorant-garamond text-[#392C2C] text-sm flex justify-center items-center cursor-pointer rounded-lg bg-pink px-6 py-2 transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md"
+      href={INQUIRE_LINK}>Inquire</ExternalLink
+    >
+  </div>
 </section>
