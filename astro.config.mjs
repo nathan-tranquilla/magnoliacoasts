@@ -17,6 +17,8 @@ export default defineConfig({
   image: {
     layout: "constrained",
     objectFit: "cover",
+    format: "webp",
+    quality: "high",
   },
   markdown: {
     rehypePlugins: [rehypeUnwrapImages],
