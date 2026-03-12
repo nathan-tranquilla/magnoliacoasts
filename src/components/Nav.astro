@@ -2,6 +2,9 @@
 import logo from "../assets/Logo.png";
 import { Image } from "astro:assets";
 import { BASE_URL } from "../data/links";
+import { is_active_link } from "../utils/utils.res.mjs";
+
+const currentPath = Astro.url.pathname;
 
 const leftLinks = [
   { href: BASE_URL + "/", text: "Home" },
@@ -12,6 +15,13 @@ const rightLinks = [
   { href: BASE_URL + "/investment", text: "Investment" },
 ];
 const links = [...leftLinks, ...rightLinks];
+
+const isActive = (href: string) => is_active_link(currentPath, href, BASE_URL);
+
+const linkBase =
+  "font-cormorant-garamond cursor-pointer p-2 tracking-wide transition-colors hover:text-[#392C2C]/60";
+const linkActive = "text-[#392C2C] underline decoration-2 underline-offset-4 decoration-[#392C2C]/30";
+const linkInactive = "text-[#392C2C]/80";
 ---
 
 <header
@@ -46,8 +56,9 @@ const links = [...leftLinks, ...rightLinks];
       {
         links.map((link) => (
           <a
-            class="font-cormorant-garamond cursor-pointer p-2"
+            class={`${linkBase} ${isActive(link.href) ? linkActive : linkInactive}`}
             href={link.href}
+            aria-current={isActive(link.href) ? "page" : undefined}
           >
             {link.text}
           </a>
@@ -62,8 +73,9 @@ const links = [...leftLinks, ...rightLinks];
       {
         leftLinks.map((link) => (
           <a
-            class="font-cormorant-garamond cursor-pointer p-2"
+            class={`${linkBase} ${isActive(link.href) ? linkActive : linkInactive}`}
             href={link.href}
+            aria-current={isActive(link.href) ? "page" : undefined}
           >
             {link.text}
           </a>
@@ -83,8 +95,9 @@ const links = [...leftLinks, ...rightLinks];
       {
         rightLinks.map((link) => (
           <a
-            class="font-cormorant-garamond cursor-pointer p-2"
+            class={`${linkBase} ${isActive(link.href) ? linkActive : linkInactive}`}
             href={link.href}
+            aria-current={isActive(link.href) ? "page" : undefined}
           >
             {link.text}
           </a>

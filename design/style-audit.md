@@ -2,11 +2,10 @@
 
 ## HIGH PRIORITY
 
-- [ ] **1. Navigation links lack hover/active states**
-  Nav links have no visual feedback — no underline, color change, or active page indicator.
-  - Add `hover:text-[#392C2C]/60` and an underline or bottom border for active page
-  - Consider `tracking-widest uppercase text-sm` for a more editorial feel
-  - **File:** `src/components/Nav.astro`
+- [x] **1. Navigation links lack hover/active states**
+  Added hover color transition, underline with offset for active page, `aria-current="page"`.
+  Active detection via ReScript `is_active_link` helper.
+  - **Files:** `src/components/Nav.astro`, `src/utils/utils.res`
 
 - [ ] **2. Gallery index cards feel plain**
   Cards show an image + pink label with no interaction feedback or refinement.
