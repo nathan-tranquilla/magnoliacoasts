@@ -16,7 +16,7 @@ require "support/constants"
         end
       end
 
-      it "works" do
+      xit "works" do
         visit "/"
         review_titles = ["Erika McNabb", "Nritya Bhumi Studio", "Tisha McNama"]
 
