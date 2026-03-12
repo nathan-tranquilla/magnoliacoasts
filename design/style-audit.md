@@ -19,10 +19,9 @@
   Stacked price and button vertically with a top border separator. Full-width Inquire button with larger text.
   - **Files:** `src/components/StandardInvestment.astro`, `src/components/CollectionsInvestment.astro`
 
-- [ ] **5. Section spacing is uneven across the homepage**
-  The gaps between hero, welcome, special moments, art in your home, testimonials, and newsletter sections vary.
-  - Standardize section padding to `py-12 md:py-16` consistently
-  - **File:** `src/pages/index.astro` and individual section components
+- [x] **5. Section spacing is uneven across the homepage**
+  Standardized to `py-12 md:py-16` on Welcome, SpecialMoments, Testimonials, and Newsletter.
+  - **Files:** `Welcome.astro`, `SpecialMoments.astro`, `TestimonialCarousel.astro`, `Newsletter.astro`
 
 ---
 
