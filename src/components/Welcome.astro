@@ -1,5 +1,5 @@
 ---
-import { getImage } from "astro:assets";
+import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
 import stephaniePortrait from "../assets/StephaniePortrait.png";
 import { BASE_URL } from "../data/links";
@@ -8,7 +8,6 @@ import { getCollection, render } from "astro:content";
 
 let welcomeContent = (await getCollection("welcomeContent"))[0];
 let { Content } = await render(welcomeContent);
-const portrait = await getImage({ src: stephaniePortrait });
 ---
 
 <SplotchyBackground aria-label="Welcome" classes="py-6 md:py-16">
@@ -17,10 +16,10 @@ const portrait = await getImage({ src: stephaniePortrait });
     <div
       class="font-cormorant-garamond text-text rounded-xl bg-white/60 p-4 text-sm shadow-sm backdrop-blur-md"
     >
-      <img
-        src={portrait.src}
-        width="333"
-        height="500"
+      <Image
+        src={stephaniePortrait}
+        widths={[128, 200]}
+        sizes="(min-width: 640px) 128px, 96px"
         alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
         class="shadow-card float-left mr-3 mb-2 w-24 rounded-md object-cover sm:w-32"
         loading="lazy"
@@ -48,10 +47,10 @@ const portrait = await getImage({ src: stephaniePortrait });
       class="shadow-card w-80 shrink-0 overflow-hidden rounded-md"
       style="aspect-ratio: 333/500;"
     >
-      <img
-        src={portrait.src}
-        width="333"
-        height="500"
+      <Image
+        src={stephaniePortrait}
+        widths={[320, 640]}
+        sizes="320px"
         alt="A portrait of Stephanie, the owner of Magnolia Coasts Photography."
         class="h-full w-full object-cover"
       />

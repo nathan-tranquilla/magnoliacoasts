@@ -1,4 +1,5 @@
 ENV["BROWSER_PATH"] = `which google-chrome-stable`.chomp
+ENV["CHROME_PATH"] = ENV["BROWSER_PATH"]
 ENV["RUBYOPT"] = "-W0"
 ENV["FLOX_DISABLE_METRICS"] = "true"
 
@@ -112,6 +113,10 @@ task :docs_clean do
   sh "rm -rf docs"
 end 
 
+task :lighthouse_clean do
+  sh "rm -rf .lighthouseci"
+end
+
 task :ruby_clean do 
   sh "rm -rf ruby/vendor/bundle"
   sh "rm -f ruby/doc/screenshots/**/*.diff.png"
@@ -125,7 +130,7 @@ task :clean_astro_pid do
   sh "rm astro.pid || true"
 end 
 
-task :clean => [:node_modules_clean, :docs_clean, :ruby_clean, :clean_astro_pid]
+task :clean => [:node_modules_clean, :docs_clean, :ruby_clean, :clean_astro_pid, :lighthouse_clean]
 
 task :lint => ['node_modules'] do 
   sh "npx prettier ./src -c"
@@ -172,33 +177,14 @@ task :dev, [:flags] => ['node_modules', :res_build, :dl_galleries] do |t, args|
   puts "Astro dev exited successfully."
 end
 
-desc "Run Lighthouse CI audit against the dev server"
-task :lighthouse => [:kill_dev] do
-  pid = spawn("rake dev['--silent']")
-  puts "Started dev server with PID #{pid}"
+desc "Run Lighthouse CI audit against the production build (run 'rake build' first)"
+task :lighthouse => [:lighthouse_clean] do
+  sh "bash -c 'ulimit -n 65536 && npx lhci autorun --collect.staticDistDir=./docs --collect.url=http://localhost/'"
+end
 
-  require 'net/http'
-  60.times do
-    begin
-      Net::HTTP.get(URI("http://localhost:4321"))
-      puts "Dev server is ready."
-      break
-    rescue Errno::ECONNREFUSED, Errno::EADDRNOTAVAIL, SocketError
-      sleep 1
-    end
-  end
-
-  begin
-    sh "npx lhci autorun"
-  ensure
-    begin
-      Process.kill("TERM", pid)
-      puts "Killed dev server with PID #{pid}"
-    rescue Exception => e
-      puts "Could not kill dev server: #{e.message}"
-    end
-    sh "rake kill_dev"
-  end
+desc "Analyze latest Lighthouse CI results"
+task :lighthouse_analyze => [:res_build] do
+  sh "node src/utils/lighthouseAnalyze.res.mjs"
 end
 
 task :test => ['node_modules', :res_build] do

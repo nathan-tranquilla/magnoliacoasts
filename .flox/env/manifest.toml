@@ -20,6 +20,7 @@ ruby.pkg-path = "ruby"
 google-chrome.pkg-path = "google-chrome"
 google-chrome.systems = ["aarch64-darwin", "x86_64-darwin", "x86_64-linux"]
 gh.pkg-path = "gh"
+woff2.pkg-path = "woff2"
 
 
 ## Environment Variables ---------------------------------------------

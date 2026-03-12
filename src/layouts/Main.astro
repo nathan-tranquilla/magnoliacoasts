@@ -4,11 +4,9 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import businessData from "../data/localBusinessProfile.json";
 
-import cormorantGaramondRegular from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf";
-import cormorantGaramondBold from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Bold.ttf";
-import cormorantGaramondSemibold from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBold.ttf";
-import cormorantGaramondLight from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.ttf";
-import dancingRegular from "../assets/fonts/Dancing_Script/static/DancingScript-Regular.ttf";
+import cormorantGaramondRegular from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.woff2";
+import cormorantGaramondLight from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.woff2";
+import cormorantGaramondLightItalic from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-LightItalic.woff2";
 
 import { getImage } from "astro:assets";
 import WelcomeBackground from "../assets/WelcomeBackground.jpg";
@@ -72,57 +70,37 @@ const webPageSchema = buildWebPageSchema(
     <meta name="description" content={description} />
     <meta name="author" content="Magnolia Coasts" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <!-- Preload Cormorant Garamond fonts for FOUC prevention -->
+    <!-- Preload only above-the-fold fonts -->
     <link
       rel="preload"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossorigin
       href={cormorantGaramondRegular}
     />
     <link
       rel="preload"
       as="font"
-      type="font/ttf"
-      crossorigin
-      href={cormorantGaramondBold}
-    />
-    <link
-      rel="preload"
-      as="font"
-      type="font/ttf"
-      crossorigin
-      href={cormorantGaramondSemibold}
-    />
-    <link
-      rel="preload"
-      as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossorigin
       href={cormorantGaramondLight}
     />
     <link
       rel="preload"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossorigin
-      href={dancingRegular}
+      href={cormorantGaramondLightItalic}
     />
-
-    <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
+    <!-- Preload the LCP hero image with responsive srcset -->
     <link
       rel="preload"
       fetchpriority="high"
       as="image"
-      href="/HeroImage.414w.webp"
+      href="/HeroImage.1800w.webp"
+      imagesrcset="/HeroImage.414w.webp 414w, /HeroImage.600w.webp 600w, /HeroImage.900w.webp 900w, /HeroImage.1200w.webp 1200w, /HeroImage.1800w.webp 1800w"
+      imagesizes="100vw"
       type="image/webp"
-    />
-    <link
-      rel="preload"
-      fetchpriority="high"
-      as="image"
-      href={optimizedBackground.src}
-      type="image/avif"
     />
 
     <link rel="icon" href={`${logo.src}`} type="image/png" />

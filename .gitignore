@@ -36,3 +36,4 @@ ruby/doc/screenshots/**/*.base.png
 ruby/doc/screenshots/**/*.diff.png
 
 astro.pid.lighthouseci/
+.lighthouseci/

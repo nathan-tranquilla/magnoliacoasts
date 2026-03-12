@@ -1,5 +1,5 @@
 ---
-import { getImage } from "astro:assets";
+import { Image } from "astro:assets";
 import specialMoment1 from "../assets/special_moments/maternity.jpg";
 import specialMoment2 from "../assets/special_moments/newborn.jpg";
 import specialMoment3 from "../assets/special_moments/family.jpg";
@@ -76,14 +76,8 @@ const otherMoments = [
 ];
 
 const allMoments = [...mainMoments, ...otherMoments];
-const resolved = await Promise.all(
-  allMoments.map(async (m) => ({
-    ...m,
-    src: (await getImage({ src: m.imgSrc, width: 600 })).src,
-  })),
-);
-const mainResolved = resolved.slice(0, 4);
-const otherResolved = resolved.slice(4);
+const mainResolved = allMoments.slice(0, 4);
+const otherResolved = allMoments.slice(4);
 ---
 
 <section
@@ -103,10 +97,10 @@ const otherResolved = resolved.slice(4);
         rel="noopener"
         class="group shadow-card relative aspect-[3/4] w-full overflow-hidden rounded-md"
       >
-        <img
-          src={moment.src}
-          width="300"
-          height="400"
+        <Image
+          src={moment.imgSrc}
+          widths={[200, 300, 400]}
+          sizes="(min-width: 768px) 25vw, 50vw"
           alt={moment.alt}
           class="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
@@ -137,10 +131,10 @@ const otherResolved = resolved.slice(4);
         rel="noopener"
         class="group shadow-card relative aspect-[3/4] w-full overflow-hidden rounded-md"
       >
-        <img
-          src={moment.src}
-          width="300"
-          height="400"
+        <Image
+          src={moment.imgSrc}
+          widths={[200, 300, 400]}
+          sizes="(min-width: 768px) 25vw, 50vw"
           alt={moment.alt}
           class="absolute inset-0 h-full w-full object-cover"
           loading="lazy"

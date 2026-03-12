@@ -19,6 +19,9 @@
       },
       "ruby": {
         "pkg-path": "ruby"
+      },
+      "woff2": {
+        "pkg-path": "woff2"
       }
     },
     "hook": {},
@@ -468,6 +471,130 @@
       "outputs": {
         "devdoc": "/nix/store/ivgz2wvk82cjgjgl6s1967cc8qhxlh1h-ruby-3.3.8-devdoc",
         "out": "/nix/store/ll92wwam2q5xr77p8zg6rqyh6xiqxdkf-ruby-3.3.8"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "woff2",
+      "broken": false,
+      "derivation": "/nix/store/xgcvp0q4rfh6hhrv41bh9c4n74mxj384-woff2-1.0.2.drv",
+      "description": "Webfont compression reference code",
+      "install_id": "woff2",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "woff2-1.0.2",
+      "pname": "woff2",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T03:43:12.682975Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.0.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/882m5gjdq0w25yaxiy9dw6ick8x68gdi-woff2-1.0.2-dev",
+        "lib": "/nix/store/58bqpj6khym55qqljfj52wria703jzfh-woff2-1.0.2-lib",
+        "out": "/nix/store/4xc6hl8nwbpg926k6ywfx1c26k83xq9c-woff2-1.0.2"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "woff2",
+      "broken": false,
+      "derivation": "/nix/store/afmp4zn5ryf6wisa7sbx36jvyihyfb5d-woff2-1.0.2.drv",
+      "description": "Webfont compression reference code",
+      "install_id": "woff2",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "woff2-1.0.2",
+      "pname": "woff2",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T03:55:40.004904Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.0.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/5a7bkgawmh7q3s9zcw96770laaiwkqac-woff2-1.0.2-dev",
+        "lib": "/nix/store/lagfwdnc2aakni078xgi839i0wyx3afz-woff2-1.0.2-lib",
+        "out": "/nix/store/2sy1iqpszc6hbcf2wjyqqxn35sv0pw8z-woff2-1.0.2"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "woff2",
+      "broken": false,
+      "derivation": "/nix/store/10h7cnka4bqjkkirjw96sax3zpkg7ap2-woff2-1.0.2.drv",
+      "description": "Webfont compression reference code",
+      "install_id": "woff2",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "woff2-1.0.2",
+      "pname": "woff2",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T04:24:48.602317Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.0.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/3m6rar89paag5y9y4cvffyz3kd6qadbq-woff2-1.0.2-dev",
+        "lib": "/nix/store/kn0lx9r5zgpchhniv04qqlqvw73in2px-woff2-1.0.2-lib",
+        "out": "/nix/store/zx0a5c91jjkmi7cj7kbcvmj6d984qvq1-woff2-1.0.2"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "woff2",
+      "broken": false,
+      "derivation": "/nix/store/1biykidjz7vfamc6mnl21nzgil239h1q-woff2-1.0.2.drv",
+      "description": "Webfont compression reference code",
+      "install_id": "woff2",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "woff2-1.0.2",
+      "pname": "woff2",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T04:57:58.131770Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.0.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/k1n68idx859yjqfdl9j7ap5rd7kvkhy9-woff2-1.0.2-dev",
+        "lib": "/nix/store/70kf9ks6mgm54m71pr1jl74ypwzxb78b-woff2-1.0.2-lib",
+        "out": "/nix/store/6cqjp95ziwcc2djp9kd2kqnvbmgisl28-woff2-1.0.2"
       },
       "system": "x86_64-linux",
       "group": "toplevel",

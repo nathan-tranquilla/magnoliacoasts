@@ -1,10 +1,6 @@
 module.exports = {
   ci: {
     collect: {
-      // CI overrides this with --collect.staticDistDir=./docs
-      // Local uses the dev server via `rake lighthouse`
-      url: ["http://localhost:4321/"],
-      startServerCommand: "",
       numberOfRuns: 3,
     },
     assert: {
