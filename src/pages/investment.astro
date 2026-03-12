@@ -52,22 +52,23 @@ const investmentCards = [
 ];
 ---
 
-<Main title="Magnolia Coasts | Mississauga | Photography Investment" description="View photography packages and pricing from Magnolia Coasts — maternity, newborn, family, milestone, headshot, and collection sessions in Mississauga." keywords="photography pricing Mississauga, maternity packages, newborn session cost, family photography rates, headshot pricing, photography investment GTA" mainClass="bg-[var(--section-bg-color)]">
+<Main
+  title="Magnolia Coasts | Mississauga | Photography Investment"
+  description="View photography packages and pricing from Magnolia Coasts — maternity, newborn, family, milestone, headshot, and collection sessions in Mississauga."
+  keywords="photography pricing Mississauga, maternity packages, newborn session cost, family photography rates, headshot pricing, photography investment GTA"
+  mainClass="bg-[var(--section-bg-color)]"
+>
   <section
     aria-label="Photography packages"
     class={`w-full pb-4 box-border w-screen font-cormorant-garamond bg-[var(--section-bg-color)] flex justify-center items-center`}
   >
-    <div class="stagger-cards m-2 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-4 lg:gap-6 max-w-[1200px]">
-      <SectionHeader
-        title="Investment"
-        classes="md:col-span-3 w-full"
-      />
+    <div
+      class="stagger-cards m-2 grid max-w-[1200px] grid-cols-1 gap-4 md:grid-cols-3 md:gap-4 lg:gap-6"
+    >
+      <SectionHeader title="Investment" classes="md:col-span-3 w-full" />
       {
         investmentCards.map((card) => (
-          <InvestmentCard
-            href={card.href}
-            text={card.text}
-          >
+          <InvestmentCard href={card.href} text={card.text}>
             <Image src={card.img} alt={card.alt} layout="full-width" />
           </InvestmentCard>
         ))

@@ -20,7 +20,11 @@ let { title, details, price, priceRange, cardStyle, productLink } = Astro.props;
     color: var(--color-pink);
   }
 </style>
-<Card test_id={title} as="article" classes={`w-full max-w-[400px] m-2 ${cardStyle || ""}`}>
+<Card
+  test_id={title}
+  as="article"
+  classes={`w-full max-w-[400px] m-2 ${cardStyle || ""}`}
+>
   <InvestmentHeader title={title} />
   <slot />
   <ul
@@ -34,8 +38,8 @@ let { title, details, price, priceRange, cardStyle, productLink } = Astro.props;
         ))
     }
   </ul>
-  <div class="mt-auto flex flex-col gap-3 border-t border-border pt-4">
-    <div class="font-cormorant-garamond text-xl font-bold text-center">
+  <div class="border-border mt-auto flex flex-col gap-3 border-t pt-4">
+    <div class="font-cormorant-garamond text-center text-xl font-bold">
       ${price || priceRange} + Tax
     </div>
     <Button color="Pink" classes="w-full max-w-full py-3">

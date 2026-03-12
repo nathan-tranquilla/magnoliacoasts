@@ -34,7 +34,9 @@ import ExternalLink from "./ExternalLink.astro";
   aria-label="Hero"
   class="flex flex-col bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(211,208,194)]"
 >
-  <div class="relative flex w-full justify-center md:max-h-[85vh] overflow-hidden">
+  <div
+    class="relative flex w-full justify-center overflow-hidden md:max-h-[85vh]"
+  >
     <div class="flex w-full max-w-[1800px] items-center justify-center">
       <picture>
         <source
@@ -67,36 +69,46 @@ import ExternalLink from "./ExternalLink.astro";
           alt="Newborn baby swaddled in pink surrounded by flowers — Magnolia Coasts Photography, Mississauga"
           width="1800"
           height="1286"
-          class="md:object-cover md:w-full"
+          class="md:w-full md:object-cover"
           fetchpriority="high"
         />
       </picture>
     </div>
     <!-- Desktop overlay -->
-    <div class="hero-overlay hidden md:flex absolute bottom-0 flex-col items-center gap-5 lg:-translate-y-28 md:-translate-y-14 rounded-2xl border border-white/20 bg-white/60 backdrop-blur-lg px-14 py-10 shadow-xl">
-      <h1 class="font-cormorant-garamond italic font-light text-text text-center md:text-5xl lg:text-6xl tracking-wide leading-tight">
+    <div
+      class="hero-overlay absolute bottom-0 hidden flex-col items-center gap-5 rounded-2xl border border-white/20 bg-white/60 px-14 py-10 shadow-xl backdrop-blur-lg md:flex md:-translate-y-14 lg:-translate-y-28"
+    >
+      <h1
+        class="font-cormorant-garamond text-text text-center leading-tight font-light tracking-wide italic md:text-5xl lg:text-6xl"
+      >
         Magnolia Coasts Photography
       </h1>
       <div class="hero-divider relative h-px w-28"></div>
-      <h2 class="font-cormorant-garamond font-light text-text/70 text-center md:text-base lg:text-lg tracking-[0.25em] uppercase">
+      <h2
+        class="font-cormorant-garamond text-text/70 text-center font-light tracking-[0.25em] uppercase md:text-base lg:text-lg"
+      >
         Family &amp; Newborn Photography in Mississauga
       </h2>
       <ExternalLink
-        class="hero-cta font-cormorant-garamond text-text md:text-base lg:text-lg tracking-[0.2em] uppercase flex justify-center items-center cursor-pointer rounded-lg bg-pink/70 border border-text/15 px-10 py-3 shadow-md transition-all duration-300 hover:scale-102 focus:scale-102 hover:shadow-xl focus:shadow-xl hover:bg-pink/90"
+        class="hero-cta font-cormorant-garamond text-text bg-pink/70 border-text/15 hover:bg-pink/90 flex cursor-pointer items-center justify-center rounded-lg border px-10 py-3 tracking-[0.2em] uppercase shadow-md transition-all duration-300 hover:scale-102 hover:shadow-xl focus:scale-102 focus:shadow-xl md:text-base lg:text-lg"
         href={INQUIRE_LINK}>Inquire</ExternalLink
       >
     </div>
   </div>
   <!-- Mobile below image -->
-  <div class="flex md:hidden flex-col items-center gap-2 px-4 py-4 bg-white">
-    <h1 class="font-cormorant-garamond italic font-light text-text text-center text-2xl sm:text-3xl">
+  <div class="flex flex-col items-center gap-2 bg-white px-4 py-4 md:hidden">
+    <h1
+      class="font-cormorant-garamond text-text text-center text-2xl font-light italic sm:text-3xl"
+    >
       Magnolia Coasts Photography
     </h1>
-    <h2 class="font-cormorant-garamond text-text text-center text-sm sm:text-base">
+    <h2
+      class="font-cormorant-garamond text-text text-center text-sm sm:text-base"
+    >
       Family &amp; Newborn Photography in Mississauga
     </h2>
     <ExternalLink
-      class="font-cormorant-garamond text-text text-sm flex justify-center items-center cursor-pointer rounded-lg bg-pink px-6 py-2 transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md"
+      class="font-cormorant-garamond text-text bg-pink flex cursor-pointer items-center justify-center rounded-lg px-6 py-2 text-sm transition-all hover:scale-102 hover:shadow-md focus:scale-102 focus:shadow-md"
       href={INQUIRE_LINK}>Inquire</ExternalLink
     >
   </div>

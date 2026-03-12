@@ -30,9 +30,17 @@ export interface Props {
   extraSchemas?: string[];
   mainClass?: string;
 }
-const defaultDescription = "Mississauga-based photographer capturing family, newborn, maternity, headshots, and milestone moments with a natural, timeless style. Book your session today!";
-const defaultKeywords = "Mississauga photographer, family photography, newborn photography, maternity photographer, headshots, milestone photography, GTA photographer";
-const { title, description = defaultDescription, keywords = defaultKeywords, extraSchemas = [], mainClass = "" } = Astro.props;
+const defaultDescription =
+  "Mississauga-based photographer capturing family, newborn, maternity, headshots, and milestone moments with a natural, timeless style. Book your session today!";
+const defaultKeywords =
+  "Mississauga photographer, family photography, newborn photography, maternity photographer, headshots, milestone photography, GTA photographer";
+const {
+  title,
+  description = defaultDescription,
+  keywords = defaultKeywords,
+  extraSchemas = [],
+  mainClass = "",
+} = Astro.props;
 
 const localBusinessProfile = JSON.stringify(businessData);
 const websiteUrl = "https://magnoliacoastsphotography.com";
@@ -44,7 +52,11 @@ const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
 
 // WebPage structured data
 import { buildWebPageSchema } from "../utils/structuredData.res.mjs";
-const webPageSchema = buildWebPageSchema(Astro.url.pathname, title, description);
+const webPageSchema = buildWebPageSchema(
+  Astro.url.pathname,
+  title,
+  description,
+);
 ---
 
 <html lang="en">
@@ -57,10 +69,7 @@ const webPageSchema = buildWebPageSchema(Astro.url.pathname, title, description)
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{title}</title>
-    <meta
-      name="description"
-      content={description}
-    />
+    <meta name="description" content={description} />
     <meta name="author" content="Magnolia Coasts" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <!-- Preload Cormorant Garamond fonts for FOUC prevention -->
@@ -121,9 +130,11 @@ const webPageSchema = buildWebPageSchema(Astro.url.pathname, title, description)
     <script type="application/ld+json" set:html={localBusinessProfile} />
     <script type="application/ld+json" set:html={breadcrumbSchema} />
     <script type="application/ld+json" set:html={webPageSchema} />
-    {extraSchemas.map((schema) => (
-      <script type="application/ld+json" set:html={schema} />
-    ))}
+    {
+      extraSchemas.map((schema) => (
+        <script type="application/ld+json" set:html={schema} />
+      ))
+    }
     <meta name="email" content="info@magnoliacoastsphotography.com" />
     <link rel="canonical" href={canonicalUrl} />
 
@@ -140,10 +151,7 @@ const webPageSchema = buildWebPageSchema(Astro.url.pathname, title, description)
       property="og:title"
       content="Mississauga Family & Newborn Photographer | Magnolia Coasts Photography"
     />
-    <meta
-      property="og:description"
-      content={description}
-    />
+    <meta property="og:description" content={description} />
     <meta property="og:url" content={websiteUrl} />
     <meta property="og:site_name" content="Magnolia Coasts Photography" />
     <meta property="og:image" content={`${websiteUrl}HeroImage.414w.webp`} />
@@ -154,16 +162,10 @@ const webPageSchema = buildWebPageSchema(Astro.url.pathname, title, description)
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta
-      name="twitter:description"
-      content={description}
-    />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${websiteUrl}${logo.src}`} />
 
-    <meta
-      name="keywords"
-      content={keywords}
-    />
+    <meta name="keywords" content={keywords} />
   </head>
   <body
     class="bg-default relative flex min-h-dvh w-screen flex-col items-stretch justify-start"

@@ -32,7 +32,11 @@ const textDisplay = "block vertical-middle text-center";
     class={`${overflowDisplay} ${textDisplay} mx-2 text-base md:text-xl font-semibold`}
     >{text}</span
   >
-  {direction == NavDir.Right && <FAButton title={"Next Page"} direction="right" />}
+  {
+    direction == NavDir.Right && (
+      <FAButton title={"Next Page"} direction="right" />
+    )
+  }
 </a>
 <a
   id={direction == NavDir.Left ? "prev-mobile" : "next-mobile"}

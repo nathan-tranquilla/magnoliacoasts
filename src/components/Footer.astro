@@ -14,41 +14,77 @@ import {
 import ExternalLink from "./ExternalLink.astro";
 ---
 
-<footer class="bg-dark-green py-12 border-t border-white/10">
-  <div class="max-w-4xl mx-auto px-4 font-cormorant-garamond text-white">
-
+<footer class="bg-dark-green border-t border-white/10 py-12">
+  <div class="font-cormorant-garamond mx-auto max-w-4xl px-4 text-white">
     <!-- Zone 1: Logo + Social -->
     <div class="flex flex-col items-center gap-4">
       <Image src={logo} width="160" alt="Magnolia Coasts Logo." />
       <div class="flex gap-4">
-        <ExternalLink href={FACEBOOK_LINK} class="facebook transition-opacity hover:opacity-70">
-          <Image class="h-8 w-8" src={fbIcon} alt="Facebook" layout="constrained" />
+        <ExternalLink
+          href={FACEBOOK_LINK}
+          class="facebook transition-opacity hover:opacity-70"
+        >
+          <Image
+            class="h-8 w-8"
+            src={fbIcon}
+            alt="Facebook"
+            layout="constrained"
+          />
         </ExternalLink>
-        <ExternalLink href={INSTAGRAM_LINK} class="instagram transition-opacity hover:opacity-70">
-          <Image class="h-8 w-8" src={instaIcon} alt="Instagram" layout="constrained" />
+        <ExternalLink
+          href={INSTAGRAM_LINK}
+          class="instagram transition-opacity hover:opacity-70"
+        >
+          <Image
+            class="h-8 w-8"
+            src={instaIcon}
+            alt="Instagram"
+            layout="constrained"
+          />
         </ExternalLink>
-        <ExternalLink href={PINTREST_LINK} class="pintrest transition-opacity hover:opacity-70">
-          <Image class="h-8 w-8" src={pintrestIcon} alt="Pinterest" layout="constrained" />
+        <ExternalLink
+          href={PINTREST_LINK}
+          class="pintrest transition-opacity hover:opacity-70"
+        >
+          <Image
+            class="h-8 w-8"
+            src={pintrestIcon}
+            alt="Pinterest"
+            layout="constrained"
+          />
         </ExternalLink>
       </div>
     </div>
 
     <!-- Zone 2: Navigation -->
-    <div class="mt-8 pt-8 border-t border-white/10 flex justify-center gap-8 text-lg tracking-wide">
-      <ExternalLink href={INQUIRE_LINK} class="text-white/80 transition-colors hover:text-white">
+    <div
+      class="mt-8 flex justify-center gap-8 border-t border-white/10 pt-8 text-lg tracking-wide"
+    >
+      <ExternalLink
+        href={INQUIRE_LINK}
+        class="text-white/80 transition-colors hover:text-white"
+      >
         Contact Us
       </ExternalLink>
-      <a href="/investment" class="text-white/80 transition-colors hover:text-white">
+      <a
+        href="/investment"
+        class="text-white/80 transition-colors hover:text-white"
+      >
         Investment
       </a>
-      <ExternalLink href={SUBSCRIBE_LINK} class="text-white/80 transition-colors hover:text-white">
+      <ExternalLink
+        href={SUBSCRIBE_LINK}
+        class="text-white/80 transition-colors hover:text-white"
+      >
         Subscribe
       </ExternalLink>
     </div>
 
     <!-- Zone 3: Service Areas -->
-    <div class="mt-8 pt-8 border-t border-white/10">
-      <h3 class="text-sm font-semibold text-white/75 uppercase tracking-widest text-center mb-4">
+    <div class="mt-8 border-t border-white/10 pt-8">
+      <h3
+        class="mb-4 text-center text-sm font-semibold tracking-widest text-white/75 uppercase"
+      >
         Service Areas
       </h3>
       <div class="flex justify-center gap-10 text-sm text-white/70">
@@ -71,9 +107,10 @@ import ExternalLink from "./ExternalLink.astro";
     </div>
 
     <!-- Zone 4: Copyright -->
-    <div class="mt-8 pt-6 border-t border-white/10 text-center text-xs text-white/60">
+    <div
+      class="mt-8 border-t border-white/10 pt-6 text-center text-xs text-white/60"
+    >
       <p>&copy; {new Date().getFullYear()} Magnolia Coasts Photography</p>
     </div>
-
   </div>
 </footer>

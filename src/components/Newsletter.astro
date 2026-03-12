@@ -7,28 +7,37 @@ import ExternalLink from "./ExternalLink.astro";
 const img = await getImage({ src: newsletter });
 ---
 
-<section aria-label="Newsletter signup" class="flex justify-center py-6 md:py-16 px-4">
-  <div class="group relative w-full max-w-[1200px] overflow-hidden rounded-md shadow-card">
+<section
+  aria-label="Newsletter signup"
+  class="flex justify-center px-4 py-6 md:py-16"
+>
+  <div
+    class="group shadow-card relative w-full max-w-[1200px] overflow-hidden rounded-md"
+  >
     <div class="relative aspect-[16/7] md:aspect-[16/5]">
       <img
         src={img.src}
         width="367"
         height="600"
         alt="Woman on a laptop"
-        class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
       />
       <div class="absolute inset-0 bg-black/40"></div>
-      <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 px-4 text-center">
-        <h2 class="font-cormorant-garamond text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-wide">
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center gap-4 px-4 text-center"
+      >
+        <h2
+          class="font-cormorant-garamond text-2xl font-light tracking-wide text-white sm:text-3xl md:text-4xl lg:text-5xl"
+        >
           Subscribe To Our Newsletter
         </h2>
-        <p class="font-dancing text-white/90 text-lg sm:text-xl md:text-2xl">
+        <p class="font-dancing text-lg text-white/90 sm:text-xl md:text-2xl">
           Get notified with latest promotions and news!
         </p>
         <ExternalLink
           href={SUBSCRIBE_LINK}
-          class="font-cormorant-garamond text-white text-sm sm:text-base tracking-[0.2em] uppercase rounded-lg bg-white/20 border border-white/30 px-8 py-3 backdrop-blur-sm transition-all duration-300 hover:bg-white/30 hover:scale-102"
+          class="font-cormorant-garamond rounded-lg border border-white/30 bg-white/20 px-8 py-3 text-sm tracking-[0.2em] text-white uppercase backdrop-blur-sm transition-all duration-300 hover:scale-102 hover:bg-white/30 sm:text-base"
         >
           Subscribe
         </ExternalLink>

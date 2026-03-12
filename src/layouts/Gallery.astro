@@ -35,7 +35,10 @@ const galleryTypeToTuple: Record<GalleryType, [string, string]> = {
   [GalleryType.Headshots]: ["Headshots", `${BASE_URL}/gallery/headshots`],
 };
 
-const galleryIntro: Record<GalleryType, { text: string; cta?: [string, string] }> = {
+const galleryIntro: Record<
+  GalleryType,
+  { text: string; cta?: [string, string] }
+> = {
   [GalleryType.Maternity]: {
     text: "Elegant studio and outdoor maternity sessions in Mississauga, celebrating the beauty of pregnancy with soft, natural light and timeless poses.",
     cta: ["View Maternity Packages", `${BASE_URL}/investment/maternity`],
@@ -60,7 +63,10 @@ const galleryIntro: Record<GalleryType, { text: string; cta?: [string, string] }
   },
   [GalleryType.Branding]: {
     text: "Professional lifestyle and brand imagery for entrepreneurs and small businesses in the Greater Toronto Area.",
-    cta: ["View Headshot & Branding Packages", `${BASE_URL}/investment/headshot`],
+    cta: [
+      "View Headshot & Branding Packages",
+      `${BASE_URL}/investment/headshot`,
+    ],
   },
   [GalleryType.Headshots]: {
     text: "Polished studio headshot portraits for corporate professionals, actors, and creatives in Mississauga.",
@@ -79,7 +85,8 @@ export interface Props {
   images: ImageMetadata[];
   galleryType: GalleryType;
 }
-const { metaTitle, title, description, keywords, galleryType, images } = Astro.props;
+const { metaTitle, title, description, keywords, galleryType, images } =
+  Astro.props;
 let galleries = Object.values(galleryTypeToTuple);
 const pkg = galleryTypeToTuple[galleryType];
 let pkgs = get_surrounding_pkgs(pkg, galleries);
@@ -91,7 +98,11 @@ const sortByFilename = (a: ImageMetadata, b: ImageMetadata) => {
   return numA - numB;
 };
 const sortedImages = images.sort(sortByFilename);
-const gallerySchema = buildImageGallerySchema(title, Astro.url.pathname, sortedImages.length);
+const gallerySchema = buildImageGallerySchema(
+  title,
+  Astro.url.pathname,
+  sortedImages.length,
+);
 let getDimensions = (i: number, galleryType: GalleryType, total: number) => {
   let mod;
   let isLandscape;
@@ -134,55 +145,71 @@ let getDimensions = (i: number, galleryType: GalleryType, total: number) => {
 };
 ---
 
-<Main title={`Magnolia Coasts | ${metaTitle}`} description={description} keywords={keywords} extraSchemas={[gallerySchema]}>
-  <section aria-label={`${title} gallery navigation`} class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
-      <SiblingPackageNav
-        text={pkgs[0][0]}
-        href={pkgs[0][1]}
-        direction={NavDir.Left}
-      />
-      <SectionHeader title={title} />
-      <SiblingPackageNav
-        text={pkgs[1][0]}
-        href={pkgs[1][1]}
-        direction={NavDir.Right}
-      />
+<Main
+  title={`Magnolia Coasts | ${metaTitle}`}
+  description={description}
+  keywords={keywords}
+  extraSchemas={[gallerySchema]}
+>
+  <section
+    aria-label={`${title} gallery navigation`}
+    class={`self-center ${desktopDisplay} ${mobileDisplay}`}
+  >
+    <SiblingPackageNav
+      text={pkgs[0][0]}
+      href={pkgs[0][1]}
+      direction={NavDir.Left}
+    />
+    <SectionHeader title={title} />
+    <SiblingPackageNav
+      text={pkgs[1][0]}
+      href={pkgs[1][1]}
+      direction={NavDir.Right}
+    />
   </section>
-  <p class="max-w-[800px] self-center px-6 py-4 text-center font-cormorant-garamond text-lg text-gray-700">
+  <p
+    class="font-cormorant-garamond max-w-[800px] self-center px-6 py-4 text-center text-lg text-gray-700"
+  >
     {galleryIntro[galleryType].text}
-    {galleryIntro[galleryType].cta && (
-      <a
-        href={galleryIntro[galleryType].cta![1]}
-        class="ml-1 font-semibold text-dark-green underline decoration-1 underline-offset-2 hover:text-green-900"
-      >
-        {galleryIntro[galleryType].cta![0]} &rarr;
-      </a>
-    )}
+    {
+      galleryIntro[galleryType].cta && (
+        <a
+          href={galleryIntro[galleryType].cta![1]}
+          class="text-dark-green ml-1 font-semibold underline decoration-1 underline-offset-2 hover:text-green-900"
+        >
+          {galleryIntro[galleryType].cta![0]} &rarr;
+        </a>
+      )
+    }
   </p>
   <section
     aria-label={`${title} photos`}
     class=`xs:grid-cols-3 grid grid-cols-1 gap-4 self-center p-4 lg:max-w-[1200px]`
   >
-      {
-        sortedImages.map((image: ImageMetadata, i) => {
-          const { width, height, classes } = getDimensions(i, galleryType, sortedImages.length);
-          return (
-            <figure id={`image-${i}`} class={classes}>
-              <Image
-                style="content-visibility: auto"
-                src={image}
-                layout="full-width"
-                width={width}
-                height={height}
-                class="h-[100%] object-cover object-center"
-                alt={`${title} photography – photo ${i + 1}`}
-                decoding="async"
-                loading={i < 6 ? "eager" : "lazy"}
-              />
-              <figcaption class="sr-only">{`${title} photo ${i + 1}`}</figcaption>
-            </figure>
-          );
-        })
-      }
+    {
+      sortedImages.map((image: ImageMetadata, i) => {
+        const { width, height, classes } = getDimensions(
+          i,
+          galleryType,
+          sortedImages.length,
+        );
+        return (
+          <figure id={`image-${i}`} class={classes}>
+            <Image
+              style="content-visibility: auto"
+              src={image}
+              layout="full-width"
+              width={width}
+              height={height}
+              class="h-[100%] object-cover object-center"
+              alt={`${title} photography – photo ${i + 1}`}
+              decoding="async"
+              loading={i < 6 ? "eager" : "lazy"}
+            />
+            <figcaption class="sr-only">{`${title} photo ${i + 1}`}</figcaption>
+          </figure>
+        );
+      })
+    }
   </section>
 </Main>

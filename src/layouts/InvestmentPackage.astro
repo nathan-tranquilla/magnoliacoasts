@@ -27,7 +27,10 @@ export enum PackageType {
   Collections = "collectionsPackages",
 }
 
-const investmentIntro: Record<PackageType, { text: string; cta?: [string, string] }> = {
+const investmentIntro: Record<
+  PackageType,
+  { text: string; cta?: [string, string] }
+> = {
   [PackageType.Maternity]: {
     text: "Celebrate your pregnancy journey with a maternity photography session in our Mississauga studio or at a scenic outdoor location.",
     cta: ["View Maternity Gallery", `${BASE_URL}/gallery/maternity`],
@@ -73,71 +76,88 @@ const collection = (await getCollection(pkgType)).sort(
 const desktopDisplay = "md:grid grid-cols-[20vw_50vw_20vw] gap-2";
 const mobileDisplay = "flex justify-around items-center";
 
-const prices = extractPrices(collection.map((p) => ({
-  price: p.data.price,
-  priceRange: (p.data as any).priceRange,
-})));
+const prices = extractPrices(
+  collection.map((p) => ({
+    price: p.data.price,
+    priceRange: (p.data as any).priceRange,
+  })),
+);
 const serviceSchema = buildServiceSchema(title, Astro.url.pathname, prices);
 ---
 
-<Main title={`Magnolia Coasts | Mississauga | ${title}`} description={description} keywords={keywords} extraSchemas={[serviceSchema]}>
-  <section aria-label={`${title} navigation`} class={`self-center ${desktopDisplay} ${mobileDisplay}`}>
-      <SiblingPackageNav
-        text={pkgs[0][0]}
-        href={pkgs[0][1]}
-        direction={NavDir.Left}
-      />
-      <SectionHeader title={title} />
-      <SiblingPackageNav
-        text={pkgs[1][0]}
-        href={pkgs[1][1]}
-        direction={NavDir.Right}
-      />
+<Main
+  title={`Magnolia Coasts | Mississauga | ${title}`}
+  description={description}
+  keywords={keywords}
+  extraSchemas={[serviceSchema]}
+>
+  <section
+    aria-label={`${title} navigation`}
+    class={`self-center ${desktopDisplay} ${mobileDisplay}`}
+  >
+    <SiblingPackageNav
+      text={pkgs[0][0]}
+      href={pkgs[0][1]}
+      direction={NavDir.Left}
+    />
+    <SectionHeader title={title} />
+    <SiblingPackageNav
+      text={pkgs[1][0]}
+      href={pkgs[1][1]}
+      direction={NavDir.Right}
+    />
   </section>
-  <p class="max-w-[800px] self-center px-6 py-4 text-center font-cormorant-garamond text-lg text-gray-700">
+  <p
+    class="font-cormorant-garamond max-w-[800px] self-center px-6 py-4 text-center text-lg text-gray-700"
+  >
     {investmentIntro[pkgType].text}
-    {investmentIntro[pkgType].cta && (
-      <a
-        href={investmentIntro[pkgType].cta![1]}
-        class="ml-1 font-semibold text-dark-green underline decoration-1 underline-offset-2 hover:text-green-900"
-      >
-        {investmentIntro[pkgType].cta![0]} &rarr;
-      </a>
-    )}
+    {
+      investmentIntro[pkgType].cta && (
+        <a
+          href={investmentIntro[pkgType].cta![1]}
+          class="text-dark-green ml-1 font-semibold underline decoration-1 underline-offset-2 hover:text-green-900"
+        >
+          {investmentIntro[pkgType].cta![0]} &rarr;
+        </a>
+      )
+    }
   </p>
-  <section aria-label={`${title} options`} class="flex w-full flex-wrap items-stretch justify-center p-4">
-      {
-        collection.map(async (pkg) => {
-          let { Content } = await render(pkg);
-          switch (pkgType) {
-            case PackageType.Collections:
-              return (
-                <CollectionsInvestment
-                  photoCount={pkg.data.photoCount}
-                  title={pkg.data.title}
-                  price={pkg.data.price}
-                  priceDetails={pkg.data.priceDetails}
-                  detailsCollection={pkg.data.detailsCollection}
-                  productLink={pkg.data.productLink}
-                >
-                  <Content />
-                </CollectionsInvestment>
-              );
-            default:
-              return (
-                <StandardInvestment
-                  cardStyle={pkg.data.cardStyle}
-                  title={pkg.data.title}
-                  price={pkg.data.price}
-                  priceRange={pkg.data.priceRange}
-                  details={pkg.data.details}
-                  productLink={pkg.data.productLink}
-                >
-                  <Content />
-                </StandardInvestment>
-              );
-          }
-        })
-      }
+  <section
+    aria-label={`${title} options`}
+    class="flex w-full flex-wrap items-stretch justify-center p-4"
+  >
+    {
+      collection.map(async (pkg) => {
+        let { Content } = await render(pkg);
+        switch (pkgType) {
+          case PackageType.Collections:
+            return (
+              <CollectionsInvestment
+                photoCount={pkg.data.photoCount}
+                title={pkg.data.title}
+                price={pkg.data.price}
+                priceDetails={pkg.data.priceDetails}
+                detailsCollection={pkg.data.detailsCollection}
+                productLink={pkg.data.productLink}
+              >
+                <Content />
+              </CollectionsInvestment>
+            );
+          default:
+            return (
+              <StandardInvestment
+                cardStyle={pkg.data.cardStyle}
+                title={pkg.data.title}
+                price={pkg.data.price}
+                priceRange={pkg.data.priceRange}
+                details={pkg.data.details}
+                productLink={pkg.data.productLink}
+              >
+                <Content />
+              </StandardInvestment>
+            );
+        }
+      })
+    }
   </section>
 </Main>

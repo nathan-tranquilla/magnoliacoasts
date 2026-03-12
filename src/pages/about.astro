@@ -35,41 +35,56 @@ let { Content } = await render(aboutContent);
     color: var(--color-dark-green);
   }
 </style>
-<Main title="Magnolia Coasts | Mississauga and GTA Photographer" description="Meet Stephanie, the photographer behind Magnolia Coasts Photography. Based in Mississauga, she captures timeless family, newborn, and portrait moments." keywords="Mississauga photographer, about Magnolia Coasts, Stephanie photographer, portrait photographer GTA, family photographer Mississauga" mainClass="bg-[var(--section-bg-color)]">
+<Main
+  title="Magnolia Coasts | Mississauga and GTA Photographer"
+  description="Meet Stephanie, the photographer behind Magnolia Coasts Photography. Based in Mississauga, she captures timeless family, newborn, and portrait moments."
+  keywords="Mississauga photographer, about Magnolia Coasts, Stephanie photographer, portrait photographer GTA, family photographer Mississauga"
+  mainClass="bg-[var(--section-bg-color)]"
+>
   <SectionHeader title="Photographer" classes="self-center" />
   <article
     aria-label="About the photographer"
-    class="about w-screen font-cormorant-garamond bg-[var(--section-bg-color)] flex flex-col justify-start items-center pb-6 md:pb-16 px-4"
+    class="about font-cormorant-garamond flex w-screen flex-col items-center justify-start bg-[var(--section-bg-color)] px-4 pb-6 md:pb-16"
   >
-    <div class="max-w-[1000px] w-full flex flex-col gap-8">
+    <div class="flex w-full max-w-[1000px] flex-col gap-8">
       <!-- Images + text -->
-      <div class="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+      <div class="flex flex-col items-start gap-6 md:flex-row md:gap-10">
         <!-- Left: all images stacked -->
-        <div class="w-full md:w-2/5 shrink-0 flex flex-col gap-4">
-          <div class="overflow-hidden rounded-md shadow-card">
-            <Image src={stephAndKids} alt="Stephanie and the kids." priority class="w-full h-full object-cover" />
+        <div class="flex w-full shrink-0 flex-col gap-4 md:w-2/5">
+          <div class="shadow-card overflow-hidden rounded-md">
+            <Image
+              src={stephAndKids}
+              alt="Stephanie and the kids."
+              priority
+              class="h-full w-full object-cover"
+            />
           </div>
           <div class="grid grid-cols-2 gap-4">
-            <div class="overflow-hidden rounded-md shadow-card">
-              <Image src={potterDavieFam} alt="Potter-Davie family." class="w-full h-full object-cover" />
+            <div class="shadow-card overflow-hidden rounded-md">
+              <Image
+                src={potterDavieFam}
+                alt="Potter-Davie family."
+                class="h-full w-full object-cover"
+              />
             </div>
-            <div class="overflow-hidden rounded-md shadow-card">
-              <Image src={stephanieCoffee} alt="Stephanie and coffee." class="w-full h-full object-cover" />
+            <div class="shadow-card overflow-hidden rounded-md">
+              <Image
+                src={stephanieCoffee}
+                alt="Stephanie and coffee."
+                class="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>
         <!-- Right: text content -->
-        <div class="md:text-base lg:text-lg text-text leading-relaxed">
+        <div class="text-text leading-relaxed md:text-base lg:text-lg">
           <Content />
         </div>
       </div>
 
       <!-- CTA -->
       <div class="flex justify-center">
-        <Button
-          color="Pink"
-          classes="md:text-lg lg:text-xl max-w-[300px]"
-        >
+        <Button color="Pink" classes="md:text-lg lg:text-xl max-w-[300px]">
           <ExternalLink
             class="flex h-full w-full items-center justify-center"
             href={INQUIRE_LINK}>Book With Stephanie</ExternalLink

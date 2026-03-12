@@ -88,7 +88,10 @@ describe("getPathInfo", () => {
     const info = getPathInfo("/investment/maternity", "/base");
     assert.deepEqual(info.segments, ["investment", "maternity"]);
     assert.deepEqual(info.names, ["Investment", "Maternity"]);
-    assert.deepEqual(info.hrefs, ["/base/investment", "/base/investment/maternity"]);
+    assert.deepEqual(info.hrefs, [
+      "/base/investment",
+      "/base/investment/maternity",
+    ]);
   });
 
   it("maps cakesmash to Cake Smash", () => {

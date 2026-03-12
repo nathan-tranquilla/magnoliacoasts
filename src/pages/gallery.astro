@@ -45,7 +45,12 @@ let galleries = [
 ];
 ---
 
-<Main title="Magnolia Coasts | Mississauga | Photography Gallery" description="Browse photography galleries by Magnolia Coasts — maternity, newborn, family, milestone, headshot, branding, and cake smash sessions in Mississauga." keywords="photography gallery Mississauga, maternity photos, newborn photos, family portraits, headshot gallery, branding photography, cake smash photos" mainClass="bg-[var(--section-bg-color)]">
+<Main
+  title="Magnolia Coasts | Mississauga | Photography Gallery"
+  description="Browse photography galleries by Magnolia Coasts — maternity, newborn, family, milestone, headshot, branding, and cake smash sessions in Mississauga."
+  keywords="photography gallery Mississauga, maternity photos, newborn photos, family portraits, headshot gallery, branding photography, cake smash photos"
+  mainClass="bg-[var(--section-bg-color)]"
+>
   <section
     aria-label="Photography galleries"
     class="flex flex-col items-center justify-start bg-[var(--section-bg-color)]"
@@ -61,17 +66,17 @@ let galleries = [
         galleries.map((gallery, i) => (
           <a
             href={gallery.href}
-            class="group relative w-full max-w-[174px] lg:max-w-[250px] overflow-hidden rounded-md shadow-card"
+            class="group shadow-card relative w-full max-w-[174px] overflow-hidden rounded-md lg:max-w-[250px]"
           >
             <Image
               src={gallery.imgSrc}
               alt={gallery.text}
               layout="constrained"
               priority={i < 4}
-              class="w-full h-full object-cover"
+              class="h-full w-full object-cover"
             />
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-2 py-4 opacity-100 md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100 flex items-end justify-center">
-              <span class="font-cormorant-garamond text-white text-base lg:text-xl font-semibold tracking-wide">
+            <div class="absolute inset-x-0 bottom-0 flex items-end justify-center bg-gradient-to-t from-black/70 via-black/30 to-transparent px-2 py-4 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
+              <span class="font-cormorant-garamond text-base font-semibold tracking-wide text-white lg:text-xl">
                 {gallery.text}
               </span>
             </div>

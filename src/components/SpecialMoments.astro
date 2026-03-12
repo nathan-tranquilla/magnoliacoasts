@@ -22,17 +22,57 @@ import {
 } from "../data/links";
 
 const mainMoments = [
-  { text: "Maternity", imgSrc: specialMoment1, href: MATERNITY_LINK, alt: "Pregnant Woman" },
-  { text: "Newborn", imgSrc: specialMoment2, href: NEWBORN_LINK, alt: "Baby in a sling" },
-  { text: "Family", imgSrc: specialMoment3, href: FAMILY_LINK, alt: "Family by the road" },
-  { text: "Cake Smashes", imgSrc: specialMoment4, href: CAKE_SMASH_LINK, alt: "Baby with birthday cake" },
+  {
+    text: "Maternity",
+    imgSrc: specialMoment1,
+    href: MATERNITY_LINK,
+    alt: "Pregnant Woman",
+  },
+  {
+    text: "Newborn",
+    imgSrc: specialMoment2,
+    href: NEWBORN_LINK,
+    alt: "Baby in a sling",
+  },
+  {
+    text: "Family",
+    imgSrc: specialMoment3,
+    href: FAMILY_LINK,
+    alt: "Family by the road",
+  },
+  {
+    text: "Cake Smashes",
+    imgSrc: specialMoment4,
+    href: CAKE_SMASH_LINK,
+    alt: "Baby with birthday cake",
+  },
 ];
 
 const otherMoments = [
-  { text: "Milestones", imgSrc: milestonesImg, href: MILESTONES_LINK, alt: "Baby looking at camera" },
-  { text: "Children", imgSrc: childrenImg, href: CHILDREN_LINK, alt: "Children on a swing" },
-  { text: "Branding", imgSrc: brandingImg, href: BRANDING_LINK, alt: "Woman in office" },
-  { text: "Headshots", imgSrc: headshotsImg, href: HEADSHOTS_LINK, alt: "Person laughing in chair" },
+  {
+    text: "Milestones",
+    imgSrc: milestonesImg,
+    href: MILESTONES_LINK,
+    alt: "Baby looking at camera",
+  },
+  {
+    text: "Children",
+    imgSrc: childrenImg,
+    href: CHILDREN_LINK,
+    alt: "Children on a swing",
+  },
+  {
+    text: "Branding",
+    imgSrc: brandingImg,
+    href: BRANDING_LINK,
+    alt: "Woman in office",
+  },
+  {
+    text: "Headshots",
+    imgSrc: headshotsImg,
+    href: HEADSHOTS_LINK,
+    alt: "Person laughing in chair",
+  },
 ];
 
 const allMoments = [...mainMoments, ...otherMoments];
@@ -40,7 +80,7 @@ const resolved = await Promise.all(
   allMoments.map(async (m) => ({
     ...m,
     src: (await getImage({ src: m.imgSrc, width: 600 })).src,
-  }))
+  })),
 );
 const mainResolved = resolved.slice(0, 4);
 const otherResolved = resolved.slice(4);
@@ -49,7 +89,7 @@ const otherResolved = resolved.slice(4);
 <section
   aria-label="Photo session types"
   id="special_moments"
-  class="font-cormorant-garamond py-6 md:py-16 px-4 grid w-full max-w-[1200px] grid-cols-2 gap-4 self-center md:grid-cols-4"
+  class="font-cormorant-garamond grid w-full max-w-[1200px] grid-cols-2 gap-4 self-center px-4 py-6 md:grid-cols-4 md:py-16"
 >
   <SectionTitle
     title="What special moments would you like to capture?"
@@ -61,18 +101,18 @@ const otherResolved = resolved.slice(4);
         href={moment.href}
         target="_blank"
         rel="noopener"
-        class="group relative w-full aspect-[3/4] overflow-hidden rounded-md shadow-card"
+        class="group shadow-card relative aspect-[3/4] w-full overflow-hidden rounded-md"
       >
         <img
           src={moment.src}
           width="300"
           height="400"
           alt={moment.alt}
-          class="absolute inset-0 w-full h-full object-cover"
+          class="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
-        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-2 py-4 opacity-100 md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100 flex items-end justify-center">
-          <span class="text-white text-base lg:text-xl font-semibold tracking-wide">
+        <div class="absolute inset-x-0 bottom-0 flex items-end justify-center bg-gradient-to-t from-black/70 via-black/30 to-transparent px-2 py-4 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
+          <span class="text-base font-semibold tracking-wide text-white lg:text-xl">
             {moment.text}
           </span>
         </div>
@@ -83,7 +123,7 @@ const otherResolved = resolved.slice(4);
 <section
   aria-label="Other photo session types"
   id="other_special_moments"
-  class="font-cormorant-garamond pb-6 md:pb-16 px-4 grid w-full max-w-[1200px] grid-cols-2 gap-4 self-center sm:grid-cols-4"
+  class="font-cormorant-garamond grid w-full max-w-[1200px] grid-cols-2 gap-4 self-center px-4 pb-6 sm:grid-cols-4 md:pb-16"
 >
   <SectionTitle
     title="Other types of photo sessions"
@@ -95,18 +135,18 @@ const otherResolved = resolved.slice(4);
         href={moment.href}
         target="_blank"
         rel="noopener"
-        class="group relative w-full aspect-[3/4] overflow-hidden rounded-md shadow-card"
+        class="group shadow-card relative aspect-[3/4] w-full overflow-hidden rounded-md"
       >
         <img
           src={moment.src}
           width="300"
           height="400"
           alt={moment.alt}
-          class="absolute inset-0 w-full h-full object-cover"
+          class="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
-        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-2 py-4 opacity-100 md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100 flex items-end justify-center">
-          <span class="text-white text-base lg:text-xl font-semibold tracking-wide">
+        <div class="absolute inset-x-0 bottom-0 flex items-end justify-center bg-gradient-to-t from-black/70 via-black/30 to-transparent px-2 py-4 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
+          <span class="text-base font-semibold tracking-wide text-white lg:text-xl">
             {moment.text}
           </span>
         </div>

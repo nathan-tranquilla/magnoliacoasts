@@ -9,7 +9,7 @@ const { segments, names, hrefs } = getPathInfo(Astro.url.pathname, BASE_URL);
   segments.length > 0 && (
     <nav
       aria-label="Breadcrumb"
-      class="font-cormorant-garamond w-full max-w-[1200px] self-center px-4 py-3 text-sm text-text/80 tracking-wide"
+      class="font-cormorant-garamond text-text/80 w-full max-w-[1200px] self-center px-4 py-3 text-sm tracking-wide"
     >
       <ol class="flex flex-wrap items-center gap-2">
         <li>
@@ -21,16 +21,15 @@ const { segments, names, hrefs } = getPathInfo(Astro.url.pathname, BASE_URL);
           const isLast = i === segments.length - 1;
           return (
             <li class="flex items-center gap-2">
-              <span aria-hidden="true" class="text-text/60 text-xs">&#x2726;</span>
+              <span aria-hidden="true" class="text-text/60 text-xs">
+                &#x2726;
+              </span>
               {isLast ? (
                 <span class="text-text font-medium" aria-current="page">
                   {names[i]}
                 </span>
               ) : (
-                <a
-                  href={hrefs[i]}
-                  class="hover:text-text transition-colors"
-                >
+                <a href={hrefs[i]} class="hover:text-text transition-colors">
                   {names[i]}
                 </a>
               )}
