@@ -39,7 +39,7 @@ const allMoments = [...mainMoments, ...otherMoments];
 const resolved = await Promise.all(
   allMoments.map(async (m) => ({
     ...m,
-    src: (await getImage({ src: m.imgSrc })).src,
+    src: (await getImage({ src: m.imgSrc, width: 600 })).src,
   }))
 );
 const mainResolved = resolved.slice(0, 4);
