@@ -27,10 +27,9 @@
 
 ## HIGH PRIORITY
 
-- [ ] **1. CLS 0.636 on desktop — Welcome section layout shift**
-  The Welcome section (`<section aria-label="Welcome">`) shifts 0.636 on desktop, the single largest CLS culprit.
-  Likely cause: the Stephanie portrait image loads after text is painted, pushing content around.
-  - **Action:** Reserve space for the Welcome section image with explicit dimensions and aspect-ratio. Ensure the layout doesn't reflow when the image loads.
+- [x] **1. CLS 0.636 on desktop — Welcome section layout shift**
+  Added explicit `width`/`height` (333×500) to both mobile and desktop portrait `<img>`, `aspect-ratio: 333/500` on the desktop container, and removed `loading="lazy"` on desktop (above the fold).
+  - **File:** `src/components/Welcome.astro`
 
 - [ ] **2. LCP 7.1–7.2 s — hero image delivery**
   The hero `<picture>` element serves a 7.0 MB `HeroImage.1800w.webp` on desktop. Mobile uses smaller breakpoints but is still slow. Estimated savings: 7,008 KiB (desktop), 49 KiB (mobile).
