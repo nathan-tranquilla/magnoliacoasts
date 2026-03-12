@@ -28,7 +28,7 @@ let testimonials = [
 
 let count = Array.length(testimonials)
 
-let cardClass = "card flex flex-col p-6 shadow-card rounded-md bg-white h-auto sm:min-h-[450px] min-h-[290px] max-w-[750px] grid grid-cols-10 grid-rows-[1rem_1rem_1rem_1fr] gap-2 sm:gap-4 font-cormorant-garamond text-sm sm:text-base md:text-lg border border-app-grey"
+let cardClass = "card flex flex-col shadow-card rounded-md bg-white h-auto sm:min-h-[450px] max-w-[750px] grid grid-cols-10 grid-rows-[auto_auto_auto_1fr] gap-x-2 sm:gap-4 font-cormorant-garamond text-sm sm:text-base md:text-lg overflow-hidden"
 
 let itemBase = "carousel-item row-start-1 col-start-1 duration-600 transition-all"
 let itemVisible = itemBase
@@ -49,7 +49,7 @@ let chevron = (~rotation) =>
     <path d="M9 18l6-6-6-6" />
   </svg>
 
-let dotBase = "m-4 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer transition-all"
+let dotBase = "mx-2 h-[0.75rem] w-[0.75rem] rounded-full border border-[#ACABAC] hover:scale-130 cursor-pointer transition-all"
 let dotInactive = dotBase ++ " bg-app-grey"
 let dotActive = dotBase ++ " scale-130 !bg-app-active-grey"
 
@@ -73,19 +73,19 @@ let make = (~images: array<string>) => {
           <div className={cardClass}>
             <div className="col-span-4 col-start-1 row-span-4 row-start-1 flex items-stretch justify-start">
               <img
-                className="h-full rounded-md object-cover object-center"
+                className="h-full w-full object-cover object-center"
                 src={imageSrc}
                 alt={t.imageAlt}
                 loading=#lazy
               />
             </div>
-            <div className="col-span-6 col-start-5 row-start-1 font-semibold whitespace-nowrap md:row-start-2">
+            <div className="col-span-6 col-start-5 row-start-1 font-semibold whitespace-nowrap pr-3 sm:pr-6 pt-3 sm:pt-6 md:row-start-2">
               {React.string(t.name)}
             </div>
-            <div className="col-span-6 col-start-5 row-start-2 font-light md:col-start-5 md:row-start-3">
+            <div className="col-span-6 col-start-5 row-start-2 font-light pr-3 sm:pr-6 md:row-start-3">
               {React.string(t.date)}
             </div>
-            <div className="row-span-full col-span-6 col-start-5 row-start-3 text-sm sm:text-base md:row-start-4">
+            <div className="row-span-full col-span-6 col-start-5 row-start-3 text-sm sm:text-base pr-3 sm:pr-6 pb-3 sm:pb-6 md:row-start-4">
               {React.string(t.text)}
             </div>
           </div>
@@ -93,7 +93,7 @@ let make = (~images: array<string>) => {
       })
       ->React.array}
     </div>
-    <div className="mt-8 flex w-full items-center justify-around">
+    <div className="mt-2 sm:mt-4 flex items-center justify-center gap-4">
       <button
         id="carousel-go-left"
         className={btnClass}
