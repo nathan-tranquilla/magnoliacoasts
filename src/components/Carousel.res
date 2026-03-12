@@ -15,13 +15,12 @@ let itemLeft = itemBase ++ " opacity-0 -translate-x-[50rem]"
 let itemRight = itemBase ++ " opacity-0 translate-x-[50rem]"
 
 @react.component
-let make = (~count: int, ~children: React.element) => {
+let make = (~count: int, ~containerId: string) => {
   let (index, setIndex) = React.useState(() => 0)
-  let containerRef = React.useRef(Nullable.null)
 
   React.useEffect1(() => {
-    containerRef.current
-    ->Nullable.toOption
+    document
+    ->Document.getElementById(containerId)
     ->Option.forEach(container => {
       container
       ->querySelectorAll(".carousel-item")
@@ -40,39 +39,31 @@ let make = (~count: int, ~children: React.element) => {
     None
   }, [index])
 
-  <div className="mx-4 flex max-w-dvw flex-col items-center justify-center md:mx-0">
-    <div
-      ref={ReactDOM.Ref.domRef(containerRef)}
-      className="grid grid-cols-1 overflow-hidden"
+  <div className="mt-8 flex w-full items-center justify-around">
+    <button
+      id="carousel-go-left"
+      className={buttonClass}
+      title="Previous Slide"
+      onClick={_ => setIndex(prev => max(0, prev - 1))}
     >
-      {children}
+      {React.string("<")}
+    </button>
+    <div className="flex items-center">
+      {Belt.Array.makeBy(count, i =>
+        <div
+          key={Int.toString(i)}
+          className={if i == index { dotActive } else { dotInactive }}
+          onClick={_ => setIndex(_ => i)}
+        />
+      )->React.array}
     </div>
-    <div className="mt-8 flex w-full items-center justify-around">
-      <button
-        id="carousel-go-left"
-        className={buttonClass}
-        title="Previous Slide"
-        onClick={_ => setIndex(prev => max(0, prev - 1))}
-      >
-        {React.string("<")}
-      </button>
-      <div className="flex items-center">
-        {Belt.Array.makeBy(count, i =>
-          <div
-            key={Int.toString(i)}
-            className={if i == index { dotActive } else { dotInactive }}
-            onClick={_ => setIndex(_ => i)}
-          />
-        )->React.array}
-      </div>
-      <button
-        id="carousel-go-right"
-        className={buttonClass}
-        title="Next Slide"
-        onClick={_ => setIndex(prev => min(count - 1, prev + 1))}
-      >
-        {React.string(">")}
-      </button>
-    </div>
+    <button
+      id="carousel-go-right"
+      className={buttonClass}
+      title="Next Slide"
+      onClick={_ => setIndex(prev => min(count - 1, prev + 1))}
+    >
+      {React.string(">")}
+    </button>
   </div>
 }
