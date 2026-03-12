@@ -31,11 +31,10 @@
   Added explicit `width`/`height` (333×500) to both mobile and desktop portrait `<img>`, `aspect-ratio: 333/500` on the desktop container, and removed `loading="lazy"` on desktop (above the fold).
   - **File:** `src/components/Welcome.astro`
 
-- [ ] **2. LCP 7.1–7.2 s — hero image delivery**
-  The hero `<picture>` element serves a 7.0 MB `HeroImage.1800w.webp` on desktop. Mobile uses smaller breakpoints but is still slow. Estimated savings: 7,008 KiB (desktop), 49 KiB (mobile).
-  - The `1800w` variant is 7.0 MB — far too large
-  - Mobile serves appropriately sized variants (414w–900w) but the desktop fallback is massive
-  - **Action:** Re-compress or re-export the 1800w hero image at much lower file size. Consider adding a 1200w breakpoint. Ensure AVIF sources are available alongside WebP.
+- [x] **2. LCP 7.1–7.2 s — hero image delivery**
+  Re-encoded all hero WebP variants with `cwebp` at proper dimensions (source was 6480×4629 stored as "1800w"). Added 1200w breakpoint. Updated `<img>` dimensions to match actual aspect ratio.
+  - 1800w: 7.0 MB → 105 KB | 1200w: new, 53 KB | 900w: 30 → 35 KB | 600w: 17 → 20 KB | 414w: 19 → 10 KB
+  - **Files:** `public/HeroImage.*.webp`, `src/components/HeroSection.astro`
 
 - [ ] **3. Image elements do not have explicit `width` and `height`**
   Missing dimensions prevent the browser from reserving layout space, contributing to CLS and slower rendering.

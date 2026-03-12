@@ -53,6 +53,11 @@ import ExternalLink from "./ExternalLink.astro";
           type="image/webp"
         />
         <source
+          srcset="/HeroImage.1200w.webp"
+          media="(max-width: 1200px)"
+          type="image/webp"
+        />
+        <source
           srcset="/HeroImage.1800w.webp"
           media="(max-width: 1800px)"
           type="image/webp"
@@ -61,7 +66,7 @@ import ExternalLink from "./ExternalLink.astro";
           src="/HeroImage.1800w.webp"
           alt="Newborn baby swaddled in pink surrounded by flowers — Magnolia Coasts Photography, Mississauga"
           width="1800"
-          height="861"
+          height="1286"
           class="md:object-cover md:w-full"
           fetchpriority="high"
         />
