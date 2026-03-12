@@ -4,7 +4,6 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import businessData from "../data/localBusinessProfile.json";
 
-import cormorantGaramondRegular from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.woff2";
 import cormorantGaramondLight from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.woff2";
 import cormorantGaramondLightItalic from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-LightItalic.woff2";
 
@@ -70,14 +69,7 @@ const webPageSchema = buildWebPageSchema(
     <meta name="description" content={description} />
     <meta name="author" content="Magnolia Coasts" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <!-- Preload only above-the-fold fonts -->
-    <link
-      rel="preload"
-      as="font"
-      type="font/woff2"
-      crossorigin
-      href={cormorantGaramondRegular}
-    />
+    <!-- Preload only LCP hero fonts (Light + Light Italic) -->
     <link
       rel="preload"
       as="font"

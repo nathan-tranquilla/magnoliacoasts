@@ -3,6 +3,12 @@
   "manifest": {
     "version": 1,
     "install": {
+      "brotli": {
+        "pkg-path": "python313Packages.brotli"
+      },
+      "fonttools": {
+        "pkg-path": "python313Packages.fonttools"
+      },
       "gh": {
         "pkg-path": "gh"
       },
@@ -29,6 +35,256 @@
     "options": {}
   },
   "packages": [
+    {
+      "attr_path": "python313Packages.brotli",
+      "broken": false,
+      "derivation": "/nix/store/4gdh4q2rwq1i2jjdbc8rawxscn6qlqp0-python3.13-brotli-1.1.0.drv",
+      "description": "Generic-purpose lossless compression algorithm",
+      "install_id": "brotli",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "python3.13-brotli-1.1.0",
+      "pname": "brotli",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T03:41:42.818790Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.0",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/6zl160blhphj31ks0c9xvqc6fnkf6v2b-python3.13-brotli-1.1.0-dist",
+        "out": "/nix/store/29b2dqvq4v38j062xwcy7781k13832qg-python3.13-brotli-1.1.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python313Packages.brotli",
+      "broken": false,
+      "derivation": "/nix/store/y632lcqfpxdhf72gg1p5b7xqkqi873h8-python3.13-brotli-1.1.0.drv",
+      "description": "Generic-purpose lossless compression algorithm",
+      "install_id": "brotli",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "python3.13-brotli-1.1.0",
+      "pname": "brotli",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T03:53:49.505626Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.0",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/nvxya7f0fy69vawiamxkl7g74085kprz-python3.13-brotli-1.1.0-dist",
+        "out": "/nix/store/sxws1m4fn30gspz2bb5w4hxq50rvbzna-python3.13-brotli-1.1.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python313Packages.brotli",
+      "broken": false,
+      "derivation": "/nix/store/72jc14g5r0apq3brh28yjli53jlzl1sp-python3.13-brotli-1.1.0.drv",
+      "description": "Generic-purpose lossless compression algorithm",
+      "install_id": "brotli",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "python3.13-brotli-1.1.0",
+      "pname": "brotli",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T04:23:08.895049Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.0",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/f1klp1j56rmjjnhd602grmb9hbawwnan-python3.13-brotli-1.1.0-dist",
+        "out": "/nix/store/s51xl1lsbcq8barf5b8jbg3x1ka46v3k-python3.13-brotli-1.1.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python313Packages.brotli",
+      "broken": false,
+      "derivation": "/nix/store/f79vz5nilw1vw0xm2p9zfl62nyy1r9hs-python3.13-brotli-1.1.0.drv",
+      "description": "Generic-purpose lossless compression algorithm",
+      "install_id": "brotli",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "python3.13-brotli-1.1.0",
+      "pname": "brotli",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T04:56:02.352389Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.0",
+      "outputs_to_install": [
+        "out",
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/vl283gc8nqbbb3fgmk0rpqxpjlq83wc8-python3.13-brotli-1.1.0-dist",
+        "out": "/nix/store/1lgbr9j9ymggrnqji8lj9kn9d8q0zmk1-python3.13-brotli-1.1.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python313Packages.fonttools",
+      "broken": false,
+      "derivation": "/nix/store/fzpgn906084dvn7g68mjv9fwj7xkrr89-python3.13-fonttools-4.59.0.drv",
+      "description": "Library to manipulate font files from Python",
+      "install_id": "fonttools",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "python3.13-fonttools-4.59.0",
+      "pname": "fonttools",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T03:41:46.378250Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.59.0",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/n16dbss3j5d8nyh61hvj8s7kbm9fn29j-python3.13-fonttools-4.59.0-dist",
+        "out": "/nix/store/ky47bi9ippx77x9cgri17a5vxgaaih81-python3.13-fonttools-4.59.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python313Packages.fonttools",
+      "broken": false,
+      "derivation": "/nix/store/a9i4wj5ybbvm8svvbj9k18d55yami5v2-python3.13-fonttools-4.59.0.drv",
+      "description": "Library to manipulate font files from Python",
+      "install_id": "fonttools",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "python3.13-fonttools-4.59.0",
+      "pname": "fonttools",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T03:53:53.887100Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.59.0",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/0kdygb406n2jw5mx5gs8bmr1y38xpnvv-python3.13-fonttools-4.59.0-dist",
+        "out": "/nix/store/mz5p7l4sdb4hp6m4yxj8d79dr3xxa8rq-python3.13-fonttools-4.59.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python313Packages.fonttools",
+      "broken": false,
+      "derivation": "/nix/store/i0wsrz0bkylc1zbd8p493cmd5f4zlwzq-python3.13-fonttools-4.59.0.drv",
+      "description": "Library to manipulate font files from Python",
+      "install_id": "fonttools",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "python3.13-fonttools-4.59.0",
+      "pname": "fonttools",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T04:23:12.847166Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.59.0",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/y9zciclv23rhip03zzw6r7mw0y7nza5k-python3.13-fonttools-4.59.0-dist",
+        "out": "/nix/store/mxx84f5k0r5f8ncvdxhzyi696c1nd223-python3.13-fonttools-4.59.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python313Packages.fonttools",
+      "broken": false,
+      "derivation": "/nix/store/2byjacm2spdrb9az1adfl89q6mlgzmq3-python3.13-fonttools-4.59.0.drv",
+      "description": "Library to manipulate font files from Python",
+      "install_id": "fonttools",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "name": "python3.13-fonttools-4.59.0",
+      "pname": "fonttools",
+      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
+      "rev_count": 856926,
+      "rev_date": "2025-09-05T10:37:24Z",
+      "scrape_date": "2025-09-08T04:56:07.160976Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "4.59.0",
+      "outputs_to_install": [
+        "out",
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/5g6wlnv6z77l5x8dndz6f5w5fllyxy37-python3.13-fonttools-4.59.0-dist",
+        "out": "/nix/store/4760xag0swjjjsq1rbd4vya9mj6ig940-python3.13-fonttools-4.59.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
     {
       "attr_path": "gh",
       "broken": false,

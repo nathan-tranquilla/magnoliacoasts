@@ -21,6 +21,8 @@ google-chrome.pkg-path = "google-chrome"
 google-chrome.systems = ["aarch64-darwin", "x86_64-darwin", "x86_64-linux"]
 gh.pkg-path = "gh"
 woff2.pkg-path = "woff2"
+fonttools.pkg-path = "python313Packages.fonttools"
+brotli.pkg-path = "python313Packages.brotli"
 
 
 ## Environment Variables ---------------------------------------------
