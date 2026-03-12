@@ -15,10 +15,8 @@
   Unified with gallery cards — same overlay style. Always visible on mobile, fade-in on hover for desktop.
   - **File:** `src/components/InvestmentCard.astro`
 
-- [ ] **4. Investment detail cards — price/Inquire row feels cramped**
-  The price and Inquire button at the bottom are squeezed together. The button is small and easy to miss.
-  - Give the price + CTA section more breathing room (larger padding top)
-  - Make the Inquire button full-width or at least more prominent
+- [x] **4. Investment detail cards — price/Inquire row feels cramped**
+  Stacked price and button vertically with a top border separator. Full-width Inquire button with larger text.
   - **Files:** `src/components/StandardInvestment.astro`, `src/components/CollectionsInvestment.astro`
 
 - [ ] **5. Section spacing is uneven across the homepage**

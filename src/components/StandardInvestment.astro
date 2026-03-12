@@ -34,15 +34,14 @@ let { title, details, price, priceRange, cardStyle, productLink } = Astro.props;
         ))
     }
   </ul>
-  <div class="mt-auto flex h-[62px] items-center justify-between pl-2">
-    <div class="font-cormorant-garamond class text-xl font-bold">
+  <div class="mt-auto flex flex-col gap-3 border-t border-[#D7D7D7] pt-4">
+    <div class="font-cormorant-garamond text-xl font-bold text-center">
       ${price || priceRange} + Tax
     </div>
-
-    <Button color="Pink" classes="w-4/10 h-3/4">
+    <Button color="Pink" classes="w-full max-w-full py-3">
       <ExternalLink
         href={productLink}
-        class="font-cormorant-garamond flex h-full w-full items-center justify-center"
+        class="font-cormorant-garamond flex h-full w-full items-center justify-center text-lg"
         >Inquire</ExternalLink
       >
     </Button>

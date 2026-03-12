@@ -68,18 +68,18 @@ let _load =
     ))
   }
   <div
-    class={`mt-auto flex justify-between items-center h-[62px] ${spanAllCols}`}
+    class={`mt-auto flex flex-col gap-3 border-t border-[#D7D7D7] pt-4 ${spanAllCols}`}
   >
     <div
-      class="font-cormorant-garamond class flex flex-col items-start pl-2 text-xl font-bold"
+      class="font-cormorant-garamond flex flex-col items-center text-xl font-bold"
     >
       ${price} + Tax
       {priceDetails.map((detail) => <span class="font-light">{detail}</span>)}
     </div>
-    <Button color="Pink" classes="max-w-[150px] w-4/10 h-3/4 ">
+    <Button color="Pink" classes="w-full max-w-full py-3">
       <ExternalLink
         href={productLink}
-        class="font-cormorant-garamond flex w-full items-center justify-center"
+        class="font-cormorant-garamond flex w-full items-center justify-center text-lg"
         >Inquire</ExternalLink
       >
     </Button>
