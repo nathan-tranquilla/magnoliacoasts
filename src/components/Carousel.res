@@ -50,9 +50,9 @@ let chevron = (~rotation) =>
     <polyline points="22 6 28 12 22 18" />
   </svg>
 
-let dotBase = "mx-2 h-[0.75rem] w-[0.75rem] rounded-full border border-border-mid hover:scale-130 cursor-pointer transition-all"
-let dotInactive = dotBase ++ " bg-app-grey"
-let dotActive = dotBase ++ " scale-130 !bg-app-active-grey"
+let dotBase = "mx-2 h-[0.75rem] w-[0.75rem] rotate-45 rounded-[2px] border hover:scale-130 cursor-pointer transition-all"
+let dotInactive = dotBase ++ " border-border-warm bg-light-pink"
+let dotActive = dotBase ++ " scale-130 border-pink-border bg-pink"
 
 @react.component
 let make = (~images: array<string>) => {

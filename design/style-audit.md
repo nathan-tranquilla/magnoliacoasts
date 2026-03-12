@@ -54,10 +54,8 @@
 - [ ] **11. Gallery grid visual rhythm**
   The masonry layout aspect ratio logic (every 3rd/4th image landscape) creates some awkward combinations depending on image count.
 
-- [ ] **12. Testimonial carousel dots are generic**
-  Small gray/active-gray dots are visually disconnected from the warm palette.
-  - Change active dot to `bg-pink` instead of `bg-app-active-grey`
-  - Consider using the diamond symbol from the hero divider instead of circles
+- [x] **12. Testimonial carousel dots are generic**
+  Replaced circles with rotated squares (`rotate-45 rounded-[2px]`) for a diamond/gem effect. Colors updated to warm palette: inactive `bg-light-pink`/`border-border-warm`, active `bg-pink`/`border-pink-border`.
   - **File:** `src/components/Carousel.res`
 
 - [ ] **13. SectionHeader uses `text-nowrap`**
