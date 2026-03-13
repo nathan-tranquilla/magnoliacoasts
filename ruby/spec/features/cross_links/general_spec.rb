@@ -92,7 +92,48 @@ links = [
     origin: "/investment/headshot",
     dest: "/gallery/headshots",
     text: "View Headshot Gallery",
-  }
+  },
+  # Homepage Special Moments → Gallery cross-links
+  {
+    origin: "/",
+    dest: "/gallery/maternity",
+    text: "Maternity",
+  },
+  {
+    origin: "/",
+    dest: "/gallery/newborn",
+    text: "Newborn",
+  },
+  {
+    origin: "/",
+    dest: "/gallery/family",
+    text: "Family",
+  },
+  {
+    origin: "/",
+    dest: "/gallery/cakesmash",
+    text: "Cake Smashes",
+  },
+  {
+    origin: "/",
+    dest: "/gallery/milestones",
+    text: "Milestones",
+  },
+  {
+    origin: "/",
+    dest: "/gallery/children",
+    text: "Children",
+  },
+  {
+    origin: "/",
+    dest: "/gallery/branding",
+    text: "Branding",
+  },
+  {
+    origin: "/",
+    dest: "/gallery/headshots",
+    text: "Headshots",
+  },
 ]
 
 [:cuprite, :cuprite_mobile].each do |driver|

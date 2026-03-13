@@ -9,6 +9,7 @@ import SiblingPackageNav, {
 } from "../components/SiblingPackageNav.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import { buildImageGallerySchema } from "../utils/structuredData.res.mjs";
+import { make as FloatingCta } from "../components/FloatingCta.res.mjs";
 
 export enum GalleryType {
   Maternity = "maternity",
@@ -212,4 +213,13 @@ let getDimensions = (i: number, galleryType: GalleryType, total: number) => {
       })
     }
   </section>
+  {
+    galleryIntro[galleryType].cta && (
+      <FloatingCta
+        client:idle
+        href={galleryIntro[galleryType].cta![1]}
+        label={galleryIntro[galleryType].cta![0]}
+      />
+    )
+  }
 </Main>

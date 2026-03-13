@@ -10,40 +10,30 @@ import brandingImg from "../assets/gallery_index/womanInOffice.png";
 import headshotsImg from "../assets/gallery_index/laughingInChair.png";
 
 import SectionTitle from "./SectionTitle.astro";
-import {
-  BRANDING_LINK,
-  CAKE_SMASH_LINK,
-  CHILDREN_LINK,
-  FAMILY_LINK,
-  HEADSHOTS_LINK,
-  MATERNITY_LINK,
-  MILESTONES_LINK,
-  NEWBORN_LINK,
-} from "../data/links";
 
 const mainMoments = [
   {
     text: "Maternity",
     imgSrc: specialMoment1,
-    href: MATERNITY_LINK,
+    href: "/gallery/maternity",
     alt: "Pregnant Woman",
   },
   {
     text: "Newborn",
     imgSrc: specialMoment2,
-    href: NEWBORN_LINK,
+    href: "/gallery/newborn",
     alt: "Baby in a sling",
   },
   {
     text: "Family",
     imgSrc: specialMoment3,
-    href: FAMILY_LINK,
+    href: "/gallery/family",
     alt: "Family by the road",
   },
   {
     text: "Cake Smashes",
     imgSrc: specialMoment4,
-    href: CAKE_SMASH_LINK,
+    href: "/gallery/cakesmash",
     alt: "Baby with birthday cake",
   },
 ];
@@ -52,25 +42,25 @@ const otherMoments = [
   {
     text: "Milestones",
     imgSrc: milestonesImg,
-    href: MILESTONES_LINK,
+    href: "/gallery/milestones",
     alt: "Baby looking at camera",
   },
   {
     text: "Children",
     imgSrc: childrenImg,
-    href: CHILDREN_LINK,
+    href: "/gallery/children",
     alt: "Children on a swing",
   },
   {
     text: "Branding",
     imgSrc: brandingImg,
-    href: BRANDING_LINK,
+    href: "/gallery/branding",
     alt: "Woman in office",
   },
   {
     text: "Headshots",
     imgSrc: headshotsImg,
-    href: HEADSHOTS_LINK,
+    href: "/gallery/headshots",
     alt: "Person laughing in chair",
   },
 ];
@@ -93,8 +83,6 @@ const otherResolved = allMoments.slice(4);
     mainResolved.map((moment) => (
       <a
         href={moment.href}
-        target="_blank"
-        rel="noopener"
         class="group shadow-card relative aspect-[3/4] w-full overflow-hidden rounded-md"
       >
         <Image
@@ -127,8 +115,6 @@ const otherResolved = allMoments.slice(4);
     otherResolved.map((moment) => (
       <a
         href={moment.href}
-        target="_blank"
-        rel="noopener"
         class="group shadow-card relative aspect-[3/4] w-full overflow-hidden rounded-md"
       >
         <Image
