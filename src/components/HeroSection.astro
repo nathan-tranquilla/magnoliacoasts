@@ -40,28 +40,33 @@ import ExternalLink from "./ExternalLink.astro";
     <div class="flex w-full max-w-[1800px] items-center justify-center">
       <picture>
         <source
-          srcset="/HeroImage.414w.webp"
+          srcset="/HeroImage.414w.webp 414w, /HeroImage.900w.webp 900w, /HeroImage.1200w.webp 1200w"
           media="(max-width: 414px)"
+          sizes="414px"
           type="image/webp"
         />
         <source
-          srcset="/HeroImage.600w.webp"
+          srcset="/HeroImage.600w.webp 600w, /HeroImage.1200w.webp 1200w, /HeroImage.1800w.webp 1800w"
           media="(max-width: 600px)"
+          sizes="600px"
           type="image/webp"
         />
         <source
-          srcset="/HeroImage.900w.webp"
+          srcset="/HeroImage.900w.webp 900w, /HeroImage.1800w.webp 1800w"
           media="(max-width: 900px)"
+          sizes="900px"
           type="image/webp"
         />
         <source
-          srcset="/HeroImage.1200w.webp"
+          srcset="/HeroImage.1200w.webp 1200w, /HeroImage.1800w.webp 1800w"
           media="(max-width: 1200px)"
+          sizes="1200px"
           type="image/webp"
         />
         <source
-          srcset="/HeroImage.1800w.webp"
+          srcset="/HeroImage.1800w.webp 1800w"
           media="(max-width: 1800px)"
+          sizes="1800px"
           type="image/webp"
         />
         <img
