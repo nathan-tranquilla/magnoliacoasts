@@ -10,48 +10,6 @@ links = [
   },
   {
     origin: "/",
-    external_link: Constants::MATERNITY_LINK,
-    text: "Maternity",
-    within: "#special_moments"
-  },
-  {
-    origin: "/",
-    external_link: Constants::NEWBORN_LINK,
-    text: "Newborn",
-    within: "#special_moments"
-  },
-  {
-    origin: "/",
-    external_link: Constants::MILESTONES_LINK,
-    text: "Milestones",
-    within: "#other_special_moments"
-  },
-  {
-    origin: "/",
-    external_link: Constants::FAMILY_LINK,
-    text: "Family",
-    within: "#special_moments"
-  },
-  {
-    origin: "/",
-    external_link: Constants::BRANDING_LINK,
-    text: "Branding",
-    within: "#other_special_moments"
-  },
-  {
-    origin: "/",
-    external_link: Constants::HEADSHOTS_LINK,
-    text: "Headshots",
-    within: "#other_special_moments"
-  },
-  {
-    origin: "/",
-    external_link: Constants::CHILDREN_LINK,
-    text: "Children",
-    within: "#other_special_moments"
-  },
-  {
-    origin: "/",
     text: "Subscribe",
     external_link: Constants::SUBSCRIBE_LINK,
     within: 'main'

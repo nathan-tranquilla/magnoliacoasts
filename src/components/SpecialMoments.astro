@@ -7,18 +7,8 @@ import specialMoment4 from "../assets/special_moments/cake_smash.jpg";
 import SpecialMoment from "./SpecialMoment.astro";
 import Button from "./Button.astro";
 import SectionTitle from "./SectionTitle.astro";
-import {
-  BRANDING_LINK,
-  CAKE_SMASH_LINK,
-  CHILDREN_LINK,
-  FAMILY_LINK,
-  HEADSHOTS_LINK,
-  MATERNITY_LINK,
-  MILESTONES_LINK,
-  NEWBORN_LINK,
-} from "../data/links";
+import { BASE_URL } from "../data/links";
 import { Image } from "astro:assets";
-import ExternalLink from "./ExternalLink.astro";
 ---
 
 <div
@@ -29,7 +19,7 @@ import ExternalLink from "./ExternalLink.astro";
     title="What special moments would you like to capture?"
     classStyles="col-span-full"
   />
-  <SpecialMoment link={MATERNITY_LINK} buttonText="Maternity">
+  <SpecialMoment link={`${BASE_URL}/gallery/maternity`} buttonText="Maternity">
     <div class="flex h-auto items-stretch">
       <Image
         class="h-full object-cover object-center"
@@ -39,7 +29,7 @@ import ExternalLink from "./ExternalLink.astro";
       />
     </div>
   </SpecialMoment>
-  <SpecialMoment link={NEWBORN_LINK} buttonText="Newborn">
+  <SpecialMoment link={`${BASE_URL}/gallery/newborn`} buttonText="Newborn">
     <div class="flex h-auto items-stretch">
       <Image
         class="h-full object-cover object-center"
@@ -49,7 +39,7 @@ import ExternalLink from "./ExternalLink.astro";
       />
     </div>
   </SpecialMoment>
-  <SpecialMoment link={FAMILY_LINK} buttonText="Family">
+  <SpecialMoment link={`${BASE_URL}/gallery/family`} buttonText="Family">
     <div class="flex h-auto items-stretch">
       <Image
         class="h-full object-cover object-center"
@@ -59,7 +49,7 @@ import ExternalLink from "./ExternalLink.astro";
       />
     </div>
   </SpecialMoment>
-  <SpecialMoment link={CAKE_SMASH_LINK} buttonText="Cake Smashes">
+  <SpecialMoment link={`${BASE_URL}/gallery/cakesmash`} buttonText="Cake Smashes">
     <div class="flex h-auto items-stretch">
       <Image
         class="h-full object-cover object-center"
@@ -80,30 +70,30 @@ import ExternalLink from "./ExternalLink.astro";
   />
 
   <Button data_id="special-moment-milestones" color="Mint" classes="mx-auto">
-    <ExternalLink
+    <a
       class="flex h-full w-full items-center justify-center"
-      href={MILESTONES_LINK}>Milestones</ExternalLink
+      href={`${BASE_URL}/gallery/milestones`}>Milestones</a
     >
   </Button>
 
   <Button data_id="special-moment-children" color="Mint" classes="mx-auto">
-    <ExternalLink
+    <a
       class="flex h-full w-full items-center justify-center"
-      href={CHILDREN_LINK}>Children</ExternalLink
+      href={`${BASE_URL}/gallery/children`}>Children</a
     >
   </Button>
 
   <Button data_id="special-moment-branding" color="Mint" classes="mx-auto">
-    <ExternalLink
+    <a
       class="flex h-full w-full items-center justify-center"
-      href={BRANDING_LINK}>Branding</ExternalLink
+      href={`${BASE_URL}/gallery/branding`}>Branding</a
     >
   </Button>
 
   <Button data_id="special-moment-headshots" color="Mint" classes="mx-auto">
-    <ExternalLink
+    <a
       class="flex h-full w-full items-center justify-center"
-      href={HEADSHOTS_LINK}>Headshots</ExternalLink
+      href={`${BASE_URL}/gallery/headshots`}>Headshots</a
     >
   </Button>
 </div>

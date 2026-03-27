@@ -46,6 +46,17 @@ export interface Props {
 }
 const { metaTitle, title, description, galleryType, images } = Astro.props;
 
+const galleryTypeToInvestment: Record<GalleryType, [string, string]> = {
+  [GalleryType.Maternity]: ["View Maternity Packages", `${BASE_URL}/investment/maternity`],
+  [GalleryType.Newborn]: ["View Newborn Packages", `${BASE_URL}/investment/newborn`],
+  [GalleryType.Milestone]: ["View Milestone Packages", `${BASE_URL}/investment/milestone`],
+  [GalleryType.CakeSmash]: ["View Milestone Packages", `${BASE_URL}/investment/milestone`],
+  [GalleryType.Family]: ["View Family Packages", `${BASE_URL}/investment/family`],
+  [GalleryType.Children]: ["View Family Packages", `${BASE_URL}/investment/family`],
+  [GalleryType.Headshots]: ["View Headshot Packages", `${BASE_URL}/investment/headshot`],
+  [GalleryType.Branding]: ["View Headshot Packages", `${BASE_URL}/investment/headshot`],
+};
+const investmentLink = galleryTypeToInvestment[galleryType];
 
 let galleries = Object.values(galleryTypeToTuple);
 const pkg = galleryTypeToTuple[galleryType];
@@ -103,8 +114,10 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
     />
   </div>
   {description && (
-    <p class="px-4 text-center text-lg text-black lg:max-w-[1200px] self-center">
-      {description}
+    <p class="px-4 mb-8 text-left text-lg text-black lg:max-w-[1200px] self-center">
+      {description}{investmentLink && (
+        <>{" "}<a href={investmentLink[1]} class="underline hover:opacity-80">{investmentLink[0]}</a></>
+      )}
     </p>
   )}
 <div
