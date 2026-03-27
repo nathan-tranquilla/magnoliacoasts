@@ -1,6 +1,8 @@
 ---
 import { INQUIRE_LINK } from "../data/links";
 import ExternalLink from "./ExternalLink.astro";
+import { Image } from "astro:assets";
+import heroImage from "../assets/HeroImage.jpg";
 ---
 
 <style>
@@ -38,36 +40,15 @@ import ExternalLink from "./ExternalLink.astro";
     class="relative flex w-full justify-center overflow-hidden md:max-h-[85vh]"
   >
     <div class="flex w-full max-w-[1800px] items-center justify-center">
-      <picture>
-        <source
-          srcset="/HeroImage.414w.webp"
-          media="(max-width: 414px)"
-          type="image/webp"
-        />
-        <source
-          srcset="/HeroImage.600w.webp"
-          media="(max-width: 600px)"
-          type="image/webp"
-        />
-        <source
-          srcset="/HeroImage.900w.webp"
-          media="(max-width: 900px)"
-          type="image/webp"
-        />
-        <source
-          srcset="/HeroImage.1800w.webp"
-          media="(max-width: 1800px)"
-          type="image/webp"
-        />
-        <img
-          src="/HeroImage.1800w.webp"
-          alt="Newborn baby swaddled in pink surrounded by flowers — Magnolia Coasts Photography, Mississauga"
-          width="1800"
-          height="861"
-          class="md:w-full md:object-cover"
-          fetchpriority="high"
-        />
-      </picture>
+      <Image
+        src={heroImage}
+        alt="Newborn baby swaddled in pink surrounded by flowers — Magnolia Coasts Photography, Mississauga"
+        widths={[414, 600, 900, 1200, 1800]}
+        sizes="100vw"
+        class="md:w-full md:object-cover"
+        loading="eager"
+        quality={95}
+      />
     </div>
     <!-- Desktop overlay -->
     <div

@@ -64,14 +64,6 @@ const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
       href={cormorantGaramondLightItalic}
     />
 
-    <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
-    <link
-      rel="preload"
-      fetchpriority="high"
-      as="image"
-      href="/HeroImage.414w.webp"
-      type="image/webp"
-    />
     <link
       rel="preload"
       fetchpriority="high"
