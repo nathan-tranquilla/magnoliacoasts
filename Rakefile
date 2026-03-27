@@ -189,33 +189,9 @@ task :dev, [:flags] => ['node_modules', :res_build, :dl_galleries] do |t, args|
   puts "Astro dev exited successfully."
 end
 
-desc "Run Lighthouse CI audit against the dev server"
-task :lighthouse => [:kill_dev] do
-  pid = spawn("rake dev['--silent']")
-  puts "Started dev server with PID #{pid}"
-
-  require 'net/http'
-  60.times do
-    begin
-      Net::HTTP.get(URI("http://localhost:4321"))
-      puts "Dev server is ready."
-      break
-    rescue Errno::ECONNREFUSED, Errno::EADDRNOTAVAIL, SocketError
-      sleep 1
-    end
-  end
-
-  begin
-    sh "npx lhci autorun"
-  ensure
-    begin
-      Process.kill("TERM", pid)
-      puts "Killed dev server with PID #{pid}"
-    rescue Exception => e
-      puts "Could not kill dev server: #{e.message}"
-    end
-    sh "rake kill_dev"
-  end
+desc "Run Lighthouse CI audit against the live site"
+task :lighthouse do
+  sh "npx lhci autorun"
 end
 
 desc "Run unit tests"
