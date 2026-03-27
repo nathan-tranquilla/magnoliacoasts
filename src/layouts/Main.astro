@@ -7,13 +7,6 @@ import businessData from "../data/localBusinessProfile.json";
 import cormorantGaramondLight from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.woff2";
 import cormorantGaramondLightItalic from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-LightItalic.woff2";
 
-import { getImage } from "astro:assets";
-import WelcomeBackground from "../assets/WelcomeBackground.webp";
-const optimizedBackground = await getImage({
-  src: WelcomeBackground,
-  format: "avif",
-});
-
 import logo from "../assets/Logo.png";
 import appleIcon from "../assets/AppleIcon.png";
 import Banner from "../components/Banner.astro";
@@ -62,14 +55,6 @@ const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
       type="font/woff2"
       crossorigin
       href={cormorantGaramondLightItalic}
-    />
-
-    <link
-      rel="preload"
-      fetchpriority="high"
-      as="image"
-      href={optimizedBackground.src}
-      type="image/avif"
     />
 
     <link rel="icon" href={`${logo.src}`} type="image/png" />
