@@ -31,4 +31,4 @@ detailsCollection:
       - in studio or park
 ---
 
-![Baby In Crib](../../assets/babyInCrib.jpg)
+![Baby In Crib](../../assets/babyInCrib.webp)

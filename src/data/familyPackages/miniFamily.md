@@ -8,4 +8,4 @@ details:
   - ""
 ---
 
-![Mini Family Session](../../assets/seasons.jpg)
+![Mini Family Session](../../assets/seasons.webp)

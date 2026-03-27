@@ -14,4 +14,4 @@ details:
 price: 450
 ---
 
-![Mini Newborn.](../../assets/miniNewborn.png)
+![Mini Newborn.](../../assets/miniNewborn.webp)

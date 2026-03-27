@@ -15,4 +15,4 @@ details:
 price: 400
 ---
 
-![Tummy Session](../../assets/tummyMilestone.png)
+![Tummy Session](../../assets/tummyMilestone.webp)

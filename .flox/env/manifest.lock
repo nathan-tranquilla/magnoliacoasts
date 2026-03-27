@@ -14,6 +14,9 @@
           "x86_64-linux"
         ]
       },
+      "libwebp": {
+        "pkg-path": "libwebp"
+      },
       "nodejs": {
         "pkg-path": "nodejs"
       },
@@ -29,27 +32,27 @@
     {
       "attr_path": "gh",
       "broken": false,
-      "derivation": "/nix/store/8arnv07dwynjhi3sc4ifbxc761yqqjd2-gh-2.78.0.drv",
+      "derivation": "/nix/store/llazyj6bs6bid3cnpi71pc3lckgxfxxr-gh-2.88.1.drv",
       "description": "GitHub CLI tool",
       "install_id": "gh",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "gh-2.78.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "gh-2.88.1",
       "pname": "gh",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T03:40:12.547452Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T03:38:24.320443Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "2.78.0",
+      "version": "2.88.1",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/886src1jhm94xdrllnzz0aww9qmfc50l-gh-2.78.0"
+        "out": "/nix/store/mkjsxxbz3pkics0xnly7p8iqgr2awfgw-gh-2.88.1"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -58,27 +61,27 @@
     {
       "attr_path": "gh",
       "broken": false,
-      "derivation": "/nix/store/j383h2gq5kwqrdxjp17xihy3s5shsr63-gh-2.78.0.drv",
+      "derivation": "/nix/store/d3ax8v6hzfk802cssrl96v9g5h8fg938-gh-2.88.1.drv",
       "description": "GitHub CLI tool",
       "install_id": "gh",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "gh-2.78.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "gh-2.88.1",
       "pname": "gh",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T03:52:22.426057Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T04:13:48.343384Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "2.78.0",
+      "version": "2.88.1",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/fj5v9hzpzr9jvcpb4d1zqlsacll9n2mp-gh-2.78.0"
+        "out": "/nix/store/1r8rp0324hmmim4p9lryhq6ck5s0z9h3-gh-2.88.1"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -87,27 +90,27 @@
     {
       "attr_path": "gh",
       "broken": false,
-      "derivation": "/nix/store/j2j15dll0pg12qghz43kikds95hkq7rk-gh-2.78.0.drv",
+      "derivation": "/nix/store/cwxcsh7j200d0v3bxlnxspd73ijr9xnb-gh-2.88.1.drv",
       "description": "GitHub CLI tool",
       "install_id": "gh",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "gh-2.78.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "gh-2.88.1",
       "pname": "gh",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T04:22:02.435164Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T04:46:27.199397Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "2.78.0",
+      "version": "2.88.1",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/sfpszlvhvlh9alfjfdv4dn5acjalihnl-gh-2.78.0"
+        "out": "/nix/store/5p7zchbbsws3d57mifs4h28fpb6jm2iv-gh-2.88.1"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
@@ -116,27 +119,27 @@
     {
       "attr_path": "gh",
       "broken": false,
-      "derivation": "/nix/store/bknn8xxqbaiplbzg0mjnmghbg5fvsm87-gh-2.78.0.drv",
+      "derivation": "/nix/store/lay9a9zipkcs25m8p260gn5k18jwkg3j-gh-2.88.1.drv",
       "description": "GitHub CLI tool",
       "install_id": "gh",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "gh-2.78.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "gh-2.88.1",
       "pname": "gh",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T04:54:31.033566Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T05:24:56.346756Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "2.78.0",
+      "version": "2.88.1",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/2dpvjfrvc4h2b67ji259xrja5ggh4f17-gh-2.78.0"
+        "out": "/nix/store/sgwlyr2d03y1jgzh2iph82yrg8wwvn2f-gh-2.88.1"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -145,27 +148,27 @@
     {
       "attr_path": "google-chrome",
       "broken": false,
-      "derivation": "/nix/store/lisf0wqzgjbkrjx6z7wi0rcp8aqma4n7-google-chrome-140.0.7339.81.drv",
+      "derivation": "/nix/store/dny3j9xphlfl6q407nm58cmlsh60qnz7-google-chrome-146.0.7680.154.drv",
       "description": "Freeware web browser developed by Google",
       "install_id": "google-chrome",
       "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "google-chrome-140.0.7339.81",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "google-chrome-146.0.7680.154",
       "pname": "google-chrome",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T03:40:12.759895Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T03:38:24.567027Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": true,
-      "version": "140.0.7339.81",
+      "version": "146.0.7680.154",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/pi8qbnhs6svq0sxcykszjynxwl1bmw21-google-chrome-140.0.7339.81"
+        "out": "/nix/store/c1q13xdm35v1xlcs8dw6b4sg6rxm5hd5-google-chrome-146.0.7680.154"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -174,27 +177,27 @@
     {
       "attr_path": "google-chrome",
       "broken": false,
-      "derivation": "/nix/store/irqldrbf8mri7d4ckp3mf9yhddcvi6bv-google-chrome-140.0.7339.81.drv",
+      "derivation": "/nix/store/q7d3627y2ng75imnv055036qxs7px0wr-google-chrome-146.0.7680.154.drv",
       "description": "Freeware web browser developed by Google",
       "install_id": "google-chrome",
       "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "google-chrome-140.0.7339.81",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "google-chrome-146.0.7680.154",
       "pname": "google-chrome",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T04:22:02.684433Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T04:46:27.475164Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": true,
-      "version": "140.0.7339.81",
+      "version": "146.0.7680.154",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/4ahvqgy0m0z76j0cl4vq70ck512l9cak-google-chrome-140.0.7339.81"
+        "out": "/nix/store/jq4393py178s35pf1f3hylchkda6fjif-google-chrome-146.0.7680.154"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
@@ -203,27 +206,145 @@
     {
       "attr_path": "google-chrome",
       "broken": false,
-      "derivation": "/nix/store/nfc50fwil17g9gi53h1p2h0zpkjgpril-google-chrome-140.0.7339.80.drv",
+      "derivation": "/nix/store/29phw6mi8qsz2p4pw3lb5jjcl05df45d-google-chrome-146.0.7680.153.drv",
       "description": "Freeware web browser developed by Google",
       "install_id": "google-chrome",
       "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "google-chrome-140.0.7339.80",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "google-chrome-146.0.7680.153",
       "pname": "google-chrome",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T04:54:31.748969Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T05:24:57.274294Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": true,
-      "version": "140.0.7339.80",
+      "version": "146.0.7680.153",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/ws89kkr3gw68az3255afxdcgdd8x65kq-google-chrome-140.0.7339.80"
+        "out": "/nix/store/5fyi5df2lfhmvjgvlkdm5b46rbwxibsy-google-chrome-146.0.7680.153"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "libwebp",
+      "broken": false,
+      "derivation": "/nix/store/2zahrw0waifjb0n4j03lv18m7ccc7aaq-libwebp-1.6.0.drv",
+      "description": "Tools and library for the WebP image format",
+      "install_id": "libwebp",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "libwebp-1.6.0",
+      "pname": "libwebp",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T03:38:42.641340Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.6.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/2ar35gazcbazh8apyl8ximha4mlwsa4x-libwebp-1.6.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "libwebp",
+      "broken": false,
+      "derivation": "/nix/store/m7qbag561wpx6q8y7r3qsv7kjcima0vv-libwebp-1.6.0.drv",
+      "description": "Tools and library for the WebP image format",
+      "install_id": "libwebp",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "libwebp-1.6.0",
+      "pname": "libwebp",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T04:14:13.751384Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.6.0",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/jjciq7ni7ygks3xbcv3rj0njnphjbnly-libwebp-1.6.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "libwebp",
+      "broken": false,
+      "derivation": "/nix/store/brbn98xblbsczy27r40yzia5gxjqwhib-libwebp-1.6.0.drv",
+      "description": "Tools and library for the WebP image format",
+      "install_id": "libwebp",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "libwebp-1.6.0",
+      "pname": "libwebp",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T04:46:45.823711Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.6.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/5xb1bdhrgrwzifvl50wi5799bcchcrwq-libwebp-1.6.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "libwebp",
+      "broken": false,
+      "derivation": "/nix/store/9s8r9dwb887x9vawzsqjh2zcnd9ni2wz-libwebp-1.6.0.drv",
+      "description": "Tools and library for the WebP image format",
+      "install_id": "libwebp",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "libwebp-1.6.0",
+      "pname": "libwebp",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T05:25:22.932606Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.6.0",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/nbqvcbgh1cgxiydas83mlv30f3gx9yhx-libwebp-1.6.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -232,29 +353,27 @@
     {
       "attr_path": "nodejs",
       "broken": false,
-      "derivation": "/nix/store/0a9kkw6mh0f80jfq1nf9767hvg5gr71k-nodejs-22.18.0.drv",
+      "derivation": "/nix/store/g2yfx00n1lp9i8ka7nbl11fawc0yfm7n-nodejs-24.14.0.drv",
       "description": "Event-driven I/O framework for the V8 JavaScript engine",
       "install_id": "nodejs",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "nodejs-22.18.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "nodejs-24.14.0",
       "pname": "nodejs",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T03:41:04.548299Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T03:38:48.617899Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "22.18.0",
+      "version": "24.14.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "dev": "/nix/store/4617bdwn34769c3bxkx9qgyzjh890qvf-nodejs-22.18.0-dev",
-        "libv8": "/nix/store/89zl005215fzsfsbq3ar5dff44c2v3f9-nodejs-22.18.0-libv8",
-        "out": "/nix/store/9yqq8szyz3qx8q6xlv1s3arhw4112wc8-nodejs-22.18.0"
+        "out": "/nix/store/d5hw52iialz64hvfzfp9qm1gr2fp43kx-nodejs-24.14.0"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -263,29 +382,27 @@
     {
       "attr_path": "nodejs",
       "broken": false,
-      "derivation": "/nix/store/1si9aramx1b8n9dgnaymh4s0v73zng5h-nodejs-22.18.0.drv",
+      "derivation": "/nix/store/jj8rw2gnisil7dw10xi2qdinad9jqp7s-nodejs-24.14.0.drv",
       "description": "Event-driven I/O framework for the V8 JavaScript engine",
       "install_id": "nodejs",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "nodejs-22.18.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "nodejs-24.14.0",
       "pname": "nodejs",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T03:52:59.374353Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T04:14:26.627860Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "22.18.0",
+      "version": "24.14.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "dev": "/nix/store/0nzhmyzfcgynya9yy6gsp66bk47nq8s3-nodejs-22.18.0-dev",
-        "libv8": "/nix/store/5zfqiqmnv1xlx0fv0zy28hwcm332vdm1-nodejs-22.18.0-libv8",
-        "out": "/nix/store/sswndb8p93xa94x53769zh3lhci99g8f-nodejs-22.18.0"
+        "out": "/nix/store/vs8zaq8fvbbjqfg4bzn424kn55sj7s7y-nodejs-24.14.0"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -294,29 +411,27 @@
     {
       "attr_path": "nodejs",
       "broken": false,
-      "derivation": "/nix/store/5cxy82gwm7zl4fxbfkj6ah23j9j5wbd6-nodejs-22.18.0.drv",
+      "derivation": "/nix/store/l9ksrfa960964gqf23yfr7a66a2n18c1-nodejs-24.14.0.drv",
       "description": "Event-driven I/O framework for the V8 JavaScript engine",
       "install_id": "nodejs",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "nodejs-22.18.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "nodejs-24.14.0",
       "pname": "nodejs",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T04:22:26.353784Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T04:46:51.722933Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "22.18.0",
+      "version": "24.14.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "dev": "/nix/store/f39fwzjpkj0hn26f3av1smbl0lmabizj-nodejs-22.18.0-dev",
-        "libv8": "/nix/store/w90f0kd8h7893i6l8jmh01z3zsr514q0-nodejs-22.18.0-libv8",
-        "out": "/nix/store/c5d89lgzr7np5pfv9l02vcnd84mg4gj4-nodejs-22.18.0"
+        "out": "/nix/store/70ypbaj273w2kk0nrs4vijizyqgbg48v-nodejs-24.14.0"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
@@ -325,29 +440,27 @@
     {
       "attr_path": "nodejs",
       "broken": false,
-      "derivation": "/nix/store/6hkkd1197yqg4n9k2vk8phx098gn1axv-nodejs-22.18.0.drv",
+      "derivation": "/nix/store/15s1kk2n6vg180wg04wj2wgnl19f03v7-nodejs-24.14.0.drv",
       "description": "Event-driven I/O framework for the V8 JavaScript engine",
       "install_id": "nodejs",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "nodejs-22.18.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "nodejs-24.14.0",
       "pname": "nodejs",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T04:55:10.799954Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T05:25:37.194239Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "22.18.0",
+      "version": "24.14.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "dev": "/nix/store/mjgd69ahrwz5skifd30a87l1gb7yc785-nodejs-22.18.0-dev",
-        "libv8": "/nix/store/j5lyv0imv3iiwbqyqc1v9vdscwylmk56-nodejs-22.18.0-libv8",
-        "out": "/nix/store/9d235766g7alzlalw4z8yqxql0jl2mgd-nodejs-22.18.0"
+        "out": "/nix/store/v2210ar51jddnrcx46m53ivv9palc26m-nodejs-24.14.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -356,28 +469,28 @@
     {
       "attr_path": "ruby",
       "broken": false,
-      "derivation": "/nix/store/7filbxyyhvgjx958mvi8c7k9dk4m47r7-ruby-3.3.8.drv",
+      "derivation": "/nix/store/jl6h02j6q92dnakjwms750w4khci9yzm-ruby-3.4.8.drv",
       "description": "Object-oriented language for quick and easy programming",
       "install_id": "ruby",
       "license": "Ruby",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "ruby-3.3.8",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "ruby-3.4.8",
       "pname": "ruby",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T03:42:06.729832Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T03:39:54.134609Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "3.3.8",
+      "version": "3.4.8",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "devdoc": "/nix/store/if4r3lb7qnlrz5gqhr7wqj3rglha4y1v-ruby-3.3.8-devdoc",
-        "out": "/nix/store/z5dn71p2v8zs4ivli9ki35m6bm50fli4-ruby-3.3.8"
+        "devdoc": "/nix/store/mk7a50jsk138apqrnlzc077cik8cr47m-ruby-3.4.8-devdoc",
+        "out": "/nix/store/88sazm3fj9kabg4pxmnjc53cx0syp8fk-ruby-3.4.8"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -386,28 +499,28 @@
     {
       "attr_path": "ruby",
       "broken": false,
-      "derivation": "/nix/store/h7skj1vlg95n80ma4ia1bkc2344bc554-ruby-3.3.8.drv",
+      "derivation": "/nix/store/nnsdpsn3frardpgx4bwkm8nwhxn1x1wm-ruby-3.4.8.drv",
       "description": "Object-oriented language for quick and easy programming",
       "install_id": "ruby",
       "license": "Ruby",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "ruby-3.3.8",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "ruby-3.4.8",
       "pname": "ruby",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T03:54:19.624762Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T04:15:52.024719Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "3.3.8",
+      "version": "3.4.8",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "devdoc": "/nix/store/7qz7r07hvg5a7cb3xsvgss0z0kz3bq9q-ruby-3.3.8-devdoc",
-        "out": "/nix/store/0ri8qj3vlysa2136847f006phj2f96xa-ruby-3.3.8"
+        "devdoc": "/nix/store/9wnq7dd2yw2lbjs69y19lm08ranqa930-ruby-3.4.8-devdoc",
+        "out": "/nix/store/rpcpk0lxd8iliza4nl9apsgrpsb2yk4d-ruby-3.4.8"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -416,28 +529,28 @@
     {
       "attr_path": "ruby",
       "broken": false,
-      "derivation": "/nix/store/n2p3d7gsdrz4rk9idiiqpbfyfq8a4pjj-ruby-3.3.8.drv",
+      "derivation": "/nix/store/jqh4k975v23rcrnh1w8xksjzx2s90z6l-ruby-3.4.8.drv",
       "description": "Object-oriented language for quick and easy programming",
       "install_id": "ruby",
       "license": "Ruby",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "ruby-3.3.8",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "ruby-3.4.8",
       "pname": "ruby",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T04:23:34.975058Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T04:47:56.051214Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "3.3.8",
+      "version": "3.4.8",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "devdoc": "/nix/store/xb02yfk1cg3llclx6wylfkkpr18jr4wp-ruby-3.3.8-devdoc",
-        "out": "/nix/store/gbmhzzzabrmiyqzbph4nk40znpbxnah7-ruby-3.3.8"
+        "devdoc": "/nix/store/k3yn26wvgk4mfrd5nw4a23wnijd9hz6c-ruby-3.4.8-devdoc",
+        "out": "/nix/store/gq0vdqfz16vf64ip8p749rmygxd7n3x1-ruby-3.4.8"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
@@ -446,28 +559,28 @@
     {
       "attr_path": "ruby",
       "broken": false,
-      "derivation": "/nix/store/3lca1dl1adiygpnb31vvm2bg8zvydvxc-ruby-3.3.8.drv",
+      "derivation": "/nix/store/r6blijk6i4bgk2mppjgm5a2xmy21vb89-ruby-3.4.8.drv",
       "description": "Object-oriented language for quick and easy programming",
       "install_id": "ruby",
       "license": "Ruby",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "name": "ruby-3.3.8",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "ruby-3.4.8",
       "pname": "ruby",
-      "rev": "8eb28adfa3dc4de28e792e3bf49fcf9007ca8ac9",
-      "rev_count": 856926,
-      "rev_date": "2025-09-05T10:37:24Z",
-      "scrape_date": "2025-09-08T04:56:34.348739Z",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T05:27:00.782313Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "3.3.8",
+      "version": "3.4.8",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "devdoc": "/nix/store/ivgz2wvk82cjgjgl6s1967cc8qhxlh1h-ruby-3.3.8-devdoc",
-        "out": "/nix/store/ll92wwam2q5xr77p8zg6rqyh6xiqxdkf-ruby-3.3.8"
+        "devdoc": "/nix/store/4k6c15chplw6cicc6f3lgzmi7i4792j6-ruby-3.4.8-devdoc",
+        "out": "/nix/store/s57rf37r1i38kpm3nlv4h8f8z2w2n80d-ruby-3.4.8"
       },
       "system": "x86_64-linux",
       "group": "toplevel",

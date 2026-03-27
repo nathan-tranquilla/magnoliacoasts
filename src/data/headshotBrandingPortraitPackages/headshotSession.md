@@ -12,4 +12,4 @@ details:
   - in studio or outdoor
 ---
 
-![Head Shot Session](../../assets/headshotSession.png)
+![Head Shot Session](../../assets/headshotSession.webp)

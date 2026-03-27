@@ -15,4 +15,4 @@ details:
   - in studio or outdoor
 ---
 
-![Birthday](../../assets/birthdayMilestone.png)
+![Birthday](../../assets/birthdayMilestone.webp)

@@ -16,4 +16,4 @@ details:
   - studio rental (costs incur)
 ---
 
-![Full Generation Session](../../assets/fullGenerationPackage.png)
+![Full Generation Session](../../assets/fullGenerationPackage.webp)

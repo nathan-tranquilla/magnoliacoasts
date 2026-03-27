@@ -15,4 +15,4 @@ details:
   - in studio or outdoor
 ---
 
-![Sitter Milestone](../../assets/sitterMilestone.png)
+![Sitter Milestone](../../assets/sitterMilestone.webp)

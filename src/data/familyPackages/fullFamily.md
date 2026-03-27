@@ -15,4 +15,4 @@ details:
   - studio rental (costs incur)
 ---
 
-![Full Family Package](../../assets/fullFamilyPackage.png)
+![Full Family Package](../../assets/fullFamilyPackage.webp)

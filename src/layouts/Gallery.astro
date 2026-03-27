@@ -88,7 +88,7 @@ const pkg = galleryTypeToTuple[galleryType];
 let pkgs = get_surrounding_pkgs(pkg, galleries);
 
 const sortByFilename = (a: ImageMetadata, b: ImageMetadata) => {
-  // Extract the numeric part from the filename (e.g., '01' from '01.jpg')
+  // Extract the numeric part from the filename (e.g., '01' from '01.webp')
   const numA = parseInt(a.src.match(/(\d+)/)?.[0] || "0", 10);
   const numB = parseInt(b.src.match(/(\d+)/)?.[0] || "0", 10);
   return numA - numB;

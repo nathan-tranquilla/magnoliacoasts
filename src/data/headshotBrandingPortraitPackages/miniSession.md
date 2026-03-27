@@ -7,4 +7,4 @@ details:
   - Offered once per month only
 ---
 
-![Solo Session](../../assets/headshotMiniSession.png)
+![Solo Session](../../assets/headshotMiniSession.webp)

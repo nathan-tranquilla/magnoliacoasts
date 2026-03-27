@@ -44,6 +44,6 @@ detailsCollection:
       - in studio or outdoor
 ---
 
-![Pregnant woman on beach](../../assets/pregoOnBeach.jpg)
-![Baby In Sling](../../assets/BabyInSling.png)
-![Wild One](../../assets/wildOne.jpg)
+![Pregnant woman on beach](../../assets/pregoOnBeach.webp)
+![Baby In Sling](../../assets/BabyInSling.webp)
+![Wild One](../../assets/wildOne.webp)

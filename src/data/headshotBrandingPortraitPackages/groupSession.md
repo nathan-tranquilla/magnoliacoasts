@@ -13,4 +13,4 @@ details:
   - outdoor option available
 ---
 
-![Branding Session](../../assets/brandingSession.png)
+![Branding Session](../../assets/brandingSession.webp)

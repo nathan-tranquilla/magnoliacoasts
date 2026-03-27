@@ -13,4 +13,4 @@ details:
 price: 300
 ---
 
-![Mini Maternity.](../../assets/miniMaternity.png)
+![Mini Maternity.](../../assets/miniMaternity.webp)

@@ -13,4 +13,4 @@ details:
   - outdoor option available
 ---
 
-![Solo Session](../../assets/soloSession.png)
+![Solo Session](../../assets/soloSession.webp)

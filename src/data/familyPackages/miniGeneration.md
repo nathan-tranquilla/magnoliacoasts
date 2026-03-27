@@ -16,4 +16,4 @@ details:
   - studio rental (costs incur)
 ---
 
-![Mini Generation Package](../../assets/miniGenerationPackage.png)
+![Mini Generation Package](../../assets/miniGenerationPackage.webp)

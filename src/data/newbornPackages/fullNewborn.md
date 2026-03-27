@@ -15,4 +15,4 @@ details:
 price: 650
 ---
 
-![Full Newborn.](../../assets/fullNewborn.png)
+![Full Newborn.](../../assets/fullNewborn.webp)

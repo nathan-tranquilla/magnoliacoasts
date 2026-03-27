@@ -13,4 +13,4 @@ details:
 price: 400
 ---
 
-![Full Maternity.](../../assets/fullMaternity.png)
+![Full Maternity.](../../assets/fullMaternity.webp)

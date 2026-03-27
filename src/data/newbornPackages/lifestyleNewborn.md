@@ -15,4 +15,4 @@ details:
 price: 550
 ---
 
-![Lifestyle Newborn.](../../assets/lifestyleNewborn.png)
+![Lifestyle Newborn.](../../assets/lifestyleNewborn.webp)

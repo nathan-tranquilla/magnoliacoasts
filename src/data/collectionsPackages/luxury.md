@@ -75,6 +75,6 @@ detailsCollection:
       - in studio or outdoors
 ---
 
-![Pregnant woman in blue dress](../../assets/blueDressPrego.jpg)
-![Baby In Sling](../../assets/BabyInSling.png)
-![Baby in white dress and cake](../../assets/whiteDressBabyCake.jpg)
+![Pregnant woman in blue dress](../../assets/blueDressPrego.webp)
+![Baby In Sling](../../assets/BabyInSling.webp)
+![Baby in white dress and cake](../../assets/whiteDressBabyCake.webp)
