@@ -84,4 +84,4 @@ jobs:
       - name: Run Lighthouse CI against live site
         uses: flox/activate-action@v1
         with:
-          command: npx lhci autorun
+          command: rake lighthouse
