@@ -2,6 +2,10 @@ ENV["BROWSER_PATH"] = `which google-chrome-stable`.chomp
 ENV["RUBYOPT"] = "-W0"
 ENV["FLOX_DISABLE_METRICS"] = "true"
 
+task :default do
+  sh "rake -T"
+end
+
 file 'node_modules' do
   sh 'npm install'
 end
@@ -18,6 +22,7 @@ file 'ruby/vendor/bundle' do
 end 
 task :ruby_install => 'ruby/vendor/bundle'
 
+desc "Install all dependencies (Ruby + Node)"
 task :install => [:ruby_install, 'node_modules']
 
 task :kill_dev do 
@@ -34,13 +39,16 @@ task :kill_dev do
   end
 end 
 
-task :tier1 do 
-  sh "rake it TAG=~snapshot"
-end 
+desc "Run tier1 integration tests (excludes snapshot and flaky tests)"
+task :tier1 do
+  ENV['TAG'] = '~snapshot,~flaky'
+  Rake::Task[:it].invoke
+end
 
-task :tier2 do 
-  sh "rake it"
-end 
+desc "Run all integration tests (including snapshots)"
+task :tier2 do
+  Rake::Task[:it].invoke
+end
 
 desc "Run integration tests. Optionally pass TAG=yourtag to filter by tag. Or TAG=~yourtag to filter OUT by tag."
 task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
@@ -72,7 +80,8 @@ task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
     Dir.chdir('ruby') do
       tag = ENV['TAG'] || args[:tag]
       if tag && !tag.empty?
-        sh "bundle exec rspec --tag #{tag}"
+        tag_flags = tag.split(',').map { |t| "--tag #{t}" }.join(' ')
+        sh "bundle exec rspec #{tag_flags}"
       else
         sh 'bundle exec rspec'
       end
@@ -90,6 +99,7 @@ task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
   end
 end
 
+desc "Re-run only failed integration tests"
 task :it_rerun => [:ruby_install] do 
   Dir.chdir('ruby') do
     sh 'bundle exec rspec --only-failures'
@@ -125,12 +135,15 @@ task :clean_astro_pid do
   sh "rm astro.pid || true"
 end 
 
+desc "Clean all build artifacts"
 task :clean => [:node_modules_clean, :docs_clean, :ruby_clean, :clean_astro_pid]
 
+desc "Check code formatting with Prettier"
 task :lint => ['node_modules'] do 
   sh "npx prettier ./src -c"
 end 
 
+desc "Auto-format code with Prettier"
 task :format => ['node_modules'] do 
   sh "npx prettier ./src --write"
 end 
@@ -139,6 +152,7 @@ task :res_dev => 'node_modules' do
   sh "npx rescript -w"
 end
 
+desc "Start Astro dev server"
 task :dev, [:flags] => ['node_modules', :res_build, :dl_galleries] do |t, args|
   # Accept flags as an argument, like :it uses args[:tag]
   flags = args[:flags] || '--host'
@@ -201,10 +215,12 @@ task :lighthouse => [:kill_dev] do
   end
 end
 
+desc "Run unit tests"
 task :test => ['node_modules', :res_build] do
   sh "node --test src/**/*.test.mjs"
 end
 
+desc "Build static site"
 task :build => ['node_modules', :res_build, :lint] do
   sh "npx astro build"
 end
@@ -213,14 +229,17 @@ task :build_prod => [:node_modules_clean, :ci_install, :res_build] do
   sh "npx astro build "
 end
 
+desc "Build and preview with Wrangler"
 task :preview => [:build_prod] do
   sh "npx wrangler pages dev ./docs"
 end
 
+desc "Build and deploy to Cloudflare Pages"
 task :deploy => [:build_prod] do 
   sh "npx wrangler pages deploy ./docs"
 end 
 
+desc "Generate a new investment package from prompts"
 task :generate_package do 
 
   require 'fileutils'

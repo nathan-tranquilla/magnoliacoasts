@@ -2,7 +2,7 @@ require "spec_helper"
 require "support/constants"
 
 [:cuprite, :cuprite_mobile].each do |driver|
-  RSpec.describe "(#{driver}) carousel", type: :feature, driver: driver, testimonials: true do
+  RSpec.describe "(#{driver}) carousel", type: :feature, driver: driver, testimonials: true, flaky: true do
     before { Capybara.current_driver = driver }
     after  { Capybara.use_default_driver }
       def assert_visible_review(review_titles, visible_index)
