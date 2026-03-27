@@ -39,9 +39,8 @@ task :kill_dev do
   end
 end 
 
-desc "Run tier1 integration tests (excludes flaky tests)"
+desc "Run tier1 integration tests"
 task :tier1 do
-  ENV['TAG'] = '~flaky'
   Rake::Task[:it].invoke
 end
 
