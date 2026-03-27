@@ -2,7 +2,7 @@
 import Gallery, { GalleryType } from "../../layouts/Gallery.astro";
 
 const images = Object.values(
-  import.meta.glob(`../../assets/galleries/newborn/*.jpg`, { eager: true }),
+  import.meta.glob(`../../assets/galleries/newborn/*.webp`, { eager: true }),
 ).map((module: any) => module.default) as ImageMetadata[];
 ---
 

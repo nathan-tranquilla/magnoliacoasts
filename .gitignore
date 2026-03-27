@@ -37,3 +37,4 @@ src/assets/__MACOSX
 
 /astro.pid.lighthouseci/
 /.lighthouseci/
+.wrangler
