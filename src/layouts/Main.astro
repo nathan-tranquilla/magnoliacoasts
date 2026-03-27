@@ -107,7 +107,11 @@ const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
     <link rel="icon" href={`${logo.src}`} type="image/png" />
     <link rel="apple-touch-icon" href={`${appleIcon.src}`} />
     <script type="application/ld+json" set:html={localBusinessProfile} />
-    {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema} />}
+    {
+      breadcrumbSchema && (
+        <script type="application/ld+json" set:html={breadcrumbSchema} />
+      )
+    }
     <meta name="email" content="info@magnoliacoastsphotography.com" />
     <link rel="canonical" href={canonicalUrl} />
 

@@ -34,7 +34,9 @@ import ExternalLink from "./ExternalLink.astro";
   aria-label="Hero"
   class="flex flex-col bg-gradient-to-r from-[rgb(237,232,220)] to-[rgb(211,208,194)]"
 >
-  <div class="relative flex w-full justify-center md:max-h-[85vh] overflow-hidden">
+  <div
+    class="relative flex w-full justify-center overflow-hidden md:max-h-[85vh]"
+  >
     <div class="flex w-full max-w-[1800px] items-center justify-center">
       <picture>
         <source
@@ -62,36 +64,46 @@ import ExternalLink from "./ExternalLink.astro";
           alt="Newborn baby swaddled in pink surrounded by flowers — Magnolia Coasts Photography, Mississauga"
           width="1800"
           height="861"
-          class="md:object-cover md:w-full"
+          class="md:w-full md:object-cover"
           fetchpriority="high"
         />
       </picture>
     </div>
     <!-- Desktop overlay -->
-    <div class="hero-overlay hidden md:flex absolute bottom-0 flex-col items-center md:gap-2 xl:gap-5 md:mb-4 xl:mb-8 md:rounded-xl xl:rounded-2xl border border-white/20 bg-white/60 backdrop-blur-lg md:px-8 xl:px-14 md:py-5 xl:py-10 shadow-xl">
-      <h1 class="font-cormorant-garamond italic font-light text-[#392C2C] text-center md:text-3xl xl:text-6xl tracking-wide leading-tight">
+    <div
+      class="hero-overlay absolute bottom-0 hidden flex-col items-center border border-white/20 bg-white/60 shadow-xl backdrop-blur-lg md:mb-4 md:flex md:gap-2 md:rounded-xl md:px-8 md:py-5 xl:mb-8 xl:gap-5 xl:rounded-2xl xl:px-14 xl:py-10"
+    >
+      <h1
+        class="font-cormorant-garamond text-center leading-tight font-light tracking-wide text-[#392C2C] italic md:text-3xl xl:text-6xl"
+      >
         Magnolia Coasts Photography
       </h1>
       <div class="hero-divider relative h-px md:w-20 xl:w-28"></div>
-      <h2 class="font-cormorant-garamond font-light text-[#392C2C]/70 text-center md:text-sm xl:text-lg tracking-[0.25em] uppercase">
+      <h2
+        class="font-cormorant-garamond text-center font-light tracking-[0.25em] text-[#392C2C]/70 uppercase md:text-sm xl:text-lg"
+      >
         Family &amp; Newborn Photography in Mississauga
       </h2>
       <ExternalLink
-        class="hero-cta font-cormorant-garamond text-[#392C2C] md:text-sm xl:text-lg tracking-[0.2em] uppercase flex justify-center items-center cursor-pointer rounded-lg bg-pink/70 border border-[#392C2C]/15 md:px-6 md:py-2 xl:px-10 xl:py-3 shadow-md transition-all duration-300 hover:scale-102 focus:scale-102 hover:shadow-xl focus:shadow-xl hover:bg-pink/90"
+        class="hero-cta font-cormorant-garamond bg-pink/70 hover:bg-pink/90 flex cursor-pointer items-center justify-center rounded-lg border border-[#392C2C]/15 tracking-[0.2em] text-[#392C2C] uppercase shadow-md transition-all duration-300 hover:scale-102 hover:shadow-xl focus:scale-102 focus:shadow-xl md:px-6 md:py-2 md:text-sm xl:px-10 xl:py-3 xl:text-lg"
         href={INQUIRE_LINK}>Inquire</ExternalLink
       >
     </div>
   </div>
   <!-- Mobile below image -->
-  <div class="flex md:hidden flex-col items-center gap-2 px-4 py-4 bg-white">
-    <h1 class="font-cormorant-garamond italic font-light text-[#392C2C] text-center text-2xl sm:text-3xl">
+  <div class="flex flex-col items-center gap-2 bg-white px-4 py-4 md:hidden">
+    <h1
+      class="font-cormorant-garamond text-center text-2xl font-light text-[#392C2C] italic sm:text-3xl"
+    >
       Magnolia Coasts Photography
     </h1>
-    <h2 class="font-cormorant-garamond text-[#392C2C] text-center text-sm sm:text-base">
+    <h2
+      class="font-cormorant-garamond text-center text-sm text-[#392C2C] sm:text-base"
+    >
       Family &amp; Newborn Photography in Mississauga
     </h2>
     <ExternalLink
-      class="font-cormorant-garamond text-[#392C2C] text-sm flex justify-center items-center cursor-pointer rounded-lg bg-pink px-6 py-2 transition-all hover:scale-102 focus:scale-102 hover:shadow-md focus:shadow-md"
+      class="font-cormorant-garamond bg-pink flex cursor-pointer items-center justify-center rounded-lg px-6 py-2 text-sm text-[#392C2C] transition-all hover:scale-102 hover:shadow-md focus:scale-102 focus:shadow-md"
       href={INQUIRE_LINK}>Inquire</ExternalLink
     >
   </div>

@@ -13,7 +13,10 @@ const { segments, names, hrefs } = getPathInfo(Astro.url.pathname, BASE_URL);
     >
       <ol class="flex flex-wrap items-center gap-1">
         <li>
-          <a href={BASE_URL + "/"} class="hover:text-dark-green transition-colors">
+          <a
+            href={BASE_URL + "/"}
+            class="hover:text-dark-green transition-colors"
+          >
             Home
           </a>
         </li>

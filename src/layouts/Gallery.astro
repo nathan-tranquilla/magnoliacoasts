@@ -48,14 +48,38 @@ export interface Props {
 const { metaTitle, title, description, galleryType, images } = Astro.props;
 
 const galleryTypeToInvestment: Record<GalleryType, [string, string]> = {
-  [GalleryType.Maternity]: ["View Maternity Packages", `${BASE_URL}/investment/maternity`],
-  [GalleryType.Newborn]: ["View Newborn Packages", `${BASE_URL}/investment/newborn`],
-  [GalleryType.Milestone]: ["View Milestone Packages", `${BASE_URL}/investment/milestone`],
-  [GalleryType.CakeSmash]: ["View Milestone Packages", `${BASE_URL}/investment/milestone`],
-  [GalleryType.Family]: ["View Family Packages", `${BASE_URL}/investment/family`],
-  [GalleryType.Children]: ["View Family Packages", `${BASE_URL}/investment/family`],
-  [GalleryType.Headshots]: ["View Headshot Packages", `${BASE_URL}/investment/headshot`],
-  [GalleryType.Branding]: ["View Headshot Packages", `${BASE_URL}/investment/headshot`],
+  [GalleryType.Maternity]: [
+    "View Maternity Packages",
+    `${BASE_URL}/investment/maternity`,
+  ],
+  [GalleryType.Newborn]: [
+    "View Newborn Packages",
+    `${BASE_URL}/investment/newborn`,
+  ],
+  [GalleryType.Milestone]: [
+    "View Milestone Packages",
+    `${BASE_URL}/investment/milestone`,
+  ],
+  [GalleryType.CakeSmash]: [
+    "View Milestone Packages",
+    `${BASE_URL}/investment/milestone`,
+  ],
+  [GalleryType.Family]: [
+    "View Family Packages",
+    `${BASE_URL}/investment/family`,
+  ],
+  [GalleryType.Children]: [
+    "View Family Packages",
+    `${BASE_URL}/investment/family`,
+  ],
+  [GalleryType.Headshots]: [
+    "View Headshot Packages",
+    `${BASE_URL}/investment/headshot`,
+  ],
+  [GalleryType.Branding]: [
+    "View Headshot Packages",
+    `${BASE_URL}/investment/headshot`,
+  ],
 };
 const investmentLink = galleryTypeToInvestment[galleryType];
 
@@ -114,14 +138,22 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
       direction={NavDir.Right}
     />
   </div>
-  {description && (
-    <h2 class="px-4 mb-8 text-left text-sm md:text-lg text-black lg:max-w-[1200px] self-center font-normal">
-      {description}{investmentLink && (
-        <>{" "}<a href={investmentLink[1]} class="underline hover:opacity-80">{investmentLink[0]}</a></>
-      )}
-    </h2>
-  )}
-<div
+  {
+    description && (
+      <h2 class="mb-8 self-center px-4 text-left text-sm font-normal text-black md:text-lg lg:max-w-[1200px]">
+        {description}
+        {investmentLink && (
+          <>
+            {" "}
+            <a href={investmentLink[1]} class="underline hover:opacity-80">
+              {investmentLink[0]}
+            </a>
+          </>
+        )}
+      </h2>
+    )
+  }
+  <div
     class=`xs:grid-cols-3 grid grid-cols-1 gap-4 self-center p-4 lg:max-w-[1200px]`
   >
     {
@@ -145,11 +177,13 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
       })
     }
   </div>
-  {investmentLink && (
-    <FloatingCta
-      client:idle
-      href={investmentLink[1]}
-      label={investmentLink[0]}
-    />
-  )}
+  {
+    investmentLink && (
+      <FloatingCta
+        client:idle
+        href={investmentLink[1]}
+        label={investmentLink[0]}
+      />
+    )
+  }
 </Main>
