@@ -39,8 +39,9 @@ task :kill_dev do
   end
 end 
 
-desc "Run tier1 integration tests"
+desc "Run integration tests in parallel shards (set SHARD=1/2 for CI)"
 task :tier1 do
+  ENV['PARALLEL'] = 'true'
   Rake::Task[:it].invoke
 end
 
@@ -74,7 +75,15 @@ task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
   begin
     Dir.chdir('ruby') do
       tag = ENV['TAG'] || args[:tag]
-      if tag && !tag.empty?
+      shard = ENV['SHARD'] # e.g. "1/2"
+      parallel = ENV['PARALLEL']
+
+      if parallel
+        total = shard ? shard.split('/').last : '2'
+        cmd = "bundle exec parallel_rspec spec/features/ -n #{total}"
+        cmd += " --only-group #{shard.split('/').first}" if shard
+        sh cmd
+      elsif tag && !tag.empty?
         tag_flags = tag.split(',').map { |t| "--tag #{t}" }.join(' ')
         sh "bundle exec rspec #{tag_flags}"
       else
