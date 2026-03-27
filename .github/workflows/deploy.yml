@@ -50,7 +50,9 @@ jobs:
       - name: Run integration tests (shard ${{ matrix.shard }})
         uses: flox/activate-action@v1
         with:
-          command: SHARD=${{ matrix.shard }} rake tier1
+          command: rake tier1
+        env:
+          SHARD: ${{ matrix.shard }}
 
   deploy:
     runs-on: ubuntu-latest
