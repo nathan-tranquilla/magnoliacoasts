@@ -135,7 +135,7 @@ links = [
       it "works from #{test_case[:origin]} to #{test_case[:dest]}" do
         visit test_case[:origin]
         scope = test_case[:within] ? find(test_case[:within]) : page
-        scope.find("a", text: test_case[:text]).click
+        scope.first("a", text: test_case[:text]).click
         expect(page.current_url).to include(test_case[:dest]), "Expected URL to include '#{test_case[:dest]}', but was #{page.current_url}"
       end
     end

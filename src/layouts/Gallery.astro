@@ -8,6 +8,7 @@ import SiblingPackageNav, {
   NavDir,
 } from "../components/SiblingPackageNav.astro";
 import SectionHeader from "../components/SectionHeader.astro";
+import { make as FloatingCta } from "../components/FloatingCta.res.mjs";
 
 export enum GalleryType {
   Maternity = "maternity",
@@ -114,11 +115,11 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
     />
   </div>
   {description && (
-    <p class="px-4 mb-8 text-left text-lg text-black lg:max-w-[1200px] self-center">
+    <h2 class="px-4 mb-8 text-left text-lg text-black lg:max-w-[1200px] self-center font-normal">
       {description}{investmentLink && (
         <>{" "}<a href={investmentLink[1]} class="underline hover:opacity-80">{investmentLink[0]}</a></>
       )}
-    </p>
+    </h2>
   )}
 <div
     class=`xs:grid-cols-3 grid grid-cols-1 gap-4 self-center p-4 lg:max-w-[1200px]`
@@ -144,4 +145,11 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
       })
     }
   </div>
+  {investmentLink && (
+    <FloatingCta
+      client:idle
+      href={investmentLink[1]}
+      label={investmentLink[0]}
+    />
+  )}
 </Main>
