@@ -35,6 +35,9 @@ const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
 <html lang="en">
   <head>
     <GoogleAnalytics />
+    <!-- Preconnect to Google Analytics to reduce connection overhead -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -66,7 +69,6 @@ const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
 
     <link
       rel="preload"
-      fetchpriority="high"
       as="image"
       href={optimizedBackground.src}
       type="image/avif"
@@ -120,6 +122,7 @@ const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
       name="keywords"
       content="Toronto family photographer, Mississauga family photographer, GTA photographer, newborn photography Toronto, newborn photography Mississauga, maternity photographer, headshots Toronto, headshots Mississauga, milestone photography, branding photography, family portraits GTA, photographer Mississauga, photographer near me GTA"
     />
+    <slot name="head" />
   </head>
   <body
     class="bg-default relative flex min-h-dvh w-screen flex-col items-stretch justify-start"

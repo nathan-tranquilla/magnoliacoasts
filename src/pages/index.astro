@@ -6,9 +6,41 @@ import NewsLetter from "../components/Newsletter.astro";
 import ArtInYourHome from "../components/ArtInYourHome.astro";
 import HeroSection from "../components/HeroSection.astro";
 import Testimonials from "../components/Testimonials.astro";
+import { getImage } from "astro:assets";
+import heroImage from "../assets/HeroImage.jpg";
+
+// Preload the hero image (LCP element) for faster mobile rendering
+const heroImageMobile = await getImage({
+  src: heroImage,
+  width: 414,
+  format: "webp",
+  quality: 95,
+});
+const heroImageDesktop = await getImage({
+  src: heroImage,
+  width: 900,
+  format: "webp",
+  quality: 95,
+});
 ---
 
 <Main title="Magnolia Coasts | Toronto Family & Maternity Photography">
+  <Fragment slot="head">
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href={heroImageMobile.src}
+      media="(max-width: 767px)"
+    />
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href={heroImageDesktop.src}
+      media="(min-width: 768px)"
+    />
+  </Fragment>
   <HeroSection />
   <SpecialMoments />
   <Welcome />
