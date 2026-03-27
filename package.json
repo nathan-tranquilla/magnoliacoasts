@@ -19,6 +19,9 @@
     "rescript-webapi": "^0.10.0",
     "tailwindcss": "^4.1.12"
   },
+  "scripts": {
+    "test": "node --test e2e/gallery.test.mjs src/utils/breadcrumbs.test.mjs"
+  },
   "devDependencies": {
     "@lhci/cli": "^0.15.1",
     "adm-zip": "^0.5.16",
