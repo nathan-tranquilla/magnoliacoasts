@@ -81,12 +81,7 @@ jobs:
       - name: Install Flox
         uses: flox/install-flox-action@v2
 
-      - name: Build static site
+      - name: Run Lighthouse CI against live site
         uses: flox/activate-action@v1
         with:
-          command: rake build
-
-      - name: Run Lighthouse CI
-        uses: flox/activate-action@v1
-        with:
-          command: npx lhci autorun --collect.staticDistDir=./docs --collect.url=http://localhost/
+          command: npx lhci autorun
