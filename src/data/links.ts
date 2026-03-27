@@ -6,6 +6,7 @@ export const BRANDING_LINK = "https://book.usesession.com/t/zK_v5yOEo";
 export const HEADSHOTS_LINK = "https://book.usesession.com/t/MuL13nQbW";
 export const MILESTONES_LINK = "https://book.usesession.com/t/aOqs7teEf";
 export const FAMILY_LINK = "https://book.usesession.com/t/qSKGXDFg9";
+export const FAMILY_FULL_LINK = "https://book.usesession.com/t/W77jTATu_";
 export const CAKE_SMASH_LINK = "https://book.usesession.com/t/v0bCgBueC";
 export const CHILDREN_LINK = "https://book.usesession.com/t/T_j3GdwJze";
 export const HOLIDAY_MINIS_LINK = "https://book.usesession.com/i/_ji73Jr_e";

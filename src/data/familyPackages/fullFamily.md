@@ -2,7 +2,7 @@
 title: Full Family Session
 sortOrder: 1
 price: 400
-productLink: https://book.usesession.com/t/qSKGXDFg9
+productLink: https://book.usesession.com/t/W77jTATu_
 details:
   - 1 hour session
   - online proofing gallery
