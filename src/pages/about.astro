@@ -7,12 +7,9 @@ import stephanieCoffee from "../assets/stephCoffee.png";
 import Button from "../components/Button.astro";
 import { INQUIRE_LINK } from "../data/links";
 import SectionHeader from "../components/SectionHeader.astro";
-import Card from "../components/Card.astro";
 import ExternalLink from "../components/ExternalLink.astro";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
-let mobileLayout = "flex flex-col justify-start items-start";
-let desktopLayout = "md:grid md:grid-cols-2 md:grid-rows-12 md:m-4";
 
 let aboutContent = (await getCollection("aboutContent"))[0];
 let { Content } = await render(aboutContent);
@@ -23,37 +20,62 @@ let { Content } = await render(aboutContent);
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+  article.about p:first-child {
+    font-size: 1.15em;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+  article.about p:first-child::first-letter {
+    font-size: 2.5em;
+    float: left;
+    line-height: 1;
+    margin-right: 0.1em;
+    margin-top: 0.05em;
+    font-weight: 600;
+    color: var(--color-dark-green);
+  }
 </style>
 <Main title="Magnolia Coasts | Toronto and GTA Photographer">
+  <SectionHeader title="Photographer" classes="self-center" />
   <article
-    class={`about w-screen font-cormorant-garamond bg-[var(--section-bg-color)] flex flex-col justify-start items-center bg-default`}
+    aria-label="About the photographer"
+    class="about w-screen font-cormorant-garamond flex flex-col justify-start items-center pb-6 md:pb-16 px-4"
   >
-    <SectionHeader title="Photographer" />
-    <Card classes={`${mobileLayout} ${desktopLayout} gap-4 max-w-[1000px]`}>
-      <div class="col-span-1 col-start-1 row-span-4 row-start-1 py-2">
-        <Image src={stephAndKids} alt="Stephanie and the kids." priority />
-      </div>
-      <div
-        class="col-span-1 col-start-2 row-span-11 row-start-1 md:mx-4 md:text-base lg:text-lg"
-      >
-        <Content />
-      </div>
-      <div class="col-span-1 col-start-1 row-span-4 row-start-5 py-2">
-        <Image src={potterDavieFam} alt="Potter-Davie family." />
-      </div>
-      <div class="col-span-1 col-start-1 row-span-4 row-start-9 py-2">
-        <Image src={stephanieCoffee} alt="Stephanie and coffee." />
+    <div class="max-w-[1000px] w-full flex flex-col gap-8">
+      <!-- Images + text -->
+      <div class="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <!-- Left: all images stacked -->
+        <div class="w-full md:w-2/5 shrink-0 flex flex-col gap-4">
+          <div class="overflow-hidden rounded-md shadow-card">
+            <Image src={stephAndKids} alt="Stephanie and the kids." priority class="w-full h-full object-cover" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="overflow-hidden rounded-md shadow-card">
+              <Image src={potterDavieFam} alt="Potter-Davie family." class="w-full h-full object-cover" />
+            </div>
+            <div class="overflow-hidden rounded-md shadow-card">
+              <Image src={stephanieCoffee} alt="Stephanie and coffee." class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+        <!-- Right: text content -->
+        <div class="md:text-base lg:text-lg text-[#392C2C] leading-relaxed">
+          <Content />
+        </div>
       </div>
 
-      <Button
-        color="Pink"
-        classes="md:text-lg lg:text-xl md:justify-self-center self-center col-start-2 col-span-1 row-start-12 max-w-[300px]"
-      >
-        <ExternalLink
-          class="flex h-[24px] h-full w-full items-center justify-center"
-          href={INQUIRE_LINK}>Book With Stephanie</ExternalLink
+      <!-- CTA -->
+      <div class="flex justify-center">
+        <Button
+          color="Pink"
+          classes="md:text-lg lg:text-xl max-w-[300px]"
         >
-      </Button>
-    </Card>
+          <ExternalLink
+            class="flex h-full w-full items-center justify-center"
+            href={INQUIRE_LINK}>Book With Stephanie</ExternalLink
+          >
+        </Button>
+      </div>
+    </div>
   </article>
 </Main>
