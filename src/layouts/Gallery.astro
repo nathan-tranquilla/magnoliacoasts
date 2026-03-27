@@ -40,10 +40,12 @@ const mobileDisplay = "flex justify-around items-center";
 export interface Props {
   title: string;
   metaTitle: string;
+  description?: string;
   images: ImageMetadata[];
   galleryType: GalleryType;
 }
-const { metaTitle, title, galleryType, images } = Astro.props;
+const { metaTitle, title, description, galleryType, images } = Astro.props;
+
 
 let galleries = Object.values(galleryTypeToTuple);
 const pkg = galleryTypeToTuple[galleryType];
@@ -100,7 +102,12 @@ let getDimensions = (i: number, galleryType: GalleryType) => {
       direction={NavDir.Right}
     />
   </div>
-  <div
+  {description && (
+    <p class="px-4 text-center text-lg text-black lg:max-w-[1200px] self-center">
+      {description}
+    </p>
+  )}
+<div
     class=`xs:grid-cols-3 grid grid-cols-1 gap-4 self-center p-4 lg:max-w-[1200px]`
   >
     {
