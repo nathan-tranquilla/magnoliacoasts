@@ -78,11 +78,13 @@ task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
       shard = ENV['SHARD'] # e.g. "1/2"
       parallel = ENV['PARALLEL']
 
-      if parallel
-        total = shard ? shard.split('/').last : '2'
-        cmd = "bundle exec parallel_rspec spec/features/ -n #{total}"
-        cmd += " --only-group #{shard.split('/').first}" if shard
-        sh cmd
+      if shard
+        group, total = shard.split('/').map(&:to_i)
+        files = Dir.glob('spec/features/**/*_spec.rb').sort
+        sharded = files.each_with_index.select { |_, i| i % total == group - 1 }.map(&:first)
+        sh "bundle exec rspec #{sharded.join(' ')}" unless sharded.empty?
+      elsif parallel
+        sh "bundle exec rspec"
       elsif tag && !tag.empty?
         tag_flags = tag.split(',').map { |t| "--tag #{t}" }.join(' ')
         sh "bundle exec rspec #{tag_flags}"
