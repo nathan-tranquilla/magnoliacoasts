@@ -39,16 +39,12 @@ task :kill_dev do
   end
 end 
 
-desc "Run tier1 integration tests (excludes snapshot and flaky tests)"
+desc "Run tier1 integration tests (excludes flaky tests)"
 task :tier1 do
-  ENV['TAG'] = '~snapshot,~flaky'
+  ENV['TAG'] = '~flaky'
   Rake::Task[:it].invoke
 end
 
-desc "Run all integration tests (including snapshots)"
-task :tier2 do
-  Rake::Task[:it].invoke
-end
 
 desc "Run integration tests. Optionally pass TAG=yourtag to filter by tag. Or TAG=~yourtag to filter OUT by tag."
 task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
@@ -124,7 +120,6 @@ end
 
 task :ruby_clean do 
   sh "rm -rf ruby/vendor/bundle"
-  sh "rm -f ruby/doc/screenshots/**/*.diff.png"
 end 
 
 task :res_clean do

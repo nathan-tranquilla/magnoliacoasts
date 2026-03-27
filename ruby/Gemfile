@@ -4,6 +4,4 @@ group :test do
   gem 'cuprite'
   gem 'capybara'
   gem 'rspec'
-  gem 'capybara-screenshot-diff'
-  gem 'oily_png', platform: :ruby
 end
