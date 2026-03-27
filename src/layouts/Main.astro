@@ -4,10 +4,8 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import businessData from "../data/localBusinessProfile.json";
 
-import cormorantGaramondRegular from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf";
-import cormorantGaramondBold from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Bold.ttf";
-import cormorantGaramondSemibold from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBold.ttf";
-import cormorantGaramondLight from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.ttf";
+import cormorantGaramondLight from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.woff2";
+import cormorantGaramondLightItalic from "../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-LightItalic.woff2";
 
 import { getImage } from "astro:assets";
 import WelcomeBackground from "../assets/WelcomeBackground.jpg";
@@ -50,34 +48,20 @@ const breadcrumbSchema = buildBreadcrumbSchema(Astro.url.pathname, websiteUrl);
     />
     <meta name="author" content="Magnolia Coasts" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <!-- Preload Cormorant Garamond fonts for FOUC prevention -->
+    <!-- Preload only above-the-fold fonts (Light + Light Italic) -->
     <link
       rel="preload"
       as="font"
-      type="font/ttf"
-      crossorigin
-      href={cormorantGaramondRegular}
-    />
-    <link
-      rel="preload"
-      as="font"
-      type="font/ttf"
-      crossorigin
-      href={cormorantGaramondBold}
-    />
-    <link
-      rel="preload"
-      as="font"
-      type="font/ttf"
-      crossorigin
-      href={cormorantGaramondSemibold}
-    />
-    <link
-      rel="preload"
-      as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossorigin
       href={cormorantGaramondLight}
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href={cormorantGaramondLightItalic}
     />
 
     <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
