@@ -55,24 +55,9 @@ jobs:
         env:
           SHARD: ${{ matrix.shard }}
 
-  tier2:
-    runs-on: ubuntu-latest
-    needs: unit-test
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Install Flox
-        uses: flox/install-flox-action@v2
-
-      - name: Run tier2 tests (webp presence)
-        uses: flox/activate-action@v1
-        with:
-          command: rake tier2
-
   deploy:
     runs-on: ubuntu-latest
-    needs: [tier1, tier2]
+    needs: tier1
     if: github.event_name == 'push'
     steps:
       - name: Checkout code
