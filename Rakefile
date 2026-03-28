@@ -45,6 +45,12 @@ task :tier1 do
   Rake::Task[:it].invoke
 end
 
+desc "Run tier2 tests (webp presence on gallery pages)"
+task :tier2 do
+  ENV['TAG'] = 'tier2'
+  Rake::Task[:it].invoke
+end
+
 
 desc "Run integration tests. Optionally pass TAG=yourtag to filter by tag. Or TAG=~yourtag to filter OUT by tag."
 task :it, [:tag] => [:ruby_install, :kill_dev] do |t, args|
