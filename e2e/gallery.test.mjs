@@ -19,9 +19,9 @@ const galleries = [
   "newborn",
 ];
 
-describe("gallery pages use .webp glob pattern", () => {
-  for (const gallery of galleries) {
-    it(`${gallery}.astro references *.webp not *.jpg`, () => {
+for (const gallery of galleries) {
+  describe(`${gallery} gallery page`, () => {
+    it("renders .webp images (glob pattern references *.webp)", () => {
       const source = readFileSync(
         join(galleryPagesDir, `${gallery}.astro`),
         "utf8",
@@ -35,12 +35,8 @@ describe("gallery pages use .webp glob pattern", () => {
         `Found legacy .jpg glob pattern in ${gallery}.astro — should be .webp`,
       );
     });
-  }
-});
 
-describe("gallery asset directories contain .webp files", () => {
-  for (const gallery of galleries) {
-    it(`${gallery} assets are .webp`, () => {
+    it("asset directory contains .webp files", () => {
       const files = readdirSync(join(galleryAssetsDir, gallery));
       const nonWebp = files.filter(
         (f) => !f.startsWith(".") && !f.endsWith(".webp"),
@@ -55,5 +51,5 @@ describe("gallery asset directories contain .webp files", () => {
         `No .webp files found in galleries/${gallery}`,
       );
     });
-  }
-});
+  });
+}
