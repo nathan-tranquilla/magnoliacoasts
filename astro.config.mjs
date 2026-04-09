@@ -4,7 +4,7 @@ import rehypeUnwrapImages from "rehype-unwrap-images";
 import tailwindcss from "@tailwindcss/vite";
 
 import sitemap from "@astrojs/sitemap";
-import react from "@astrojs/react";
+import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,5 +25,5 @@ export default defineConfig({
     inlineStylesheets: "always",
   },
 
-  integrations: [sitemap(), react()],
+  integrations: [sitemap(), preact({ compat: true })],
 });

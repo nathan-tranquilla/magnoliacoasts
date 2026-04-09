@@ -108,15 +108,17 @@ Capybara.register_driver :cuprite do |app|
     app,
     headless: true, # Headless for CI/build machine
     browser_options: {"no-sandbox": true}, # Required for CI
-    window_size: [1920, 1080] # Consistent viewport
+    window_size: [1920, 1080], # Consistent viewport
+    timeout: 30 # Allow time for Vite dev server module loading
   )
 end
 
 Capybara.register_driver :cuprite_mobile do |app|
   Capybara::Cuprite::Driver.new(
-    app, 
+    app,
     headless: true,
-    window_size: [375, 812], 
+    window_size: [375, 812],
+    timeout: 30,
     browser_options: { 'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_0 like Mac OS X)...', "no-sandbox": true })
 end
 
