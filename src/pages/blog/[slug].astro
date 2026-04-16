@@ -1,0 +1,101 @@
+---
+import Main from "../../layouts/Main.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import Card from "../../components/Card.astro";
+import PositionedImage from "../../components/PositionedImage.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const imagePositionClasses: Record<string, string> = {
+  "full-width": "w-full rounded-lg object-cover max-h-[500px]",
+  "float-left": "float-left mr-6 mb-4 w-full rounded-lg object-cover md:w-1/2",
+  "float-right":
+    "float-right ml-6 mb-4 w-full rounded-lg object-cover md:w-1/2",
+  center: "mx-auto block max-w-2xl rounded-lg object-cover",
+};
+
+const imgClass =
+  imagePositionClasses[post.data.featuredImagePosition || "full-width"];
+---
+
+<style is:global>
+  article.blog-post p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  article.blog-post h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  article.blog-post h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  article.blog-post ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  article.blog-post li {
+    margin-bottom: 0.25rem;
+  }
+</style>
+
+<Main title={`${post.data.title} | Magnolia Coasts Photography`}>
+  <article
+    class="blog-post bg-default font-cormorant-garamond flex w-screen flex-col items-center justify-start"
+  >
+    <SectionHeader title="Blog" />
+    <Card classes="max-w-[800px] w-full mx-4 mb-12">
+      <h2 class="text-2xl md:text-3xl">{post.data.title}</h2>
+      <div class="text-pastel-green mt-1 mb-4 flex gap-3 text-sm">
+        <time>
+          {
+            new Date(post.data.publishDate).toLocaleDateString("en-CA", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </time>
+        {post.data.author && <span>by {post.data.author}</span>}
+      </div>
+
+      {
+        post.data.featuredImage && (
+          <img
+            src={post.data.featuredImage}
+            alt={post.data.featuredImageAlt || ""}
+            class={`mb-6 ${imgClass}`}
+          />
+        )
+      }
+
+      <div class="prose text-base leading-relaxed md:text-lg">
+        <Content components={{ PositionedImage }} />
+      </div>
+
+      <div class="mt-8 border-t border-gray-200 pt-4">
+        <a
+          href="/blog"
+          class="text-pastel-green hover:text-dark-green text-sm transition-colors"
+        >
+          &larr; Back to all posts
+        </a>
+      </div>
+    </Card>
+  </article>
+</Main>

@@ -1,0 +1,31 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  layout?: string;
+}
+
+const { src, alt, caption, layout = "full-width" } = Astro.props;
+
+const layoutClasses: Record<string, string> = {
+  "full-width": "w-full rounded-lg object-cover",
+  "float-left": "float-left mr-6 mb-4 w-full rounded-lg object-cover md:w-1/2",
+  "float-right":
+    "float-right ml-6 mb-4 w-full rounded-lg object-cover md:w-1/2",
+  center: "mx-auto block max-w-2xl rounded-lg object-cover",
+};
+
+const imgClass = layoutClasses[layout] || layoutClasses["full-width"];
+---
+
+<figure class="my-4">
+  <img src={src} alt={alt} class={imgClass} />
+  {
+    caption && (
+      <figcaption class="mt-2 text-center text-sm text-gray-500">
+        {caption}
+      </figcaption>
+    )
+  }
+</figure>

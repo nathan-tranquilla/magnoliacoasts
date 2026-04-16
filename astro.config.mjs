@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 import sitemap from "@astrojs/sitemap";
 import preact from "@astrojs/preact";
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,5 +26,5 @@ export default defineConfig({
     inlineStylesheets: "always",
   },
 
-  integrations: [sitemap(), preact({ compat: true })],
+  integrations: [sitemap(), preact({ compat: true }), mdx()],
 });

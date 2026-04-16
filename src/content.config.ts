@@ -90,6 +90,19 @@ const aboutContent = defineCollection({
   schema: z.object({}),
 });
 
+const blog = defineCollection({
+  loader: glob({ pattern: "**/*.mdx", base: "./src/content/blog" }),
+  schema: z.object({
+    title: z.string(),
+    publishDate: z.coerce.string(),
+    author: z.string().optional(),
+    featuredImage: z.string().optional(),
+    featuredImageAlt: z.string().optional(),
+    featuredImagePosition: z.string().optional(),
+    excerpt: z.string().optional(),
+  }),
+});
+
 // 4. Export a single `collections` object to register your collection(s)
 export const collections = {
   aboutContent,
@@ -101,4 +114,5 @@ export const collections = {
   headshotPackages,
   collectionsPackages,
   bannerMessages,
+  blog,
 };

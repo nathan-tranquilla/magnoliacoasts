@@ -4,11 +4,13 @@
   "version": "0.0.1",
   "dependencies": {
     "@astrojs/cloudflare": "^13.1.10",
+    "@astrojs/mdx": "^5.0.3",
     "@astrojs/preact": "^5.1.1",
     "@astrojs/sitemap": "^3.7.2",
     "@rescript/core": "^1.6.1",
     "@rescript/react": "^0.14.0",
     "@tailwindcss/vite": "^4.1.12",
+    "@tinacms/cli": "^2.2.2",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
     "astro": "^6.1.7",
@@ -18,7 +20,8 @@
     "rehype-unwrap-images": "^1.0.0",
     "rescript": "^12.1.0",
     "rescript-webapi": "^0.10.0",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.1.12",
+    "tinacms": "^3.7.2"
   },
   "devDependencies": {
     "@lhci/cli": "^0.15.1",

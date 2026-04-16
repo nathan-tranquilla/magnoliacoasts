@@ -155,6 +155,38 @@ task :res_dev => 'node_modules' do
   sh "npx rescript -w"
 end
 
+desc "Start Astro dev server with TinaCMS admin"
+task :tina, [:flags] => ['node_modules', :res_build, :dl_galleries] do |t, args|
+  flags = args[:flags] || '--host'
+  if File.exist?("astro.pid")
+    puts "Astro dev is already running (astro.pid exists)."
+    exit(1)
+  end
+  pid = spawn("npx tinacms dev -c \"npx astro dev #{flags}\"")
+  puts "TinaCMS + Astro dev PID: #{pid}"
+  File.write("astro.pid", pid)
+
+  Signal.trap("INT") do
+    puts "Received SIGINT, terminating TinaCMS dev..."
+    begin
+      Process.kill("TERM", pid)
+    rescue Exception => e
+      puts "Could not kill process: #{e.message}"
+    end
+    File.delete("astro.pid") if File.exist?("astro.pid")
+    puts "TinaCMS dev stopped and pid file removed."
+    exit
+  end
+
+  begin
+    Process.wait(pid)
+  rescue SignalException, Errno::ECHILD
+    puts "TinaCMS dev process was terminated externally."
+  end
+  File.delete("astro.pid") if File.exist?("astro.pid")
+  puts "TinaCMS dev exited successfully."
+end
+
 desc "Start Astro dev server"
 task :dev, [:flags] => ['node_modules', :res_build, :dl_galleries] do |t, args|
   # Accept flags as an argument, like :it uses args[:tag]
